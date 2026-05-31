@@ -1,0 +1,2430 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>AI from the front line - Dave Sellick</title>
+<style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&display=swap");
+
+@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+
+:root {
+  --periwinkle:       #A8B0F8;
+  --periwinkle-50:    #EFF1FE;
+  --periwinkle-100:   #DDE1FC;
+  --periwinkle-200:   #C4CAFA;
+  --periwinkle-500:   #7C87E8;
+  --periwinkle-700:   #4A56B8;
+
+  --green:            #D0F8B0;
+  --green-200:        #E6FCD1;
+  --green-400:        #A5DE72;
+  --green-600:        #6DA83C;
+
+  --claude:           #D97757;
+  --claude-soft:      #EDC9B5;
+
+  --ink:              #1E1E46;
+  --ink-900:          #0F1030;
+  --ink-700:          #2B2D5E;
+  --ink-500:          #525682;
+  --ink-300:          #8D92B0;
+  --ink-100:          #D5D7E4;
+
+  --paper:            #FAFAF7;
+  --paper-soft:       #F1F0EA;
+  --paper-card:       #FFFFFF;
+
+  --rule:             rgba(30,30,70,0.10);
+
+  --font-serif:       "Very Vogue", "Very Vogue Text", "Fraunces", Georgia, serif;
+  --font-sans:        "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:        "JetBrains Mono", ui-monospace, Menlo, monospace;
+
+  --pad-x: 160px;
+  --pad-y: 120px;
+
+  --shadow-emoji: drop-shadow(0 12px 28px rgba(30,30,70,0.20)) drop-shadow(0 2px 4px rgba(30,30,70,0.10));
+  --shadow-card: 0 1px 0 rgba(30,30,70,0.04), 0 24px 60px -24px rgba(30,30,70,0.24);
+  --shadow-lift: 0 2px 0 rgba(30,30,70,0.04), 0 32px 80px -28px rgba(30,30,70,0.32);
+}
+
+html, body {
+  margin: 0; padding: 0;
+  background: #0a0a0a; color: var(--ink);
+  font-family: var(--font-sans);
+  letter-spacing: -0.005em;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+.mono, [class*="mono"], pre, code { letter-spacing: 0.02em; }
+deck-stage { background: #0a0a0a; }
+
+/* ── Slide base ─────────────────────────────────────────────────── */
+.slide {
+  display: flex; flex-direction: column;
+  background: var(--paper); color: var(--ink);
+  font-family: var(--font-sans);
+  position: relative; overflow: hidden;
+}
+.slide.ink       { background: var(--ink);        color: var(--paper); }
+.slide.paper-soft{ background: var(--paper-soft); color: var(--ink);   }
+
+/* Subtle premium vignette on every slide for depth */
+.slide::after {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 50% 30%, transparent 60%, rgba(30,30,70,0.025) 100%);
+  pointer-events: none; z-index: 1;
+}
+.slide.ink::after {
+  background: radial-gradient(ellipse at 50% 30%, transparent 60%, rgba(0,0,0,0.20) 100%);
+}
+
+.frame {
+  padding: var(--pad-y) var(--pad-x);
+  display: flex; flex-direction: column;
+  flex: 1; min-height: 0;
+  position: relative; z-index: 2;
+}
+.fill { flex: 1; min-height: 0; }
+.center-y { display:flex; flex-direction:column; justify-content:center; }
+
+/* ── Page chip only — no other chrome ───────────────────────────── */
+.topbar {
+  display: flex; justify-content: flex-end; align-items: center;
+  margin-bottom: 32px;
+}
+.bottombar {
+  display: flex; justify-content: space-between; align-items: center;
+  margin-top: 32px;
+  font-family: var(--font-sans); font-size: 18px; color: var(--ink-300);
+}
+.slide.ink .bottombar { color: var(--periwinkle-200); opacity: 0.7; }
+
+.page-chip {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 7px 14px; border-radius: 999px;
+  background: transparent;
+  border: 1px solid rgba(30,30,70,0.10);
+  font-family: var(--font-mono); font-size: 13px;
+  color: var(--ink-500); letter-spacing: 0.12em;
+  font-weight: 500;
+}
+.page-chip .n { color: var(--ink); font-weight: 600; }
+.slide.ink .page-chip { border-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.55); }
+.slide.ink .page-chip .n { color: var(--paper); }
+.slide.claude-cream .page-chip { border-color: rgba(31,24,21,0.12); color: rgba(31,24,21,0.55); }
+.slide.claude-cream .page-chip .n { color: #1F1815; }
+
+/* ── Display + supporting type ──────────────────────────────────── */
+.display {
+  font-family: var(--font-serif); font-weight: 400;
+  letter-spacing: -0.025em; line-height: 0.96;
+  color: var(--ink); margin: 0; text-wrap: balance;
+}
+.slide.ink .display { color: var(--paper); }
+.display em { font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.06em; }
+.slide.ink .display em { color: var(--green); }
+
+.kicker {
+  font-family: var(--font-mono); font-size: 16px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink-700); margin: 0 0 32px;
+  display: inline-flex; align-items: center; gap: 14px;
+  font-weight: 500;
+}
+.kicker::before {
+  content: ''; width: 8px; height: 8px; border-radius: 50%;
+  background: var(--periwinkle-700); display: inline-block;
+}
+.slide.ink .kicker { color: rgba(255,255,255,0.78); }
+.slide.ink .kicker::before { background: var(--green); }
+
+.sub {
+  font-family: var(--font-sans);
+  font-size: 26px; font-weight: 400;
+  letter-spacing: -0.01em; line-height: 1.4;
+  color: var(--ink-500); margin: 0;
+}
+.slide.ink .sub { color: rgba(255,255,255,0.7); }
+.sub em {
+  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  color: var(--periwinkle-700);
+}
+.slide.ink .sub em { color: var(--green); }
+
+.sub-serif {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 38px; letter-spacing: -0.02em; line-height: 1.3;
+  color: var(--ink-500); margin: 0;
+}
+.slide.ink .sub-serif { color: rgba(255,255,255,0.65); }
+
+/* ── Floating emoji sticker ─────────────────────────────────────── */
+.sticker {
+  position: absolute; line-height: 1;
+  z-index: 5; pointer-events: none;
+  filter: var(--shadow-emoji);
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   SLIDE-SPECIFIC STYLES
+   ────────────────────────────────────────────────────────────────── */
+
+/* SLIDE 04 · "Accountant Detected" mock */
+.rd-card {
+  background: #0c0c18; border-radius: 22px;
+  padding: 36px 40px; width: 580px; flex-shrink: 0;
+  font-family: "Courier New", monospace;
+  box-shadow: 0 32px 60px -20px rgba(0,0,0,0.35);
+}
+.rd-banner { font-size: 13px; letter-spacing: 0.18em; color: #e8a020; text-align: center; border: 1px solid #e8a020; padding: 5px 10px; border-radius: 4px; margin-bottom: 22px; text-transform: uppercase; }
+.rd-emoji { font-size: 56px; text-align: center; display: block; margin-bottom: 10px; filter: drop-shadow(0 6px 16px rgba(255,80,40,0.35)); }
+.rd-title { font-family: var(--font-sans); font-weight: 800; font-size: 40px; color: #e04040; text-align: center; margin: 0 0 24px; letter-spacing: -0.02em; line-height: 1.05; }
+.rd-label { font-size: 14px; color: #6a9e6a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
+.rd-row { display: flex; align-items: center; padding: 5px 0; font-size: 17px; color: #bbb; }
+.rd-row .ck { color: #4aad4a; margin-right: 12px; }
+.rd-row .auto { margin-left: auto; font-size: 13px; color: #e8a020; letter-spacing: 0.08em; }
+.rd-row .lol  { margin-left: auto; font-size: 13px; color: #e04040; }
+.rd-verdict { margin: 16px 0; padding-top: 14px; border-top: 1px solid #2a2a3a; font-size: 14px; color: #e8a020; letter-spacing: 0.12em; }
+.rd-quote { font-size: 16px; color: #777; text-align: center; margin: 0 0 18px; }
+.rd-quote b { color: #e8a020; }
+.rd-btn { display: block; background: #e04040; color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 17px; text-align: center; padding: 15px; border-radius: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+.rd-skip { display: block; color: #555; font-size: 14px; text-align: center; text-decoration: underline; }
+
+/* SLIDE 05 · Hero quote + 3 supporting */
+.qw-hero {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 32px;
+  padding: 44px 60px 40px;
+  margin-bottom: 20px;
+  position: relative; overflow: hidden;
+}
+.qw-hero::before {
+  content: '"'; position: absolute; top: -10px; left: 40px;
+  font-family: var(--font-serif); font-style: italic; font-size: 240px;
+  color: rgba(168,176,248,0.12); line-height: 1; user-select: none;
+}
+.qw-hero-quote {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 72px; line-height: 1.0; letter-spacing: -0.035em;
+  color: var(--paper); margin: 0; position: relative; z-index: 1;
+  text-wrap: balance;
+}
+.qw-hero-attr {
+  font-family: var(--font-sans); font-size: 18px; font-weight: 500;
+  letter-spacing: 0.04em; line-height: 1.5;
+  color: rgba(168,176,248,0.85);
+  margin-top: 20px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+  display: flex; align-items: baseline; gap: 16px;
+}
+.qw-hero-attr b { color: var(--paper); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.qw-hero-attr .role { color: rgba(168,176,248,0.65); text-transform: uppercase; font-size: 13px; letter-spacing: 0.18em; }
+
+.qw-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+.qw-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 24px; padding: 36px 36px 32px;
+  display: flex; flex-direction: column; justify-content: space-between;
+  min-height: 220px;
+  position: relative; overflow: hidden;
+}
+.qw-quote {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 36px; line-height: 1.1; letter-spacing: -0.02em;
+  color: var(--paper); margin: 0;
+}
+.qw-attr {
+  font-family: var(--font-sans); font-size: 13px; font-weight: 500;
+  letter-spacing: 0.06em; line-height: 1.5;
+  color: rgba(168,176,248,0.75);
+  margin-top: 24px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.qw-attr b { color: var(--paper); font-weight: 600; }
+
+/* SLIDE 05 · Image quote cards (real headlines) */
+.qw-img-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 20px;
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  position: relative;
+  box-shadow: 0 20px 40px -16px rgba(0,0,0,0.45);
+}
+.qw-img-card-image {
+  width: 100%;
+  aspect-ratio: 5/2;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  background: #fff;
+}
+.qw-img-card-meta {
+  padding: 18px 22px 20px;
+  display: flex; flex-direction: column; gap: 6px;
+}
+.qw-img-card-source {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(168,176,248,0.60); font-weight: 600;
+  margin: 0;
+}
+.qw-img-card-attr {
+  font-family: var(--font-sans); font-size: 17px;
+  color: var(--paper); font-weight: 600;
+  letter-spacing: -0.01em; line-height: 1.3;
+  margin: 0;
+}
+.qw-img-card-role {
+  font-family: var(--font-sans); font-size: 13px;
+  color: rgba(168,176,248,0.65); font-weight: 400;
+  letter-spacing: -0.005em;
+  margin: 2px 0 0;
+}
+
+/* App-style monochrome icon badges (slides 07 & 08) */
+.app-icon {
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  display: grid; place-items: center;
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.app-icon svg {
+  width: 28px; height: 28px;
+  fill: none;
+}
+.icon-vested  { background: #FEF6E1; border: 1px solid rgba(146,64,14,0.22); }
+.icon-mirage  { background: #DEF7F8; border: 1px solid rgba(8,116,138,0.22); }
+.icon-washing { background: #FCE4EC; border: 1px solid rgba(159,18,57,0.22); }
+.icon-mind    { background: #E8E9FB; border: 1px solid rgba(55,48,163,0.22); }
+.icon-humans  { background: #D7F3E2; border: 1px solid rgba(6,95,70,0.22); }
+.icon-cost    { background: #FEE2E2; border: 1px solid rgba(153,27,27,0.22); }
+.icon-data    { background: #DDE7FA; border: 1px solid rgba(30,64,175,0.22); }
+.icon-vested  svg { stroke: #92400E; color: #92400E; }
+.icon-mirage  svg { stroke: #155E75; color: #155E75; }
+.icon-washing svg { stroke: #9F1239; color: #9F1239; }
+.icon-mind    svg { stroke: #3730A3; color: #3730A3; }
+.icon-humans  svg { stroke: #065F46; color: #065F46; }
+.icon-cost    svg { stroke: #991B1B; color: #991B1B; }
+.icon-data    svg { stroke: #1E40AF; color: #1E40AF; }
+
+/* Per-card colour theming for slides 07 & 08 */
+.why-card.theme-vested  .why-label,
+.why-card.theme-vested  .why-headline em,
+.why-card.theme-vested  .why-tagline em { color: #B45309; }
+.why-card.theme-mirage  .why-label,
+.why-card.theme-mirage  .why-headline em,
+.why-card.theme-mirage  .why-tagline em { color: #0E7490; }
+.why-card.theme-washing .why-label,
+.why-card.theme-washing .why-headline em,
+.why-card.theme-washing .why-tagline em { color: #BE123C; }
+
+.bw-card.theme-mind   .bw-num-tag,
+.bw-card.theme-mind   .bw-headline em,
+.bw-card.theme-mind   .bw-body em { color: #4F46E5; }
+.bw-card.theme-humans .bw-num-tag,
+.bw-card.theme-humans .bw-headline em,
+.bw-card.theme-humans .bw-body em { color: #047857; }
+.bw-card.theme-cost   .bw-num-tag,
+.bw-card.theme-cost   .bw-headline em,
+.bw-card.theme-cost   .bw-body em { color: #DC2626; }
+.bw-card.theme-data   .bw-num-tag,
+.bw-card.theme-data   .bw-headline em,
+.bw-card.theme-data   .bw-body em { color: #1D4ED8; }
+
+/* SLIDE 07 · Two reasons (more dramatic) */
+.why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; flex: 1; }
+.why-card {
+  background: var(--paper-card); border-radius: 28px;
+  padding: 48px 44px 44px;
+  box-shadow: var(--shadow-lift);
+  border: 1px solid rgba(30,30,70,0.06);
+  display: flex; flex-direction: column; gap: 22px;
+  position: relative; overflow: hidden;
+}
+.why-num {
+  font-family: var(--font-serif); font-style: italic; font-size: 160px;
+  color: var(--periwinkle); line-height: 0.80; letter-spacing: -0.05em; margin: 0;
+  position: absolute; top: 24px; right: 36px;
+  opacity: 0.16; user-select: none;
+}
+.why-label {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--periwinkle-700); margin: 0;
+}
+.why-headline {
+  font-family: var(--font-serif); font-size: 46px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.025em; line-height: 1.02; margin: 0;
+}
+.why-headline em { font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.06em; }
+.why-tagline {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 22px; line-height: 1.55; color: var(--ink-500);
+  letter-spacing: -0.005em;
+  margin: auto 0 0; padding-top: 28px;
+  border-top: 1px solid rgba(168,176,248,0.18);
+}
+.why-tagline em { font-family: var(--font-sans); font-style: italic; font-weight: 500; color: var(--periwinkle-700); }
+
+/* SLIDE 08 · Four reasons with GIANT ghost numerals */
+.bw-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; }
+.bw-card {
+  background: var(--paper-card); border-radius: 28px;
+  padding: 52px 52px 48px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(168,176,248,0.10);
+  display: flex; flex-direction: column; gap: 18px;
+  position: relative; overflow: hidden;
+}
+.bw-num-ghost {
+  position: absolute; right: -32px; bottom: -64px;
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 360px; line-height: 0.85; letter-spacing: -0.06em;
+  color: rgba(168,176,248,0.10);
+  user-select: none; pointer-events: none; z-index: 0;
+}
+.bw-num-tag {
+  font-family: var(--font-mono); font-size: 13px;
+  letter-spacing: 0.22em; color: var(--periwinkle-700);
+  text-transform: uppercase; margin: 0;
+  position: relative; z-index: 1;
+}
+.bw-headline {
+  font-family: var(--font-serif); font-size: 56px; font-weight: 400;
+  color: var(--ink); letter-spacing: -0.035em; line-height: 0.98;
+  margin: 0; position: relative; z-index: 1;
+}
+.bw-headline em { font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.06em; }
+.bw-body {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 20px; line-height: 1.55; color: var(--ink-500);
+  letter-spacing: -0.005em;
+  margin: auto 0 0; padding-top: 20px;
+  border-top: 1px solid rgba(168,176,248,0.16);
+  position: relative; z-index: 1;
+}
+.bw-body em { font-family: var(--font-sans); font-style: italic; font-weight: 500; color: var(--periwinkle-700); }
+
+/* SLIDE 09 · Probabilistic chat windows */
+.prob-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.prob-window {
+  background: #fff; border-radius: 24px;
+  border: 1px solid rgba(168,176,248,0.18);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+.prob-hdr { padding: 16px 22px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(168,176,248,0.15); }
+.prob-hdr-label { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; color: var(--ink-300); text-transform: uppercase; }
+.prob-body { padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; }
+.prob-user { background: var(--ink); color: var(--paper); border-radius: 16px 16px 6px 16px; padding: 14px 18px; font-size: 19px; align-self: flex-end; max-width: 85%; line-height: 1.4; font-family: var(--font-sans); }
+.prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 16px 20px; font-size: 19px; color: var(--ink); line-height: 1.55; max-width: 92%; border: 1px solid rgba(168,176,248,0.22); font-family: var(--font-sans); }
+.prob-ai em { color: var(--periwinkle-700); font-style: italic; font-family: var(--font-serif); padding-inline-end: 0.06em; }
+.prob-run-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); text-align: center; padding: 12px; background: rgba(168,176,248,0.05); border-top: 1px solid rgba(168,176,248,0.12); }
+
+/* SLIDE 10 · Probabilistic vs Deterministic */
+.vs-grid { display: grid; grid-template-columns: 1fr 80px 1fr; gap: 0; align-items: stretch; }
+.vs-col { border-radius: 32px; padding: 56px 52px; display: flex; flex-direction: column; min-height: 580px; }
+.vs-col.prob { background: rgba(255,255,255,0.04); backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(168,176,248,0.18); }
+.vs-col.det  { background: var(--paper); box-shadow: 0 32px 72px -32px rgba(0,0,0,0.50); }
+.vs-pill {
+  display: inline-flex; align-items: center; gap: 12px;
+  padding: 10px 22px; border-radius: 999px;
+  font-family: var(--font-sans); font-size: 18px; font-weight: 600; letter-spacing: -0.02em;
+  margin-bottom: 24px; align-self: flex-start;
+}
+.vs-pill .dot { width: 8px; height: 8px; border-radius: 50%; }
+.vs-col.prob .vs-pill { background: rgba(255,180,80,0.15); color: #f4b070; }
+.vs-col.prob .vs-pill .dot { background: #f4b070; }
+.vs-col.det .vs-pill { background: rgba(46,125,50,0.10); color: #2e7d32; }
+.vs-col.det .vs-pill .dot { background: #2e7d32; }
+.vs-headline {
+  font-family: var(--font-serif); font-size: 64px; line-height: 1.0;
+  letter-spacing: -0.03em; margin: 0 0 32px;
+}
+.vs-col.prob .vs-headline { color: var(--paper); }
+.vs-col.prob .vs-headline em { font-style: italic; color: rgba(244,176,112,0.95); padding-inline-end: 0.08em; }
+.vs-col.det .vs-headline { color: var(--ink); }
+.vs-col.det .vs-headline em { font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.08em; }
+.vs-points { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 18px; }
+.vs-points li {
+  font-family: var(--font-sans); font-weight: 400; font-size: 22px;
+  letter-spacing: -0.005em; line-height: 1.5;
+  padding-left: 28px; position: relative;
+}
+.vs-points li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; position: absolute; left: 0; top: 13px; }
+.vs-col.prob .vs-points li { color: rgba(255,255,255,0.88); }
+.vs-col.prob .vs-points li::before { background: rgba(244,176,112,0.6); }
+.vs-col.det .vs-points li { color: var(--ink); }
+.vs-col.det .vs-points li::before { background: var(--periwinkle); }
+.vs-divider { display: flex; align-items: center; justify-content: center; font-family: var(--font-serif); font-style: italic; font-size: 64px; color: rgba(255,255,255,0.18); }
+
+/* SLIDE 11 · Bluetooth-as-hero layout */
+.prop-stack { display: flex; flex-direction: column; gap: 24px; margin-top: 56px; }
+.prop-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.prop-card {
+  background: var(--paper-card); border-radius: 28px;
+  padding: 40px 44px 36px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(168,176,248,0.10);
+  display: flex; flex-direction: column; gap: 16px;
+  position: relative;
+}
+.prop-num {
+  font-family: var(--font-serif); font-style: italic; font-size: 56px;
+  color: var(--periwinkle); line-height: 0.85; letter-spacing: -0.04em; margin: 0;
+}
+.prop-text {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 28px; line-height: 1.3; letter-spacing: -0.015em;
+  margin: 0; color: var(--ink);
+}
+.prop-text em { font-family: var(--font-serif); font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.06em; }
+
+.prop-hero {
+  background: #14152F;
+  border-radius: 32px;
+  padding: 56px 64px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.06) inset,
+    0 32px 80px -20px rgba(15,16,48,0.50);
+  display: grid; grid-template-columns: auto 1fr; gap: 56px; align-items: center;
+  position: relative; overflow: hidden;
+}
+.prop-hero-icon {
+  font-size: 140px; line-height: 1;
+  filter: var(--shadow-emoji);
+}
+.prop-hero-text {
+  font-family: var(--font-serif); font-weight: 400;
+  font-size: 60px; line-height: 1.0; letter-spacing: -0.035em;
+  color: var(--paper); margin: 0;
+}
+.prop-hero-text em { font-style: italic; color: var(--green); padding-inline-end: 0.06em; }
+.prop-hero-foot {
+  font-family: var(--font-sans); font-size: 18px; line-height: 1.5;
+  color: rgba(255,255,255,0.6); margin: 16px 0 0; letter-spacing: -0.005em;
+}
+
+/* SLIDE 13 · Claude.ai app mockup */
+.claude-app {
+  width: 100%; max-width: 1100px;
+  background: #FAF9F5;
+  border-radius: 24px;
+  border: 1px solid rgba(31,24,21,0.08);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.7) inset,
+    0 32px 80px -20px rgba(31,24,21,0.32),
+    0 8px 22px -8px rgba(31,24,21,0.16);
+  overflow: hidden;
+}
+.claude-app-bar {
+  padding: 16px 24px;
+  display: flex; align-items: center; justify-content: space-between;
+  background: rgba(255,255,255,0.55);
+  border-bottom: 1px solid rgba(31,24,21,0.06);
+}
+.claude-app-brand {
+  display: flex; align-items: center; gap: 10px;
+  font-family: var(--font-serif); font-size: 22px;
+  color: #1F1815; font-weight: 500; letter-spacing: -0.02em;
+}
+.claude-app-brand img { width: 22px; height: 22px; }
+.claude-app-meta { display: flex; align-items: center; gap: 14px; }
+.claude-app-pill {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(107,182,107,0.10);
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(50,140,50,0.92); letter-spacing: 0.16em;
+  text-transform: uppercase; font-weight: 600;
+}
+.claude-app-pill-dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: #6BB66B;
+  box-shadow: 0 0 0 3px rgba(107,182,107,0.22);
+}
+.claude-app-avatar {
+  width: 36px; height: 36px; border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.10);
+}
+.claude-app-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.claude-app-body {
+  padding: 56px 80px 40px;
+  display: flex; flex-direction: column; align-items: center;
+  text-align: center;
+}
+.claude-app-mark {
+  width: 60px; height: auto;
+  margin-bottom: 22px;
+  filter: drop-shadow(0 8px 16px rgba(217,119,87,0.20));
+}
+.claude-app-greeting {
+  font-family: var(--font-serif); font-weight: 400; font-size: 52px;
+  color: #1F1815; margin: 0; letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+.claude-app-greeting em { font-style: italic; color: #D97757; }
+.claude-app-question {
+  font-family: var(--font-sans); font-size: 19px;
+  color: rgba(31,24,21,0.55); margin: 6px 0 28px;
+  letter-spacing: -0.005em;
+}
+.claude-app-input-wrap { width: 100%; max-width: 760px; }
+.claude-app-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #fff;
+  border: 1px solid rgba(31,24,21,0.10);
+  border-radius: 14px;
+  display: flex; align-items: center; gap: 12px;
+  box-shadow: 0 4px 12px -4px rgba(31,24,21,0.08);
+}
+.claude-app-input-add {
+  width: 30px; height: 30px;
+  border-radius: 8px;
+  background: rgba(31,24,21,0.06);
+  display: grid; place-items: center;
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 18px; color: rgba(31,24,21,0.55);
+  flex-shrink: 0;
+}
+.claude-app-input-text {
+  flex: 1; text-align: left;
+  font-family: var(--font-sans); font-size: 16px;
+  color: rgba(31,24,21,0.40);
+  letter-spacing: -0.005em;
+}
+.claude-app-input-send {
+  font-family: var(--font-mono); font-size: 13px;
+  padding: 6px 12px; border-radius: 8px;
+  background: rgba(217,119,87,0.12); color: #D97757;
+  font-weight: 600;
+}
+.claude-app-suggestions {
+  display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;
+  margin-top: 14px;
+}
+.claude-app-chip {
+  font-family: var(--font-sans); font-size: 13px;
+  padding: 8px 14px; border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(31,24,21,0.08);
+  color: rgba(31,24,21,0.65);
+  letter-spacing: -0.005em;
+}
+.claude-app-foot {
+  padding: 12px 26px;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: rgba(31,24,21,0.03);
+  border-top: 1px solid rgba(31,24,21,0.05);
+  font-family: var(--font-mono); font-size: 11px;
+  color: rgba(31,24,21,0.45); letter-spacing: 0.10em;
+}
+.claude-app-foot-dot { color: rgba(31,24,21,0.30); }
+
+/* SLIDE 14 · Claude-branded ecosystem cards */
+.slide.claude-cream { background: #F5F0EB; color: #1F1815; }
+.slide.claude-cream::after { background: radial-gradient(ellipse at 50% 30%, transparent 50%, rgba(217,119,87,0.05) 100%); }
+.slide.claude-cream .kicker { color: rgba(31,24,21,0.5); }
+.slide.claude-cream .kicker::before { background: #D97757; }
+.slide.claude-cream .display { color: #1F1815; }
+.slide.claude-cream .display em { color: #D97757; }
+.slide.claude-cream .page-chip { background: rgba(31,24,21,0.06); color: rgba(31,24,21,0.7); }
+.slide.claude-cream .page-chip .n { color: #1F1815; }
+.slide.claude-cream .bottombar { color: rgba(31,24,21,0.5); }
+
+.eco-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; align-items: stretch; }
+.eco-card {
+  background: #FFFDFA;
+  border: 1px solid rgba(217,119,87,0.07);
+  border-radius: 26px; padding: 44px 36px 36px;
+  display: flex; flex-direction: column; gap: 22px;
+  box-shadow:
+    0 1px 2px rgba(31,24,21,0.04),
+    0 6px 16px -6px rgba(217,119,87,0.08),
+    0 28px 60px -28px rgba(31,24,21,0.15);
+  position: relative;
+}
+.eco-badge {
+  width: 64px; height: 64px; border-radius: 18px;
+  display: grid; place-items: center; flex-shrink: 0;
+  background: rgba(217,119,87,0.08);
+  box-shadow: 0 4px 12px -4px rgba(217,119,87,0.15);
+}
+.eco-name {
+  font-family: var(--font-serif); font-weight: 400;
+  font-size: 44px; line-height: 0.95; letter-spacing: -0.03em;
+  color: #1F1815; margin: 0;
+}
+.eco-name em { font-style: italic; color: #D97757; padding-inline-end: 0.08em; }
+.eco-tag {
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.22em;
+  text-transform: uppercase; margin: 0 0 8px;
+  color: rgba(31,24,21,0.42);
+}
+.eco-line {
+  font-family: var(--font-sans); font-size: 17px; line-height: 1.55;
+  color: rgba(31,24,21,0.58); letter-spacing: -0.005em;
+  margin: auto 0 0; padding-top: 22px;
+  border-top: 1px solid rgba(217,119,87,0.09);
+}
+.eco-pair {
+  display: inline-flex; align-items: center; gap: 8px;
+  align-self: flex-start;
+  padding: 6px 12px; border-radius: 999px;
+  background: rgba(31,24,21,0.05);
+  border: 1px solid rgba(31,24,21,0.08);
+  font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: rgba(31,24,21,0.65);
+}
+.eco-pair .plus { color: #D97757; font-weight: 600; }
+
+/* Slide 14 · "Above the stack" sidenote (Claude Design) */
+.eco-meta {
+  display: inline-flex; align-items: center;
+  gap: 16px;
+  padding: 14px 22px 14px 14px;
+  background: rgba(217,119,87,0.06);
+  border: 1px solid rgba(217,119,87,0.20);
+  border-radius: 16px;
+  margin-bottom: 24px;
+  align-self: flex-start;
+}
+.eco-meta-badge {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: rgba(217,119,87,0.10);
+  display: grid; place-items: center;
+  flex-shrink: 0;
+}
+.eco-meta-badge img { width: 18px; height: 18px; }
+.eco-meta-body { display: flex; flex-direction: column; gap: 3px; }
+.eco-meta-tag {
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(31,24,21,0.50); font-weight: 600;
+  margin: 0;
+}
+.eco-meta-name {
+  font-family: var(--font-sans); font-size: 17px; font-weight: 700;
+  color: #1F1815; margin: 0; letter-spacing: -0.01em;
+}
+.eco-meta-name em {
+  font-family: var(--font-serif); font-style: italic;
+  color: #D97757; font-weight: 400; padding-inline-end: 0.05em;
+  font-size: 1.10em;
+}
+.eco-meta-line {
+  color: rgba(31,24,21,0.55); font-weight: 400;
+}
+
+/* SLIDE 15 · CLI terminal */
+.cli-window {
+  background: #0c0c18; border-radius: 22px; overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  box-shadow: 0 32px 72px -16px rgba(0,0,0,0.55);
+  width: 720px; flex-shrink: 0;
+}
+.cli-titlebar { background: #15152a; padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
+.cli-dot { width: 11px; height: 11px; border-radius: 50%; }
+.cli-title { font-family: var(--font-mono); font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-left: 8px; }
+.cli-body { padding: 36px 32px 32px; font-family: "JetBrains Mono", "Courier New", monospace; font-size: 17px; line-height: 1.85; }
+.cli-line { display: block; }
+.cli-prompt { color: var(--periwinkle); }
+.cli-cmd { color: rgba(255,255,255,0.92); }
+.cli-out { color: rgba(255,255,255,0.65); }
+.cli-out.green { color: #6ad26a; }
+.cli-out.amber { color: #e8a020; }
+.cli-cursor { display: inline-block; width: 9px; height: 18px; background: var(--periwinkle); vertical-align: text-bottom; }
+
+/* SLIDES 02 & 03 · Hype cycle (minimal floating chart, no card frame) */
+.hype-cycle {
+  width: 100%;
+  padding: 24px 8px 0;
+  position: relative;
+}
+.hype-cycle-caption { display: none; }
+
+/* SLIDE 16 · Recommend split */
+.rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; flex: 1; }
+.rec-col {
+  border-radius: 32px; padding: 56px 56px 52px;
+  display: flex; flex-direction: column; gap: 24px;
+  position: relative; overflow: hidden;
+}
+.rec-col.most {
+  background: var(--paper-card);
+  border: 1px solid rgba(168,176,248,0.18);
+  box-shadow: var(--shadow-lift);
+}
+.rec-col.strong {
+  background: linear-gradient(160deg, #1E1E46 0%, #2B2D5E 100%);
+  color: var(--paper);
+  box-shadow: 0 32px 72px -32px rgba(0,0,0,0.45);
+}
+.rec-emoji {
+  position: absolute; top: 36px; right: 40px;
+  font-size: 100px; line-height: 1;
+  filter: var(--shadow-emoji); opacity: 0.92;
+}
+.rec-eyebrow {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em;
+  text-transform: uppercase; margin: 0;
+}
+.rec-col.most .rec-eyebrow { color: var(--periwinkle-700); }
+.rec-col.strong .rec-eyebrow { color: var(--periwinkle-200); }
+.rec-headline {
+  font-family: var(--font-serif); font-size: 88px; font-weight: 400;
+  letter-spacing: -0.04em; line-height: 0.92; margin: 0;
+}
+.rec-col.most .rec-headline { color: var(--ink); }
+.rec-col.strong .rec-headline { color: var(--paper); }
+.rec-headline em { font-style: italic; padding-inline-end: 0.08em; }
+.rec-col.most .rec-headline em { color: var(--periwinkle-700); }
+.rec-col.strong .rec-headline em { color: var(--green); }
+.rec-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
+.rec-list li {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 24px; line-height: 1.4; letter-spacing: -0.005em;
+  padding-left: 28px; position: relative;
+}
+.rec-col.most .rec-list li { color: var(--ink); }
+.rec-col.strong .rec-list li { color: rgba(255,255,255,0.88); }
+.rec-list li::before { content: '→'; position: absolute; left: 0; top: 0; font-family: var(--font-mono); font-size: 20px; }
+.rec-col.most .rec-list li::before { color: var(--periwinkle-700); }
+.rec-col.strong .rec-list li::before { color: var(--green); }
+.rec-also {
+  display: flex; flex-direction: column; gap: 14px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(31,24,21,0.10);
+}
+.rec-col.strong .rec-also { border-top-color: rgba(255,255,255,0.10); }
+.rec-also-row {
+  display: flex; align-items: flex-start; gap: 14px;
+}
+.rec-also-tag {
+  flex-shrink: 0;
+  display: inline-flex; align-items: center;
+  padding: 5px 11px; border-radius: 999px;
+  font-family: var(--font-mono); font-size: 10px;
+  letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
+  background: rgba(74,86,184,0.10); color: var(--periwinkle-700);
+  margin-top: 2px; white-space: nowrap;
+}
+.rec-also-tag.warn { background: rgba(232,160,32,0.14); color: #8b5a10; }
+.rec-also-text {
+  font-family: var(--font-sans); font-size: 18px; line-height: 1.45;
+  color: var(--ink-500); margin: 0; letter-spacing: -0.005em;
+}
+.rec-also-text em {
+  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  color: var(--ink);
+}
+
+.rec-warn {
+  font-family: var(--font-sans); font-size: 17px; line-height: 1.5;
+  letter-spacing: -0.005em;
+  padding: 18px 22px; border-radius: 14px;
+  margin-top: auto;
+}
+.rec-col.most .rec-warn {
+  background: rgba(232,160,32,0.08); color: #8b5a10;
+  border: 1px solid rgba(232,160,32,0.22);
+}
+.rec-col.strong .rec-warn {
+  background: rgba(255,255,255,0.04); color: rgba(255,200,120,0.92);
+  border: 1px solid rgba(255,200,120,0.18);
+}
+
+/* SLIDE 01 · Cover prompt — Claude chat input style */
+.cover-prompt {
+  display: inline-flex; align-items: center; gap: 14px;
+  padding: 12px 12px 12px 18px;
+  background: rgba(255,255,255,0.65);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255,255,255,0.7);
+  border-radius: 20px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.85) inset,
+    0 16px 36px -16px rgba(74,86,184,0.22),
+    0 2px 8px -2px rgba(74,86,184,0.10);
+  max-width: 880px;
+}
+.cover-prompt-icon {
+  width: 36px; height: 36px;
+  display: grid; place-items: center;
+  background: rgba(217,119,87,0.14);
+  border: 1px solid rgba(217,119,87,0.18);
+  border-radius: 11px;
+  flex-shrink: 0;
+}
+.cover-prompt-icon img { width: 18px; height: 18px; }
+.cover-prompt-text {
+  font-family: var(--font-sans); font-size: 24px;
+  color: rgba(30,30,70,0.78);
+  letter-spacing: -0.005em;
+  flex: 1;
+}
+.cover-prompt-text em { font-style: italic; color: var(--ink); }
+.cover-prompt-cursor {
+  display: inline-block; width: 2px; height: 22px;
+  background: var(--periwinkle-700);
+  margin-left: 4px; vertical-align: text-bottom;
+}
+.cover-prompt-kbd {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 6px;
+  height: 36px; padding: 0 14px;
+  background: var(--ink); color: var(--paper);
+  border-radius: 11px;
+  font-family: var(--font-mono); font-size: 13px;
+  font-weight: 500; letter-spacing: 0.10em;
+  flex-shrink: 0;
+}
+.cover-prompt-kbd .arrow {
+  font-size: 16px; line-height: 1;
+}
+
+/* SLIDE 12 · Why-listen-to-me receipts card */
+.receipts-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,176,248,0.18);
+  border-radius: 32px;
+  padding: 48px 48px 40px;
+  display: flex; flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 32px 72px -32px rgba(0,0,0,0.45);
+}
+.receipts-head {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.receipts-icon {
+  font-size: 88px; line-height: 1;
+  filter: var(--shadow-emoji);
+}
+.receipts-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(208,248,176,0.85); font-weight: 500;
+}
+.receipts-tag .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--green);
+  box-shadow: 0 0 0 4px rgba(208,248,176,0.18);
+}
+.receipts-quote {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 40px; line-height: 1.2; letter-spacing: -0.02em;
+  color: var(--paper); margin: 0;
+}
+.receipts-quote em { font-style: italic; color: var(--green); padding-inline-end: 0.06em; }
+.receipts-meta {
+  font-family: var(--font-mono); font-size: 12px;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin: 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Serif italic ems within sans body — bump for x-height parity */
+.sub em,
+.rec-also-text em,
+.prop-text em {
+  font-size: 1.06em;
+}
+
+/* SLIDE 17 · Closing */
+.closing-stack { display: flex; flex-direction: column; gap: 32px; max-width: 1500px; }
+.closing-curious {
+  font-family: var(--font-serif); font-size: 96px; font-style: italic;
+  color: var(--periwinkle-700); letter-spacing: -0.035em;
+  margin: 24px 0 0;
+}
+.closing-curious em { padding-inline-end: 0.08em; }
+.closing-contact {
+  font-family: var(--font-mono); font-size: 16px; color: var(--ink-300);
+  letter-spacing: 0.06em; margin: 24px 0 0;
+}
+
+/* ──────────────────────────────────────────────────────────────────
+   NEW SLIDES · The sharpened argument
+   (deterministic core → GenAI as copilot → resolution)
+   ────────────────────────────────────────────────────────────────── */
+
+/* Shared · key-line callout (accent), light + ink variants */
+.keyline {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 34px; line-height: 1.32; letter-spacing: -0.02em;
+  color: var(--periwinkle-700); margin: 0;
+  padding: 28px 34px;
+  background: rgba(168,176,248,0.10);
+  border: 1px solid rgba(168,176,248,0.28);
+  border-left: 5px solid var(--periwinkle-700);
+  border-radius: 18px;
+}
+.keyline b { font-weight: 500; font-style: italic; color: var(--ink); }
+.slide.ink .keyline {
+  color: var(--green);
+  background: rgba(208,248,176,0.07);
+  border-color: rgba(208,248,176,0.20);
+  border-left-color: var(--green);
+}
+.slide.ink .keyline b { color: var(--paper); }
+
+/* Slide A · deterministic tool grid */
+.tool-grid { display: flex; flex-wrap: wrap; gap: 16px; }
+.tool-chip {
+  display: inline-flex; align-items: center; gap: 13px;
+  padding: 18px 26px; border-radius: 16px;
+  background: var(--paper-card);
+  border: 1px solid rgba(30,30,70,0.08);
+  box-shadow: var(--shadow-card);
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 24px; letter-spacing: -0.01em; color: var(--ink);
+}
+.tool-chip .tc-dot {
+  width: 9px; height: 9px; border-radius: 3px;
+  background: var(--periwinkle-500); flex-shrink: 0;
+}
+
+/* Slide B · single-property panel (on ink) */
+.prop-one {
+  display: inline-flex; align-items: center; gap: 26px;
+  padding: 26px 40px; border-radius: 22px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(168,176,248,0.20);
+  align-self: flex-start;
+}
+.prop-one-tag {
+  font-family: var(--font-mono); font-size: 14px;
+  letter-spacing: 0.16em; text-transform: uppercase;
+  color: rgba(168,176,248,0.72); max-width: 180px; line-height: 1.4;
+}
+.prop-one-word {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 64px; letter-spacing: -0.03em; line-height: 1;
+  color: var(--green);
+}
+
+/* Slide C · the verification test (emphasis) */
+.vtest-quote {
+  font-family: var(--font-serif); font-style: italic;
+  font-size: 80px; line-height: 1.06; letter-spacing: -0.03em;
+  color: var(--ink); text-align: center; text-wrap: balance;
+  max-width: 1480px; margin: 0 auto;
+}
+.vtest-quote em { font-style: italic; color: var(--periwinkle-700); }
+.vtest-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
+.vtest-col {
+  border-radius: 26px; padding: 38px 44px 34px;
+  display: flex; flex-direction: column; gap: 14px;
+  border: 1px solid;
+}
+.vtest-col.win  { background: rgba(109,168,60,0.08); border-color: rgba(109,168,60,0.30); }
+.vtest-col.lose { background: rgba(232,160,32,0.08); border-color: rgba(232,160,32,0.32); }
+.vtest-label {
+  font-family: var(--font-mono); font-size: 13px;
+  letter-spacing: 0.20em; text-transform: uppercase; margin: 0;
+}
+.vtest-col.win  .vtest-label { color: var(--green-600); }
+.vtest-col.lose .vtest-label { color: #8b5a10; }
+.vtest-head {
+  font-family: var(--font-serif); font-size: 38px; font-weight: 400;
+  letter-spacing: -0.02em; line-height: 1.05; color: var(--ink); margin: 0;
+}
+.vtest-body {
+  font-family: var(--font-sans); font-size: 22px; line-height: 1.45;
+  letter-spacing: -0.005em; color: var(--ink-500); margin: 0;
+}
+.vtest-verdict {
+  font-family: var(--font-sans); font-weight: 600; font-size: 26px;
+  letter-spacing: -0.01em; margin: auto 0 0; padding-top: 16px;
+  border-top: 1px solid rgba(30,30,70,0.10);
+}
+.vtest-col.win  .vtest-verdict { color: var(--green-600); }
+.vtest-col.lose .vtest-verdict { color: #b5710f; }
+
+/* Slides D & E · argument list (light + ink) */
+.arg-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; }
+.arg-list li {
+  font-family: var(--font-sans); font-weight: 400;
+  font-size: 24px; line-height: 1.42; letter-spacing: -0.005em;
+  padding-left: 36px; position: relative; color: var(--ink);
+}
+.arg-list li::before {
+  content: '→'; position: absolute; left: 0; top: 0;
+  font-family: var(--font-mono); font-size: 22px; color: var(--periwinkle-700);
+}
+.arg-list em { font-family: var(--font-serif); font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.05em; }
+.slide.ink .arg-list li { color: rgba(255,255,255,0.90); }
+.slide.ink .arg-list li::before { color: var(--green); }
+.slide.ink .arg-list em { color: var(--green); }
+
+/* Slide F · exposure columns */
+.exp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; flex: 1; }
+.exp-col {
+  border-radius: 28px; padding: 46px 46px 42px;
+  display: flex; flex-direction: column; gap: 18px;
+  background: var(--paper-card); box-shadow: var(--shadow-card);
+  position: relative; overflow: hidden;
+}
+.exp-col.safe    { border: 1px solid rgba(109,168,60,0.28); }
+.exp-col.exposed { border: 1px solid rgba(232,160,32,0.32); }
+.exp-eyebrow {
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.18em;
+  text-transform: uppercase; margin: 0;
+}
+.exp-col.safe    .exp-eyebrow { color: var(--green-600); }
+.exp-col.exposed .exp-eyebrow { color: #8b5a10; }
+.exp-verdict {
+  font-family: var(--font-serif); font-size: 50px; font-weight: 400;
+  letter-spacing: -0.03em; line-height: 1.0; color: var(--ink); margin: 0;
+}
+.exp-col.safe    .exp-verdict em { font-style: italic; color: var(--green-600); }
+.exp-col.exposed .exp-verdict em { font-style: italic; color: #b5710f; }
+.exp-body {
+  font-family: var(--font-sans); font-size: 22px; line-height: 1.5;
+  letter-spacing: -0.005em; color: var(--ink-500); margin: auto 0 0;
+}
+.exp-body em { font-family: var(--font-sans); font-style: italic; font-weight: 500; color: var(--ink); }
+
+/* Slide G · closing thesis (emphasis) */
+.closing-thesis {
+  font-family: var(--font-serif); font-size: 80px; font-weight: 400;
+  line-height: 1.16; letter-spacing: -0.03em;
+  color: var(--paper); text-align: center; text-wrap: balance;
+  max-width: 1520px; margin: 0 auto;
+}
+.closing-thesis em { font-style: italic; color: var(--green); padding-inline-end: 0.04em; }
+
+/* ── Colourful icon chips · brand coloured-monochrome system ──────────
+   One hue family per chip: tinted fill < mid border < deeper ink stroke.
+   Lucide single-stroke icons only (strokeWidth ~2.1). */
+.ic {
+  display: grid; place-items: center; flex-shrink: 0;
+  width: 64px; height: 64px; border-radius: 18px; border: 1px solid;
+}
+.ic svg { width: 31px; height: 31px; fill: none; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
+.ic-lg { width: 108px; height: 108px; border-radius: 28px; }
+.ic-lg svg { width: 52px; height: 52px; }
+.ic-purple { background:#EEF0F7; border-color:#C5CCE0; } .ic-purple svg { stroke:#3D4785; }
+.ic-green  { background:#DCEFE4; border-color:#A8D4BA; } .ic-green  svg { stroke:#1F5A32; }
+.ic-amber  { background:#FDF3D6; border-color:#E6D4A3; } .ic-amber  svg { stroke:#7A5E1E; }
+.ic-rose   { background:#FDE7EC; border-color:rgba(168,69,94,0.34); } .ic-rose svg { stroke:#7A1E35; }
+.ic-violet { background:#F3E3EE; border-color:#D8B8CC; } .ic-violet svg { stroke:#7A3D6F; }
+.ic-blue   { background:#E2ECF6; border-color:rgba(74,120,168,0.34); } .ic-blue svg { stroke:#1F4D8A; }
+.ic-teal   { background:#D4EBE6; border-color:#A3CFC4; } .ic-teal svg { stroke:#1F5A52; }
+
+/* Slide 13 · deterministic tool tiles */
+.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+.tile {
+  display: flex; align-items: center; gap: 20px;
+  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.07);
+  border-radius: 18px; padding: 18px 26px; box-shadow: var(--shadow-card);
+}
+.tile-label { font-family: var(--font-sans); font-weight: 600; font-size: 27px; letter-spacing: -0.015em; color: var(--ink); }
+
+/* Slides 14, 16 & 17 · icon point rows */
+.pt-grid { display: flex; flex-direction: column; gap: 18px; }
+.pt-row {
+  display: flex; align-items: center; gap: 26px;
+  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.07);
+  border-radius: 20px; padding: 22px 30px; box-shadow: var(--shadow-card);
+}
+.pt-text {
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 27px; line-height: 1.24; letter-spacing: -0.015em;
+  color: var(--ink); margin: 0;
+}
+.pt-text em { font-family: var(--font-serif); font-style: italic; color: var(--periwinkle-700); padding-inline-end: 0.05em; font-size: 1.06em; }
+.pt-text b { font-weight: 700; color: var(--ink); }
+.slide.ink .pt-row { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.10); box-shadow: none; }
+.slide.ink .pt-text { color: var(--paper); }
+.slide.ink .pt-text em { color: var(--green); }
+.slide.ink .pt-text b { color: var(--paper); }
+
+/* Kill all animations — this deck is presented, not played */
+*, *::before, *::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+}
+</style>
+</head>
+<body>
+
+<script>
+  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "periwinkle"
+  }/*EDITMODE-END*/;
+</script>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ════════════════════════════════════════════════════════════════
+       01 · COVER
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="01 Cover"
+    style="background: linear-gradient(150deg, #DDDCFC 0%, #EAE8FF 40%, #F5F3FF 100%);">
+
+    <div aria-hidden="true" style="position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(168,176,248,0.5);"></div>
+    <div aria-hidden="true" style="position:absolute;right:180px;top:60px;width:180px;height:180px;border-radius:50%;background:rgba(168,176,248,0.3);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-160px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:rgba(208,248,176,0.25);"></div>
+
+    <div class="frame">
+      <div class="fill center-y" style="max-width: 1500px;">
+        <h1 class="display" style="font-size: 200px;">
+          AI from the<br>
+          <em>front&nbsp;line.</em>
+        </h1>
+
+        <div class="cover-prompt" style="margin-top: 56px;">
+          <span class="cover-prompt-icon">
+            <img src="Images/claude-logo.svg" alt="">
+          </span>
+          <span class="cover-prompt-text">
+            ...this is what you actually <em>need to know.</em><span class="cover-prompt-cursor"></span>
+          </span>
+          <span class="cover-prompt-kbd"><span class="arrow">↵</span> RETURN</span>
+        </div>
+      </div>
+
+      <div class="bottombar" style="font-size: 20px; color: var(--ink-700); justify-content: flex-end;">
+        <div style="display: flex; align-items: center; gap: 22px;">
+          <div style="text-align: right;">
+            <div style="font-family: var(--font-sans); font-size: 28px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
+            <div style="font-family: var(--font-mono); font-size: 13px; color: var(--ink-500); letter-spacing: 0.20em; margin-top: 8px; text-transform: uppercase; font-weight: 500;">Founder · Sidgrove</div>
+          </div>
+          <img src="Images/Headshot%20normal.jpg" alt="Dave Sellick" style="width: 96px; height: 96px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       02 · THE CALL I MADE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="02 The call I made">
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">02</span> / 27</span></div>
+
+      <div class="fill" style="display:grid; grid-template-columns: 3fr 8fr; gap: 88px; align-items: center;">
+        <div>
+          <p class="kicker">October 2025 · Xero Roadshow</p>
+          <h2 class="display" style="font-size: 116px; margin-bottom: 48px;">
+            I made a <em>call.</em>
+          </h2>
+          <p style="font-family: var(--font-serif); font-style: italic; font-size: 44px; color: var(--ink); letter-spacing: -0.025em; line-height: 1.2; margin: 0;">
+            <span style="color: var(--periwinkle-700); font-family: var(--font-serif); font-style: italic; font-size: 0.9em; margin-right: 4px;">"</span>We were at the peak<br>of a GenAI hype bubble.<span style="color: var(--periwinkle-700);">"</span>
+          </p>
+        </div>
+
+        <div class="hype-cycle">
+          <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+            <defs>
+              <linearGradient id="hypeFillLight" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#A8B0F8" stop-opacity="0.32"/>
+                <stop offset="100%" stop-color="#A8B0F8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <text x="22" y="180" font-family="DM Sans" font-size="11" fill="#525682" letter-spacing="3" text-anchor="middle" transform="rotate(-90, 22, 180)" font-weight="600">HYPE</text>
+
+            <path d="M 60,300 C 130,300 220,80 280,80 C 340,80 410,300 470,300 C 560,300 640,210 700,180 L 700,310 L 60,310 Z"
+                  fill="url(#hypeFillLight)"/>
+
+            <line x1="60" y1="310" x2="710" y2="310" stroke="#1E1E46" stroke-width="1" opacity="0.12" stroke-linecap="round"/>
+
+            <path d="M 60,300 C 130,300 220,80 280,80 C 340,80 410,300 470,300 C 560,300 640,210 700,180"
+                  stroke="#A8B0F8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+            <text x="710" y="338" font-family="DM Sans" font-size="11" fill="#525682" letter-spacing="3" text-anchor="end" font-weight="600">TIME</text>
+
+            <line x1="280" y1="80" x2="280" y2="56" stroke="#c04020" stroke-width="1.5" opacity="0.35" stroke-dasharray="2 3"/>
+
+            <circle cx="280" cy="80" r="12" fill="#fff" stroke="#c04020" stroke-width="3"/>
+            <circle cx="280" cy="80" r="5" fill="#c04020"/>
+
+            <g transform="translate(280, 32)">
+              <rect x="-105" y="-16" width="210" height="32" rx="16" fill="#1E1E46"/>
+              <text x="0" y="4" font-family="DM Sans" font-weight="600" font-size="12" fill="#fff" letter-spacing="-0.01em" text-anchor="middle">"we are here" · oct '25</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       03 · HOW WRONG I WAS
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="03 How wrong I was">
+
+    <div aria-hidden="true" style="position:absolute;right:-200px;top:-200px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:rgba(168,176,248,0.04);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">03</span> / 27</span></div>
+
+      <div class="fill" style="display:grid; grid-template-columns: 3fr 8fr; gap: 88px; align-items: center;">
+        <div>
+          <p class="kicker">correction</p>
+          <h2 class="display" style="font-size: 156px;">
+            ...and I was<br>
+            <em>wrong.</em>
+          </h2>
+          <p class="sub" style="margin-top: 48px; color: rgba(255,255,255,0.78); font-size: 30px;">
+            We'd only just <em>got started.</em>
+          </p>
+        </div>
+
+        <div class="hype-cycle dark">
+          <svg viewBox="0 0 760 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; height:auto; display:block;">
+            <defs>
+              <linearGradient id="hypeFillDark" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#A8B0F8" stop-opacity="0.20"/>
+                <stop offset="100%" stop-color="#A8B0F8" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+
+            <text x="22" y="180" font-family="DM Sans" font-size="11" fill="rgba(168,176,248,0.55)" letter-spacing="3" text-anchor="middle" transform="rotate(-90, 22, 180)" font-weight="600">HYPE</text>
+
+            <path d="M 60,300 C 130,300 220,80 280,80 C 340,80 410,300 470,300 C 560,300 640,210 700,180 L 700,310 L 60,310 Z"
+                  fill="url(#hypeFillDark)"/>
+
+            <line x1="60" y1="310" x2="710" y2="310" stroke="#A8B0F8" stroke-width="1" opacity="0.20" stroke-linecap="round"/>
+
+            <path d="M 60,300 C 130,300 220,80 280,80 C 340,80 410,300 470,300 C 560,300 640,210 700,180"
+                  stroke="#A8B0F8" stroke-width="4.5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+
+            <text x="710" y="338" font-family="DM Sans" font-size="11" fill="rgba(168,176,248,0.55)" letter-spacing="3" text-anchor="end" font-weight="600">TIME</text>
+
+            <text x="280" y="42" font-family="DM Sans" font-size="11" fill="rgba(255,255,255,0.45)" letter-spacing="2.5" text-anchor="middle" font-weight="500">i thought</text>
+            <circle cx="280" cy="80" r="12" fill="rgba(192,64,32,0.18)" stroke="rgba(192,64,32,0.45)" stroke-width="2"/>
+
+            <line x1="174" y1="202" x2="174" y2="252" stroke="#D0F8B0" stroke-width="1.5" opacity="0.55" stroke-dasharray="2 3"/>
+
+            <circle cx="174" cy="190" r="12" fill="#D0F8B0" stroke="#FAFAF7" stroke-width="3"/>
+            <circle cx="174" cy="190" r="5" fill="#1E1E46"/>
+
+            <g transform="translate(174, 282)">
+              <rect x="-110" y="-16" width="220" height="32" rx="16" fill="#D0F8B0"/>
+              <text x="0" y="4" font-family="DM Sans" font-weight="700" font-size="12" fill="#1E1E46" letter-spacing="-0.01em" text-anchor="middle">we're actually here</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       04 · TICK TOCK
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="04 Tick Tock"
+    style="background: linear-gradient(140deg, #FDDDD0 0%, #FDE8E0 60%, #FAF0EC 100%);">
+
+    <div class="frame" style="--pad-x: 140px;">
+      <div class="topbar"><span class="page-chip" style="background: rgba(120,50,30,0.08); color: rgba(120,50,30,0.7);"><span class="n" style="color: rgba(120,50,30,0.85);">04</span> / 27</span></div>
+
+      <div class="fill" style="display: grid; grid-template-columns: 5fr 4fr; gap: 100px; align-items: center;">
+        <div>
+          <p class="kicker" style="color: rgba(120,50,30,0.6);">the narrative is brutal</p>
+          <h2 class="display" style="font-size: 200px; color: #7a1a0a; margin-bottom: 40px;">
+            Tick<br>
+            <em style="color: #c04020;">Tock.</em>
+          </h2>
+          <p style="font-family: var(--font-serif); font-style: italic; font-size: 48px; color: rgba(80,20,10,0.55); letter-spacing: -0.02em; line-height: 1.3; margin: 0;">
+            ...we're doomed, right?
+          </p>
+        </div>
+
+        <div class="rd-card">
+          <div class="rd-banner">⚠ Redundancy Notice — Confidential ⚠</div>
+          <span class="rd-emoji">🚨</span>
+          <div class="rd-title">Accountant<br>Detected.</div>
+
+          <div class="rd-label">Role Assessment: Complete</div>
+          <div class="rd-row"><span class="ck">✓</span> Data entry <span class="auto">AUTOMATABLE</span></div>
+          <div class="rd-row"><span class="ck">✓</span> Reconciliation <span class="auto">AUTOMATABLE</span></div>
+          <div class="rd-row"><span class="ck">✓</span> Tax preparation <span class="auto">AUTOMATABLE</span></div>
+          <div class="rd-row"><span class="ck">✓</span> Forecasting <span class="auto">AUTOMATABLE</span></div>
+          <div class="rd-row"><span class="ck">✓</span> "But I'm good with people" <span class="lol">lol</span></div>
+          <div class="rd-verdict">Verdict: Fully. Automatable.</div>
+          <p class="rd-quote">Mustafa said 18 months. <b>The clock is ticking.</b></p>
+          <span class="rd-btn">I Accept My Redundancy</span>
+          <span class="rd-skip">this won't apply to me</span>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       05 · TAKING STOCK — hero quote + 3 supporting (DARK)
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="05 Taking stock">
+
+    <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">05</span> / 27</span></div>
+
+      <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="margin-bottom: 24px;">
+          <p class="kicker">taking stock</p>
+          <h2 class="display" style="font-size: 80px;">
+            What you're <em>told.</em>
+          </h2>
+        </div>
+
+        <!-- HERO quote -->
+        <div class="qw-hero">
+          <p class="qw-hero-quote">"Clients want the relationship with a human."</p>
+          <p style="font-family:var(--font-sans); font-size:32px; font-weight:500; color:rgba(168,176,248,0.75); margin:20px 0 0; letter-spacing:-0.01em; position:relative; z-index:1;"><em style="font-style:italic; color:#D0F8B0;">It is a fair point. For now.</em></p>
+          <div class="qw-hero-attr">
+            <b>Stuart McLeod</b>
+            <span class="role">CEO · Archie &nbsp;·&nbsp; Founder · Karbon</span>
+          </div>
+        </div>
+
+        <!-- Supporting evidence: real published headlines -->
+        <div class="qw-row">
+          <div class="qw-img-card">
+            <img class="qw-img-card-image" src="Images/Quotes%20-%20narrative/Blomfield.png" alt="Telegraph: AI will make income tax redundant within five years">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">The Telegraph</p>
+              <p class="qw-img-card-attr">Tom Blomfield</p>
+              <p class="qw-img-card-role">Monzo founder</p>
+            </div>
+          </div>
+
+          <div class="qw-img-card">
+            <img class="qw-img-card-image" src="Images/Quotes%20-%20narrative/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">AI · Microsoft</p>
+              <p class="qw-img-card-attr">Mustafa Suleyman</p>
+              <p class="qw-img-card-role">CEO, Microsoft AI</p>
+            </div>
+          </div>
+
+          <div class="qw-img-card">
+            <img class="qw-img-card-image" src="Images/Quotes%20-%20narrative/big%20four.png" alt="Big Four accounting choosing AI over humans">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">Markets</p>
+              <p class="qw-img-card-attr">The Big Four</p>
+              <p class="qw-img-card-role">cutting benefits &amp; hiring</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       06 · TAKING STOCK (cont.) — 4 more headlines
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="06 Taking stock cont">
+
+    <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">06</span> / 27</span></div>
+
+      <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
+
+        <div class="qw-row">
+
+          <div class="qw-img-card">
+            <img style="width:100%; height:auto; display:block;" src="Images/Quotes%20-%20narrative/anthropic.png" alt="Anthropic">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">Anthropic</p>
+              <p class="qw-img-card-attr">Dario Amodei</p>
+              <p class="qw-img-card-role">CEO, Anthropic</p>
+            </div>
+          </div>
+
+          <div class="qw-img-card">
+            <img style="width:100%; height:auto; display:block;" src="Images/Quotes%20-%20narrative/Daniel%20Priestley.png" alt="Daniel Priestley">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">Social</p>
+              <p class="qw-img-card-attr">Daniel Priestley</p>
+              <p class="qw-img-card-role">Author &amp; Entrepreneur</p>
+            </div>
+          </div>
+
+          <div class="qw-img-card">
+            <img style="width:100%; height:auto; display:block;" src="Images/Quotes%20-%20narrative/AAT.png" alt="AAT">
+            <div class="qw-img-card-meta">
+              <p class="qw-img-card-source">AAT</p>
+              <p class="qw-img-card-attr">AAT</p>
+              <p class="qw-img-card-role">Association of Accounting Technicians</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       07 · YOU'RE FINE — single emoji, layered composition
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="07 You're fine">
+
+    <!-- emoji as punctuation at the end of "fine." -->
+    <div class="sticker" style="right: 280px; top: 380px; font-size: 180px;">😌</div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">07</span> / 27</span></div>
+
+      <div class="fill center-y" style="max-width: 1300px;">
+        <p class="kicker">they're wrong.</p>
+        <h2 class="display" style="font-size: 320px; margin-bottom: 48px;">
+          You're <em>fine.</em>
+        </h2>
+        <p class="sub" style="max-width: 1000px; font-size: 28px;">
+          Hold this thought for the rest of the talk.
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       07 · WHY HAS THE NARRATIVE GOT STRONGER — ghost numbers
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="08 Why stronger" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">08</span> / 27</span></div>
+
+      <div style="margin-bottom: 48px;">
+        <p class="kicker">why the narrative is winning</p>
+        <h2 class="display" style="font-size: 88px;">
+          Three flawed <em>reasons.</em>
+        </h2>
+      </div>
+
+      <div class="fill why-grid">
+        <div class="why-card theme-vested">
+          <div class="app-icon icon-vested">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/>
+              <polyline points="16 7 22 7 22 13"/>
+            </svg>
+          </div>
+          <p class="why-label">vested interests</p>
+          <h3 class="why-headline">
+            The <em>economy</em> depends on the hype.
+          </h3>
+          <p class="why-tagline">
+            AI companies. The wrappers around them. The subsidies. <em>Every user is a loss leader.</em>
+          </p>
+        </div>
+
+        <div class="why-card theme-mirage">
+          <div class="app-icon icon-mirage">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+          </div>
+          <p class="why-label">or, as I coin it</p>
+          <h3 class="why-headline">
+            The view from afar.<br>
+            <em>The GenAI Mirage.</em>
+          </h3>
+          <p class="why-tagline">
+            They're looking from <em>30,000 feet.</em> I'm looking from the ledger.
+          </p>
+        </div>
+
+        <div class="why-card theme-washing">
+          <div class="app-icon icon-washing">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/>
+              <line x1="12" y1="9" x2="12" y2="13"/>
+              <circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <p class="why-label">ai washing</p>
+          <h3 class="why-headline">
+            The perfect <em>excuse.</em>
+          </h3>
+          <p class="why-tagline">
+            These companies were already planning the cuts. GenAI gives them the cover. <em>Moral accountability becomes 'progress'.</em>
+          </p>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       08 · BUT IT WON'T — giant ghost numerals
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="09 But it won't">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">09</span> / 27</span></div>
+
+      <div style="margin-bottom: 48px;">
+        <p class="kicker">but it won't</p>
+        <h2 class="display" style="font-size: 88px;">
+          Here's <em>why.</em>
+        </h2>
+      </div>
+
+      <div class="fill bw-grid">
+        <div class="bw-card theme-mind">
+          <div class="app-icon icon-mind">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/>
+              <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/>
+            </svg>
+          </div>
+          <p class="bw-num-tag">personal context</p>
+          <h3 class="bw-headline">
+            It can't <em>read minds.</em>
+          </h3>
+          <p class="bw-body">
+            Can't adapt to the full nuance of every client. <em>Yet.</em>
+          </p>
+        </div>
+
+        <div class="bw-card theme-humans">
+          <div class="app-icon icon-humans">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"/>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <p class="bw-num-tag">human preference</p>
+          <h3 class="bw-headline">
+            Humans want <em>humans.</em>
+          </h3>
+          <p class="bw-body">
+            For high-stakes work. <em>40,000 years of evolution</em> won't disintegrate overnight.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       10 · UNSUSTAINABLE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="10 Unsustainable" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">10</span> / 27</span></div>
+
+      <div class="fill center-y">
+        <p class="kicker">the flawed analogy</p>
+        <h2 class="display" style="font-size: 88px; margin-bottom: 46px;">
+          Economically and<br>environmentally <em>unsustainable.</em>
+        </h2>
+
+        <div class="pt-grid" style="max-width: 1320px;">
+          <div class="pt-row">
+            <span class="ic ic-amber"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></svg></span>
+            <p class="pt-text">Massively subsidised. <em>Nobody pays the true cost</em> yet</p>
+          </div>
+          <div class="pt-row">
+            <span class="ic ic-green"><svg viewBox="0 0 24 24"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
+            <p class="pt-text">And the energy and water it burns <em>only grows</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       11 · AND EVEN IF IT WERE FREE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="11 And even if">
+
+    <div aria-hidden="true" style="position:absolute;left:-120px;bottom:-140px;width:440px;height:440px;border-radius:50%;background:rgba(168,176,248,0.05);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">11</span> / 27</span></div>
+
+      <div class="fill center-y">
+        <h2 class="display" style="font-size: 120px;">
+          And even if it were <em>free…</em>
+        </h2>
+        <p class="sub" style="margin-top: 28px; font-size: 30px; color: rgba(255,255,255,0.7);">
+          …and ran on sunshine.
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       09 · MOST IMPORTANTLY — IT'S PROBABILISTIC
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="12 Probabilistic">
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">12</span> / 27</span></div>
+
+      <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="margin-bottom: 36px;">
+          <p class="kicker">most importantly</p>
+          <h2 class="display" style="font-size: 104px;">
+            It's probabilistic. <em>By design.</em>
+          </h2>
+          <p class="sub" style="margin-top: 24px; max-width: 1400px; font-size: 26px;">
+            An extremely smart autocomplete. Confidently <em>probably</em> correct.
+          </p>
+        </div>
+
+        <p class="kicker" style="text-align:center; margin-bottom: 16px;">same prompt · two runs</p>
+
+        <div class="prob-grid">
+          <div class="prob-window">
+            <div class="prob-hdr">
+              <img src="Images/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <span class="prob-hdr-label" style="flex:1;">Claude</span>
+              <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-300);background:rgba(168,176,248,0.12);padding:3px 10px;border-radius:999px;letter-spacing:0.1em;">RUN A</span>
+            </div>
+            <div class="prob-body">
+              <div class="prob-user">What should I prioritise in our month-end close?</div>
+              <div class="prob-ai">Start with <em>bank reconciliations</em>. Review unmatched items over £500 first.</div>
+            </div>
+            <div class="prob-run-label">0.8s · claude-sonnet-4-6</div>
+          </div>
+
+          <div class="prob-window">
+            <div class="prob-hdr">
+              <img src="Images/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <span class="prob-hdr-label" style="flex:1;">Claude</span>
+              <span style="font-family:var(--font-mono);font-size:11px;color:rgba(80,200,120,0.9);background:rgba(80,200,120,0.10);padding:3px 10px;border-radius:999px;letter-spacing:0.1em;">RUN B</span>
+            </div>
+            <div class="prob-body">
+              <div class="prob-user">What should I prioritise in our month-end close?</div>
+              <div class="prob-ai">Focus on <em>your largest accruals first</em>. They have the biggest P&amp;L impact.</div>
+            </div>
+            <div class="prob-run-label">1.1s · claude-sonnet-4-6</div>
+          </div>
+        </div>
+
+        <p style="font-family: var(--font-serif); font-style: italic; font-size: 34px; text-align: center; color: var(--ink); margin: 30px auto 0; letter-spacing: -0.02em;">
+          Same question, two answers. It <em style="color: var(--periwinkle-700);">makes mistakes</em>, and won't tell you which.
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       10 · PROBABILISTIC vs DETERMINISTIC
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="13 Prob vs Det">
+
+    <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.15);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-80px;bottom:-80px;width:320px;height:320px;border-radius:50%;background:rgba(168,176,248,0.06);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">13</span> / 27</span></div>
+
+      <div style="margin-bottom: 40px;">
+        <p class="kicker">two ways software answers</p>
+        <h2 class="display" style="font-size: 80px;">
+          Probabilistic <em style="color: rgba(255,255,255,0.4);">vs.</em> <em>Deterministic.</em>
+        </h2>
+      </div>
+
+      <div class="fill vs-grid">
+        <div class="vs-col prob">
+          <span class="vs-pill"><span class="dot"></span> Probabilistic</span>
+          <h3 class="vs-headline">What <em>GenAI</em><br>actually is.</h3>
+          <ul class="vs-points">
+            <li>Confident, regardless of correctness.</li>
+            <li>Outputs vary every run.</li>
+            <li>Optimised to convince. Not to be right.</li>
+          </ul>
+        </div>
+
+        <div class="vs-divider">vs.</div>
+
+        <div class="vs-col det">
+          <span class="vs-pill"><span class="dot"></span> Deterministic</span>
+          <h3 class="vs-headline">What mission-critical<br><em>runs on.</em></h3>
+          <ul class="vs-points">
+            <li>Same input. Same output. Every time.</li>
+            <li>Auditable. Testable.</li>
+            <li>Built to be right.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       11 · WHAT I PROPOSE — Bluetooth as hero
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="14 What I propose" style="background: linear-gradient(160deg, #FAFAF7 0%, #F1F0EA 100%);">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">14</span> / 27</span></div>
+
+      <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
+        <p class="kicker">my proposition</p>
+        <h2 class="display" style="font-size: 104px;">
+          Build <em>deterministic</em><br>
+          foundations, faster.
+        </h2>
+        <p class="sub" style="margin-top: 24px; max-width: 1400px; font-size: 28px;">
+          Enabled by GenAI. <em>Not replaced by it.</em>
+        </p>
+
+        <div class="prop-stack">
+          <div class="prop-pair">
+            <div class="prop-card">
+              <p class="prop-num">01</p>
+              <p class="prop-text">Use GenAI to <em>review</em> and flag exceptions.</p>
+            </div>
+            <div class="prop-card">
+              <p class="prop-num">02</p>
+              <p class="prop-text">Mission critical work uses <em>an API.</em></p>
+            </div>
+          </div>
+
+          <div class="prop-hero">
+            <span class="prop-hero-icon">📡</span>
+            <div>
+              <p class="prop-hero-text">No one uses <em>Bluetooth</em> to power conference speakers.</p>
+              <p class="prop-hero-foot">Our work is just as critical that it's right.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       13 · THE CORE WAS ALREADY SOLVED
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="15 Core solved" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">15</span> / 27</span></div>
+
+      <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
+        <div style="margin-bottom: 48px;">
+          <p class="kicker">the core</p>
+          <h2 class="display" style="font-size: 116px;">
+            The core was already <em>solved.</em>
+          </h2>
+          <p class="sub" style="margin-top: 18px; font-size: 30px;">And not by AI.</p>
+        </div>
+
+        <div class="tile-grid" style="max-width: 1560px; margin-bottom: 34px;">
+          <span class="tile"><span class="ic ic-purple"><svg viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></svg></span><span class="tile-label">Rules</span></span>
+          <span class="tile"><span class="ic ic-blue"><svg viewBox="0 0 24 24"><path d="M3 7V5a2 2 0 0 1 2-2h2"/><path d="M17 3h2a2 2 0 0 1 2 2v2"/><path d="M21 17v2a2 2 0 0 1-2 2h-2"/><path d="M7 21H5a2 2 0 0 1-2-2v-2"/><path d="M7 8h8"/><path d="M7 12h10"/><path d="M7 16h6"/></svg></span><span class="tile-label">OCR / ML</span></span>
+          <span class="tile"><span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></span><span class="tile-label">APIs</span></span>
+          <span class="tile"><span class="ic ic-violet"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span><span class="tile-label">RPA</span></span>
+          <span class="tile"><span class="ic ic-green"><svg viewBox="0 0 24 24"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg></span><span class="tile-label">Formulas</span></span>
+          <span class="tile"><span class="ic ic-amber"><svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span><span class="tile-label">Power Query</span></span>
+          <span class="tile"><span class="ic ic-rose"><svg viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg></span><span class="tile-label">Apps Script</span></span>
+          <span class="tile"><span class="ic ic-blue"><svg viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span><span class="tile-label">Stream Deck</span></span>
+          <span class="tile"><span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><span class="tile-label">SaaS</span></span>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       14 · GENAI DIDN'T SOLVE AN OPEN PROBLEM
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="16 GenAI didn't solve">
+
+    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">16</span> / 27</span></div>
+
+      <div class="fill center-y">
+        <span class="ic ic-amber ic-lg" style="margin-bottom: 40px;"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg></span>
+        <p class="kicker">then AI arrived</p>
+        <h2 class="display" style="font-size: 124px;">
+          Late. And it <em>guesses.</em>
+        </h2>
+        <p class="sub" style="margin-top: 24px; max-width: 1150px; font-size: 30px; color: rgba(255,255,255,0.78);">
+          Guessing is a brilliant trick. It's the wrong job for the ledger.
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       15 · THE VERIFICATION TEST  ★ emphasis beat
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="17 Verification test">
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">17</span> / 27</span></div>
+
+      <div class="fill center-y" style="gap: 64px;">
+        <div style="text-align:center;">
+          <p class="kicker" style="margin-bottom: 30px;">the one rule</p>
+          <p class="vtest-quote">
+            Use AI only where checking the answer is <em>cheaper</em> than producing it.
+          </p>
+        </div>
+
+        <div class="vtest-grid">
+          <div class="vtest-col win">
+            <span class="ic ic-green"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg></span>
+            <p class="vtest-label">words</p>
+            <h3 class="vtest-head">Prose, code, explanation</h3>
+            <p class="vtest-verdict">&rarr; fair game</p>
+          </div>
+          <div class="vtest-col lose">
+            <span class="ic ic-rose"><svg viewBox="0 0 24 24"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg></span>
+            <p class="vtest-label">numbers</p>
+            <h3 class="vtest-head">Ledgers, entries, totals</h3>
+            <p class="vtest-verdict">&rarr; never</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       16 · VIBE CODING, HONESTLY
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="18 Vibe coding" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-x: 120px;">
+      <div class="topbar"><span class="page-chip"><span class="n">18</span> / 27</span></div>
+
+      <div class="fill center-y">
+        <p class="kicker">vibe coding</p>
+        <h2 class="display" style="font-size: 96px; margin-bottom: 40px;">
+          Real builds. <em>Real risk.</em>
+        </h2>
+        <p style="font-family: var(--font-serif); font-style: italic; font-size: 62px; line-height: 1.14; letter-spacing: -0.025em; color: var(--ink); max-width: 1480px; margin: 0;">
+          Shipping code you can't read is posting <em style="color: var(--periwinkle-700);">journals you never checked.</em>
+        </p>
+        <p class="sub" style="margin-top: 40px; font-size: 28px;">
+          It works in the demo. The long tail is the job.
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       17 · THE RESOLUTION  ★ emphasis beat · the payoff
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="19 The resolution"
+    style="background: linear-gradient(155deg, #14152F 0%, #1E1E46 45%, #2B2D5E 100%);">
+
+    <div aria-hidden="true" style="position:absolute;right:-220px;top:-220px;width:620px;height:620px;border-radius:50%;border:1px solid rgba(208,248,176,0.16);"></div>
+    <div aria-hidden="true" style="position:absolute;right:-120px;top:-120px;width:400px;height:400px;border-radius:50%;border:1px solid rgba(168,176,248,0.12);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-140px;bottom:-160px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.10) 0%, transparent 70%);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">19</span> / 27</span></div>
+
+      <div class="fill center-y">
+        <p class="kicker">the resolution</p>
+        <h2 class="display" style="font-size: 116px;">
+          Use the tool to<br><em>build the tools.</em>
+        </h2>
+        <p class="sub" style="margin-top: 22px; max-width: 1100px; font-size: 30px; color: rgba(255,255,255,0.78);">
+          Build it with AI. Check it once. It never guesses again.
+        </p>
+
+        <div style="display:flex; align-items:center; gap: 52px; margin-top: 68px;">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <span class="ic ic-violet ic-lg"><svg viewBox="0 0 24 24"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></span>
+            <span style="font-family:var(--font-serif); font-style:italic; font-size:36px; color:var(--paper); letter-spacing:-0.02em;">Scaffold</span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:38px; color:var(--green); opacity:0.75;">&rarr;</span>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <span class="ic ic-blue ic-lg"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <span style="font-family:var(--font-serif); font-style:italic; font-size:36px; color:var(--paper); letter-spacing:-0.02em;">Verify once</span>
+          </div>
+          <span style="font-family:var(--font-mono); font-size:38px; color:var(--green); opacity:0.75;">&rarr;</span>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:18px;">
+            <span class="ic ic-green ic-lg"><svg viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></svg></span>
+            <span style="font-family:var(--font-serif); font-style:italic; font-size:36px; color:var(--paper); letter-spacing:-0.02em;">Same every time</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       18 · WHO'S EXPOSED AND WHO ISN'T
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="20 Who's exposed" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-y: 84px;">
+      <div class="topbar"><span class="page-chip"><span class="n">20</span> / 27</span></div>
+
+      <div style="margin-bottom: 44px;">
+        <p class="kicker">the stakes</p>
+        <h2 class="display" style="font-size: 96px;">
+          So who's <em>exposed?</em>
+        </h2>
+      </div>
+
+      <div class="fill exp-grid">
+        <div class="exp-col safe" style="justify-content:center; gap:26px;">
+          <span class="ic ic-green ic-lg"><svg viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></span>
+          <p class="exp-eyebrow">you, used with discipline</p>
+          <h3 class="exp-verdict" style="font-size:72px;">Fine. <em>Advantaged, even.</em></h3>
+        </div>
+        <div class="exp-col exposed" style="justify-content:center; gap:26px;">
+          <span class="ic ic-amber ic-lg"><svg viewBox="0 0 24 24"><path d="M18 11c-1.5 0-2.5.5-3 2"/><path d="M4 6a2 2 0 0 0-2 2v4a5 5 0 0 0 5 5 8 8 0 0 1 5 2 8 8 0 0 1 5-2 5 5 0 0 0 5-5V8a2 2 0 0 0-2-2h-3a8 8 0 0 0-5 2 8 8 0 0 0-5-2z"/><path d="M6 11c1.5 0 2.5.5 3 2"/></svg></span>
+          <p class="exp-eyebrow">the 'all in on AI' vendor</p>
+          <h3 class="exp-verdict" style="font-size:72px;"><em>Hollow.</em></h3>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       12 · DON'T TAKE MY WORD FOR IT
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="21 Don't take my word">
+
+    <div aria-hidden="true" style="position:absolute;right:-200px;top:-200px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:rgba(168,176,248,0.04);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">21</span> / 27</span></div>
+
+      <div class="fill" style="display:grid; grid-template-columns: 6fr 5fr; gap: 96px; align-items: center;">
+
+        <div>
+          <p class="kicker">why listen to me?</p>
+          <h2 class="display" style="font-size: 144px; margin-bottom: 40px;">
+            I'm <em>building</em><br>with this.
+          </h2>
+          <p class="sub" style="font-size: 26px; max-width: 640px; color: rgba(255,255,255,0.78);">
+            So let me tell you what works.<br><em>Let me cut through it.</em>
+          </p>
+        </div>
+
+        <div class="receipts-card">
+          <div class="receipts-head">
+            <span class="receipts-icon">🛠️</span>
+            <span class="receipts-tag"><span class="dot"></span> from the ledger</span>
+          </div>
+          <p class="receipts-quote">
+            Burning myself out pushing the <em>boundaries</em> of what's actually possible.
+          </p>
+          <p class="receipts-meta">a talk in its own right</p>
+        </div>
+
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       13 · THE CLAUDE ECOSYSTEM — big logo, dramatic glow
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide claude-cream" data-label="22 Claude ecosystem"
+    style="background: linear-gradient(135deg, #FBF7F2 0%, #F4EADD 50%, #EDD8C2 100%);">
+
+    <!-- atmospheric gradient orbs -->
+    <div aria-hidden="true" style="position:absolute;right:-280px;top:-180px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle, rgba(217,119,87,0.22) 0%, transparent 70%);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-180px;bottom:-220px;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle, rgba(217,119,87,0.10) 0%, transparent 70%);"></div>
+
+    <div class="frame">
+      <div class="topbar" style="justify-content: space-between;">
+        <p class="kicker" style="margin: 0;">the claude ecosystem</p>
+        <span class="page-chip"><span class="n">22</span> / 27</span>
+      </div>
+
+      <div class="fill" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 44px;">
+
+        <h2 style="font-family: var(--font-sans); font-weight: 700; font-size: 116px; line-height: 0.92; letter-spacing: -0.05em; color: #1F1815; margin: 0; text-align: center;">
+          This is <em style="font-family: var(--font-serif); font-style: italic; font-weight: 400; color: #D97757; font-size: 1.20em; letter-spacing: -0.025em;">all I use.</em>
+        </h2>
+
+        <div class="claude-app">
+          <div class="claude-app-bar">
+            <div class="claude-app-brand">
+              <img src="Images/claude-logo.svg" alt="">
+              <span>Claude</span>
+            </div>
+            <div class="claude-app-meta">
+              <span class="claude-app-pill">
+                <span class="claude-app-pill-dot"></span>
+                signed in
+              </span>
+              <div class="claude-app-avatar">
+                <img src="Images/Headshot%20normal.jpg" alt="Dave">
+              </div>
+            </div>
+          </div>
+
+          <div class="claude-app-body">
+            <img src="Images/claude-logo.svg" alt="" class="claude-app-mark">
+            <h3 class="claude-app-greeting">Good morning, <em>Dave</em></h3>
+            <p class="claude-app-question">What's on your plate today?</p>
+
+            <div class="claude-app-input-wrap">
+              <div class="claude-app-input">
+                <span class="claude-app-input-add">+</span>
+                <span class="claude-app-input-text">Reply to Claude...</span>
+                <span class="claude-app-input-send">↵</span>
+              </div>
+              <div class="claude-app-suggestions">
+                <span class="claude-app-chip">Reconcile this month</span>
+                <span class="claude-app-chip">Draft client email</span>
+                <span class="claude-app-chip">Pull MTD numbers</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="claude-app-foot">
+            <span>claude-sonnet-4-6</span>
+            <span class="claude-app-foot-dot">·</span>
+            <span>faster, more capable</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       14 · THE CLAUDE STACK — 5 cards
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide claude-cream" data-label="23 Claude stack">
+
+    <div aria-hidden="true" style="position:absolute;right:-200px;top:-200px;width:560px;height:560px;border-radius:50%;background:rgba(217,119,87,0.06);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:rgba(217,119,87,0.04);"></div>
+
+    <div class="frame" style="--pad-x: 80px; --pad-y: 80px;">
+      <div class="topbar"><span class="page-chip"><span class="n">23</span> / 27</span></div>
+
+      <div style="margin-bottom: 28px;">
+        <p class="kicker">the stack for finance &amp; accounting</p>
+        <h2 class="display" style="font-size: 88px;">
+          The GenAI tools<br>
+          <em>I use.</em>
+        </h2>
+      </div>
+
+      <div class="eco-meta">
+        <div class="eco-meta-badge"><img src="Images/claude-logo.svg" alt=""></div>
+        <div class="eco-meta-body">
+          <p class="eco-meta-tag">above the stack · sidenote</p>
+          <p class="eco-meta-name">Claude <em>Design</em> <span class="eco-meta-line">· a little, helpful for consistent design across surfaces.</span></p>
+        </div>
+      </div>
+
+      <div class="fill eco-grid">
+
+        <div class="eco-card chat">
+          <div class="eco-badge"><img src="Images/claude-logo.svg" alt="" style="width: 36px; height: 36px;"></div>
+          <div>
+            <p class="eco-tag">chat</p>
+            <h3 class="eco-name">claude<em>.ai</em></h3>
+          </div>
+          <p class="eco-line">Near-expert thinking, on demand. Cold context every time.</p>
+        </div>
+
+        <div class="eco-card code">
+          <div class="eco-badge"><img src="Images/claude-logo.svg" alt="" style="width: 36px; height: 36px;"></div>
+          <div>
+            <p class="eco-tag">cli</p>
+            <h3 class="eco-name">Claude <em>Code</em></h3>
+          </div>
+          <p class="eco-line">Ships working things. If your foundations are clean.</p>
+        </div>
+
+        <div class="eco-card excel">
+          <div class="eco-badge"><img src="Images/claude-logo.svg" alt="" style="width: 36px; height: 36px;"></div>
+          <div>
+            <p class="eco-tag">excel</p>
+            <h3 class="eco-name">Claude <em>Excel</em></h3>
+          </div>
+          <p class="eco-line">In-cell analysis. Always verify formulas.</p>
+        </div>
+
+        <div class="eco-card api">
+          <div class="eco-badge"><img src="Images/claude-logo.svg" alt="" style="width: 36px; height: 36px;"></div>
+          <div>
+            <p class="eco-tag">api</p>
+            <h3 class="eco-name">Claude <em>API</em></h3>
+          </div>
+          <span class="eco-pair"><span class="plus">+</span> Gemini · image &amp; PDF</span>
+          <p class="eco-line">Powers anything. Custom integrations and pipelines.</p>
+        </div>
+
+        <div class="eco-card cowork">
+          <div class="eco-badge"><img src="Images/claude-logo.svg" alt="" style="width: 36px; height: 36px;"></div>
+          <div>
+            <p class="eco-tag">cowork</p>
+            <h3 class="eco-name">Claude <em>Cowork</em></h3>
+          </div>
+          <p class="eco-line">Shared team memory. Mostly hype today.</p>
+        </div>
+
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       15 · LIVE DEMO
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="24 Live demo">
+
+    <div class="frame" style="--pad-x: 100px;">
+      <div class="topbar"><span class="page-chip"><span class="n">24</span> / 27</span></div>
+
+      <div class="fill" style="display:grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center;">
+
+        <div>
+          <div style="display:inline-flex; align-items:center; gap:14px; background:rgba(255,60,60,0.12); border:1.5px solid rgba(255,90,90,0.35); border-radius:14px; padding:16px 32px; margin-bottom:44px;">
+            <span style="width:18px; height:18px; border-radius:50%; background:#ff4444; display:block; box-shadow:0 0 0 5px rgba(255,68,68,0.18), 0 0 16px 2px rgba(255,68,68,0.30); flex-shrink:0;"></span>
+            <span style="font-family:var(--font-sans); font-size:26px; font-weight:700; letter-spacing:0.14em; color:#ff7070; text-transform:uppercase;">Live Demo</span>
+          </div>
+          <h2 class="display" style="font-size: 148px;">
+            Let's <em>walk</em><br>through it.
+          </h2>
+          <p class="sub" style="margin-top: 32px; color: rgba(255,255,255,0.7); font-size: 30px;">
+            From the ledger.
+          </p>
+        </div>
+
+        <div class="cli-window">
+          <div class="cli-titlebar">
+            <span class="cli-dot" style="background:#ff5f57;"></span>
+            <span class="cli-dot" style="background:#febc2e;"></span>
+            <span class="cli-dot" style="background:#28c840;"></span>
+            <span class="cli-title">claude — ~/sidgrove/client-reports</span>
+          </div>
+          <div class="cli-body">
+            <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">claude "summarise Q1 for ACME Ltd"</span></span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line cli-out green">✓ Reading xero_export_q1.csv</span>
+            <span class="cli-line cli-out green">✓ Loaded 37 journal entries</span>
+            <span class="cli-line cli-out green">✓ Cross-referencing bank feed</span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line cli-out">─── Q1 · ACME Ltd ───────</span>
+            <span class="cli-line cli-out">  Revenue:  <span style="color:#d0f8b0;">£128,400</span>  ↑ 12%</span>
+            <span class="cli-line cli-out">  Costs:    <span style="color:#d0f8b0;">£ 84,200</span>  ↓  4%</span>
+            <span class="cli-line cli-out">  Flagged:  <span style="color:#e8a020;">3 items</span></span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cursor"></span></span>
+          </div>
+        </div>
+
+      </div>
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       16 · WHAT I ACTUALLY RECOMMEND
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="25 Recommend" style="background: var(--paper-soft);">
+
+    <div class="frame" style="--pad-y: 80px;">
+      <div class="topbar"><span class="page-chip"><span class="n">25</span> / 27</span></div>
+
+      <div style="margin-bottom: 48px;">
+        <p class="kicker">my recommendation</p>
+        <h2 class="display" style="font-size: 88px;">
+          What I <em>actually</em> recommend.
+        </h2>
+      </div>
+
+      <div class="fill rec-grid">
+
+        <div class="rec-col most">
+          <span class="rec-emoji">👋</span>
+          <p class="rec-eyebrow">for most</p>
+          <h3 class="rec-headline">Start in <em>chat.</em></h3>
+          <ul class="rec-list">
+            <li>Use claude.ai for thinking.</li>
+            <li>Try Claude for Excel.</li>
+            <li>Watch the data you paste.</li>
+          </ul>
+
+          <div class="rec-also">
+            <div class="rec-also-row">
+              <span class="rec-also-tag">still relevant</span>
+              <p class="rec-also-text">GenAI-assisted <em>voice dictation</em> to improve workflow and prompting.</p>
+            </div>
+            <div class="rec-also-row">
+              <span class="rec-also-tag warn">important</span>
+              <p class="rec-also-text">Reduce <em>friction</em> to accessing the chat interface.</p>
+            </div>
+          </div>
+
+          <p class="rec-warn">
+            Sensitive client data? Get the Teams plan. Don't push data into the model.
+          </p>
+        </div>
+
+        <div class="rec-col strong">
+          <span class="rec-emoji">🏗️</span>
+          <p class="rec-eyebrow">for strong foundations</p>
+          <h3 class="rec-headline">Build with <em>Code.</em></h3>
+          <ul class="rec-list">
+            <li>Build with Claude Code daily.</li>
+            <li>Maybe try Cowork. Sparingly.</li>
+          </ul>
+          <p class="rec-warn">
+            Cowork is where I see the most hype. Ignore it unless Claude itself directs you there.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       24 · CLOSING THESIS  ★ emphasis beat
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="26 Closing line"
+    style="background: linear-gradient(155deg, #0F1030 0%, #1E1E46 55%, #2B2D5E 100%);">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"><span class="n">26</span> / 27</span></div>
+
+      <div class="fill center-y" style="align-items:center;">
+        <p class="closing-thesis">
+          GenAI didn't give us a solution. It gave us a <em>faster pen</em> and a <em>power tool</em>. Use it to build the deterministic things that don't guess, and price the judgement <em>no tool touches</em>
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       17 · STAY CURIOUS
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="27 Stay curious"
+    style="background: linear-gradient(150deg, #DDDCFC 0%, #EAE8FF 40%, #F5F3FF 100%);">
+
+    <div aria-hidden="true" style="position:absolute;left:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(168,176,248,0.5);"></div>
+    <div aria-hidden="true" style="position:absolute;left:180px;top:60px;width:180px;height:180px;border-radius:50%;background:rgba(168,176,248,0.3);"></div>
+    <div aria-hidden="true" style="position:absolute;right:-160px;bottom:-160px;width:420px;height:420px;border-radius:50%;background:rgba(208,248,176,0.25);"></div>
+
+    <div class="frame">
+      <div class="topbar" style="justify-content: space-between;">
+        <p class="kicker" style="margin: 0;">end of deck</p>
+        <span class="page-chip"><span class="n">27</span> / 27</span>
+      </div>
+
+      <div class="fill" style="display: grid; grid-template-columns: 7fr 5fr; gap: 96px; align-items: center;">
+
+        <div>
+          <h2 class="display" style="font-size: 200px; line-height: 0.92;">
+            Thanks,<br>
+            stay <em>curious.</em>
+          </h2>
+          <p class="sub" style="font-size: 30px; margin: 56px 0 0; max-width: 720px;">
+            We've adapted before. <em>This is no different.</em>
+          </p>
+          <p style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-500); margin: 72px 0 0; display: inline-flex; align-items: center; gap: 12px; font-weight: 500;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--periwinkle-700);"></span>
+            come find me after
+          </p>
+        </div>
+
+        <div style="background: rgba(255,255,255,0.78); backdrop-filter: blur(20px) saturate(180%); border: 1px solid rgba(255,255,255,0.9); border-radius: 32px; padding: 48px 44px 44px; box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 32px 72px -24px rgba(74,86,184,0.32), 0 8px 22px -8px rgba(74,86,184,0.18);">
+
+          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
+            <img src="Images/Headshot%20normal.jpg" alt="Dave Sellick" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
+
+            <div>
+              <div style="font-family: var(--font-sans); font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
+              <div style="font-family: var(--font-mono); font-size: 12px; color: var(--ink-500); letter-spacing: 0.22em; margin-top: 10px; text-transform: uppercase; font-weight: 500;">Founder · Sidgrove</div>
+            </div>
+
+            <div style="width: 100%; padding-top: 24px; border-top: 1px solid rgba(30,30,70,0.10); display: flex; justify-content: center;">
+              <a href="https://www.linkedin.com/in/davesellick/" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(10,102,194,0.10); border-radius: 999px; border: 1px solid rgba(10,102,194,0.22); text-decoration: none;">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="#0A66C2">
+                  <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 0 0 1.55-1.55 1.55 1.55 0 1 0-1.55 1.55zm11.332 9.787v-4.703c0-2.31-.5-4.087-3.197-4.087a2.802 2.802 0 0 0-2.523 1.387h-.036v-1.18H9.917v8.583h2.672v-4.246c0-1.12.213-2.205 1.6-2.205 1.367 0 1.387 1.28 1.387 2.277v4.174z"/>
+                </svg>
+                <span style="font-family: var(--font-sans); font-size: 18px; color: var(--ink); font-weight: 500; letter-spacing: -0.01em;">/in/davesellick</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+</deck-stage>
+<script src="deck-stage.js"></script>
+</body>
+</html>
