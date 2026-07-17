@@ -71,8 +71,8 @@ The deck will become a 20-slide personal field report.
 13. **The practical rule:** Keep the verification-cost heuristic, replacing the words-versus-numbers binary with easy-to-verify versus hard-to-verify/high-consequence work.
 14. **Vibe coding with controls:** Merge the risk and resolution. Build with AI, test the workflow, and monitor the controls.
 15. **Who becomes advantaged:** Reframe exposure around disciplined practitioners and shallow workflows, rather than a vague "hollow" vendor comparison.
-16. **Dave's working stack:** Merge the Claude ecosystem and tool inventory into one capability-led slide.
-17. **Live demo:** Make the architecture explicit: the model writes or orchestrates the workflow, controlled code calculates, source data reconciles, and a human approves.
+16. **Demo roadmap:** Replace the standalone product inventory with one minimal sequence showing what the live demonstration will cover: Chat for thinking, Cowork for shared context, vibe coding for building, then controlled output and human sign-off.
+17. **Live demo:** The demonstration itself covers Chat, Cowork, vibe coding, and the move from GenAI-assisted building to controlled finance output. The deck slide acts as a clear start and return point, while making the architecture explicit: the model writes or orchestrates the workflow, controlled code calculates, source data reconciles, and a human approves.
 18. **What Dave would do on Monday:** Replace the dense recommendation cards with three actions: Start now, Build next, Guardrail always.
 19. **Closing thesis:** Resolve the opening with a short, personal conclusion.
 20. **Contact/Q&A:** A quiet holding slide after the spoken ending, with no "end of deck" production language.
@@ -99,7 +99,7 @@ The existing design is the brand reference. The revision will feel like a live e
 - Navy and paper alternation for tension and release.
 - Lavender as the core Sidgrove accent.
 - Green as the resolution, verification, and "safe with controls" accent.
-- Claude coral only in the tool-specific section.
+- Claude coral only in the demo roadmap and live-demo section.
 - Occasional humour and interface simulation when the interface itself is evidence.
 
 ### Change
