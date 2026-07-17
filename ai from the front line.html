@@ -178,22 +178,22 @@ deck-stage { background: #0a0a0a; }
 /* SLIDE 04 · "Accountant Detected" mock */
 .rd-card {
   background: #0c0c18; border-radius: 22px;
-  padding: 36px 40px; width: 580px; flex-shrink: 0;
+  box-sizing: border-box; padding: 32px 38px; width: 100%; max-width: 730px; flex-shrink: 0;
   font-family: "Courier New", monospace;
   box-shadow: 0 32px 60px -20px rgba(0,0,0,0.35);
 }
-.rd-banner { font-size: 13px; letter-spacing: 0.18em; color: #e8a020; text-align: center; border: 1px solid #e8a020; padding: 5px 10px; border-radius: 4px; margin-bottom: 22px; text-transform: uppercase; }
-.rd-emoji { font-size: 56px; text-align: center; display: block; margin-bottom: 10px; filter: drop-shadow(0 6px 16px rgba(255,80,40,0.35)); }
-.rd-title { font-family: var(--font-sans); font-weight: 800; font-size: 40px; color: #e04040; text-align: center; margin: 0 0 24px; letter-spacing: -0.02em; line-height: 1.05; }
-.rd-label { font-size: 14px; color: #6a9e6a; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 10px; }
-.rd-row { display: flex; align-items: center; padding: 5px 0; font-size: 17px; color: #bbb; }
+.rd-banner { font-size: 17px; letter-spacing: 0.16em; color: #f1b62e; text-align: center; border: 1px solid #e8a020; padding: 7px 10px; border-radius: 4px; margin-bottom: 18px; text-transform: uppercase; }
+.rd-emoji { font-size: 56px; text-align: center; display: block; margin-bottom: 8px; filter: drop-shadow(0 6px 16px rgba(255,80,40,0.35)); }
+.rd-title { font-family: var(--font-sans); font-weight: 800; font-size: 42px; color: #ef4545; text-align: center; margin: 0 0 20px; letter-spacing: -0.02em; line-height: 1.02; }
+.rd-label { font-size: 18px; color: #8fbd8f; letter-spacing: 0.11em; text-transform: uppercase; margin-bottom: 10px; }
+.rd-row { display: flex; align-items: center; padding: 6px 0; font-size: 23px; color: #d0d0d8; }
 .rd-row .ck { color: #4aad4a; margin-right: 12px; }
-.rd-row .auto { margin-left: auto; font-size: 13px; color: #e8a020; letter-spacing: 0.08em; }
+.rd-row .auto { margin-left: auto; font-size: 17px; color: #f1b62e; letter-spacing: 0.06em; }
 .rd-row .lol  { margin-left: auto; font-size: 13px; color: #e04040; }
-.rd-verdict { margin: 16px 0; padding-top: 14px; border-top: 1px solid #2a2a3a; font-size: 14px; color: #e8a020; letter-spacing: 0.12em; }
+.rd-verdict { margin: 16px 0; padding-top: 14px; border-top: 1px solid #2a2a3a; font-size: 18px; color: #f1b62e; letter-spacing: 0.08em; }
 .rd-quote { font-size: 16px; color: #777; text-align: center; margin: 0 0 18px; }
 .rd-quote b { color: #e8a020; }
-.rd-btn { display: block; background: #e04040; color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 17px; text-align: center; padding: 15px; border-radius: 10px; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+.rd-btn { display: block; background: #e84040; color: #fff; font-family: var(--font-sans); font-weight: 700; font-size: 20px; text-align: center; padding: 16px; border-radius: 10px; letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 4px; }
 .rd-skip { display: block; color: #555; font-size: 14px; text-align: center; text-decoration: underline; }
 
 /* SLIDE 05 · Hero quote + 3 supporting */
@@ -423,11 +423,11 @@ deck-stage { background: #0a0a0a; }
   box-shadow: var(--shadow-card);
   overflow: hidden;
 }
-.prob-hdr { padding: 16px 22px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(168,176,248,0.15); }
-.prob-hdr-label { font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.14em; color: var(--ink-300); text-transform: uppercase; }
-.prob-body { padding: 26px 24px; display: flex; flex-direction: column; gap: 14px; }
-.prob-user { background: var(--ink); color: var(--paper); border-radius: 16px 16px 6px 16px; padding: 14px 18px; font-size: 19px; align-self: flex-end; max-width: 85%; line-height: 1.4; font-family: var(--font-sans); }
-.prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 16px 20px; font-size: 19px; color: var(--ink); line-height: 1.55; max-width: 92%; border: 1px solid rgba(168,176,248,0.22); font-family: var(--font-sans); }
+.prob-hdr { padding: 18px 24px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid rgba(168,176,248,0.15); }
+.prob-hdr-label { font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.14em; color: var(--ink-500); text-transform: uppercase; }
+.prob-body { padding: 30px 26px; display: flex; flex-direction: column; gap: 18px; }
+.prob-user { background: var(--ink); color: var(--paper); border-radius: 16px 16px 6px 16px; padding: 16px 20px; font-size: 25px; align-self: flex-end; max-width: 92%; line-height: 1.35; font-family: var(--font-sans); }
+.prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 16px 20px; font-size: 25px; color: var(--ink); line-height: 1.42; max-width: 94%; border: 1px solid rgba(168,176,248,0.22); font-family: var(--font-sans); }
 .prob-ai em { color: var(--periwinkle-700); font-style: italic; font-family: var(--font-serif); padding-inline-end: 0.06em; }
 .prob-run-label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-300); text-align: center; padding: 12px; background: rgba(168,176,248,0.05); border-top: 1px solid rgba(168,176,248,0.12); }
 
@@ -1232,10 +1232,83 @@ deck-stage { background: #0a0a0a; }
 .verify-side { padding-top: 34px; border-top: 4px solid currentColor; }
 .process-line { display: grid; grid-template-columns: repeat(3, 1fr); gap: 64px; align-items: start; }
 .process-step { position: relative; padding-top: 26px; border-top: 2px solid rgba(208,248,176,0.60); }
-.demo-journey { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; }
-.demo-step { padding-top: 24px; border-top: 2px solid rgba(217,119,87,0.40); }
-.demo-step strong { display: block; font-family: var(--font-serif); font-size: 42px; line-height: 1; font-weight: 400; }
-.demo-step p { margin: 14px 0 0; font-size: 20px; line-height: 1.4; color: rgba(31,24,21,0.58); }
+.demo-journey {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  align-content: center;
+  padding: 20px 0 42px;
+}
+.demo-step {
+  min-width: 0;
+  padding: 0 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.demo-node {
+  width: 100%;
+  height: 66px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+.demo-node::before,
+.demo-node::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  height: 3px;
+  background: rgba(217,119,87,0.58);
+  transform: translateY(-50%);
+}
+.demo-node::before { left: -24px; right: 50%; }
+.demo-node::after { left: 50%; right: -24px; }
+.demo-step:first-child .demo-node::before,
+.demo-step:last-child .demo-node::after { display: none; }
+.demo-step:last-child .demo-node::before {
+  background: linear-gradient(90deg, rgba(217,119,87,0.58), var(--green-600));
+}
+.demo-index {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 3px solid var(--claude);
+  background: #F5F0EB;
+  color: #a84f35;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+.demo-step:last-child .demo-index { border-color: var(--green-600); color: var(--green-600); }
+.demo-mark { height: 142px; width: 100%; display: flex; align-items: center; justify-content: center; }
+.demo-step strong { display: block; font-family: var(--font-serif); font-size: 48px; line-height: 1; font-weight: 400; }
+.demo-step p { margin: 18px 0 0; font-size: 26px; line-height: 1.35; color: rgba(31,24,21,0.76); }
+.demo-verified { display: flex; align-items: center; justify-content: center; gap: 18px; color: var(--green-600); }
+.demo-check {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 3px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: 40px;
+  font-weight: 700;
+}
+.demo-verified-label { font-family: var(--font-mono); font-size: 21px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+.live-eyebrow { font-size: 18px; }
+.live-eyebrow::before { display: none; }
 .monday-actions { display: grid; grid-template-columns: repeat(3, 1fr); gap: 58px; align-items: start; }
 .monday-action { padding-top: 28px; border-top: 3px solid var(--periwinkle-500); }
 .monday-action:nth-child(2) { border-top-color: var(--green-600); }
@@ -1266,7 +1339,7 @@ deck-stage { background: #0a0a0a; }
           AI from the<br><em>front line.</em>
         </h1>
         <p class="sub" style="font-size: 36px; color: var(--ink-700); margin-top: 44px;">
-          What I've learned using it <em>for real.</em>
+          What I've learned from using it <em>for real.</em>
         </p>
       </div>
       <div class="bottombar" style="justify-content:flex-start; color: var(--ink-500);">
@@ -1322,7 +1395,7 @@ deck-stage { background: #0a0a0a; }
         <p class="eyebrow" style="color: var(--green); margin:0 0 36px;">Correction</p>
         <h2 class="display" style="font-size: 192px;">...and I was <em>wrong.</em></h2>
         <p class="sub" style="font-size: 38px; margin-top: 46px; color: rgba(255,255,255,0.78);">
-          We'd only just <em>got started.</em>
+          The tools were only just <em>getting started.</em>
         </p>
       </div>
     </div>
@@ -1331,9 +1404,9 @@ deck-stage { background: #0a0a0a; }
   <!-- 04 · TICK TOCK -->
   <section class="slide" data-label="04 Tick Tock"
     style="background: linear-gradient(140deg, #FDDDD0 0%, #FDE8E0 62%, #FAF0EC 100%);">
-    <div class="frame" style="--pad-x: 140px;">
+    <div class="frame" style="--pad-x: 120px;">
       <div class="topbar"><span class="slide-num" style="color:rgba(122,26,10,0.55);">04</span></div>
-      <div class="fill" style="display:grid; grid-template-columns: 1fr 0.72fr; gap: 110px; align-items:center;">
+      <div class="fill" style="display:grid; grid-template-columns: 0.9fr 0.82fr; gap: 80px; align-items:center;">
         <div>
           <p class="eyebrow" style="color:#a23b24; margin:0 0 34px;">The message to accountants is brutal:</p>
           <h2 class="display" style="font-size: 156px; color:#7a1a0a;">
@@ -1363,7 +1436,7 @@ deck-stage { background: #0a0a0a; }
       <div style="display:grid; grid-template-columns: 0.72fr 1.28fr; gap: 64px; align-items:end; margin-bottom: 38px;">
         <h2 class="display" style="font-size: 94px;">The doom story is <em>everywhere.</em></h2>
         <p class="sub" style="font-size: 30px; color:rgba(255,255,255,0.78); max-width:720px; justify-self:end;">
-          AI is coming for the work, <em>and soon.</em>
+          The claim is simple: AI is coming for accounting work — <em>and soon.</em>
         </p>
       </div>
       <div class="fill headline-wall">
@@ -1406,8 +1479,8 @@ deck-stage { background: #0a0a0a; }
           <h2 class="display" style="font-size: 142px;">I'm <em>building</em><br>with this.</h2>
         </div>
         <div style="padding-left:62px; border-left:1px solid rgba(255,255,255,0.17);">
-          <p class="sub-serif" style="font-size: 54px; color:var(--paper);">
-            This is my view from the ledger.
+          <p class="sub" style="font-size: 50px; line-height:1.2; color:var(--paper);">
+            This is my view from the <em>ledger.</em>
           </p>
           <div class="editorial-rule" style="margin:38px 0;"></div>
           <p class="sub" style="font-size: 30px; color:rgba(255,255,255,0.68);">
@@ -1424,22 +1497,22 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><span class="slide-num">08</span></div>
       <div style="display:grid; grid-template-columns: 0.82fr 1.18fr; gap:90px; align-items:end; margin-bottom:40px;">
         <p class="eyebrow" style="color:var(--periwinkle-700); margin:0;">My reading</p>
-        <h2 class="display" style="font-size: 88px;">What I think the replacement story <em>misses.</em></h2>
+        <h2 class="display" style="font-size: 78px;">What I think the<br><span style="white-space:nowrap;">accountant-replacement story <em>misses.</em></span></h2>
       </div>
       <div class="argument-list" style="flex:1;">
         <div class="argument-row">
           <span class="argument-index">01</span>
           <h3 class="argument-title">Money amplifies the story.</h3>
-          <p class="argument-copy">Investment, incentives and attention reward the biggest version of the claim.</p>
+          <p class="argument-copy">Investment, incentives and attention can favour the boldest version of the claim.</p>
         </div>
         <div class="argument-row">
           <span class="argument-index">02</span>
           <h3 class="argument-title">Tasks look like jobs from 30,000 feet.</h3>
-          <p class="argument-copy">A workflow can appear simple until you work inside its exceptions.</p>
+          <p class="argument-copy">A workflow looks simple until you handle its exceptions.</p>
         </div>
         <div class="argument-row">
           <span class="argument-index">03</span>
-          <h3 class="argument-title">Context and accountability live down in the ledger.</h3>
+          <h3 class="argument-title">Context and accountability live in the detail.</h3>
           <p class="argument-copy">That is where professional judgement becomes visible — and consequential.</p>
         </div>
       </div>
@@ -1454,7 +1527,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <h2 class="display" style="font-size: 150px;">Even if it were <em>free...</em></h2>
         <p class="sub" style="font-size: 38px; color:rgba(255,255,255,0.72); margin-top: 36px;">
-          ...and ran on sunshine. <em>One constraint would remain.</em>
+          ...and ran on sunshine, <em>one constraint would remain.</em>
         </p>
       </div>
     </div>
@@ -1467,14 +1540,14 @@ deck-stage { background: #0a0a0a; }
       <div style="display:grid; grid-template-columns: 0.92fr 1.08fr; gap:70px; align-items:end; margin-bottom:32px;">
         <h2 class="display" style="font-size: 90px;">It produces <em>plausible</em> answers.</h2>
         <p class="sub" style="font-size: 28px; color:var(--ink-700);">
-          It does not prove what is correct.
+          Plausible is not the same as proven.
         </p>
       </div>
       <div class="prob-grid">
         <div class="prob-window">
           <div class="prob-hdr">
             <span class="prob-hdr-label" style="flex:1;">Same prompt</span>
-            <span class="slide-num" style="font-size:12px;">RUN A</span>
+            <span class="slide-num" style="font-size:16px; color:var(--ink-500);">RUN A</span>
           </div>
           <div class="prob-body">
             <div class="prob-user">What should I prioritise in our month-end close?</div>
@@ -1484,7 +1557,7 @@ deck-stage { background: #0a0a0a; }
         <div class="prob-window">
           <div class="prob-hdr">
             <span class="prob-hdr-label" style="flex:1;">Same prompt</span>
-            <span class="slide-num" style="font-size:12px;">RUN B</span>
+            <span class="slide-num" style="font-size:16px; color:var(--ink-500);">RUN B</span>
           </div>
           <div class="prob-body">
             <div class="prob-user">What should I prioritise in our month-end close?</div>
@@ -1492,8 +1565,8 @@ deck-stage { background: #0a0a0a; }
           </div>
         </div>
       </div>
-      <p class="sub-serif" style="font-size: 34px; text-align:center; color:var(--ink); margin-top:28px;">
-        Same prompt, two reasonable answers. Fine for ideas. Not fine as a control.
+      <p class="sub" style="font-size: 30px; text-align:center; color:var(--ink); margin-top:30px;">
+        Same prompt, two reasonable answers. Fine for ideas. <em>Not fine as a control.</em>
       </p>
     </div>
   </section>
@@ -1560,12 +1633,12 @@ deck-stage { background: #0a0a0a; }
         <div class="verify-side" style="color:var(--green-600);">
           <span class="slide-num" style="color:currentColor;">Easy to verify</span>
           <h3 class="display" style="font-size: 68px; margin-top:20px;">Use it.</h3>
-          <p class="sub" style="font-size:28px; margin-top:22px;">Easy to verify: use it.</p>
+          <p class="sub" style="font-size:28px; margin-top:22px;">Drafting, explaining, prototyping.</p>
         </div>
         <div class="verify-side" style="color:#B5741A;">
           <span class="slide-num" style="color:currentColor;">Hard to verify · high consequence</span>
           <h3 class="display" style="font-size: 68px; margin-top:20px;">Add controls — or do not delegate it.</h3>
-          <p class="sub" style="font-size:28px; margin-top:22px;">Hard to verify and high consequence: add controls or do not delegate it.</p>
+          <p class="sub" style="font-size:28px; margin-top:22px;">Posting, approving, filing.</p>
         </div>
       </div>
     </div>
@@ -1579,8 +1652,8 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <p class="eyebrow" style="color:var(--green); margin:0 0 32px;">Vibe coding with controls</p>
         <h2 class="display" style="font-size: 116px;">Vibe coding is still <em>coding.</em></h2>
-        <p class="sub-serif" style="font-size: 50px; color:var(--paper); margin-top:44px; max-width:1480px;">
-          Shipping code you can't read is posting journals you never checked.
+        <p class="sub" style="font-size: 44px; color:var(--paper); margin-top:44px; max-width:1480px;">
+          Shipping code you can't read is posting <em>journals you never checked.</em>
         </p>
         <div class="editorial-rule" style="margin:54px 0 38px;"></div>
         <p class="sub" style="font-size:36px; color:rgba(255,255,255,0.82);">
@@ -1595,7 +1668,7 @@ deck-stage { background: #0a0a0a; }
     <div class="frame" style="--pad-x: 120px; --pad-y: 84px;">
       <div class="topbar"><span class="slide-num">15</span></div>
       <p class="eyebrow" style="color:var(--periwinkle-700); margin:0 0 28px;">My bet on who wins.</p>
-      <h2 class="display" style="font-size: 94px; max-width:1450px;">The advantage moves towards <em>disciplined practitioners.</em></h2>
+      <h2 class="display" style="font-size: 94px; max-width:1450px;">The advantage shifts to <em>disciplined practitioners.</em></h2>
       <div class="process-line" style="flex:1; margin-top: 72px;">
         <div class="process-step">
           <span class="slide-num" style="color:#B5741A;">01 · exposed</span>
@@ -1603,7 +1676,7 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="process-step">
           <span class="slide-num" style="color:var(--periwinkle-700);">02 · leverage</span>
-          <h3 class="display" style="font-size:56px; margin-top:24px;">Systems and workflow fluency</h3>
+          <h3 class="display" style="font-size:56px; margin-top:24px;">Fluency in systems and workflows.</h3>
         </div>
         <div class="process-step">
           <span class="slide-num" style="color:var(--green-600);">03 · value</span>
@@ -1620,35 +1693,40 @@ deck-stage { background: #0a0a0a; }
   <section class="slide claude-cream" data-label="16 Demo roadmap">
     <div class="frame" style="--pad-x: 100px; --pad-y: 76px;">
       <div class="topbar"><span class="slide-num">16</span></div>
-      <div style="margin-bottom:68px;">
+      <div style="margin-bottom:12px;">
         <p class="eyebrow" style="color:#b75d3f; margin:0 0 24px;">Live route map</p>
         <h2 class="display" style="font-size: 92px;">What I am going to <em>show you.</em></h2>
       </div>
       <div class="demo-journey" style="flex:1;">
-        <div class="demo-step" style="display:flex; flex-direction:column;">
-          <div style="height:150px; display:flex; align-items:center;">
-            <img src="Images/Claude full logo.png" alt="Claude" style="width:300px; max-width:100%; height:auto;">
+        <div class="demo-step">
+          <div class="demo-node"><span class="demo-index">01</span></div>
+          <div class="demo-mark">
+            <img src="Images/Claude full logo.png" alt="Claude" style="width:270px; max-width:100%; height:auto;">
           </div>
           <strong>Chat</strong>
           <p>for thinking.</p>
         </div>
-        <div class="demo-step" style="display:flex; flex-direction:column;">
-          <div style="height:150px; display:flex; align-items:center;">
+        <div class="demo-step">
+          <div class="demo-node"><span class="demo-index">02</span></div>
+          <div class="demo-mark">
             <img src="Images/claude Cowork.png" alt="Claude Cowork" style="width:240px; max-width:100%; height:auto;">
           </div>
           <strong>Cowork</strong>
           <p>for shared context.</p>
         </div>
-        <div class="demo-step" style="display:flex; flex-direction:column;">
-          <div style="height:150px; display:flex; align-items:center;">
+        <div class="demo-step">
+          <div class="demo-node"><span class="demo-index">03</span></div>
+          <div class="demo-mark">
             <img src="Images/Claude Code.png" alt="Claude Code" style="width:230px; max-width:100%; height:auto;">
           </div>
           <strong>Vibe coding</strong>
           <p>for building.</p>
         </div>
-        <div class="demo-step" style="display:flex; flex-direction:column; border-top-color:var(--green-600);">
-          <div style="height:150px; display:flex; align-items:center;">
-            <span style="font-family:var(--font-mono); font-size:18px; letter-spacing:0.16em; text-transform:uppercase; color:var(--green-600);">Verified</span>
+        <div class="demo-step">
+          <div class="demo-node"><span class="demo-index">04</span></div>
+          <div class="demo-mark demo-verified">
+            <span class="demo-check">✓</span>
+            <span class="demo-verified-label">Verified</span>
           </div>
           <strong>Controlled output</strong>
           <p>for trust.</p>
@@ -1664,8 +1742,8 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="display:grid; grid-template-columns: 0.86fr 1.14fr; gap:110px; align-items:center;">
         <div>
           <div style="display:inline-flex; align-items:center; gap:12px; margin-bottom:38px;">
-            <span style="width:13px;height:13px;border-radius:50%;background:var(--claude);box-shadow:0 0 0 5px rgba(217,119,87,0.16);"></span>
-            <span class="eyebrow" style="color:#ef9a7e;">Live · handoff / return</span>
+            <span aria-hidden="true" style="width:13px;height:13px;border-radius:50%;background:var(--claude);box-shadow:0 0 0 5px rgba(217,119,87,0.16);"></span>
+            <span class="eyebrow live-eyebrow" style="color:#ef9a7e;">Live demonstration</span>
           </div>
           <h2 class="display" style="font-size: 142px;">Let's walk <em style="color:#ef9a7e;">through it.</em></h2>
         </div>
