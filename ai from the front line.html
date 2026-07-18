@@ -251,7 +251,7 @@ deck-stage { background: #0a0a0a; }
   display: flex; flex-direction: column;
 }
 .press-card img {
-  width: 100%; aspect-ratio: 5 / 2.6;
+  width: 100%; aspect-ratio: 5 / 2.9;
   object-fit: cover; object-position: top center;
   display: block; background: #fff;
 }
@@ -545,12 +545,12 @@ deck-stage { background: #0a0a0a; }
 .env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1460px; }
 .env-card {
   background: var(--paper-card); border: 1px solid rgba(30,30,70,0.06);
-  border-radius: 28px; padding: 46px 48px 42px;
+  border-radius: 28px; padding: 42px 48px 38px;
   box-shadow: var(--shadow-lift);
   display: flex; flex-direction: column; gap: 26px;
-  min-height: 320px;
+  min-height: 240px;
 }
-.env-emoji { font-size: 72px; line-height: 1; filter: var(--shadow-emoji); }
+.env-emoji { font-size: 84px; line-height: 1; filter: var(--shadow-emoji); }
 .env-text {
   font-family: var(--font-sans); font-weight: 500;
   font-size: 31px; line-height: 1.32; letter-spacing: -0.015em;
@@ -845,8 +845,8 @@ deck-stage { background: #0a0a0a; }
 .eco-name em { font-style: italic; color: #D97757; padding-inline-end: 0.07em; }
 .eco-tag {
   margin-left: auto; flex-shrink: 0;
-  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
-  text-transform: uppercase; color: rgba(31,24,21,0.42); font-weight: 600;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(31,24,21,0.58); font-weight: 600;
 }
 .eco-line {
   font-family: var(--font-sans); font-size: 18px; line-height: 1.5;
@@ -954,12 +954,12 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill" style="display: grid; grid-template-columns: 5fr 4fr; gap: 100px; align-items: center;">
         <div>
-          <p class="kicker" style="color: rgba(120,50,30,0.6);">the narrative is relentless</p>
+          <p class="kicker" style="color: rgba(120,50,30,0.6);">the narrative is brutal</p>
           <h2 class="display" style="font-size: 200px; color: #7a1a0a; margin-bottom: 40px;">
             Tick<br>
             <em style="color: #c04020;">Tock.</em>
           </h2>
-          <p style="font-family: var(--font-serif); font-style: italic; font-size: 48px; color: rgba(80,20,10,0.55); letter-spacing: -0.02em; line-height: 1.3; margin: 0;">
+          <p style="font-family: var(--font-serif); font-style: italic; font-size: 48px; color: rgba(80,20,10,0.78); letter-spacing: -0.02em; line-height: 1.3; margin: 0;">
             ...we're doomed, right?
           </p>
         </div>
@@ -1022,11 +1022,11 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/Quotes%20-%20narrative/big%20four.png" alt="Big Four choosing AI over humans">
+            <img src="Images/Quotes%20-%20narrative/big%20four.png" alt="Big Four choosing AI over humans" style="object-position: right center;">
             <div class="press-meta">
               <p class="press-source">Markets</p>
               <p class="press-name">The Big Four</p>
-              <p class="press-role">cutting benefits &amp; hiring</p>
+              <p class="press-role">cutting benefits and headcount</p>
             </div>
           </div>
         </div>
@@ -1057,7 +1057,7 @@ deck-stage { background: #0a0a0a; }
           <span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></span>
           <p class="why-label">the genai mirage</p>
           <h3 class="why-headline">It looks great <em>from afar.</em></h3>
-          <p class="why-tagline">Built to look credible. From a distance, that reads as capability.</p>
+          <p class="why-tagline">The demos look incredible. Living with it is a different story.</p>
         </div>
 
         <div class="why-card t-amber">
@@ -1069,7 +1069,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="why-card t-rose">
           <span class="ic ic-rose"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/><line x1="12" y1="9" x2="12" y2="13"/><circle cx="12" cy="17" r="0.6" fill="currentColor" stroke="none"/></svg></span>
-          <p class="why-label">in deep</p>
+          <p class="why-label">the sunk cost</p>
           <h3 class="why-headline">They're in <em>too deep.</em></h3>
           <p class="why-tagline">Cuts announced, billions sunk. "AI did it" reads better than "we did".</p>
         </div>
@@ -1163,7 +1163,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y">
         <div style="margin-bottom: 90px;">
-          <p class="kicker">it can't deliver · the mechanic</p>
+          <p class="kicker">it can't deliver · how it works</p>
           <h2 class="display" style="font-size: 110px;">
             It's probabilistic. <em>By design.</em>
           </h2>
@@ -1198,7 +1198,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y">
         <div style="margin-bottom: 56px;">
-          <p class="kicker">the same question, twice</p>
+          <p class="kicker">it can't deliver · same question, twice</p>
           <h2 class="display" style="font-size: 96px;">
             Two <em>answers.</em>
           </h2>
@@ -1233,7 +1233,7 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <p class="sub" style="font-size: 28px; text-align: center; margin-top: 52px;">
-          Both confident. <em>At most one is right.</em>
+          Both sound confident. <em>They can't both be right.</em>
         </p>
       </div>
 
@@ -1256,7 +1256,7 @@ deck-stage { background: #0a0a0a; }
             Sold below<br><em>cost.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 620px;">
-            Every seat is subsidised. The bill arrives <em>once you depend on it.</em>
+            Every seat is subsidised. The price goes up <em>once you're locked in.</em>
           </p>
         </div>
 
@@ -1291,11 +1291,11 @@ deck-stage { background: #0a0a0a; }
         <div class="env-grid">
           <div class="env-card">
             <span class="env-emoji">⚡</span>
-            <p class="env-text">The energy draw <em>grows</em> with every model generation.</p>
+            <p class="env-text">Every new model needs <em>more power</em> than the last.</p>
           </div>
           <div class="env-card">
             <span class="env-emoji">💧</span>
-            <p class="env-text">So does the <em>cooling water.</em> None of it priced in yet.</p>
+            <p class="env-text">And more <em>water</em> to cool it. None of that is in the price yet.</p>
           </div>
         </div>
       </div>
@@ -1342,10 +1342,10 @@ deck-stage { background: #0a0a0a; }
     <div class="frame">
       <div class="topbar"><span class="page-chip"><span class="n">11</span> / 20</span></div>
 
-      <div class="fill center-y">
-        <p class="kicker">their answer: agentic everything</p>
-        <h2 class="display" style="font-size: 190px; margin-bottom: 48px;">
-          The <em style="color:#f0b25c;">asbestos</em><br>era.
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <p class="kicker">their answer: agents everywhere</p>
+        <h2 class="display" style="font-size: 170px; margin-bottom: 48px;">
+          The <span style="text-decoration: line-through; text-decoration-thickness: 0.07em; text-decoration-color: rgba(240,178,92,0.9); color: rgba(255,255,255,0.45);">agentic</span><br><em style="color:#f0b25c;">asbestos</em> era.
         </h2>
         <p class="sub" style="font-size: 32px;">
           We're embedding it everywhere today. <em style="color:#f0b25c;">We'll spend years ripping it out.</em>
@@ -1460,9 +1460,6 @@ deck-stage { background: #0a0a0a; }
         <h2 class="display" style="font-size: 104px;">
           Rocket fuel. <em>Not the driver.</em>
         </h2>
-        <p class="sub" style="margin-top: 22px; font-size: 27px;">
-          Use it as a copilot. Build <em>deterministic, repeatable</em> assets that don't embed it.
-        </p>
 
         <div class="prop-stack">
           <div class="prop-tri">
@@ -1481,10 +1478,10 @@ deck-stage { background: #0a0a0a; }
           </div>
 
           <div class="prop-hero">
-            <span class="prop-hero-icon">📡</span>
+            <span class="prop-hero-icon">🔊</span>
             <div>
               <p class="prop-hero-text">No one uses <em>Bluetooth</em> to power conference speakers.</p>
-              <p class="prop-hero-foot">Cabled where it must not fail. Our work is the cable.</p>
+              <p class="prop-hero-foot">Our work is just as critical that it's right.</p>
             </div>
           </div>
         </div>
@@ -1505,7 +1502,7 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar" style="margin-bottom: 16px;"><span class="page-chip"><span class="n">15</span> / 20</span></div>
 
       <div style="margin-bottom: 28px;">
-        <p class="kicker">the genai stack · all I use</p>
+        <p class="kicker">what I actually use</p>
         <h2 class="display" style="font-size: 92px;">
           The <em>stack.</em>
         </h2>
@@ -1655,7 +1652,7 @@ deck-stage { background: #0a0a0a; }
               <span class="rad-badge b-teal">🎙️</span>
               <div class="rad-body">
                 <h3 class="rad-name">Wispr Flow</h3>
-                <p class="rad-line">Voice in, prose out. Dictation that keeps up with you.</p>
+                <p class="rad-line">Talk instead of type. It keeps up.</p>
               </div>
             </div>
             <div class="rad-tile">
@@ -1673,7 +1670,7 @@ deck-stage { background: #0a0a0a; }
               <span class="rad-badge b-blue">✨</span>
               <div class="rad-body">
                 <h3 class="rad-name">Gemini</h3>
-                <p class="rad-line">Google's frontier model. Long context, image &amp; PDF.</p>
+                <p class="rad-line">Google's best model. Long context, images and PDFs.</p>
               </div>
             </div>
             <div class="rad-tile">
@@ -1726,7 +1723,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="rec-col strong">
           <span class="rec-emoji">🏗️</span>
-          <p class="rec-eyebrow">for strong foundations</p>
+          <p class="rec-eyebrow">if you're building</p>
           <h3 class="rec-headline">Build with <em>Code.</em></h3>
           <div class="rec-rows">
             <div class="rec-row"><span class="ck">✓</span><span>Build with Claude Code, <em>daily.</em></span></div>
@@ -1773,7 +1770,7 @@ deck-stage { background: #0a0a0a; }
           </div>
           <div class="tk-row">
             <span class="tk-num">03</span>
-            <p class="tk-text">Build with AI. Leverage it. <em>Don't let it run your accounting.</em></p>
+            <p class="tk-text">Build with it. Use it. <em>Don't let it run your accounting.</em></p>
             <span class="tk-emoji">🏗️</span>
           </div>
         </div>
