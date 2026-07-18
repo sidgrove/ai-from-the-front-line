@@ -784,6 +784,110 @@ deck-stage { background: #0a0a0a; }
   box-shadow: 0 1px 0 rgba(255,255,255,0.95) inset, 0 32px 72px -24px rgba(74,86,184,0.32), 0 8px 22px -8px rgba(74,86,184,0.18);
 }
 
+/* ── 15 · The stack · cream Claude slide ────────────────────────── */
+.slide.cream { background: linear-gradient(135deg, #FBF7F2 0%, #F4EADD 55%, #EFDCC8 100%); color: #1F1815; }
+.slide.cream::after { background: radial-gradient(ellipse at 50% 30%, transparent 55%, rgba(217,119,87,0.06) 100%); }
+.slide.cream .kicker { color: rgba(31,24,21,0.55); }
+.slide.cream .kicker::before { background: #D97757; }
+.slide.cream .display { color: #1F1815; }
+.slide.cream .display em { color: #D97757; }
+.slide.cream .page-chip { border-color: rgba(31,24,21,0.14); color: rgba(31,24,21,0.60); }
+.slide.cream .page-chip .n { color: #1F1815; }
+
+.dsg-bar {
+  display: flex; align-items: center; gap: 22px;
+  background: #FFFDFA;
+  border: 1px solid rgba(217,119,87,0.24);
+  border-radius: 20px; padding: 20px 30px;
+  margin-bottom: 24px;
+  box-shadow: 0 6px 16px -6px rgba(217,119,87,0.12), 0 28px 60px -28px rgba(31,24,21,0.16);
+}
+.dsg-badge {
+  width: 56px; height: 56px; border-radius: 16px;
+  display: grid; place-items: center; flex-shrink: 0;
+  background: rgba(217,119,87,0.10); border: 1px solid rgba(217,119,87,0.22);
+}
+.dsg-badge img { width: 27px; height: 27px; }
+.dsg-body { display: flex; flex-direction: column; gap: 3px; }
+.dsg-name { font-family: var(--font-serif); font-weight: 400; font-size: 32px; line-height: 1; color: #1F1815; margin: 0; letter-spacing: -0.02em; }
+.dsg-name em { font-style: italic; color: #D97757; padding-inline-end: 0.06em; }
+.dsg-line { font-family: var(--font-sans); font-size: 17px; color: rgba(31,24,21,0.60); margin: 0; letter-spacing: -0.005em; }
+.dsg-tag {
+  margin-left: auto; flex-shrink: 0;
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: #D97757; font-weight: 600;
+  border: 1px solid rgba(217,119,87,0.35);
+  padding: 7px 14px; border-radius: 999px;
+}
+
+.eco-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.eco-card {
+  background: #FFFDFA;
+  border: 1px solid rgba(217,119,87,0.08);
+  border-radius: 24px; padding: 28px 30px 24px;
+  display: flex; flex-direction: column; gap: 16px;
+  box-shadow:
+    0 1px 2px rgba(31,24,21,0.04),
+    0 6px 16px -6px rgba(217,119,87,0.08),
+    0 28px 60px -28px rgba(31,24,21,0.15);
+}
+.eco-head { display: flex; align-items: center; gap: 16px; }
+.eco-badge {
+  width: 48px; height: 48px; border-radius: 14px;
+  display: grid; place-items: center; flex-shrink: 0;
+  background: rgba(217,119,87,0.09);
+  border: 1px solid rgba(217,119,87,0.16);
+}
+.eco-badge img { width: 23px; height: 23px; }
+.eco-badge.dark { background: #101014; border-color: #101014; }
+.eco-badge.dark span { font-family: var(--font-mono); font-size: 14px; font-weight: 600; color: #fff; letter-spacing: 0.06em; }
+.eco-name {
+  font-family: var(--font-serif); font-weight: 400;
+  font-size: 31px; line-height: 0.95; letter-spacing: -0.02em;
+  color: #1F1815; margin: 0;
+}
+.eco-name em { font-style: italic; color: #D97757; padding-inline-end: 0.07em; }
+.eco-tag {
+  margin-left: auto; flex-shrink: 0;
+  font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.18em;
+  text-transform: uppercase; color: rgba(31,24,21,0.42); font-weight: 600;
+}
+.eco-line {
+  font-family: var(--font-sans); font-size: 16.5px; line-height: 1.5;
+  color: rgba(31,24,21,0.60); letter-spacing: -0.005em;
+  margin: auto 0 0; padding-top: 16px;
+  border-top: 1px solid rgba(217,119,87,0.10);
+}
+
+/* ── 17 · Also worth knowing · radar tiles ──────────────────────── */
+.rad-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.rad-col { display: flex; flex-direction: column; gap: 18px; }
+.rad-group {
+  font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--ink-500); font-weight: 600;
+  margin: 0 0 4px;
+}
+.rad-tile {
+  display: flex; align-items: center; gap: 22px;
+  background: var(--paper-card);
+  border: 1px solid rgba(30,30,70,0.07);
+  border-radius: 22px; padding: 26px 30px;
+  box-shadow: var(--shadow-card);
+  flex: 1;
+}
+.rad-badge {
+  width: 58px; height: 58px; border-radius: 16px;
+  display: grid; place-items: center; flex-shrink: 0;
+  font-size: 28px; line-height: 1;
+}
+.rad-badge.b-teal   { background:#D4EBE6; border: 1px solid #A3CFC4; }
+.rad-badge.b-violet { background:#F3E3EE; border: 1px solid #D8B8CC; }
+.rad-badge.b-blue   { background:#E2ECF6; border: 1px solid rgba(74,120,168,0.34); }
+.rad-badge.b-rose   { background:#FDE7EC; border: 1px solid rgba(168,69,94,0.34); }
+.rad-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.rad-name { font-family: var(--font-sans); font-weight: 700; font-size: 25px; letter-spacing: -0.015em; color: var(--ink); margin: 0; }
+.rad-line { font-family: var(--font-sans); font-size: 17px; line-height: 1.4; color: var(--ink-500); margin: 0; letter-spacing: -0.005em; }
+
 /* Kill all animations — this deck is presented, not played */
 *, *::before, *::after {
   animation-duration: 0s !important;
@@ -850,7 +954,7 @@ deck-stage { background: #0a0a0a; }
     style="background: linear-gradient(140deg, #FDDDD0 0%, #FDE8E0 60%, #FAF0EC 100%);">
 
     <div class="frame" style="--pad-x: 140px;">
-      <div class="topbar"><span class="page-chip" style="border-color: rgba(120,50,30,0.16); color: rgba(120,50,30,0.7);"><span class="n" style="color: rgba(120,50,30,0.85);">02</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip" style="border-color: rgba(120,50,30,0.16); color: rgba(120,50,30,0.7);"><span class="n" style="color: rgba(120,50,30,0.85);">02</span> / 20</span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 5fr 4fr; gap: 100px; align-items: center;">
         <div>
@@ -894,7 +998,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar" style="margin-bottom: 20px;"><span class="page-chip"><span class="n">03</span> / 18</span></div>
+      <div class="topbar" style="margin-bottom: 20px;"><span class="page-chip"><span class="n">03</span> / 20</span></div>
 
       <div style="margin-bottom: 40px;">
         <p class="kicker">and it's not subtle</p>
@@ -942,7 +1046,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide paper-soft" data-label="04 Why so strong">
 
     <div class="frame" style="--pad-x: 120px;">
-      <div class="topbar"><span class="page-chip"><span class="n">04</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">04</span> / 20</span></div>
 
       <div class="fill center-y">
       <div style="margin-bottom: 48px;">
@@ -989,7 +1093,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:rgba(168,176,248,0.04);"></div>
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">05</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">05</span> / 20</span></div>
 
       <div class="fill" style="display:grid; grid-template-columns: 6fr 5fr; gap: 96px; align-items: center;">
 
@@ -1059,7 +1163,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="06 Probabilistic">
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">06</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">06</span> / 20</span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 90px;">
@@ -1094,7 +1198,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="07 Two answers">
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><span class="page-chip"><span class="n">07</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">07</span> / 20</span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 56px;">
@@ -1147,7 +1251,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide paper-soft" data-label="08 The economics">
 
     <div class="frame" style="--pad-x: 140px;">
-      <div class="topbar"><span class="page-chip"><span class="n">08</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">08</span> / 20</span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 6fr 5fr; gap: 90px; align-items: center;">
         <div>
@@ -1180,7 +1284,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="09 The environment">
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">09</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">09</span> / 20</span></div>
 
       <div class="fill center-y">
         <p class="kicker">it can't deliver · the environment</p>
@@ -1213,7 +1317,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">10</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">10</span> / 20</span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="kicker">the actual question</p>
@@ -1240,7 +1344,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-140px;bottom:-160px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle, rgba(232,160,32,0.08) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">11</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">11</span> / 20</span></div>
 
       <div class="fill center-y">
         <p class="kicker">their answer: agentic everything</p>
@@ -1262,7 +1366,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="12 Hooked">
 
     <div class="frame" style="--pad-x: 140px;">
-      <div class="topbar"><span class="page-chip"><span class="n">12</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">12</span> / 20</span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 6fr 5fr; gap: 90px; align-items: center;">
         <div>
@@ -1308,7 +1412,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide paper-soft" data-label="13 Pre-authorised mistakes">
 
     <div class="frame" style="--pad-x: 140px;">
-      <div class="topbar"><span class="page-chip"><span class="n">13</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">13</span> / 20</span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 6fr 5fr; gap: 90px; align-items: center;">
         <div>
@@ -1353,7 +1457,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="14 Rocket fuel" style="background: linear-gradient(160deg, #FAFAF7 0%, #F1F0EA 100%);">
 
     <div class="frame" style="--pad-x: 120px; --pad-y: 90px;">
-      <div class="topbar" style="margin-bottom: 20px;"><span class="page-chip"><span class="n">14</span> / 18</span></div>
+      <div class="topbar" style="margin-bottom: 20px;"><span class="page-chip"><span class="n">14</span> / 20</span></div>
 
       <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
         <p class="kicker">my answer</p>
@@ -1395,103 +1499,209 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       15 · THE STACK, THEN LIVE
+       15 · THE GENAI STACK
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide ink" data-label="15 Stack live">
+  <section class="slide cream" data-label="15 The stack">
 
-    <div class="frame" style="--pad-x: 110px; --pad-y: 84px;">
-      <div class="topbar" style="margin-bottom: 16px;"><span class="page-chip"><span class="n">15</span> / 18</span></div>
+    <div aria-hidden="true" style="position:absolute;right:-200px;top:-200px;width:560px;height:560px;border-radius:50%;background:rgba(217,119,87,0.06);"></div>
 
-      <div style="margin-bottom: 36px;">
-        <p class="kicker">the tools I do it with</p>
-        <h2 class="display" style="font-size: 88px;">
-          The stack. <em>Then live.</em>
+    <div class="frame" style="--pad-x: 120px; --pad-y: 88px;">
+      <div class="topbar" style="margin-bottom: 16px;"><span class="page-chip"><span class="n">15</span> / 20</span></div>
+
+      <div style="margin-bottom: 28px;">
+        <p class="kicker">the genai stack · all I use</p>
+        <h2 class="display" style="font-size: 92px;">
+          The <em>stack.</em>
         </h2>
       </div>
 
-      <div class="fill" style="display:grid; grid-template-columns: 1fr auto; gap: 72px; align-items: center;">
+      <div class="fill center-y">
 
-        <div class="stack-rows">
-          <div class="stack-row">
-            <span class="stack-badge"><img src="Images/claude-logo.svg" alt=""></span>
-            <div class="stack-body">
-              <h3 class="stack-name">claude<em>.ai</em></h3>
-              <p class="stack-line">Near-expert thinking on demand. Cold context every time.</p>
-            </div>
-            <span class="stack-tag">chat</span>
+        <div class="dsg-bar">
+          <span class="dsg-badge"><img src="Images/claude-logo.svg" alt=""></span>
+          <div class="dsg-body">
+            <h3 class="dsg-name">Claude <em>Design</em></h3>
+            <p class="dsg-line">One design system, every surface. It keeps the rest of the stack honest.</p>
           </div>
-          <div class="stack-row">
-            <span class="stack-badge"><img src="Images/claude-logo.svg" alt=""></span>
-            <div class="stack-body">
-              <h3 class="stack-name">Claude <em>Code</em></h3>
-              <p class="stack-line">Ships working things, if your foundations are clean.</p>
-            </div>
-            <span class="stack-tag">cli</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-badge"><img src="Images/claude-logo.svg" alt=""></span>
-            <div class="stack-body">
-              <h3 class="stack-name">Claude <em>Excel</em></h3>
-              <p class="stack-line">In-cell analysis. Verify every formula.</p>
-            </div>
-            <span class="stack-tag">excel</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-badge"><img src="Images/claude-logo.svg" alt=""></span>
-            <div class="stack-body">
-              <h3 class="stack-name">Claude <em>API</em></h3>
-              <p class="stack-line">Powers the pipelines. Gemini alongside for image &amp; PDF.</p>
-            </div>
-            <span class="stack-tag">api</span>
-          </div>
-          <div class="stack-row">
-            <span class="stack-badge"><img src="Images/claude-logo.svg" alt=""></span>
-            <div class="stack-body">
-              <h3 class="stack-name">Claude <em>Cowork</em></h3>
-              <p class="stack-line">Shared team memory. Mostly hype today.</p>
-            </div>
-            <span class="stack-tag">cowork</span>
-          </div>
+          <span class="dsg-tag">on top of it all</span>
         </div>
 
-        <div>
-          <div class="demo-pill"><span class="dot"></span><span>Live Demo</span></div>
-          <div class="cli-window">
-            <div class="cli-titlebar">
-              <span class="cli-dot" style="background:#ff5f57;"></span>
-              <span class="cli-dot" style="background:#febc2e;"></span>
-              <span class="cli-dot" style="background:#28c840;"></span>
-              <span class="cli-title">claude — ~/sidgrove/client-reports</span>
+        <div class="eco-grid">
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge"><img src="Images/claude-logo.svg" alt=""></span>
+              <h3 class="eco-name">claude<em>.ai</em></h3>
+              <span class="eco-tag">chat</span>
             </div>
-            <div class="cli-body">
-              <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">claude "summarise Q1 for ACME Ltd"</span></span>
-              <span class="cli-line cli-out"> </span>
-              <span class="cli-line cli-out green">✓ Reading xero_export_q1.csv</span>
-              <span class="cli-line cli-out green">✓ Loaded 37 journal entries</span>
-              <span class="cli-line cli-out green">✓ Cross-referencing bank feed</span>
-              <span class="cli-line cli-out"> </span>
-              <span class="cli-line cli-out">─── Q1 · ACME Ltd ───────</span>
-              <span class="cli-line cli-out">  Revenue:  <span style="color:#d0f8b0;">£128,400</span>  ↑ 12%</span>
-              <span class="cli-line cli-out">  Costs:    <span style="color:#d0f8b0;">£ 84,200</span>  ↓  4%</span>
-              <span class="cli-line cli-out">  Flagged:  <span style="color:#e8a020;">3 items</span>  → for a human</span>
-              <span class="cli-line cli-out"> </span>
-              <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cursor"></span></span>
+            <p class="eco-line">Near-expert thinking on demand. Cold context every time.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge"><img src="Images/claude-logo.svg" alt=""></span>
+              <h3 class="eco-name">Claude <em>Code</em></h3>
+              <span class="eco-tag">cli</span>
             </div>
+            <p class="eco-line">Ships working things, if your foundations are clean.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge dark"><span>CX</span></span>
+              <h3 class="eco-name">Codex</h3>
+              <span class="eco-tag">openai</span>
+            </div>
+            <p class="eco-line">The tag team. It reviews Code's builds, and Code reviews its.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge"><img src="Images/claude-logo.svg" alt=""></span>
+              <h3 class="eco-name">Claude <em>Excel</em></h3>
+              <span class="eco-tag">excel</span>
+            </div>
+            <p class="eco-line">In-cell analysis. Verify every formula.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge"><img src="Images/claude-logo.svg" alt=""></span>
+              <h3 class="eco-name">Claude <em>API</em></h3>
+              <span class="eco-tag">api</span>
+            </div>
+            <p class="eco-line">Powers the pipelines. Gemini rides along for image &amp; PDF.</p>
+          </div>
+
+          <div class="eco-card">
+            <div class="eco-head">
+              <span class="eco-badge"><img src="Images/claude-logo.svg" alt=""></span>
+              <h3 class="eco-name">Claude <em>Cowork</em></h3>
+              <span class="eco-tag">cowork</span>
+            </div>
+            <p class="eco-line">Shared team memory. Mostly hype today.</p>
           </div>
         </div>
 
       </div>
+
       <div class="bottombar" style="margin-top: 20px;"></div>
     </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       16 · WHAT I ACTUALLY RECOMMEND
+       16 · LIVE DEMO
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="16 Recommend">
+  <section class="slide ink" data-label="16 Live demo">
+
+    <div class="frame" style="--pad-x: 100px;">
+      <div class="topbar"><span class="page-chip"><span class="n">16</span> / 20</span></div>
+
+      <div class="fill" style="display:grid; grid-template-columns: 1fr auto; gap: 80px; align-items: center;">
+
+        <div>
+          <div class="demo-pill"><span class="dot"></span><span>Live Demo</span></div>
+          <h2 class="display" style="font-size: 148px;">
+            Let's <em>walk</em><br>through it.
+          </h2>
+          <p class="sub" style="margin-top: 32px; font-size: 30px;">
+            From the ledger.
+          </p>
+        </div>
+
+        <div class="cli-window">
+          <div class="cli-titlebar">
+            <span class="cli-dot" style="background:#ff5f57;"></span>
+            <span class="cli-dot" style="background:#febc2e;"></span>
+            <span class="cli-dot" style="background:#28c840;"></span>
+            <span class="cli-title">claude — ~/sidgrove/client-reports</span>
+          </div>
+          <div class="cli-body">
+            <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">claude "summarise Q1 for ACME Ltd"</span></span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line cli-out green">✓ Reading xero_export_q1.csv</span>
+            <span class="cli-line cli-out green">✓ Loaded 37 journal entries</span>
+            <span class="cli-line cli-out green">✓ Cross-referencing bank feed</span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line cli-out">─── Q1 · ACME Ltd ───────</span>
+            <span class="cli-line cli-out">  Revenue:  <span style="color:#d0f8b0;">£128,400</span>  ↑ 12%</span>
+            <span class="cli-line cli-out">  Costs:    <span style="color:#d0f8b0;">£ 84,200</span>  ↓  4%</span>
+            <span class="cli-line cli-out">  Flagged:  <span style="color:#e8a020;">3 items</span>  → for a human</span>
+            <span class="cli-line cli-out"> </span>
+            <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cursor"></span></span>
+          </div>
+        </div>
+
+      </div>
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       17 · ALSO WORTH KNOWING
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="17 Radar">
+
+    <div class="frame" style="--pad-x: 130px;">
+      <div class="topbar"><span class="page-chip"><span class="n">17</span> / 20</span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 48px;">
+          <p class="kicker">beyond the claude stack</p>
+          <h2 class="display" style="font-size: 96px;">
+            Also worth <em>knowing.</em>
+          </h2>
+        </div>
+
+        <div class="rad-cols">
+          <div class="rad-col">
+            <p class="rad-group">in the workflow</p>
+            <div class="rad-tile">
+              <span class="rad-badge b-teal">🎙️</span>
+              <div class="rad-body">
+                <h3 class="rad-name">Wispr Flow</h3>
+                <p class="rad-line">Voice in, prose out. Dictation that keeps up with you.</p>
+              </div>
+            </div>
+            <div class="rad-tile">
+              <span class="rad-badge b-violet">📝</span>
+              <div class="rad-body">
+                <h3 class="rad-name">Fireflies · Loom AI</h3>
+                <p class="rad-line">Meeting notes that write themselves. Check names and numbers.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="rad-col">
+            <p class="rad-group">on the radar</p>
+            <div class="rad-tile">
+              <span class="rad-badge b-blue">✨</span>
+              <div class="rad-body">
+                <h3 class="rad-name">Gemini</h3>
+                <p class="rad-line">The other frontier. Long context, image &amp; PDF.</p>
+              </div>
+            </div>
+            <div class="rad-tile">
+              <span class="rad-badge b-rose">🐉</span>
+              <div class="rad-body">
+                <h3 class="rad-name">DeepSeek · Qwen · Kimi</h3>
+                <p class="rad-line">China's open models: cheap, quick, closing the gap.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       18 · WHAT I ACTUALLY RECOMMEND
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="18 Recommend">
 
     <div class="frame" style="--pad-y: 80px;">
-      <div class="topbar"><span class="page-chip"><span class="n">16</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">18</span> / 20</span></div>
 
       <div style="margin-bottom: 48px;">
         <p class="kicker">my recommendation</p>
@@ -1549,12 +1759,12 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       17 · KEY TAKEAWAYS
+       19 · KEY TAKEAWAYS
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="17 Takeaways">
+  <section class="slide" data-label="19 Takeaways">
 
     <div class="frame">
-      <div class="topbar"><span class="page-chip"><span class="n">17</span> / 18</span></div>
+      <div class="topbar"><span class="page-chip"><span class="n">19</span> / 20</span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 48px;">
@@ -1590,9 +1800,9 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       18 · CLOSE
+       20 · CLOSE
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="18 Close"
+  <section class="slide" data-label="20 Close"
     style="background: linear-gradient(150deg, #DDDCFC 0%, #EAE8FF 40%, #F5F3FF 100%);">
 
     <div aria-hidden="true" style="position:absolute;left:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:rgba(168,176,248,0.5);"></div>
@@ -1602,7 +1812,7 @@ deck-stage { background: #0a0a0a; }
     <div class="frame">
       <div class="topbar" style="justify-content: space-between;">
         <p class="kicker" style="margin: 0;">the close</p>
-        <span class="page-chip"><span class="n">18</span> / 18</span>
+        <span class="page-chip"><span class="n">20</span> / 20</span>
       </div>
 
       <div class="fill" style="display: grid; grid-template-columns: 7fr 5fr; gap: 96px; align-items: center;">
