@@ -265,11 +265,11 @@ deck-stage { background: #0a0a0a; }
   color: rgba(168,176,248,0.60); font-weight: 600; margin: 0;
 }
 .press-name {
-  font-family: var(--font-sans); font-size: 19px;
+  font-family: var(--font-sans); font-size: 21px;
   color: var(--paper); font-weight: 600;
   letter-spacing: -0.01em; margin: 0;
 }
-.press-role { font-family: var(--font-sans); font-size: 14px; color: rgba(168,176,248,0.65); margin: 0; }
+.press-role { font-family: var(--font-sans); font-size: 16px; color: rgba(168,176,248,0.70); margin: 0; }
 
 /* ── 04 · Why the noise · cards ─────────────────────────────────── */
 .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
@@ -293,7 +293,7 @@ deck-stage { background: #0a0a0a; }
 .why-headline em { font-style: italic; padding-inline-end: 0.06em; }
 .why-tagline {
   font-family: var(--font-sans); font-weight: 400;
-  font-size: 21px; line-height: 1.5; color: var(--ink-500);
+  font-size: 23px; line-height: 1.5; color: var(--ink-500);
   letter-spacing: -0.005em;
   margin: auto 0 0; padding-top: 26px;
   border-top: 1px solid rgba(168,176,248,0.18);
@@ -331,8 +331,8 @@ deck-stage { background: #0a0a0a; }
 .use-rows { display: flex; flex-direction: column; gap: 20px; }
 .use-row { display: flex; flex-direction: column; gap: 9px; }
 .use-row-top { display: flex; align-items: baseline; gap: 12px; }
-.use-label { font-family: var(--font-sans); font-size: 19px; font-weight: 500; color: var(--paper); letter-spacing: -0.01em; }
-.use-value { margin-left: auto; font-family: var(--font-mono); font-size: 14px; color: rgba(168,176,248,0.85); letter-spacing: 0.04em; }
+.use-label { font-family: var(--font-sans); font-size: 21px; font-weight: 500; color: var(--paper); letter-spacing: -0.01em; }
+.use-value { margin-left: auto; font-family: var(--font-mono); font-size: 15px; color: rgba(168,176,248,0.90); letter-spacing: 0.04em; }
 .use-value.warn { color: #f0b25c; }
 .use-track { height: 9px; border-radius: 999px; background: rgba(255,255,255,0.08); overflow: hidden; }
 .use-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--periwinkle-500), var(--periwinkle)); }
@@ -668,8 +668,8 @@ deck-stage { background: #0a0a0a; }
 /* ── 16 · Recommend ─────────────────────────────────────────────── */
 .rec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; flex: 1; }
 .rec-col {
-  border-radius: 32px; padding: 56px 56px 52px;
-  display: flex; flex-direction: column; gap: 24px;
+  border-radius: 32px; padding: 46px 52px 42px;
+  display: flex; flex-direction: column; gap: 20px;
   position: relative; overflow: hidden;
 }
 .rec-col.most {
@@ -702,38 +702,29 @@ deck-stage { background: #0a0a0a; }
 .rec-headline em { font-style: italic; padding-inline-end: 0.08em; }
 .rec-col.most .rec-headline em { color: var(--periwinkle-700); }
 .rec-col.strong .rec-headline em { color: var(--green); }
-.rec-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px; }
-.rec-list li {
-  font-family: var(--font-sans); font-weight: 400;
-  font-size: 24px; line-height: 1.4; letter-spacing: -0.005em;
+.rec-rows { display: flex; flex-direction: column; margin-top: 4px; }
+.rec-row {
+  display: flex; align-items: flex-start; gap: 18px;
+  padding: 15px 0;
+  font-family: var(--font-sans); font-weight: 500;
+  font-size: 27px; line-height: 1.3; letter-spacing: -0.012em;
 }
-.rec-col.most .rec-list li { color: var(--ink); }
-.rec-col.strong .rec-list li { color: rgba(255,255,255,0.88); }
-.rec-also {
-  display: flex; flex-direction: column; gap: 14px;
-  padding-top: 18px;
-  border-top: 1px solid rgba(31,24,21,0.10);
+.rec-row + .rec-row { border-top: 1px solid rgba(30,30,70,0.08); }
+.rec-col.strong .rec-row + .rec-row { border-top-color: rgba(255,255,255,0.10); }
+.rec-col.most .rec-row { color: var(--ink); }
+.rec-col.strong .rec-row { color: rgba(255,255,255,0.92); }
+.rec-row .ck { font-family: var(--font-mono); font-size: 24px; margin-top: 2px; flex-shrink: 0; }
+.rec-col.most .rec-row .ck { color: var(--periwinkle-700); }
+.rec-col.strong .rec-row .ck { color: var(--green); }
+.rec-row em {
+  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  color: var(--periwinkle-700);
 }
-.rec-also-row { display: flex; align-items: flex-start; gap: 14px; }
-.rec-also-tag {
-  flex-shrink: 0;
-  display: inline-flex; align-items: center;
-  padding: 5px 11px; border-radius: 999px;
-  font-family: var(--font-mono); font-size: 10px;
-  letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600;
-  background: rgba(74,86,184,0.10); color: var(--periwinkle-700);
-  margin-top: 2px; white-space: nowrap;
-}
-.rec-also-tag.warn { background: rgba(232,160,32,0.14); color: #8b5a10; }
-.rec-also-text {
-  font-family: var(--font-sans); font-size: 18px; line-height: 1.45;
-  color: var(--ink-500); margin: 0; letter-spacing: -0.005em;
-}
-.rec-also-text em { font-family: var(--font-sans); font-style: italic; font-weight: 500; color: var(--ink); }
+.rec-col.strong .rec-row em { color: var(--green); }
 .rec-warn {
-  font-family: var(--font-sans); font-size: 17px; line-height: 1.5;
-  letter-spacing: -0.005em;
-  padding: 18px 22px; border-radius: 14px;
+  font-family: var(--font-sans); font-size: 19px; line-height: 1.45;
+  letter-spacing: -0.005em; font-weight: 500;
+  padding: 17px 22px; border-radius: 14px;
   margin-top: auto;
 }
 .rec-col.most .rec-warn {
@@ -811,7 +802,7 @@ deck-stage { background: #0a0a0a; }
 .dsg-body { display: flex; flex-direction: column; gap: 3px; }
 .dsg-name { font-family: var(--font-serif); font-weight: 400; font-size: 32px; line-height: 1; color: #1F1815; margin: 0; letter-spacing: -0.02em; }
 .dsg-name em { font-style: italic; color: #D97757; padding-inline-end: 0.06em; }
-.dsg-line { font-family: var(--font-sans); font-size: 17px; color: rgba(31,24,21,0.60); margin: 0; letter-spacing: -0.005em; }
+.dsg-line { font-family: var(--font-sans); font-size: 19px; color: rgba(31,24,21,0.62); margin: 0; letter-spacing: -0.005em; }
 .dsg-tag {
   margin-left: auto; flex-shrink: 0;
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
@@ -853,7 +844,7 @@ deck-stage { background: #0a0a0a; }
   text-transform: uppercase; color: rgba(31,24,21,0.42); font-weight: 600;
 }
 .eco-line {
-  font-family: var(--font-sans); font-size: 16.5px; line-height: 1.5;
+  font-family: var(--font-sans); font-size: 18px; line-height: 1.5;
   color: rgba(31,24,21,0.60); letter-spacing: -0.005em;
   margin: auto 0 0; padding-top: 16px;
   border-top: 1px solid rgba(217,119,87,0.10);
@@ -885,8 +876,8 @@ deck-stage { background: #0a0a0a; }
 .rad-badge.b-blue   { background:#E2ECF6; border: 1px solid rgba(74,120,168,0.34); }
 .rad-badge.b-rose   { background:#FDE7EC; border: 1px solid rgba(168,69,94,0.34); }
 .rad-body { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
-.rad-name { font-family: var(--font-sans); font-weight: 700; font-size: 25px; letter-spacing: -0.015em; color: var(--ink); margin: 0; }
-.rad-line { font-family: var(--font-sans); font-size: 17px; line-height: 1.4; color: var(--ink-500); margin: 0; letter-spacing: -0.005em; }
+.rad-name { font-family: var(--font-sans); font-weight: 700; font-size: 27px; letter-spacing: -0.015em; color: var(--ink); margin: 0; }
+.rad-line { font-family: var(--font-sans); font-size: 19px; line-height: 1.4; color: var(--ink-500); margin: 0; letter-spacing: -0.005em; }
 
 /* Kill all animations — this deck is presented, not played */
 *, *::before, *::after {
@@ -1716,21 +1707,11 @@ deck-stage { background: #0a0a0a; }
           <span class="rec-emoji">👋</span>
           <p class="rec-eyebrow">for most</p>
           <h3 class="rec-headline">Start in <em>chat.</em></h3>
-          <ul class="rec-list">
-            <li>Use claude.ai for thinking.</li>
-            <li>Try Claude for Excel.</li>
-            <li>Watch the data you paste.</li>
-          </ul>
-
-          <div class="rec-also">
-            <div class="rec-also-row">
-              <span class="rec-also-tag">still relevant</span>
-              <p class="rec-also-text">GenAI-assisted <em>voice dictation</em> to improve workflow and prompting.</p>
-            </div>
-            <div class="rec-also-row">
-              <span class="rec-also-tag warn">important</span>
-              <p class="rec-also-text">Reduce <em>friction</em> to accessing the chat interface.</p>
-            </div>
+          <div class="rec-rows">
+            <div class="rec-row"><span class="ck">✓</span><span>Use claude.ai for <em>thinking.</em></span></div>
+            <div class="rec-row"><span class="ck">✓</span><span>Try Claude for <em>Excel.</em></span></div>
+            <div class="rec-row"><span class="ck">✓</span><span>Talk to it. <em>Dictation beats typing.</em></span></div>
+            <div class="rec-row"><span class="ck">✓</span><span>Put it <em>one keypress</em> away.</span></div>
           </div>
 
           <p class="rec-warn">
@@ -1742,11 +1723,11 @@ deck-stage { background: #0a0a0a; }
           <span class="rec-emoji">🏗️</span>
           <p class="rec-eyebrow">for strong foundations</p>
           <h3 class="rec-headline">Build with <em>Code.</em></h3>
-          <ul class="rec-list">
-            <li>Build with Claude Code daily.</li>
-            <li>Deterministic core. GenAI at the edges.</li>
-            <li>Human sign-off on anything that posts.</li>
-          </ul>
+          <div class="rec-rows">
+            <div class="rec-row"><span class="ck">✓</span><span>Build with Claude Code, <em>daily.</em></span></div>
+            <div class="rec-row"><span class="ck">✓</span><span><em>Deterministic</em> core. GenAI at the edges.</span></div>
+            <div class="rec-row"><span class="ck">✓</span><span>A <em>human</em> signs off on anything that posts.</span></div>
+          </div>
           <p class="rec-warn">
             Cowork is where I see the most hype. Ignore it unless Claude itself directs you there.
           </p>
