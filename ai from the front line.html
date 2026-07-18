@@ -563,52 +563,56 @@ deck-stage { background: #0a0a0a; }
   color: var(--periwinkle-700);
 }
 
-/* ── 14 · Rocket fuel · prop cards + hero ───────────────────────── */
-.prop-stack { display: flex; flex-direction: column; gap: 24px; margin-top: 52px; }
-.prop-tri { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; }
-.prop-card {
-  background: var(--paper-card); border-radius: 28px;
-  padding: 36px 40px 32px;
+/* ── 14 · A copilot, never the pilot · flow diagram ─────────────── */
+.flow { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 60px; width: 100%; }
+.flow-pilot {
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--paper-card);
+  border: 1px solid rgba(217,119,87,0.28);
+  border-radius: 999px; padding: 15px 28px;
+  box-shadow: 0 8px 20px -8px rgba(217,119,87,0.25), var(--shadow-card);
+}
+.flow-pilot img { width: 27px; height: 27px; }
+.flow-pilot .name { font-family: var(--font-sans); font-weight: 700; font-size: 23px; color: var(--ink); letter-spacing: -0.01em; }
+.flow-pilot .tag {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--claude); font-weight: 600;
+  border-left: none; padding-left: 12px; margin-left: 2px;
+  border: 0; position: relative;
+}
+.flow-pilot .tag::before { content: '·'; position: absolute; left: 0; color: rgba(30,30,70,0.3); }
+.flow-arrows { display: grid; grid-template-columns: 3fr 1.15fr; width: 100%; max-width: 1480px; gap: 16px; }
+.flow-arrows span {
+  text-align: center;
+  font-family: var(--font-mono); font-size: 15px; letter-spacing: 0.14em;
+  text-transform: uppercase; color: var(--periwinkle-700); font-weight: 600;
+}
+.flow-row { display: flex; align-items: stretch; gap: 14px; width: 100%; max-width: 1480px; }
+.flow-step {
+  flex: 1;
+  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.08);
+  border-radius: 18px; padding: 22px 24px;
   box-shadow: var(--shadow-card);
-  border: 1px solid rgba(168,176,248,0.10);
-  display: flex; flex-direction: column; gap: 14px;
-  position: relative;
+  display: flex; flex-direction: column; align-items: center; gap: 9px;
 }
-.prop-num {
-  font-family: var(--font-serif); font-style: italic; font-size: 50px;
-  color: var(--periwinkle); line-height: 0.85; letter-spacing: -0.04em; margin: 0;
-}
-.prop-text {
-  font-family: var(--font-sans); font-weight: 400;
-  font-size: 26px; line-height: 1.32; letter-spacing: -0.015em;
-  margin: 0; color: var(--ink);
-}
-.prop-text em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 500;
-  color: var(--periwinkle-700);
-}
+.flow-step .lbl { font-family: var(--font-sans); font-weight: 600; font-size: 25px; color: var(--ink); letter-spacing: -0.01em; }
+.flow-step .tag { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em; color: var(--green-600); text-transform: uppercase; font-weight: 600; }
+.flow-step.you { background: var(--ink); border-color: var(--ink); box-shadow: 0 20px 44px -16px rgba(30,30,70,0.45); }
+.flow-step.you .lbl { color: var(--paper); }
+.flow-step.you .tag { color: var(--green); }
+.flow-arr { align-self: center; font-family: var(--font-mono); font-size: 26px; color: var(--periwinkle-500); flex-shrink: 0; }
 
-.prop-hero {
-  background: #14152F;
-  border-radius: 32px;
-  padding: 48px 64px;
-  box-shadow:
-    0 1px 0 rgba(255,255,255,0.06) inset,
-    0 32px 80px -20px rgba(15,16,48,0.50);
-  display: flex; align-items: center; justify-content: center; gap: 52px;
-  position: relative; overflow: hidden;
+/* Dark Claude prompt bar (slide 10) */
+.cover-prompt.dark {
+  background: rgba(255,255,255,0.07);
+  border-color: rgba(255,255,255,0.16);
+  backdrop-filter: none;
+  box-shadow: 0 24px 56px -24px rgba(0,0,0,0.5);
 }
-.prop-hero-icon { font-size: 120px; line-height: 1; filter: var(--shadow-emoji); }
-.prop-hero-text {
-  font-family: var(--font-serif); font-weight: 400;
-  font-size: 56px; line-height: 1.0; letter-spacing: -0.035em;
-  color: var(--paper); margin: 0;
-}
-.prop-hero-text em { font-style: italic; color: var(--green); padding-inline-end: 0.06em; }
-.prop-hero-foot {
-  font-family: var(--font-sans); font-size: 18px; line-height: 1.5;
-  color: rgba(255,255,255,0.6); margin: 14px 0 0; letter-spacing: -0.005em;
-}
+.cover-prompt.dark .cover-prompt-text { color: rgba(255,255,255,0.88); }
+.cover-prompt.dark .cover-prompt-text em { color: var(--green); font-style: italic; }
+.cover-prompt.dark .cover-prompt-kbd { background: var(--paper); color: var(--ink); }
+.cover-prompt.dark .cover-prompt-cursor { background: var(--green); }
 
 /* ── 15 · Stack + live demo ─────────────────────────────────────── */
 .stack-rows { display: flex; flex-direction: column; gap: 16px; }
@@ -1337,9 +1341,16 @@ deck-stage { background: #0a0a0a; }
         <h2 class="display" style="font-size: 150px;">
           So how should<br>we <em>use</em> it?
         </h2>
-        <p class="sub" style="font-size: 30px; margin-top: 40px;">
-          It's brilliant. <em>Just not in charge.</em>
-        </p>
+
+        <div class="cover-prompt dark" style="margin-top: 56px;">
+          <span class="cover-prompt-icon">
+            <img src="Images/claude-logo.svg" alt="">
+          </span>
+          <span class="cover-prompt-text">
+            It's brilliant. How do I use it <em>without handing it the keys?</em><span class="cover-prompt-cursor"></span>
+          </span>
+          <span class="cover-prompt-kbd"><span class="arrow">↵</span> RETURN</span>
+        </div>
       </div>
 
       <div class="bottombar"></div>
@@ -1484,30 +1495,43 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="display:flex; flex-direction:column; justify-content:center;">
         <p class="kicker">my answer</p>
         <h2 class="display" style="font-size: 104px;">
-          Rocket fuel. <em>Not the driver.</em>
+          A copilot. <em>Never the pilot.</em>
         </h2>
+        <p class="sub" style="margin-top: 22px; font-size: 27px;">
+          Don't run the workflow through it end to end. <em>Build the tools that run it.</em>
+        </p>
 
-        <div class="prop-stack">
-          <div class="prop-tri">
-            <div class="prop-card">
-              <p class="prop-num">01</p>
-              <p class="prop-text">Use it as a <em>copilot.</em></p>
-            </div>
-            <div class="prop-card">
-              <p class="prop-num">02</p>
-              <p class="prop-text"><em>Build</em> tools with it. Checked once, then it just runs.</p>
-            </div>
-            <div class="prop-card">
-              <p class="prop-num">03</p>
-              <p class="prop-text">Never <em>embed</em> it in the ledger.</p>
-            </div>
+        <div class="flow">
+          <div class="flow-pilot">
+            <img src="Images/claude-logo.svg" alt="">
+            <span class="name">Claude</span>
+            <span class="tag">the copilot</span>
           </div>
 
-          <div class="prop-hero">
-            <span class="prop-hero-icon">🔊</span>
-            <div>
-              <p class="prop-hero-text">No one uses <em>Bluetooth</em> to power conference speakers.</p>
-              <p class="prop-hero-foot">Our work is just as critical that it's right.</p>
+          <div class="flow-arrows">
+            <span>↓ builds the tools</span>
+            <span>↓ drafts &amp; flags</span>
+          </div>
+
+          <div class="flow-row">
+            <div class="flow-step">
+              <span class="lbl">Fetch invoices</span>
+              <span class="tag">deterministic</span>
+            </div>
+            <span class="flow-arr">→</span>
+            <div class="flow-step">
+              <span class="lbl">Reconcile</span>
+              <span class="tag">deterministic</span>
+            </div>
+            <span class="flow-arr">→</span>
+            <div class="flow-step">
+              <span class="lbl">Report</span>
+              <span class="tag">deterministic</span>
+            </div>
+            <span class="flow-arr">→</span>
+            <div class="flow-step you">
+              <span class="lbl">You</span>
+              <span class="tag">sign-off</span>
             </div>
           </div>
         </div>
