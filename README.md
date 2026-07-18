@@ -1,6 +1,8 @@
-# Vibe Coding from the Front Line
+# AI from the Front Line
 
-Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on where GenAI actually fits in accounting, and where it doesn't.
+Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on the GenAI narrative in accounting: why it's so loud, why it's inflated, and how to actually use the tools.
+
+18 slides: the relentless narrative → why it's strong and why it's inflated → why it can't deliver (probabilistic by design, sold below cost, the planet on the tab) → the agentic push (asbestos era, hooked by design, pre-authorised mistakes) → the better way (copilot + deterministic assets, the Claude stack, live demo) → recommendations → key takeaways.
 
 ## Viewing
 
