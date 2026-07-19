@@ -2,7 +2,7 @@
 
 Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on the GenAI narrative in accounting: why it's so loud, why it's inflated, and how to actually use the tools.
 
-18 slides: the relentless narrative → why it's strong and why it's inflated → why it can't deliver (probabilistic by design, sold below cost, the planet on the tab) → the agentic push (asbestos era, hooked by design, pre-authorised mistakes) → the better way (copilot + deterministic assets, the Claude stack, live demo) → recommendations → key takeaways.
+21 slides: the brutal narrative → why it's loud and why it's inflated → why it can't deliver (probabilistic by design, sold below cost, not exactly green) → their answer (the ~~agentic~~ asbestos era, hooked on tokens, pre-authorised mistakes) → my answer (a copilot never the pilot, the four ways to use it, the stack, live demo) → recommendations → key takeaways → humans are going nowhere.
 
 ## Viewing
 

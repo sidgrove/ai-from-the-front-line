@@ -602,39 +602,68 @@ deck-stage { background: #0a0a0a; }
 .flow-step.you .tag { color: var(--green); }
 .flow-arr { align-self: center; font-family: var(--font-mono); font-size: 26px; color: var(--periwinkle-500); flex-shrink: 0; }
 
-/* ── 15 · Four ways to use it · mode cards ──────────────────────── */
+/* ── 15 · Four ways to use it · mode cards with mini mocks ──────── */
 .mode-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
 .mode-card {
   background: var(--paper-card); border-radius: 26px;
-  padding: 34px 34px 30px;
+  padding: 24px 26px 28px;
   box-shadow: var(--shadow-lift);
   border: 1px solid rgba(30,30,70,0.06);
-  display: flex; flex-direction: column; gap: 16px;
-  min-height: 350px;
+  display: flex; flex-direction: column; gap: 18px;
 }
-.mode-head { display: flex; align-items: center; justify-content: space-between; }
+.mode-vis {
+  border-radius: 16px; height: 150px;
+  border: 1px solid rgba(30,30,70,0.07);
+  background: #F7F7FB;
+  padding: 18px;
+  display: flex; flex-direction: column; justify-content: center; gap: 9px;
+  overflow: hidden;
+}
+.mv-bub { font-family: var(--font-sans); font-size: 14.5px; line-height: 1.35; padding: 8px 13px; max-width: 90%; }
+.mv-bub.user { background: var(--ink); color: var(--paper); border-radius: 12px 12px 4px 12px; align-self: flex-end; }
+.mv-bub.ai { background: var(--periwinkle-50); border: 1px solid rgba(168,176,248,0.32); color: var(--ink); border-radius: 12px 12px 12px 4px; align-self: flex-start; }
+.mv-formula {
+  font-family: var(--font-mono); font-size: 13.5px; color: var(--periwinkle-700);
+  background: #fff; border: 1px solid rgba(168,176,248,0.5); border-radius: 8px;
+  padding: 8px 11px; font-weight: 600; white-space: nowrap;
+}
+.mv-cells { display: grid; grid-template-columns: repeat(3, 1fr); }
+.mv-cells span { height: 27px; border: 1px solid rgba(30,30,70,0.10); margin: -0.5px; background: #fff; }
+.mv-cells span.on { background: rgba(208,248,176,0.35); border-color: rgba(109,168,60,0.5); }
+.mv-meterlbl {
+  display: flex; font-family: var(--font-mono); font-size: 11px;
+  letter-spacing: 0.14em; color: var(--ink-500); text-transform: uppercase; font-weight: 600;
+}
+.mv-meterlbl .v { margin-left: auto; color: var(--ink-300); }
+.mv-track { height: 8px; border-radius: 999px; background: rgba(30,30,70,0.08); overflow: hidden; }
+.mv-fill { display: block; height: 100%; border-radius: 999px; background: linear-gradient(90deg, var(--periwinkle-500), var(--periwinkle)); }
+.mv-warn {
+  font-family: var(--font-sans); font-size: 13.5px; color: var(--amber);
+  background: var(--amber-soft); border: 1px solid rgba(232,160,32,0.3);
+  border-radius: 8px; padding: 7px 11px;
+}
+.mode-vis.code { background: #0c0c18; border-color: #0c0c18; }
+.mv-code { font-family: var(--font-mono); font-size: 13.5px; line-height: 1.5; }
+.mv-code.cmd { color: rgba(255,255,255,0.92); }
+.mv-code.cmd .p { color: var(--periwinkle); }
+.mv-code.ok { color: #6ad26a; }
+.mode-title-row { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
 .mode-pill {
   font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.16em;
   text-transform: uppercase; font-weight: 600;
-  padding: 6px 12px; border-radius: 999px;
+  padding: 6px 12px; border-radius: 999px; flex-shrink: 0;
 }
 .mode-pill.g { background: rgba(109,168,60,0.13); color: var(--green-600); }
 .mode-pill.a { background: rgba(232,160,32,0.15); color: #8b5a10; }
 .mode-pill.r { background: rgba(168,69,94,0.12); color: #7A1E35; }
 .mode-pill.t { background: rgba(31,90,82,0.11); color: #1F5A52; }
-.mode-label {
-  font-family: var(--font-mono); font-size: 14px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--ink-500); margin: 0; font-weight: 600;
-}
 .mode-name {
-  font-family: var(--font-serif); font-size: 44px; font-weight: 400;
+  font-family: var(--font-serif); font-size: 40px; font-weight: 400;
   color: var(--ink); letter-spacing: -0.025em; line-height: 1; margin: 0;
 }
 .mode-line {
-  font-family: var(--font-sans); font-size: 19.5px; line-height: 1.5;
-  color: var(--ink-500); letter-spacing: -0.005em;
-  margin: auto 0 0; padding-top: 20px;
-  border-top: 1px solid rgba(168,176,248,0.18);
+  font-family: var(--font-sans); font-size: 19px; line-height: 1.5;
+  color: var(--ink-500); letter-spacing: -0.005em; margin: 0;
 }
 
 /* Dark Claude prompt bar (slide 10) */
@@ -1597,42 +1626,54 @@ deck-stage { background: #0a0a0a; }
 
         <div class="mode-grid">
           <div class="mode-card">
-            <div class="mode-head">
-              <span class="ic ic-green"><svg viewBox="0 0 24 24"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg></span>
+            <div class="mode-vis">
+              <span class="mv-bub user">Rewrite this for the client?</span>
+              <span class="mv-bub ai">Done. Two options below.</span>
+            </div>
+            <div class="mode-title-row">
+              <h3 class="mode-name">Chat.</h3>
               <span class="mode-pill g">use daily</span>
             </div>
-            <p class="mode-label">the copilot</p>
-            <h3 class="mode-name">Chat.</h3>
             <p class="mode-line">Ask, draft, think. You drive.</p>
           </div>
 
           <div class="mode-card">
-            <div class="mode-head">
-              <span class="ic ic-blue"><svg viewBox="0 0 24 24"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></span>
+            <div class="mode-vis">
+              <span class="mv-formula">=CLAUDE(A2:A40)</span>
+              <div class="mv-cells">
+                <span></span><span class="on"></span><span></span>
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="mode-title-row">
+              <h3 class="mode-name">Integrations.</h3>
               <span class="mode-pill a">use, verify</span>
             </div>
-            <p class="mode-label">in the office suite</p>
-            <h3 class="mode-name">Integrations.</h3>
             <p class="mode-line">AI inside Excel, Word, the inbox. Check its work.</p>
           </div>
 
           <div class="mode-card">
-            <div class="mode-head">
-              <span class="ic ic-rose"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
+            <div class="mode-vis">
+              <div class="mv-meterlbl">month-end · agent <span class="v">82%</span></div>
+              <div class="mv-track"><span class="mv-fill" style="width: 82%;"></span></div>
+              <span class="mv-warn">⚠ Paused. Needs you.</span>
+            </div>
+            <div class="mode-title-row">
+              <h3 class="mode-name">Cowork.</h3>
               <span class="mode-pill r">use sparingly</span>
             </div>
-            <p class="mode-label">end to end</p>
-            <h3 class="mode-name">Cowork.</h3>
             <p class="mode-line">Hands the whole job to GenAI. The hype lives here.</p>
           </div>
 
           <div class="mode-card">
-            <div class="mode-head">
-              <span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg></span>
+            <div class="mode-vis code">
+              <span class="mv-code cmd"><span class="p">❯</span> claude build recon-tool</span>
+              <span class="mv-code ok">✓ Shipped. Runs the same, forever.</span>
+            </div>
+            <div class="mode-title-row">
+              <h3 class="mode-name">Vibe coding.</h3>
               <span class="mode-pill t">use to build</span>
             </div>
-            <p class="mode-label">build your own</p>
-            <h3 class="mode-name">Vibe coding.</h3>
             <p class="mode-line">You describe, it codes. How the tools get built.</p>
           </div>
         </div>
