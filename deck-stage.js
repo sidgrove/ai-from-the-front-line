@@ -462,6 +462,16 @@
     }
 
     _restoreIndex() {
+      // Deep link wins: ?slide=N or #N (1-based) jumps straight to a slide.
+      try {
+        const qs = new URLSearchParams(location.search).get('slide');
+        const hash = (location.hash || '').replace('#', '');
+        const link = qs != null ? qs : hash;
+        if (link !== '' && /^\d+$/.test(link)) {
+          const n = parseInt(link, 10) - 1;
+          if (n >= 0 && n < this._slides.length) { this._index = n; return; }
+        }
+      } catch (e) { /* ignore */ }
       try {
         const raw = localStorage.getItem(this._storageKey);
         if (raw != null) {
