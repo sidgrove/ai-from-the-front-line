@@ -835,6 +835,22 @@ deck-stage { background: #0a0a0a; }
 }
 .tk-emoji { margin-left: auto; font-size: 46px; line-height: 1; filter: var(--shadow-emoji); }
 
+/* ── 21 · Close · precedent strip ───────────────────────────────── */
+.past-strip { display: flex; align-items: center; gap: 14px; margin-top: 48px; }
+.past-chip {
+  background: rgba(255,255,255,0.68);
+  border: 1px solid rgba(255,255,255,0.85);
+  border-radius: 16px; padding: 16px 22px;
+  display: flex; flex-direction: column; gap: 5px;
+  box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 14px 32px -16px rgba(74,86,184,0.25);
+}
+.past-year {
+  font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--periwinkle-700); font-weight: 600;
+}
+.past-line { font-family: var(--font-sans); font-size: 17px; color: var(--ink); letter-spacing: -0.01em; font-weight: 500; }
+.past-arr { font-family: var(--font-mono); font-size: 20px; color: var(--periwinkle-700); flex-shrink: 0; }
+
 /* ── 18 · Close ─────────────────────────────────────────────────── */
 .closing-curious {
   font-family: var(--font-serif); font-size: 92px; font-style: italic;
@@ -2011,9 +2027,23 @@ deck-stage { background: #0a0a0a; }
             Humans are going<br><em>nowhere.</em>
           </h2>
           <p class="closing-curious">Stay curious.</p>
-          <p class="sub" style="font-size: 30px; margin: 44px 0 0; max-width: 760px;">
-            They said the spreadsheet would kill this job. <em>You got Excel instead.</em>
-          </p>
+
+          <div class="past-strip">
+            <div class="past-chip">
+              <span class="past-year">1979</span>
+              <span class="past-line">"Spreadsheets will kill accounting."</span>
+            </div>
+            <span class="past-arr">→</span>
+            <div class="past-chip">
+              <span class="past-year">since</span>
+              <span class="past-line">Excel became the job.</span>
+            </div>
+            <span class="past-arr">→</span>
+            <div class="past-chip">
+              <span class="past-year">2026</span>
+              <span class="past-line">Same panic. New tech.</span>
+            </div>
+          </div>
           <p style="font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ink-500); margin: 64px 0 0; display: inline-flex; align-items: center; gap: 12px; font-weight: 500;">
             <span style="width: 8px; height: 8px; border-radius: 50%; background: var(--periwinkle-700);"></span>
             come find me after
