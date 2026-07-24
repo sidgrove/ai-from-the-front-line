@@ -25,7 +25,7 @@
   --green:            #D0F8B0;
   --green-200:        #E6FCD1;
   --green-400:        #A5DE72;
-  --green-600:        #6DA83C;
+  --green-600:        #4E7D28;
 
   --claude:           #D97757;
 
@@ -40,7 +40,7 @@
   --paper-soft:       #F1F0EA;
   --paper-card:       #FFFFFF;
 
-  --amber:            #b5710f;
+  --amber:            #8b5a10;
   --amber-soft:       rgba(232,160,32,0.10);
 
   --font-serif:       "Very Vogue", "Very Vogue Text", "Fraunces", Georgia, serif;
@@ -288,7 +288,7 @@ deck-stage { background: #0a0a0a; }
 .press-source {
   font-family: var(--font-mono); font-size: 10px;
   letter-spacing: 0.22em; text-transform: uppercase;
-  color: rgba(168,176,248,0.60); font-weight: 600; margin: 0;
+  color: rgba(168,176,248,0.78); font-weight: 600; margin: 0;
 }
 .press-name {
   font-family: var(--font-sans); font-size: 21px;
@@ -404,7 +404,7 @@ deck-stage { background: #0a0a0a; }
 }
 .use-foot {
   font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.2em;
-  text-transform: uppercase; color: rgba(255,255,255,0.45);
+  text-transform: uppercase; color: rgba(255,255,255,0.55);
   padding-top: 18px; border-top: 1px solid rgba(255,255,255,0.08); margin: 0;
 }
 
@@ -503,7 +503,7 @@ deck-stage { background: #0a0a0a; }
   padding: 3px 10px; border-radius: 999px;
 }
 .prob-run.a { color: var(--ink-300); background: rgba(168,176,248,0.12); }
-.prob-run.b { color: rgba(80,160,80,0.95); background: rgba(80,200,120,0.10); }
+.prob-run.b { color: var(--green-600); background: rgba(80,200,120,0.10); }
 .prob-body { padding: 28px 26px; display: flex; flex-direction: column; gap: 16px; }
 .prob-user { background: linear-gradient(170deg, #2B2D5E 0%, #1E1E46 100%); color: var(--paper); border-radius: 16px 16px 6px 16px; padding: 15px 20px; font-size: 21px; align-self: flex-end; max-width: 85%; line-height: 1.4; font-family: var(--font-sans); box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 8px 18px -8px rgba(30,30,70,0.45); }
 .prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 17px 22px; font-size: 21px; color: var(--ink); line-height: 1.5; max-width: 92%; border: 1px solid rgba(168,176,248,0.28); font-family: var(--font-sans); box-shadow: 0 6px 14px -8px rgba(74,86,184,0.3); }
@@ -677,7 +677,7 @@ deck-stage { background: #0a0a0a; }
 }
 
 /* ── 09 · Environment cards ─────────────────────────────────────── */
-.env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; max-width: 1460px; }
+.env-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; }
 .env-card {
   background: var(--paper-card); border: 1px solid rgba(30,30,70,0.06);
   border-radius: 28px; padding: 32px 38px 34px;
@@ -2251,7 +2251,7 @@ deck-stage { background: #0a0a0a; }
           </div>
         </div>
 
-        <p class="sub" style="font-size: 24px; margin-top: 36px; font-style: italic; color: var(--ink-300);">
+        <p class="sub" style="font-size: 24px; margin-top: 36px; font-style: italic; color: var(--ink-500);">
           Or at least, that's what I think.
         </p>
       </div>
@@ -2316,7 +2316,7 @@ deck-stage { background: #0a0a0a; }
             </div>
 
             <div style="width: 100%; padding-top: 24px; border-top: 1px solid rgba(30,30,70,0.10); display: flex; justify-content: center;">
-              <a href="https://www.linkedin.com/in/davesellick/" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(10,102,194,0.10); border-radius: 999px; border: 1px solid rgba(10,102,194,0.22); text-decoration: none;">
+              <a href="https://www.linkedin.com/in/davesellick/" aria-label="Dave Sellick on LinkedIn" style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; background: rgba(10,102,194,0.10); border-radius: 999px; border: 1px solid rgba(10,102,194,0.22); text-decoration: none;">
                 <svg viewBox="0 0 24 24" width="18" height="18" fill="#0A66C2">
                   <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 0 0 1.55-1.55 1.55 1.55 0 1 0-1.55 1.55zm11.332 9.787v-4.703c0-2.31-.5-4.087-3.197-4.087a2.802 2.802 0 0 0-2.523 1.387h-.036v-1.18H9.917v8.583h2.672v-4.246c0-1.12.213-2.205 1.6-2.205 1.367 0 1.387 1.28 1.387 2.277v4.174z"/>
                 </svg>
