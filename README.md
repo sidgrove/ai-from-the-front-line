@@ -6,7 +6,9 @@ Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on t
 
 ## Viewing
 
-Open `ai from the front line.html` in a browser, or serve the folder so the fonts load reliably:
+Live at **https://ai-from-the-front-line.vercel.app** — pushes to `main` auto-deploy (Vercel project `sidgrove/ai-from-the-front-line`).
+
+Locally, open `ai from the front line.html` in a browser, or serve the folder so the fonts load reliably:
 
     npx serve .
 
