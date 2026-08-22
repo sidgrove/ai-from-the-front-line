@@ -268,7 +268,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 32 · Deterministic
 
 - **Section tag:** How I use it *· 02 build*
-- **Headline:** Build deterministic tools. *Not probabilistic ones.*
+- **Headline:** Build deterministic, *wherever possible.*
+- **Sub:** Probabilistic *augments* it. It doesn't replace it.
 - **Cards:** ⚙️ Deterministic — Pre-set logic. Predictable. *Same answer every run.* · vs · 🎲 Probabilistic — Pattern-matched. Plausible. *Different answer every run.*
 
 ## 33 · Vibe coding
