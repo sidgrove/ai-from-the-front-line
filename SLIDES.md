@@ -412,23 +412,16 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. Lots of *hype.*
 - **Other options:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 
-## 53 · Do and don't
-
-- **Section tag:** What works *· my answer*
-- **Headline:** Do and *don't.*
-- **Do — Use it *as a copilot.*:** Chat, for *thlighting.* · Build tools with *Claude Code.* · Enhance and augment with tools like *AI dictation.* · Explore *spreadsheet add-ons.* · Create assets: *branding, sites and slides.*
-- **Don't — Use it *as the pilot.*:** Let it *be the pilot.* · Let it run *autonomously, end to end.* · Post anything *unreviewed.* · Buy the *agent pitch.*
-
-## 54 · Takeaways
+## 53 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
-- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Build deterministic tools with it. Don’t let it run the close. · ✅ Use it daily. Check everything. — Chat, dictation, note takers: daily. Add-ons, MCP, Cowork: mindfully.
+- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Never autonomous, end to end. Nothing posted unreviewed. · ✅ Use it every day. — Chat. Build tools with Claude Code. Augment: dictation, add-ons, brand, sites, slides.
   1. The work isn't going away. *Someone has to rip the asbestos out.*
   2. The narrative is hype, powered by *massive financial bets.*
   3. Build with it. Use it. *Don't let it run your accounting.*
 
-## 55 · Thank you
+## 54 · Thank you
 
 - **Headline:** Thank *you.*
-- **Contact card:** Dave Sellick — Founder, Sidgrove — LinkedIn /in/davesellick — QR: Scan for the AI walkthrough recordings (`Images/55 Thank you/qr.png`)
+- **Contact card:** Dave Sellick — Founder, Sidgrove — LinkedIn /in/davesellick — QR: Scan for the AI walkthrough recordings (`Images/54 Thank you/qr.png`)
