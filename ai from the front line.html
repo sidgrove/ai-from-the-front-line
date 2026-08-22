@@ -2160,12 +2160,12 @@ deck-stage { background: #0a0a0a; }
 
     <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
 
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar" style="margin-bottom: 16px;"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+    <div class="frame" style="--pad-y: 70px;">
+      <div class="topbar" style="margin-bottom: 10px;"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
-        <div style="margin-bottom: 36px;">
-          <h2 class="display" style="font-size: 96px;">It's not just me <em>saying it.</em></h2>
+        <div style="margin-bottom: 22px;">
+          <h2 class="display" style="font-size: 84px;">It's not just me <em>saying it.</em></h2>
         </div>
         <div class="press-grid four">
           <div class="press-card">
@@ -2177,7 +2177,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/19%20Environment%20press/un.png" alt="UN asks AI companies to reveal full environmental impacts">
+            <img src="Images/19%20Environment%20press/un.png" alt="UN asks AI companies to reveal full environmental impacts" style="object-position: left bottom;">
             <div class="press-meta">
               <p class="press-source">Climate Home News</p>
               <p class="press-name">The UN</p>
@@ -3994,10 +3994,11 @@ deck-stage { background: #0a0a0a; }
 .wf-report-badge { margin-left: auto; font-family: var(--font-sans); font-size: 15px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: var(--green-200); color: var(--green-600); }
 
 /* ── Environment press · 2x2 cuttings ──────────────────────────── */
-.press-grid.four { grid-template-columns: 1fr 1fr; gap: 22px; }
-.press-grid.four .press-card img { aspect-ratio: 16 / 6.2; }
-.press-grid.four .press-meta { flex-direction: row; align-items: baseline; gap: 14px; padding: 14px 22px 16px; }
-.press-grid.four .press-role::before { content: '· '; }
+.press-grid.four { grid-template-columns: 1fr 1fr; gap: 20px; }
+.press-grid.four .press-card img { aspect-ratio: 16 / 6.6; object-position: bottom center; }
+.press-grid.four .press-meta { flex-direction: row; align-items: baseline; gap: 12px; padding: 12px 22px 14px; }
+.press-grid.four .press-role { display: none; }
+.press-grid.four .press-name { font-size: 20px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
