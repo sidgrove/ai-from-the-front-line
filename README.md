@@ -30,4 +30,6 @@ All fonts are self-hosted, so the deck renders identically **with no internet co
 
 ## Assets
 
-`fonts/` holds the **Very Vogue** family (Nicky Laatz) under a commercial licence — **do not redistribute** — and `Images/Quotes - narrative/` holds third-party headline screenshots. This repository is **private**; these files are bundled only so the deck renders. `fonts/web/` holds DM Sans and JetBrains Mono (both SIL OFL, freely redistributable variable woff2s).
+`Images/` has **one folder per slide**, named `NN Slide title` to match the slide order (e.g. `03 The headlines/`), plus `Images/shared/` for assets used across slides (the Claude logo, headshot, spare logo files). Drop a slide's images into its numbered folder; in the HTML, URL-encode spaces in the `src` (`Images/06%20Why%20listen/setup-wide.jpg`). The folder set is kept in sync with the deck — when slides are added, removed, or reordered, the folders are renumbered to match.
+
+`fonts/` holds the **Very Vogue** family (Nicky Laatz) under a commercial licence — **do not redistribute** — and `Images/03 The headlines/` holds third-party headline screenshots. This repository is **private**; these files are bundled only so the deck renders. `fonts/web/` holds DM Sans and JetBrains Mono (both SIL OFL, freely redistributable variable woff2s).
