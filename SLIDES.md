@@ -79,8 +79,9 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 08 · An LLM
 
 - **Section tag:** The reality
-- **Headline:** Large language models *(LLMs).*
-- **Sub:** A very advanced autocomplete, *based on pattern recognition.*
+- **Kicker:** ‘AI’, as most people mean it, is GenAI:
+- **Headline:** Transformer-based *LLMs.*
+- **Sub:** Large language models. A very advanced autocomplete, *based on pattern recognition.*
 - **Mock (phone keyboard, predictive text):**
   - Them: Can you send over the Q1 figures before Friday?
   - Me (typing): Sure, I'll send the|
