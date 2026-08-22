@@ -55,7 +55,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** The narrative
 - **Headline:** But I think *they're wrong.*
 - **Sub:** You're fine. We're in a hype bubble. *And they're already backtracking.*
-- **Image:** `Images/05 Hype bubble/reversal.png` — caption: Already backtracking
+- **Image:** `Images/05 Hype bubble/reversal.png`
 
 ## 06 · Why so strong
 

@@ -1567,25 +1567,20 @@ deck-stage { background: #0a0a0a; }
     <div class="frame">
       <div class="topbar"><p class="section-tag">The narrative</p><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 70px; align-items: center;">
+      <div class="fill" style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center;">
         <div>
-          <h2 class="display" style="font-size: 112px; margin-bottom: 32px;">But I think <em>they're wrong.</em></h2>
-          <p class="sub" style="font-size: 30px;">You're fine. We're in a hype bubble. <em>And they're already backtracking.</em></p>
+          <h2 class="display" style="font-size: 112px; margin-bottom: 28px;">But I think <em>they're wrong.</em></h2>
+          <p class="sub" style="font-size: 30px; margin-bottom: 44px;">You're fine. We're in a hype bubble. <em>And they're already backtracking.</em></p>
+          <figure class="shot bub-cut">
+            <img src="Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
+          </figure>
         </div>
-        <div class="bub-wrap">
-          <svg class="bub" viewBox="0 0 800 800" aria-hidden="true">
-            <circle class="bub-outer" cx="400" cy="400" r="360"/>
-            <ellipse class="bub-shine" cx="250" cy="220" rx="120" ry="60" transform="rotate(-30 250 220)"/>
-            <circle class="bub-inner" cx="470" cy="470" r="190"/>
-            <ellipse class="bub-shine" cx="395" cy="380" rx="62" ry="30" transform="rotate(-30 395 380)"/>
-            <text class="bub-label" x="400" y="150" text-anchor="middle">AI</text>
-            <text class="bub-label small" x="470" y="488" text-anchor="middle">GenAI hype</text>
-          </svg>
-        <figure class="shot bub-cut">
-          <img src="Images/05%20Hype%20bubble/reversal.png" alt="Headline: companies reversing AI-driven workforce cuts" style="max-height: 820px;">
-          <figcaption>Already backtracking</figcaption>
-        </figure>
-        </div>
+        <svg class="bub" viewBox="0 0 800 800" aria-hidden="true">
+          <circle class="bub-outer" cx="400" cy="400" r="372"/>
+          <path class="bub-arc" d="M 130 300 A 300 300 0 0 1 300 130"/>
+          <circle class="bub-inner" cx="455" cy="455" r="200"/>
+          <path class="bub-arc thin" d="M 312 400 A 155 155 0 0 1 400 312"/>
+        </svg>
       </div>
 
       <div class="bottombar"></div>
@@ -4133,14 +4128,12 @@ deck-stage { background: #0a0a0a; }
 .nt-stack .oe-wave { height: 72px; gap: 6px; } .nt-stack .oe-wave i { width: 7px; } .nt-stack .oe-mic { width: 60px; height: 60px; } .nt-stack .oe-mic svg { width: 28px; height: 28px; }
 
 /* ── Hype bubble · bubble in a bubble ──────────────────────────── */
-.bub-wrap { position: relative; height: 800px; }
-.bub { position: absolute; right: 0; top: 0; width: 760px; height: 760px; }
-.bub-outer { fill: rgba(168,176,248,0.08); stroke: rgba(168,176,248,0.75); stroke-width: 3; }
-.bub-inner { fill: rgba(208,248,176,0.10); stroke: var(--green); stroke-width: 3; }
-.bub-shine { fill: rgba(255,255,255,0.35); }
-.bub-label { font-family: var(--font-serif); font-size: 72px; fill: rgba(255,255,255,0.9); }
-.bub-label.small { font-size: 40px; fill: var(--green); }
-.bub-cut { position: absolute; left: 0; bottom: 10px; width: 620px; }
+.bub { width: 100%; max-width: 760px; height: auto; justify-self: end; }
+.bub-outer { fill: rgba(168,176,248,0.06); stroke: rgba(168,176,248,0.55); stroke-width: 2; }
+.bub-inner { fill: rgba(208,248,176,0.07); stroke: rgba(208,248,176,0.7); stroke-width: 2; }
+.bub-arc { fill: none; stroke: rgba(255,255,255,0.55); stroke-width: 6; stroke-linecap: round; }
+.bub-arc.thin { stroke-width: 4; stroke: rgba(208,248,176,0.8); }
+.bub-cut { width: 100%; max-width: 640px; }
 .bub-cut img { border: 4px solid #fff; }
 .slide.ink .bub-cut figcaption { color: rgba(255,255,255,0.7); }
 </style>
