@@ -193,7 +193,7 @@
       min-width: 16px;
       height: 16px;
       padding: 0 4px;
-      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif;
       font-size: 10px;
       line-height: 1;
       color: rgba(255,255,255,0.88);

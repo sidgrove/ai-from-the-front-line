@@ -25,23 +25,19 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 02 · Tick Tock
 
-- **Section tag:** Why the noise
+- **Section tag:** The Narrative
 - **Headline:** Tick *Tock.*
 - **Sub:** ...we're doomed, right?
 - **Mock (redundancy pop-up):**
-  - Banner: ⚠ Redundancy Notice · Confidential ⚠
   - Title: Accountant Detected.
-  - Label: Role Assessment: Complete
-  - Rows: Data entry — AUTOMATABLE · Reconciliation — AUTOMATABLE · Tax preparation — AUTOMATABLE · Forecasting — AUTOMATABLE · "But I'm good with people" — lol
-  - Verdict: Verdict: Fully. Automatable.
-  - Quote: Microsoft's AI boss says 18 months. **He named accounting.**
-  - Buttons: I Accept My Redundancy / this won't apply to me
+  - Rows: Data entry — AUTOMATABLE · Reconciliation — AUTOMATABLE · Tax preparation — AUTOMATABLE
+  - Button: I Accept My Redundancy
 
 ## 03 · The headlines
 
-- **Section tag:** Why the noise
+- **Section tag:** The Narrative
 - **Headline:** The *headlines.*
-- **Sub:** You've seen these. *You're next, apparently.*
+- **Sub:** The doomsaying, *in print.*
 - **Press cards:**
   1. The Telegraph — Tom Blomfield — Monzo founder (`Blomfield.png`)
   2. Fortune — Mustafa Suleyman — CEO, Microsoft AI (`Suleyman.png`)
@@ -49,91 +45,136 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 04 · Why so strong
 
-- **Section tag:** Why the noise
-- **Headline:** I don't buy it. So why the *shouting?*
+- **Section tag:** The Narrative
+- **Headline:** So why so much *hype?*
 - **Cards:**
-  1. **The GenAI mirage** — It looks great *from afar.* — The demo runs itself. Day to day, it needs babysitting.
-  2. **The money** — The hype pays *their bills.* — The labs lose billions. Big Tech has spent hundreds of billions. The story has to hold.
-  3. **The sunk cost** — They're in *too deep.* — Big Tech over-hired, then over-built. "AI" is a better story than "we got it wrong".
+  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
+  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
+  3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI. (AI" / "the accounts say — over-hired · rates · margins")
 
-## 05 · The meter
-
-- **Section tag:** Why the noise
-- **Headline:** If full autonomy worked, *I'd be using it.*
-- **Sub:** Nothing to sell you. *I just use it, a lot.*
-- **Mock (usage card, "a normal week"):**
-  - Frontier models, hands on — ~12 hrs / day
-  - Claude Max subscription — limit hit · weekly
-  - Tools I built, one key each — 60
-  - Code shipped — daily
-  - Fully autonomous, unreviewed — 0 · not worth the risk yet
-  - Footer: nothing to sell · no product, course or fund · not sponsored
-
-## 06 · Why listen
+## 05 · Why listen
 
 - **Section tag:** Side note
 - **Headline:** Why listen to *me?*
-- **Photo tag:** My desk, most days
 - **Claims:**
-  1. I try *all of it.* — This is my everyday desk. I try everything early, and I bin most of it.
-  2. If I've stopped *doing it,* — there's usually a reason. Ask me which.
-- **Permission card:** So, officially — You don't have to keep up with all of it. *I'll tell you what stuck.*
+  1. I try *all of it.*
+  2. If it worked, *I'd be doing it.*
+- **Permission card:** So, officially — You have permission to simplify. *Ignore the hype. Focus on what matters.*
 
-## 07 · Can it deliver? (divider)
+## 06 · The meter
 
-- **Headline:** So, can it *deliver?*
-- **Prompt bar:** It's everywhere. *Can it actually do the work?*
+- **Section tag:** The Narrative
+- **Headline:** If full autonomy worked, *I'd be using it.*
+- **Sub:** Nothing to sell. *I just use it, a lot.*
+- **Mock (usage card, "a normal week"):**
+  - Frontier models, hands on — ~12 hrs / day
+  - Claude Max subscription — limit hit · weekly
+  - Fully autonomous, unreviewed — 0 · not worth the risk yet
 
-## 08 · Probabilistic
+## 07 · What is it? (divider)
 
-- **Section tag:** Can it deliver
+- **Headline:** So what actually *is* it?
+- **Prompt bar:** Generative AI, specifically. *How does it actually work?*
+
+## 08 · An LLM
+
+- **Section tag:** The reality
+- **Headline:** Transformer-based *LLMs.*
+- **Sub:** A very advanced autocomplete. *Prediction, not understanding.*
+- **Mock (phone keyboard, predictive text):**
+  - Them: Can you send over the Q1 figures before Friday?
+  - Me (typing): Sure, I'll send the|
+  - Suggestions: file · **figures** · invoice
+
+## 09 · Probabilistic
+
+- **Section tag:** The reality
 - **Headline:** It's probabilistic. *By design.*
 - **Pipeline:** "What should I prioritise?" → [ 3923 · 1129 · 358 · … ] → Transformer → a *plausible* next token
-- **Popover:** Candidates / p(next): cashflow 34% · the VAT return 22% · a holiday 1.8% — Ranked by plausibility. Nothing is checked.
-- **Sub:** An extremely smart autocomplete. *Confidently probably correct.*
+- **Popover:** Candidates / p(next): cashflow 34% · the VAT return 22% · a holiday 1.8% — Nothing is checked.
+- **Sub:** Confidently, *probably* correct.
 
-## 09 · Two answers
+## 10 · Why a problem? (beat)
 
-- **Section tag:** Can it deliver
+- **Section tag:** The reality
+- **Headline:** OK, so why is that a problem, *particularly in accounting?*
+
+## 11 · Two answers
+
+- **Section tag:** The reality
 - **Headline:** Same question. *Two answers.*
-- **Mock (two Claude runs, same prompt "Add up this quarter's invoices for me." · acme · Q1 · 214 PDFs):**
-  - Run A (41s): Done. 206 fall in Q1, total *£128,400*. 8 look like next quarter.
-  - Run B (38s): Done. 209 fall in Q1, total *£129,150*. 5 look like next quarter.
+- **Mock (two Claude runs, same prompt "Add up this quarter's invoices for me."):**
+  - Run A: Done. 206 fall in Q1, total *£128,400*. 8 look like next quarter.
+  - Run B: Done. 209 fall in Q1, total *£129,150*. 5 look like next quarter.
   - Delta sticker: £750 apart
-- **Sub:** Both sound confident. *They can't both be right.*
+- **Sub:** It can't be relied on for *consistent, high-integrity output.*
 
-## 10 · The economics
+## 12 · Just use it (beat)
 
-- **Section tag:** Can it deliver
+- **Section tag:** The reality
+- **Headline:** Just *use* it.
+- **Sub:** It makes mistakes, *all the time.*
+
+## 13 · Not intelligent
+
+- **Section tag:** The reality
+- **Headline:** It isn't *intelligent.*
+- **Sub:** Pretend it is, and you'll trust it *too much.*
+- **Rows:**
+  1. It won't always do what you tell it. *That's the maths.*
+  2. It can't check its own work. *It'll say it did.*
+  3. A probably-correct review of a probably-correct answer. *Someone has to look.*
+- **Sign-off:** Hold that thought. *Act three.*
+
+## 14 · Better than a human?
+
+- **Section tag:** The reality
+- **Headline:** "But it's better than *a human."*
+- **Sub:** Maybe. *But it's different.*
+- **Rows:**
+  1. Unpredictable, *unlike a person.*
+  2. Confident *either way.*
+  3. Hides its errors *well.*
+  4. Replacing tools *that already work.*
+  5. Not better than a human *using it properly.*
+
+## 15 · Added to that (beat)
+
+- **Section tag:** The reality
+- **Headline:** And *added* to that…
+
+## 16 · The economics
+
+- **Section tag:** The reality
 - **Headline:** Sold below *cost.*
-- **Sub:** The heavy seats are subsidised, mine included. To claw it back they don't raise the price. *They shrink the limit.*
+- **Sub:** Heavy seats are subsidised. They don't raise the price. *They shrink the limit.*
 - **Mock (receipt · GenAI Ltd · a heavy seat):**
   - What you pay — flat fee
   - What you cost them — more than that
   - Who covers the gap — investors, for now
   - How they get it back — shrink the limit
-  - Footer: valid until: they need it back
 
-## 11 · The environment
+## 17 · The environment
 
-- **Section tag:** Can it deliver
+- **Section tag:** The reality
 - **Headline:** And it's not exactly *green.*
 - **Stats:**
-  1. *×2* — Data-centre electricity by 2030. *AI is the main reason.* — IEA, Energy and AI (2025): 415 TWh in 2024, ~945 TWh in 2030.
-  2. *+37%* — Google's electricity use, in one year. Their words: *"accelerating faster than the grid is decarbonizing".* — Google 2026 Environmental Report: electricity demand up 37% in 2025.
+  1. *×2* — Data-centre electricity by 2030. *AI is the main reason.*
+  2. *+37%* — Google's electricity use, in one year. *"Faster than the grid is decarbonizing."*
 
-## 12 · How to use it (divider)
+## 18 · How to use it (divider)
 
 - **Headline:** So how should we *use* it?
 - **Prompt bar:** It's brilliant. How do I use it *without handing it the keys?*
 
-## 13 · Asbestos era
+## 19 · Asbestos era
 
 - **Section tag:** How to use it *· the pitch*
+- **Lead-in:** Well… let's start with *what everyone's selling right now.*
 - **Headline:** The ~~agentic~~ *asbestos* era.
-- **Sub:** We're embedding it everywhere today. *We'll spend years ripping it out.*
+- **Sub:** Embedded everywhere today. *Years ripping it out.*
 
-## 14 · Hooked
+## 20 · Hooked
 
 - **Section tag:** How to use it *· the pitch*
 - **Headline:** They want you *hooked.*
@@ -141,31 +182,40 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Mock (⬢ AgentSuite Pro · Autopilot on):**
   - Month-end close — 82%
   - Tokens remaining — 41k of 3.0M
-  - Alert: ⚠ Out of tokens. Your close is paused at 82%.
   - Button: Top up · £299
-  - Fine print: Topping up switches on auto-top-up · pricing subject to change
+  - Fine print: auto-top-up on · pricing subject to change
 
-## 15 · Pre-authorised mistakes
+## 21 · Pre-authorised mistakes
 
 - **Section tag:** How to use it *· the pitch*
 - **Headline:** Pre-authorised *mistakes.*
 - **Sub:** It improvises the steps, *then marks its own homework.*
 - **Mock (permission dialog · "Agent" wants to run your month-end · Full autonomy · no review):**
-  - Fetch the invoices — Its plan, each run
-  - Match & reconcile — Its call, each run
-  - Post the journals — Live, no undo
-  - Decide it's all correct — Marks its own work
-  - Note: By continuing, you accept **mistakes that haven't happened yet.**
-  - Buttons: Approve future mistakes / review it yourself instead (slower)
+  - Fetch the invoices
+  - Match & reconcile
+  - Post the journals
+  - Decide it's all correct
+  - Button: Approve future mistakes
 
-## 16 · Copilot, never the pilot
+## 22 · It's toxic
+
+- **Section tag:** How to use it *· the pitch*
+- **Headline:** It's *toxic.*
+- **Sub:** It'll need ripping out, at huge cost. *Like asbestos.*
+
+## 23 · Better approach (divider)
+
+- **Headline:** So what's a *better* approach?
+- **Prompt bar:** In my opinion, *anyway.*
+
+## 24 · Copilot, never the pilot
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** A copilot. *Never the pilot.*
-- **Sub:** Don't put it in the process. *Have it write the tools that run the process.* Code does the same thing every run.
-- **Flow:** Claude (the copilot) → writes the code, once / drafts and flags → Fetch invoices (code) → Match (code) → Report (code) → You (exceptions, sign-off)
+- **Sub:** Don't put it in the process. *Have it write the tools that run the process.*
+- **Flow:** Claude (the copilot) → → Fetch invoices (code) → Match (code) → Report (code) → You (exceptions, sign-off)
 
-## 17 · Recommend
+## 25 · Recommend
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** What I *actually* recommend.
@@ -174,50 +224,45 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Try Claude for Excel. *Check its work.*
   - Talk to it. *Dictation beats typing.*
   - Put it *one keypress* away.
-  - Warning: Client data? Only on a work plan with a data agreement. Personal plans train by default, and a toggle isn't a contract.
-- **Column 2 — 🏗️ If you build things, or pay someone who does — Build with *Code.***
+- **Column 2 — 🏗️ If you build, or pay someone who does — Build with *Code.***
   - Build with Claude Code, *daily.*
   - *Deterministic* core. GenAI at the edges.
   - A *human* signs off on anything that posts.
-  - Warning: Claude Cowork is where the hype is thickest right now. Use it on documents if you like. Keep it off the close.
 
-## 18 · Five ways
+## 26 · Five ways
 
 - **Section tag:** How to use it *· five ways*
 - **Headline:** Five ways to *use it.*
-- **Cards (name — verdict pill — line):**
-  1. Chat. — Use daily — Ask, draft, think. You drive.
-  2. In your apps. — Sparingly — AI inside Excel, Xero, the inbox. Check its work.
-  3. Agents. — Last resort — A whole job, unwatched. Keep it off the close.
-  4. Vibe coding. — Use to build — You describe, it codes. You test what it built.
-  5. The rest. — Small wins — Notetakers and dictation. Small, useful, every day.
-- **Footnote:** Names as of August 2026. They rename faster than they ship.
+- **Cards (verdict pill — line):**
+  1. Chat. — Use daily
+  2. In your apps. — Sparingly
+  3. Agents. — Last resort
+  4. Vibe coding. — Use to build
+  5. Note takers. — Small wins
 
-## 19 · Chat
+## 27 · Chat
 
 - **Section tag:** How to use it *· five ways*
 - **Headline:** Chat. *The daily driver.* — verdict: Use daily
 - **Mock (claude.ai · new chat):**
   - User: How do I explain this VAT position to a nervous client?
   - AI: Plainly: nothing is owed today. Three ways to say it, **calmest first…**
-  - Flag: ⚠ Near-expert, not expert. Verify anything that matters.
   - Input: Ask anything… · One keypress
 - **The rule:** Talk to it like a colleague. *Check it like a junior.*
-- **What I use:** Claude (claude.ai · the one I open first — Daily driver) · Gemini (Better with long documents, images and PDFs.)
-- **Also out there · check where the data goes:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek (China-hosted)
+- **What I use:** Claude · Gemini
+- **Also out there:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
 
-## 20 · In apps
+## 28 · In apps
 
 - **Section tag:** How to use it *· five ways*
 - **Headline:** In your apps. *Check everything.* — verdict: Sparingly
 - **Mock (creditors.xlsx · Claude for Excel):**
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
-  - Flag: ⚠ It queried 1 of 38. You answer it. The other 37 still get your eyes.
-- **The stat:** Best system tested: *12%* at fixing errors in real workbooks. 35% at whole jobs. — SpreadsheetBench 2, June 2026
-- **What I use:** Claude for Excel (Reads the whole workbook. On every paid plan. — With care) · Microsoft 365 Copilot (Edit with Copilot in Excel, if you're licensed.) · Xero + Claude (Since Xerocon, Claude can read the ledger. I let it read, not post.)
-- **Also out there:** Xero JAX (beta) · Gemini in Sheets · Intuit Assist · Sage Copilot · Notion AI
+- **The stat:** Best system tested: *12%* at fixing errors in real workbooks.
+- **What I use:** Claude for Excel · Microsoft 365 Copilot · Xero + Claude
+- **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot · Notion AI
 
-## 21 · Agents
+## 29 · Agents
 
 - **Section tag:** How to use it *· five ways*
 - **Headline:** Agents. *The last resort.* — verdict: Last resort
@@ -228,37 +273,42 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - ✗ Posted the same accrual twice
   - Halt: Paused. Needs a human. · Step 4 of 9
 - **The stat:** Given a whole job to do unwatched, the best agents *still fail most of the time.*
-- **What I use:** Claude Cowork (The one I trust most. I still keep it away from the ledger. — Watching)
+- **What I use:** Claude Cowork
 - **Also out there:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
-- **Note:** The vendors say "a human reviews it". Reviewing an agent means redoing the job. *Reviewing a tool's exceptions doesn't.*
+- **Note:** Reviewing an agent means redoing the job. *Reviewing exceptions doesn't.*
 
-## 22 · Vibe coding
+## 30 · Vibe coding
 
 - **Section tag:** How to use it *· five ways*
 - **Headline:** Vibe coding. *Where it shines.* — verdict: Use to build
 - **Mock (terminal · recon-tool · built with Claude Code):**
   - ❯ claude "build me a reconciliation tool"
-  - ✓ Built. 48 checks pass on last year's numbers.
-  - ❯ recon-tool --client acme --period Q1
-  - ✓ 214 matched · code, not AI · same answer every run
+  - ✓ Built.
+  - ❯ recon-tool --client acme
+  - ✓ 214 matched · same answer every run
   - ⚠ 3 exceptions flagged · over to you
-- **The point:** GenAI is probabilistic. Code isn't. *Test it once and it stays tested.*
-- **What I use:** Claude Code (An agent too, but nothing ships until I've read it. Built this deck. — The one) · Codex in ChatGPT (OpenAI's coder. I use it to review Claude's work.)
-- **Also out there:** Cursor · GitHub Copilot · Lovable · Replit · v0 · Bolt.new
+- **The point:** Code isn't probabilistic. *Test once, stays tested.*
+- **What I use:** Claude Code · Codex in ChatGPT
+- **Also out there:** Cursor · Lovable · Replit
 
-## 23 · The rest
+## 31 · AI note takers
 
 - **Section tag:** How to use it *· five ways*
-- **Headline:** The rest. *Small stuff that works.* — verdict: Small wins
-- **Mock (dictation + meeting notes):**
-  - Dictation: "…then next steps as bullets, and copy the VAT team" **· typed as you talk**
-  - Meeting notes · auto-drafted: Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
-  - Flag: ⚠ It met the client once. Check names and numbers.
-- **The rule:** Recording a client? *Say so, in words, every time.* A bot in the call doesn't count.
-- **What I use:** Wispr Flow (Talk instead of type, in any app. It's cloud, so not for client secrets. — Everywhere) · Fireflies (The calls I choose, summarised and actioned. Off for anything sensitive.)
-- **Also out there:** Loom AI · Granola · Otter · Fathom · superwhisper (on-device) · Teams recap
+- **Headline:** AI *note takers.* — verdict: Small wins
+- **Mock (meeting notes):** Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
+- **What I use:** Fireflies
+- **Also out there:** Loom AI · Granola · Otter · Fathom · Teams recap
 
-## 24 · Takeaways
+## 32 · Other tools
+
+- **Section tag:** How to use it *· five ways*
+- **Headline:** Other GenAI tools *I use.*
+- **Rows:**
+  1. Dictation. *Wispr Flow.*
+  2. Creating slides, like these. *Claude Code.*
+  3. Branding and brand assets. *Claude Design.*
+
+## 33 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -268,7 +318,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 25 · Thank you
+## 34 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.

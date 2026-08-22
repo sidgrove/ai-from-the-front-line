@@ -45,7 +45,7 @@
 
   --font-serif:       "Very Vogue", "Very Vogue Text", "Fraunces", Georgia, serif;
   --font-sans:        "DM Sans", ui-sans-serif, system-ui, sans-serif;
-  --font-mono:        "JetBrains Mono", ui-monospace, Menlo, monospace;
+  --font-mono:        "DM Sans", ui-sans-serif, system-ui, sans-serif; /* no typewriter fonts: Dave */
 
   --pad-x: 160px;
   --pad-y: 120px;
@@ -153,7 +153,7 @@ deck-stage { background: #0a0a0a; }
   padding: 7px 14px; border-radius: 999px;
   background: transparent;
   border: 1px solid rgba(30,30,70,0.10);
-  font-family: var(--font-mono); font-size: 13px;
+  font-family: var(--font-mono); font-size: 16px;
   color: var(--ink-500); letter-spacing: 0.12em;
   font-weight: 500;
 }
@@ -198,7 +198,7 @@ deck-stage { background: #0a0a0a; }
 }
 .slide.ink .sub { color: rgba(255,255,255,0.7); }
 .sub em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  font-family: var(--font-sans); font-style: normal; font-weight: 500;
   color: var(--periwinkle-700);
 }
 .slide.ink .sub em { color: var(--green); }
@@ -233,7 +233,7 @@ deck-stage { background: #0a0a0a; }
   letter-spacing: -0.005em;
   flex: 1;
 }
-.cover-prompt-text em { font-style: italic; font-weight: 500; color: var(--periwinkle-700); }
+.cover-prompt-text em { font-style: normal; font-weight: 500; color: var(--periwinkle-700); }
 .cover-prompt-cursor {
   display: inline-block; width: 2px; height: 22px;
   background: var(--periwinkle-700);
@@ -272,7 +272,7 @@ deck-stage { background: #0a0a0a; }
   border: 1px solid rgba(255,255,255,0.09);
   border-radius: 24px;
   padding: 40px 44px; width: 660px; flex-shrink: 0;
-  font-family: "Courier New", monospace;
+  font-family: var(--font-sans);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.07), 0 40px 80px -24px rgba(60,10,5,0.45);
 }
 .rd-banner { font-size: 13px; letter-spacing: 0.18em; color: #e8a020; text-align: center; border: 1px solid #e8a020; padding: 5px 10px; border-radius: 4px; margin-bottom: 22px; text-transform: uppercase; }
@@ -364,14 +364,14 @@ deck-stage { background: #0a0a0a; }
 }
 .wv-row {
   display: flex; align-items: center; justify-content: space-between;
-  font-family: var(--font-mono); font-size: 13.5px; letter-spacing: 0.04em;
+  font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.04em;
   color: var(--ink-500);
 }
 .wv-row .stars { font-size: 15px; letter-spacing: 0.14em; color: #1F5A52; }
 .wv-row .stars.dim { color: var(--ink-300); }
 .wv-loop {
   display: flex; align-items: center; justify-content: center; gap: 9px;
-  font-family: var(--font-mono); font-size: 13px; color: var(--ink-500);
+  font-family: var(--font-mono); font-size: 16px; color: var(--ink-500);
 }
 .wv-loop b {
   font-weight: 600; padding: 7px 14px; border-radius: 999px;
@@ -382,7 +382,65 @@ deck-stage { background: #0a0a0a; }
 .wv-track { height: 10px; border-radius: 999px; background: rgba(30,30,70,0.08); box-shadow: inset 0 1px 2px rgba(30,30,70,0.1); overflow: hidden; }
 .wv-track i { display: block; height: 100%; width: 96%; border-radius: 999px; background: linear-gradient(90deg, #C26480, #7A1E35); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 2px 8px -2px rgba(122,30,53,0.4); }
 
-/* ── 05 · The meter ─────────────────────────────────────────────── */
+/* ── 04 · Why so strong · card 3 pill ──────────────────────────── */
+.wv-pill {
+  font-weight: 600; padding: 6px 14px; border-radius: 999px;
+  background: #fff; border: 1px solid rgba(122,30,53,0.28); color: #7A1E35; letter-spacing: 0.08em;
+}
+
+/* ── 08 · An LLM · phone-keyboard autocomplete mock ─────────────── */
+.kb-kicker {
+  font-family: var(--font-mono); font-size: 16px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--ink-300); margin: 0 0 22px;
+}
+.kb-mock {
+  width: 640px; justify-self: end;
+  background: var(--paper-card); border: 1px solid rgba(255,255,255,0.9);
+  border-radius: 36px; padding: 30px 26px 24px;
+  box-shadow: var(--shadow-lift);
+  display: flex; flex-direction: column; gap: 18px;
+}
+.kb-screen { display: flex; flex-direction: column; gap: 12px; padding: 6px 6px 10px; }
+.kb-bubble {
+  font-family: var(--font-sans); font-size: 22px; line-height: 1.35; letter-spacing: -0.01em;
+  padding: 14px 20px; border-radius: 22px; max-width: 86%;
+}
+.kb-bubble.them { align-self: flex-start; background: #EEEEF3; color: var(--ink); border-bottom-left-radius: 6px; }
+.kb-bubble.me { align-self: flex-end; background: var(--periwinkle-700); color: #fff; border-bottom-right-radius: 6px; }
+.kb-caret { display: inline-block; width: 2px; height: 1em; background: currentColor; margin-left: 3px; vertical-align: -0.15em; animation: kbblink 1s steps(2, start) infinite; }
+@keyframes kbblink { to { visibility: hidden; } }
+.kb-suggest {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  padding: 8px; border-radius: 14px; background: #E9E9F1;
+}
+.kb-sug {
+  font-family: var(--font-sans); font-size: 20px; text-align: center; padding: 10px 0;
+  color: var(--ink-500); border-radius: 10px;
+}
+.kb-sug.hi { background: #fff; color: var(--ink); font-weight: 600; box-shadow: 0 1px 2px rgba(30,30,70,0.12); }
+.kb-keys { display: flex; flex-direction: column; gap: 8px; padding: 4px 0 0; }
+.kb-rowk { display: flex; justify-content: center; gap: 7px; }
+.kb-rowk i {
+  font-style: normal; font-family: var(--font-sans); font-size: 19px; color: var(--ink);
+  width: 50px; height: 48px; border-radius: 9px; background: #fff; border: 1px solid rgba(30,30,70,0.10);
+  box-shadow: 0 1px 0 rgba(30,30,70,0.18);
+  display: flex; align-items: center; justify-content: center;
+}
+.kb-rowk i.w { width: 78px; background: #E3E3EC; font-size: 15px; color: var(--ink-500); }
+.kb-rowk i.space { flex: 1; max-width: 300px; background: #fff; font-size: 15px; color: var(--ink-300); }
+.kb-foot {
+  font-family: var(--font-sans); font-size: 18px; line-height: 1.4; color: var(--ink-500);
+  margin: 6px 0 0; padding-top: 16px; border-top: 1px solid rgba(168,176,248,0.18); text-wrap: pretty;
+}
+.kb-foot em { font-style: normal; color: var(--periwinkle-700); }
+
+/* ── 11 · Not intelligent · tighter takeaway rows ──────────────── */
+.tk-rows.ni { padding: 6px 48px; }
+.tk-rows.ni .tk-row { padding: 26px 0; gap: 30px; }
+.tk-rows.ni .tk-text { font-size: 31px; }
+.tk-rows.ni .tk-num { font-size: 54px; width: 72px; }
+
+/* ── 06 · The meter ─────────────────────────────────────────────── */
 .use-card {
   background: linear-gradient(170deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.025) 100%);
   border: 1px solid rgba(168,176,248,0.20);
@@ -465,7 +523,7 @@ deck-stage { background: #0a0a0a; }
   border-color: rgba(168,176,248,0.45);
 }
 .ph-chip.out em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 600;
+  font-family: var(--font-sans); font-style: normal; font-weight: 600;
   color: var(--periwinkle-700);
 }
 .ph-arrow { font-family: var(--font-mono); font-size: 26px; color: var(--periwinkle-500); flex-shrink: 0; }
@@ -729,7 +787,7 @@ deck-stage { background: #0a0a0a; }
   color: var(--ink); margin: 0; text-wrap: pretty;
 }
 .stat-what em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  font-family: var(--font-sans); font-style: normal; font-weight: 500;
   color: var(--periwinkle-700);
 }
 .stat-src {
@@ -812,7 +870,7 @@ deck-stage { background: #0a0a0a; }
 .mv-bub.user { background: var(--ink); color: var(--paper); border-radius: 12px 12px 4px 12px; align-self: flex-end; }
 .mv-bub.ai { background: var(--periwinkle-50); border: 1px solid rgba(168,176,248,0.32); color: var(--ink); border-radius: 12px 12px 12px 4px; align-self: flex-start; }
 .mv-formula {
-  font-family: var(--font-mono); font-size: 13.5px; color: var(--periwinkle-700);
+  font-family: var(--font-mono); font-size: 16px; color: var(--periwinkle-700);
   background: #fff; border: 1px solid rgba(168,176,248,0.5); border-radius: 8px;
   padding: 8px 11px; font-weight: 600; white-space: nowrap;
 }
@@ -838,7 +896,7 @@ deck-stage { background: #0a0a0a; }
   border-color: rgba(255,255,255,0.09);
   box-shadow: inset 0 1px 0 rgba(255,255,255,0.07);
 }
-.mv-code { font-family: var(--font-mono); font-size: 14px; line-height: 1.5; white-space: nowrap; }
+.mv-code { font-family: var(--font-mono); font-size: 16px; line-height: 1.5; white-space: nowrap; }
 .mv-code.cmd { color: rgba(255,255,255,0.92); }
 .mv-code.cmd .p { color: var(--periwinkle); }
 .mv-code.ok { color: #6ad26a; }
@@ -871,7 +929,7 @@ deck-stage { background: #0a0a0a; }
   box-shadow: 0 24px 56px -24px rgba(0,0,0,0.5);
 }
 .cover-prompt.dark .cover-prompt-text { color: rgba(255,255,255,0.88); }
-.cover-prompt.dark .cover-prompt-text em { color: var(--green); font-style: italic; }
+.cover-prompt.dark .cover-prompt-text em { color: var(--green); font-style: normal; }
 .cover-prompt.dark .cover-prompt-kbd { background: var(--paper); color: var(--ink); }
 .cover-prompt.dark .cover-prompt-cursor { background: var(--green); }
 
@@ -886,8 +944,8 @@ deck-stage { background: #0a0a0a; }
 }
 .cli-titlebar { background: #15152a; padding: 14px 18px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid rgba(255,255,255,0.07); }
 .cli-dot { width: 11px; height: 11px; border-radius: 50%; }
-.cli-title { font-family: var(--font-mono); font-size: 13px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-left: 8px; }
-.cli-body { padding: 32px 32px 30px; font-family: "JetBrains Mono", "Courier New", monospace; font-size: 17px; line-height: 1.8; }
+.cli-title { font-family: var(--font-mono); font-size: 16px; color: rgba(255,255,255,0.45); letter-spacing: 0.06em; margin-left: 8px; }
+.cli-body { padding: 32px 32px 30px; font-family: var(--font-sans); font-size: 17px; line-height: 1.8; }
 .cli-line { display: block; }
 .cli-prompt { color: var(--periwinkle); }
 .cli-cmd { color: rgba(255,255,255,0.92); }
@@ -953,10 +1011,11 @@ deck-stage { background: #0a0a0a; }
 .rec-col.most .rec-row .ck { color: var(--periwinkle-700); }
 .rec-col.strong .rec-row .ck { color: var(--green); }
 .rec-row em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  font-family: var(--font-sans); font-style: normal; font-weight: 500;
   color: var(--periwinkle-700);
 }
 .rec-col.strong .rec-row em { color: var(--green); }
+.rec-warn em { font-style: normal; font-weight: 600; }
 .rec-warn {
   font-family: var(--font-sans); font-size: 19px; line-height: 1.45;
   letter-spacing: -0.005em; font-weight: 500;
@@ -997,7 +1056,7 @@ deck-stage { background: #0a0a0a; }
   color: var(--ink); margin: 0; text-wrap: pretty;
 }
 .tk-text em {
-  font-family: var(--font-sans); font-style: italic; font-weight: 500;
+  font-family: var(--font-sans); font-style: normal; font-weight: 500;
   color: var(--periwinkle-700);
 }
 .tk-emoji { margin-left: auto; font-size: 46px; line-height: 1; filter: var(--shadow-emoji); }
@@ -1008,7 +1067,7 @@ deck-stage { background: #0a0a0a; }
   color: var(--ink-500); letter-spacing: -0.012em; line-height: 1.4;
   margin: 34px 0 0; max-width: 760px;
 }
-.thanks-line em { font-family: var(--font-sans); font-style: italic; font-weight: 500; color: var(--periwinkle-700); }
+.thanks-line em { font-family: var(--font-sans); font-style: normal; font-weight: 500; color: var(--periwinkle-700); }
 .byline {
   font-family: var(--font-sans); font-size: 15px; font-weight: 500;
   color: var(--ink-500); letter-spacing: -0.005em;
@@ -1193,7 +1252,7 @@ deck-stage { background: #0a0a0a; }
   color: var(--ink-700);
 }
 .slide.cream .way-rule .rt { color: #3A2E28; }
-.way-rule .rt em { font-family: var(--font-sans); font-style: italic; font-weight: 500; }
+.way-rule .rt em { font-family: var(--font-sans); font-style: normal; font-weight: 500; }
 .way-rule.g .rl { color: var(--green-600); } .way-rule.g .rt em { color: var(--green-600); }
 .way-rule.a .rl { color: #8b5a10; }          .way-rule.a .rt em { color: #8b5a10; }
 .way-rule.r .rl { color: #A8455E; }          .way-rule.r .rt em { color: #A8455E; }
@@ -1213,7 +1272,7 @@ deck-stage { background: #0a0a0a; }
 }
 .appw-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
 .appw-title {
-  font-family: var(--font-mono); font-size: 13px; color: var(--ink-300);
+  font-family: var(--font-mono); font-size: 16px; color: var(--ink-300);
   letter-spacing: 0.08em; margin-left: 10px;
 }
 .appw-body { padding: 30px 32px; display: flex; flex-direction: column; gap: 16px; }
@@ -1310,7 +1369,7 @@ deck-stage { background: #0a0a0a; }
 .slide.ink .shot figcaption { color: rgba(255,255,255,0.5); }
 .shot.window { border-radius: 22px; overflow: hidden; gap: 0; background: #fff; border: 1px solid rgba(30,30,70,0.10); box-shadow: var(--shadow-lift); }
 .shot.window img { border-radius: 0; border: 0; box-shadow: none; }
-.shot.window figcaption { order: -1; display: flex; align-items: center; gap: 9px; padding: 14px 20px; background: #F4F4FA; border-bottom: 1px solid rgba(30,30,70,0.07); font-family: var(--font-mono); font-size: 13px; color: var(--ink-300); letter-spacing: 0.08em; }
+.shot.window figcaption { order: -1; display: flex; align-items: center; gap: 9px; padding: 14px 20px; background: #F4F4FA; border-bottom: 1px solid rgba(30,30,70,0.07); font-family: var(--font-mono); font-size: 16px; color: var(--ink-300); letter-spacing: 0.08em; }
 .shot.window figcaption::before { content: ''; width: 11px; height: 11px; border-radius: 50%; background: #ff5f57; box-shadow: 20px 0 0 #febc2e, 40px 0 0 #28c840; margin-right: 44px; flex-shrink: 0; }
 
 /* Kill all animations — this deck is presented, not played */
@@ -1320,6 +1379,19 @@ deck-stage { background: #0a0a0a; }
   animation-iteration-count: 1 !important;
   transition: none !important;
 }
+
+/* ── Readability floor: no text under ~17px on a slide (Dave) ───── */
+.lt.sm { font-size: 12px; } .lt { font-size: 16px; }
+.rcpt-foot, .rd-banner, .auto, .lol, .prob-run, .tok-pill, .mode-pill, .way-star, .mv-retired, .cover-prompt-kbd,
+.rd-verdict, .press-source, .use-tag, .use-live, .prob-run-label, .rcpt-head, .cb-input .kb, .xl-grid .h, .mv-meterlbl,
+.wv-row .stars, .prob-hdr-label, .prob-attach, .perm-sub, .mv-warn, .way-rule .rl, .ag-halt .s, .oe-hd, .byline { font-size: 17px; }
+.press-role, .wv-row span, .wv-loop b, .wv-pill, .wl-plabel, .ph-cand .pct, .tok-lbl, .tok-lbl .v, .perm-row .tag, .perm-note, .mv-bub, .mv-code,
+.oe-cap, .appw-title, .way-label, .xl-grid span, .cli-title, .cli-body, .cli-cmd, .cli-line, .rd-row, .rd-quote, .rd-btn, .why-label, .prob-delta, .cb-flag, .stat-src,
+.flow-tree .lbl, .flow-step .tag, .flow-pilot .tag { font-size: 19px; }
+.use-name, .use-value, .tok-alert, .rec-eyebrow, .cover-chips .cs, .rec-warn, .way-verdict, .cb-input .ph, .way-other, .ag-step .m, .oe-note, .kb-sug, .tok-btn, .perm-btn, .cb, .ag-step { font-size: 21px; }
+.press-name, .use-label, .ph-cand .t, .prob-user, .prob-ai, .perm-row, .kb-bubble { font-size: 23px; }
+.rd-row .auto, .rd-row .lol, .cover-chips .cs b, .cs b, .kb-rowk i.w, .kb-rowk i.space, .ph-drop-hdr span, .xl-grid span.h { font-size: 17px; }
+.mv-formula s, .mv-formula { font-size: 19px; }
 </style>
 </head>
 <body>
@@ -1335,6 +1407,7 @@ deck-stage { background: #0a0a0a; }
   <!-- ════════════════════════════════════════════════════════════════
        01 · COVER
        ════════════════════════════════════════════════════════════════ -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="oai-mark" viewBox="0 0 2406 2406"><path id="oai-petal" fill="#fff" d="M1107.3 299.1c-197.999 0-373.9 127.3-435.2 315.3L650 743.5v427.9c0 21.4 11 40.4 29.4 51.4l344.5 198.515V833.3h.1v-27.9L1372.7 604c33.715-19.52 70.44-32.857 108.47-39.828L1447.6 450.3C1361 353.5 1237.1 298.5 1107.3 299.1zm0 117.5-.6.6c79.699 0 156.3 27.5 217.6 78.4-2.5 1.2-7.4 4.3-11 6.1L952.8 709.3c-18.4 10.4-29.4 30-29.4 51.4V1248l-155.1-89.4V755.8c-.1-187.099 151.601-338.9 339-339.2z"/><use href="#oai-petal" transform="rotate(60 1203 1203)"/><use href="#oai-petal" transform="rotate(120 1203 1203)"/><use href="#oai-petal" transform="rotate(180 1203 1203)"/><use href="#oai-petal" transform="rotate(240 1203 1203)"/><use href="#oai-petal" transform="rotate(300 1203 1203)"/></symbol></svg>
   <section class="slide" data-label="Cover"
     style="background: linear-gradient(150deg, #DDDCFC 0%, #EAE8FF 40%, #F5F3FF 100%);">
 
@@ -1387,7 +1460,7 @@ deck-stage { background: #0a0a0a; }
     style="background: linear-gradient(140deg, #FDDDD0 0%, #FDE8E0 60%, #FAF0EC 100%);">
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Why the noise</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The Narrative</p><span class="page-chip"></span></div>
 
       <div class="fill split">
         <div>
@@ -1401,20 +1474,13 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <div class="rd-card">
-          <div class="rd-banner">⚠ Redundancy Notice · Confidential ⚠</div>
           <span class="rd-emoji">🚨</span>
           <div class="rd-title">Accountant<br>Detected.</div>
 
-          <div class="rd-label">Role Assessment: Complete</div>
           <div class="rd-row"><span class="ck">✓</span> Data entry <span class="auto">AUTOMATABLE</span></div>
           <div class="rd-row"><span class="ck">✓</span> Reconciliation <span class="auto">AUTOMATABLE</span></div>
           <div class="rd-row"><span class="ck">✓</span> Tax preparation <span class="auto">AUTOMATABLE</span></div>
-          <div class="rd-row"><span class="ck">✓</span> Forecasting <span class="auto">AUTOMATABLE</span></div>
-          <div class="rd-row"><span class="ck">✓</span> "But I'm good with people" <span class="lol">lol</span></div>
-          <div class="rd-verdict">Verdict: Fully. Automatable.</div>
-          <p class="rd-quote">Microsoft's AI boss says 18 months. <b>He named accounting.</b></p>
           <span class="rd-btn">I Accept My Redundancy</span>
-          <span class="rd-skip">this won't apply to me</span>
         </div>
       </div>
 
@@ -1430,7 +1496,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar" style="margin-bottom: 20px;"><p class="section-tag">Why the noise</p><span class="page-chip"></span></div>
+      <div class="topbar" style="margin-bottom: 20px;"><p class="section-tag">The Narrative</p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 52px;">
@@ -1438,7 +1504,7 @@ deck-stage { background: #0a0a0a; }
             The <em>headlines.</em>
           </h2>
           <p class="sub" style="margin-top: 20px; font-size: 27px;">
-            You've seen these. <em>You're next, apparently.</em>
+            The doomsaying, <em>in print.</em>
           </p>
         </div>
         <div class="press-grid">
@@ -1482,12 +1548,12 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Why the noise</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The Narrative</p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
       <div style="margin-bottom: 52px;">
         <h2 class="display" style="font-size: 116px;">
-          I don't buy it. So why the <em>shouting?</em>
+          So why so much <em>hype?</em>
         </h2>
       </div>
 
@@ -1499,7 +1565,7 @@ deck-stage { background: #0a0a0a; }
           </div>
           <p class="why-label">The GenAI mirage</p>
           <h3 class="why-headline">It looks great <em>from afar.</em></h3>
-          <p class="why-tagline">The demo runs itself. Day to day, it needs babysitting.</p>
+          <p class="why-tagline">Mind-blowing demo. Different reality.</p>
         </div>
 
         <div class="why-card t-amber">
@@ -1508,18 +1574,17 @@ deck-stage { background: #0a0a0a; }
           </div>
           <p class="why-label">The money</p>
           <h3 class="why-headline">The hype pays <em>their bills.</em></h3>
-          <p class="why-tagline">The labs lose billions. Big Tech has spent hundreds of billions. The story has to hold.</p>
+          <p class="why-tagline">Hundreds of billions bet. It has to be right.</p>
         </div>
 
         <div class="why-card t-rose">
           <div class="why-vis">
-            <div class="wv-row"><span>billions committed</span><span>already spent</span></div>
-            <div class="wv-track"><i></i></div>
-            <div class="wv-row"><span>undo</span><span>not found</span></div>
+            <div class="wv-row"><span>the press release says</span><span class="wv-pill">AI</span></div>
+            <div class="wv-row"><span>the accounts say</span><span>over-hired · rates</span></div>
           </div>
-          <p class="why-label">The sunk cost</p>
-          <h3 class="why-headline">They're in <em>too deep.</em></h3>
-          <p class="why-tagline">Big Tech over-hired, then over-built. "AI" is a better story than "we got it wrong".</p>
+          <p class="why-label">The tech is actually good</p>
+          <h3 class="why-headline">Good enough to <em>believe.</em></h3>
+          <p class="why-tagline">People are losing jobs. Just not to AI.</p>
         </div>
       </div>
       </div>
@@ -1529,7 +1594,56 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       05 · WHY I SAY IT'S INFLATED · THE METER
+       05 · SIDE NOTE · WHY LISTEN TO ME
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="Why listen">
+
+    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.16) 0%, transparent 70%);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
+
+    <div class="frame" style="--pad-y: 96px;">
+      <div class="topbar"><p class="section-tag">Side note</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 44px;">
+          <h2 class="display" style="font-size: 104px;">
+            Why listen to <em>me?</em>
+          </h2>
+        </div>
+
+        <div class="wl-grid">
+          <div class="wl-photos">
+            <img class="wl-photo a" src="Images/05%20Why%20listen/setup-wide.jpg" alt="Dave's studio: two monitors of Excel above a wall of Stream Decks">
+            <img class="wl-photo b" src="Images/05%20Why%20listen/setup-angle.jpg" alt="The same desk from the side: more Stream Decks than sense">
+          </div>
+
+          <div class="wl-claims">
+            <div class="wl-claim">
+              <span class="wl-num">01</span>
+              <div class="wl-ctext">
+                <h3 class="wl-ctitle">I try <em>all of it.</em></h3>
+              </div>
+            </div>
+            <div class="wl-claim">
+              <span class="wl-num">02</span>
+              <div class="wl-ctext">
+                <h3 class="wl-ctitle">If it worked, <em>I'd be doing it.</em></h3>
+              </div>
+            </div>
+            <div class="wl-permission">
+              <p class="wl-plabel">So, officially</p>
+              <p class="wl-ptext">You have permission to simplify. <em>Ignore the hype. Focus on what&nbsp;matters.</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       06 · THE NARRATIVE · THE METER
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="The meter">
 
@@ -1537,7 +1651,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.08) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Why the noise</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The Narrative</p><span class="page-chip"></span></div>
 
       <div class="fill split">
 
@@ -1546,7 +1660,7 @@ deck-stage { background: #0a0a0a; }
             If full autonomy worked,<br><em>I'd be using it.</em>
           </h2>
           <p class="sub" style="font-size: 26px; max-width: 640px;">
-            Nothing to sell you. <em>I just use it, a lot.</em>
+            Nothing to sell. <em>I just use it, a lot.</em>
           </p>
         </div>
 
@@ -1555,9 +1669,7 @@ deck-stage { background: #0a0a0a; }
             <span class="use-avatar"><img src="Images/shared/Headshot%20normal.jpg" alt="Dave"></span>
             <div class="use-who">
               <span class="use-name">Dave Sellick</span>
-              <span class="use-tag">Usage · a normal week</span>
             </div>
-            <span class="use-live">Self-reported</span>
           </div>
 
           <div class="use-rows">
@@ -1577,20 +1689,6 @@ deck-stage { background: #0a0a0a; }
             </div>
             <div class="use-row">
               <div class="use-row-top">
-                <span class="use-label">Tools I built, one key each</span>
-                <span class="use-value">60</span>
-              </div>
-              <div class="use-track"><span class="use-fill" style="width: 75%;"></span></div>
-            </div>
-            <div class="use-row">
-              <div class="use-row-top">
-                <span class="use-label">Code shipped</span>
-                <span class="use-value">daily</span>
-              </div>
-              <div class="use-track"><span class="use-fill max" style="width: 100%;"></span></div>
-            </div>
-            <div class="use-row">
-              <div class="use-row-top">
                 <span class="use-label">Fully autonomous, unreviewed</span>
                 <span class="use-value warn">0 · not worth the risk yet</span>
               </div>
@@ -1598,7 +1696,6 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
 
-          <p class="use-foot">nothing to sell · no product, course or fund · not sponsored</p>
         </div>
 
       </div>
@@ -1608,61 +1705,9 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       06 · SIDE NOTE · WHY LISTEN TO ME
+       07 · DIVIDER · SO WHAT ACTUALLY IS IT?
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Why listen">
-
-    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.16) 0%, transparent 70%);"></div>
-    <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
-
-    <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">Side note</p><span class="page-chip"></span></div>
-
-      <div class="fill center-y">
-        <div style="margin-bottom: 44px;">
-          <h2 class="display" style="font-size: 104px;">
-            Why listen to <em>me?</em>
-          </h2>
-        </div>
-
-        <div class="wl-grid">
-          <div class="wl-photos">
-            <span class="wl-tag">My desk, most days</span>
-            <img class="wl-photo a" src="Images/06%20Why%20listen/setup-wide.jpg" alt="Dave's studio: two monitors of Excel above a wall of Stream Decks">
-            <img class="wl-photo b" src="Images/06%20Why%20listen/setup-angle.jpg" alt="The same desk from the side: more Stream Decks than sense">
-          </div>
-
-          <div class="wl-claims">
-            <div class="wl-claim">
-              <span class="wl-num">01</span>
-              <div class="wl-ctext">
-                <h3 class="wl-ctitle">I try <em>all of it.</em></h3>
-                <p class="wl-cline">This is my everyday desk. I try everything early, and I bin most of it.</p>
-              </div>
-            </div>
-            <div class="wl-claim">
-              <span class="wl-num">02</span>
-              <div class="wl-ctext">
-                <h3 class="wl-ctitle">If I've stopped <em>doing it,</em></h3>
-                <p class="wl-cline">there's usually a reason. Ask me which.</p>
-              </div>
-            </div>
-            <div class="wl-permission">
-              <p class="wl-plabel">So, officially</p>
-              <p class="wl-ptext">You don't have to keep up with all of it. <em>I'll tell you what&nbsp;stuck.</em></p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       07 · DIVIDER · SO, CAN IT DELIVER?
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide ink" data-label="Can it deliver?">
+  <section class="slide ink" data-label="What is it?">
 
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
@@ -1672,7 +1717,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <h2 class="display" style="font-size: 150px;">
-          So, can it<br><em>deliver?</em>
+          So what actually<br><em>is</em> it?
         </h2>
 
         <div class="cover-prompt dark" style="margin-top: 56px;">
@@ -1680,7 +1725,7 @@ deck-stage { background: #0a0a0a; }
             <img src="Images/shared/claude-logo.svg" alt="">
           </span>
           <span class="cover-prompt-text">
-            It's everywhere. <em>Can it actually do the work?</em><span class="cover-prompt-cursor"></span>
+            Generative AI, specifically. <em>How does it actually work?</em><span class="cover-prompt-cursor"></span>
           </span>
           <span class="cover-prompt-kbd"><span class="arrow">↵</span> Return</span>
         </div>
@@ -1691,7 +1736,53 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       08 · CAN IT DELIVER · PROBABILISTIC
+       08 · THE REALITY · A VERY ADVANCED AUTOCOMPLETE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="An LLM">
+
+    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.16) 0%, transparent 70%);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill split">
+
+        <div>
+          <h2 class="display" style="font-size: 104px; margin-bottom: 36px;">
+            Transformer-based<br><em>LLMs.</em>
+          </h2>
+          <p class="sub" style="font-size: 26px; max-width: 640px;">
+            A very advanced autocomplete. <em>Prediction, not understanding.</em>
+          </p>
+        </div>
+
+        <div class="kb-mock">
+          <div class="kb-screen">
+            <div class="kb-bubble them">Can you send over the Q1 figures before Friday?</div>
+            <div class="kb-bubble me">Sure, I'll send the<span class="kb-caret"></span></div>
+          </div>
+          <div class="kb-suggest">
+            <span class="kb-sug">file</span>
+            <span class="kb-sug hi">figures</span>
+            <span class="kb-sug">invoice</span>
+          </div>
+          <div class="kb-keys">
+            <div class="kb-rowk"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i></div>
+            <div class="kb-rowk"><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i></div>
+            <div class="kb-rowk"><i class="w">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i>m</i><i class="w">⌫</i></div>
+            <div class="kb-rowk"><i class="w">123</i><i class="space">space</i><i class="w">return</i></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       09 · THE REALITY · PROBABILISTIC
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Probabilistic">
 
@@ -1699,7 +1790,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Can it deliver</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <div style="margin-bottom: 90px;">
@@ -1718,11 +1809,9 @@ deck-stage { background: #0a0a0a; }
           <span class="ph-out-wrap">
             <span class="ph-chip out">a <em>plausible</em> next token</span>
             <span class="ph-drop">
-              <span class="ph-drop-hdr"><span>Candidates</span><span>p(next)</span></span>
               <span class="ph-cand win"><span class="t">cashflow</span><span class="bar"><i style="width: 34%;"></i></span><span class="pct">34%</span></span>
               <span class="ph-cand"><span class="t">the VAT return</span><span class="bar"><i style="width: 22%;"></i></span><span class="pct">22%</span></span>
               <span class="ph-cand"><span class="t">a holiday</span><span class="bar"><i style="width: 2%;"></i></span><span class="pct">1.8%</span></span>
-              <span class="ph-drop-foot">Ranked by plausibility. Nothing is checked.</span>
             </span>
           </span>
         </div>
@@ -1732,7 +1821,7 @@ deck-stage { background: #0a0a0a; }
              hole: the two read as one row. -->
         <div style="width: 100%; display: flex; margin-top: 78px; margin-bottom: 120px;">
           <p class="sub" style="font-size: 32px; text-align: left; max-width: 900px;">
-            An extremely smart autocomplete. <em>Confidently probably correct.</em>
+            Confidently, <em>probably</em> correct.
           </p>
         </div>
       </div>
@@ -1742,7 +1831,28 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       08 · TWO ANSWERS
+       10 · BEAT · SO WHY IS THAT A PROBLEM?
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Why a problem?">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 124px;">
+          OK, so why is that a problem,<br><em>particularly in accounting?</em>
+        </h2>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       11 · TWO ANSWERS
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Two answers">
 
@@ -1750,7 +1860,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;right:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">Can it deliver</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <div style="margin-bottom: 56px;">
@@ -1771,10 +1881,9 @@ deck-stage { background: #0a0a0a; }
               <span class="prob-run a">Run A</span>
             </div>
             <div class="prob-body">
-              <div class="prob-user">Add up this quarter's invoices for me.<span class="prob-attach">📎 acme · Q1 · 214 PDFs</span></div>
+              <div class="prob-user">Add up this quarter's invoices for me.</div>
               <div class="prob-ai">Done. 206 fall in Q1, total <em>£128,400</em>. 8 look like next quarter.</div>
             </div>
-            <div class="prob-run-label">41s</div>
           </div>
 
           <div class="prob-window">
@@ -1784,17 +1893,16 @@ deck-stage { background: #0a0a0a; }
               <span class="prob-run b">Run B</span>
             </div>
             <div class="prob-body">
-              <div class="prob-user">Add up this quarter's invoices for me.<span class="prob-attach">📎 acme · Q1 · 214 PDFs</span></div>
+              <div class="prob-user">Add up this quarter's invoices for me.</div>
               <div class="prob-ai">Done. 209 fall in Q1, total <em>£129,150</em>. 5 look like next quarter.</div>
             </div>
-            <div class="prob-run-label">38s</div>
           </div>
 
           <span class="prob-delta">£750 apart</span>
         </div>
 
         <p class="sub" style="font-size: 28px; text-align: center; margin-top: 52px;">
-          Both sound confident. <em>They can't both be right.</em>
+          It can't be relied on for <em>consistent, high-integrity output.</em>
         </p>
       </div>
 
@@ -1803,7 +1911,146 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       09 · IT CAN'T DELIVER · THE ECONOMICS
+       12 · BEAT · JUST USE IT
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Just use it">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 140px;">
+          Just <em>use</em> it.
+        </h2>
+        <p class="sub" style="margin-top: 36px; font-size: 32px;">
+          It makes mistakes, <em>all the time.</em>
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       13 · THE REALITY · IT ISN'T INTELLIGENT
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Not intelligent">
+
+    <div aria-hidden="true" style="position:absolute;right:-200px;top:-200px;width:560px;height:560px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-100px;bottom:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.08) 0%, transparent 70%);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 44px;">
+          <h2 class="display" style="font-size: 112px;">
+            It isn't <em>intelligent.</em>
+          </h2>
+          <p class="sub" style="margin-top: 20px; font-size: 27px;">
+            Pretend it is, and you'll trust it <em>too much.</em>
+          </p>
+        </div>
+
+        <div class="tk-rows ni">
+          <div class="tk-row">
+            <span class="tk-num">01</span>
+            <p class="tk-text">It won't always do what you tell it. <em>That's the maths.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">02</span>
+            <p class="tk-text">It can't check its own work. <em>It'll say it did.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">03</span>
+            <p class="tk-text">A probably-correct review of a probably-correct answer. <em>Someone has to look.</em></p>
+          </div>
+        </div>
+
+        <p class="sub" style="font-size: 24px; margin-top: 36px; margin-left: 52px;">
+          Hold that thought. <em>Act three.</em>
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       14 · THE REALITY · BUT IT'S BETTER THAN A HUMAN?
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="Better than a human?">
+
+    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.16) 0%, transparent 70%);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
+
+    <div class="frame" style="--pad-y: 96px;">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 36px;">
+          <h2 class="display" style="font-size: 104px;">
+            "But it's better than <em>a human."</em>
+          </h2>
+          <p class="sub" style="margin-top: 18px; font-size: 30px;">
+            Maybe. <em>But it's different.</em>
+          </p>
+        </div>
+
+        <div class="tk-rows ni">
+          <div class="tk-row">
+            <span class="tk-num">01</span>
+            <p class="tk-text">Unpredictable, <em>unlike a person.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">02</span>
+            <p class="tk-text">Confident <em>either way.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">03</span>
+            <p class="tk-text">Hides its errors <em>well.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">04</span>
+            <p class="tk-text">Replacing tools <em>that already work.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">05</span>
+            <p class="tk-text">Not better than a human <em>using it properly.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       15 · BEAT · AND ADDED TO THAT
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Added to that">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 140px;">
+          And <em>added</em> to that…
+        </h2>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       16 · THE REALITY · THE ECONOMICS
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="The economics">
 
@@ -1811,7 +2058,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(232,160,32,0.10) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Can it deliver</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill split">
         <div>
@@ -1819,7 +2066,7 @@ deck-stage { background: #0a0a0a; }
             Sold below<br><em>cost.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 700px;">
-            The heavy seats are subsidised, mine included. To claw it back they don't raise the price. <em>They shrink the limit.</em>
+            Heavy seats are subsidised. They don't raise the price. <em>They shrink the limit.</em>
           </p>
         </div>
 
@@ -1830,7 +2077,6 @@ deck-stage { background: #0a0a0a; }
           <div class="rcpt-row"><span class="lbl">Who covers the gap</span><span class="dots"></span><span class="val warn">investors, for now</span></div>
           <div class="rcpt-row"><span class="lbl">How they get it back</span><span class="dots"></span><span class="val warn">shrink the limit</span></div>
           <div class="rcpt-bar"></div>
-          <p class="rcpt-foot">valid until: they need it back</p>
         </div>
       </div>
 
@@ -1839,7 +2085,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       10 · IT CAN'T DELIVER · THE ENVIRONMENT
+       17 · THE REALITY · THE ENVIRONMENT
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="The environment">
 
@@ -1847,7 +2093,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.14) 0%, transparent 70%);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">Can it deliver</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <h2 class="display" style="font-size: 116px; margin-bottom: 48px;">
@@ -1858,12 +2104,10 @@ deck-stage { background: #0a0a0a; }
           <div class="env-card">
             <p class="stat-num"><em>×2</em></p>
             <p class="stat-what">Data-centre electricity by 2030. <em>AI is the main reason.</em></p>
-            <p class="stat-src">IEA, Energy and AI (2025): 415 TWh in 2024, ~945 TWh in 2030.</p>
           </div>
           <div class="env-card">
             <p class="stat-num"><em>+37%</em></p>
-            <p class="stat-what">Google's electricity use, in one year. Their words: <em>"accelerating faster than the grid is decarbonizing".</em></p>
-            <p class="stat-src">Google 2026 Environmental Report: electricity demand up 37% in 2025.</p>
+            <p class="stat-what">Google's electricity use, in one year. <em>"Faster than the grid is decarbonizing."</em></p>
           </div>
         </div>
       </div>
@@ -1873,7 +2117,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       11 · SO HOW SHOULD WE USE IT?
+       18 · SO HOW SHOULD WE USE IT?
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="How to use it">
 
@@ -1904,7 +2148,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       12 · THEIR ANSWER · THE ASBESTOS ERA
+       19 · THEIR ANSWER · THE ASBESTOS ERA
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="Asbestos era"
     style="background: linear-gradient(155deg, #14152F 0%, #1E1E46 55%, #2B2D5E 100%);">
@@ -1917,11 +2161,12 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">How to use it <em>· the pitch</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
+        <p class="sub" style="font-size: 34px; margin-bottom: 28px; color: rgba(255,255,255,0.78);">Well… let's start with <em style="color:#f0b25c;">what everyone's selling right now.</em></p>
         <h2 class="display" style="font-size: 170px; margin-bottom: 48px;">
           The <span style="text-decoration: line-through; text-decoration-thickness: 0.07em; text-decoration-color: rgba(240,178,92,0.9); color: rgba(255,255,255,0.45);">agentic</span><br><em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">asbestos</em> era.
         </h2>
         <p class="sub" style="font-size: 32px;">
-          We're embedding it everywhere today. <em style="color:#f0b25c;">We'll spend years ripping it out.</em>
+          Embedded everywhere today. <em style="color:#f0b25c;">Years ripping it out.</em>
         </p>
       </div>
 
@@ -1930,7 +2175,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       13 · HOOKED BY DESIGN
+       20 · HOOKED BY DESIGN
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Hooked">
 
@@ -1966,10 +2211,8 @@ deck-stage { background: #0a0a0a; }
             <div class="tok-track"><span class="tok-fill low" style="width: 4%;"></span></div>
           </div>
 
-          <div class="tok-alert">⚠ Out of tokens. Your close is paused at 82%.</div>
 
           <span class="tok-btn">Top up · £299</span>
-          <span class="tok-fine">Topping up switches on auto-top-up · pricing subject to change</span>
         </div>
       </div>
 
@@ -1978,7 +2221,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       14 · AND IT DOESN'T WORK · PRE-AUTHORISED MISTAKES
+       21 · AND IT DOESN'T WORK · PRE-AUTHORISED MISTAKES
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="Pre-authorised mistakes">
 
@@ -2007,15 +2250,13 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="perm-rows">
-            <div class="perm-row"><span class="ck">✓</span> Fetch the invoices <span class="tag">Its plan, each run</span></div>
-            <div class="perm-row"><span class="ck" style="color: var(--amber);">~</span> Match &amp; reconcile <span class="tag" style="color: var(--amber); font-weight: 600;">Its call, each run</span></div>
-            <div class="perm-row"><span class="ck">✓</span> Post the journals <span class="tag">Live, no undo</span></div>
-            <div class="perm-row prob"><span class="ck">~</span> Decide it's all correct <span class="tag">Marks its own work</span></div>
+            <div class="perm-row"><span class="ck">✓</span> Fetch the invoices</div>
+            <div class="perm-row"><span class="ck" style="color: var(--amber);">~</span> Match &amp; reconcile</div>
+            <div class="perm-row"><span class="ck">✓</span> Post the journals</div>
+            <div class="perm-row prob"><span class="ck">~</span> Decide it's all correct</div>
           </div>
-          <p class="perm-note">By continuing, you accept <b>mistakes that haven't happened yet.</b></p>
           <div class="perm-actions">
             <span class="perm-btn">Approve future mistakes</span>
-            <span class="perm-skip">review it yourself instead (slower)</span>
           </div>
         </div>
       </div>
@@ -2025,7 +2266,61 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       15 · MY ANSWER · A COPILOT, NEVER THE PILOT
+       22 · THE PITCH · IT'S TOXIC
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="It's toxic" style="background: radial-gradient(ellipse at 50% 40%, #2a1f3d 0%, #0F1030 70%);">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(240,178,92,0.10);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">How to use it <em>· the pitch</em></p><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 190px;">
+          It's <em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">toxic.</em>
+        </h2>
+        <p class="sub" style="margin-top: 36px; font-size: 34px;">
+          It'll need ripping out, at huge cost. <em style="color:#f0b25c;">Like asbestos.</em>
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       23 · DIVIDER · SO WHAT'S A BETTER APPROACH?
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Better approach">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+
+    <div class="frame">
+      <div class="topbar"><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 150px;">
+          So what's a<br><em>better</em> approach?
+        </h2>
+
+        <div class="cover-prompt dark" style="margin-top: 56px;">
+          <span class="cover-prompt-icon">
+            <img src="Images/shared/claude-logo.svg" alt="">
+          </span>
+          <span class="cover-prompt-text">
+            In my opinion, <em>anyway.</em><span class="cover-prompt-cursor"></span>
+          </span>
+          <span class="cover-prompt-kbd"><span class="arrow">↵</span> Return</span>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       24 · MY ANSWER · A COPILOT, NEVER THE PILOT
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Copilot, never the pilot" style="background: linear-gradient(160deg, #FAFAF7 0%, #F1F0EA 100%);">
 
@@ -2040,7 +2335,7 @@ deck-stage { background: #0a0a0a; }
           A copilot. <em>Never the pilot.</em>
         </h2>
         <p class="sub" style="margin-top: 24px; font-size: 28px;">
-          Don't put it in the process. <em>Have it write the tools that run the process.</em> Code does the same thing every run.
+          Don't put it in the process. <em>Have it write the tools that run the process.</em>
         </p>
 
         <div class="flow">
@@ -2052,8 +2347,6 @@ deck-stage { background: #0a0a0a; }
 
           <div class="flow-tree">
             <i class="stem"></i><i class="bar"></i><i class="drop a"></i><i class="drop b"></i>
-            <span class="lbl a">writes the code, once</span>
-            <span class="lbl b">drafts and flags</span>
           </div>
 
           <div class="flow-row">
@@ -2085,7 +2378,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       16 · WHAT I ACTUALLY RECOMMEND
+       25 · WHAT I ACTUALLY RECOMMEND
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="Recommend">
 
@@ -2114,23 +2407,17 @@ deck-stage { background: #0a0a0a; }
             <div class="rec-row"><span class="ck">✓</span><span>Put it <em>one keypress</em> away.</span></div>
           </div>
 
-          <p class="rec-warn">
-            Client data? Only on a work plan with a data agreement. Personal plans train by default, and a toggle isn't a contract.
-          </p>
         </div>
 
         <div class="rec-col strong">
           <span class="rec-emoji">🏗️</span>
-          <p class="rec-eyebrow">If you build things, or pay someone who does</p>
+          <p class="rec-eyebrow">If you build, or pay someone who does</p>
           <h3 class="rec-headline">Build with <em>Code.</em></h3>
           <div class="rec-rows">
             <div class="rec-row"><span class="ck">✓</span><span>Build with Claude Code, <em>daily.</em></span></div>
             <div class="rec-row"><span class="ck">✓</span><span><em>Deterministic</em> core. GenAI at the edges.</span></div>
             <div class="rec-row"><span class="ck">✓</span><span>A <em>human</em> signs off on anything that posts.</span></div>
           </div>
-          <p class="rec-warn">
-            Claude Cowork is where the hype is thickest right now. Use it on documents if you like. Keep it off the close.
-          </p>
         </div>
 
       </div>
@@ -2140,7 +2427,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       17 · FIVE WAYS TO USE IT
+       26 · FIVE WAYS TO USE IT
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Five ways">
 
@@ -2167,13 +2454,11 @@ deck-stage { background: #0a0a0a; }
               <h3 class="mode-name">Chat.</h3>
               <span class="mode-pill g">Use daily</span>
             </div>
-            <p class="mode-line">Ask, draft, think. You drive.</p>
           </div>
 
           <div class="mode-card">
             <div class="mode-vis">
               <span class="mv-formula"><s>=COPILOT("classify", A2)</s></span>
-              <span class="mv-retired">retired · 14 Sep 2026</span>
               <div class="mv-cells">
                 <span></span><span class="on"></span><span></span>
                 <span></span><span></span><span></span>
@@ -2183,7 +2468,6 @@ deck-stage { background: #0a0a0a; }
               <h3 class="mode-name">In your apps.</h3>
               <span class="mode-pill a">Sparingly</span>
             </div>
-            <p class="mode-line">AI inside Excel, Xero, the inbox. Check its work.</p>
           </div>
 
           <div class="mode-card">
@@ -2196,7 +2480,6 @@ deck-stage { background: #0a0a0a; }
               <h3 class="mode-name">Agents.</h3>
               <span class="mode-pill r">Last resort</span>
             </div>
-            <p class="mode-line">A whole job, unwatched. Keep it off the close.</p>
           </div>
 
           <div class="mode-card">
@@ -2208,7 +2491,6 @@ deck-stage { background: #0a0a0a; }
               <h3 class="mode-name">Vibe coding.</h3>
               <span class="mode-pill t">Use to build</span>
             </div>
-            <p class="mode-line">You describe, it codes. You test what it built.</p>
           </div>
 
           <div class="mode-card">
@@ -2219,17 +2501,15 @@ deck-stage { background: #0a0a0a; }
                   <i style="height:30%"></i><i style="height:62%"></i><i style="height:95%"></i><i style="height:48%"></i><i style="height:78%"></i><i style="height:34%"></i><i style="height:64%"></i><i style="height:88%"></i><i style="height:42%"></i><i style="height:58%"></i><i style="height:26%"></i>
                 </span>
               </div>
-              <p class="oe-cap" style="font-size:16px;">"…and copy the VAT team" <b>· typed for you</b></p>
+              <p class="oe-cap">"…and copy the VAT team" <b>· typed for you</b></p>
             </div>
             <div class="mode-title-row">
-              <h3 class="mode-name">The rest.</h3>
+              <h3 class="mode-name">Note takers.</h3>
               <span class="mode-pill p">Small wins</span>
             </div>
-            <p class="mode-line">Notetakers and dictation. Small, useful, every day.</p>
           </div>
         </div>
 
-        <p class="foot-note">Names as of August 2026. They rename faster than they ship.</p>
       </div>
 
       <div class="bottombar"></div>
@@ -2237,7 +2517,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       18 · WAY ONE · CHAT
+       27 · WAY ONE · CHAT
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Chat">
 
@@ -2266,7 +2546,6 @@ deck-stage { background: #0a0a0a; }
               <div class="appw-body">
                 <span class="cb user">How do I explain this VAT position to a nervous client?</span>
                 <span class="cb ai">Plainly: nothing is owed today. Three ways to say it, <b>calmest first…</b></span>
-                <span class="cb-flag">⚠ Near-expert, not expert. Verify anything that matters.</span>
                 <div class="cb-input">
                   <span class="ph">Ask anything…</span>
                   <span class="kb">One keypress</span>
@@ -2286,7 +2565,6 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude</h3>
-                  <p class="way-tline">claude.ai · the one I open first.</p>
                 </div>
                 <span class="way-star">Daily driver</span>
               </div>
@@ -2294,18 +2572,17 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(66,133,244,0.30);"><svg viewBox="0 0 24 24"><path d="M12 1A11.3 11.3 0 0 0 23 12A11.3 11.3 0 0 0 12 23A11.3 11.3 0 0 0 1 12A11.3 11.3 0 0 0 12 1Z" fill="#4285F4"/></svg></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Gemini</h3>
-                  <p class="way-tline">Better with long documents, images and PDFs.</p>
                 </div>
               </div>
             </div>
 
-            <p class="way-label">Also out there · check where the data goes</p>
+            <p class="way-label">Also out there</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt sm" style="color:#fff;">GPT</span></span>ChatGPT</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>ChatGPT</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Microsoft Copilot</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(32,128,141,0.30);"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#20808D" d="M22.4 7.09H20.09V0.07L12.58 6.42V0.16H11.42V6.35L4.49 0V7.09H1.6V17.49H4.49V24L11.42 17.64V23.84H12.58V17.79L19.51 23.98V17.49H22.4Z M18.93 2.56V7.09H13.58Z M5.65 2.63L10.51 7.09H5.65Z M2.76 16.33V8.25H10.61L4.49 14.36V16.33Z M5.65 21.37V14.84L11.42 9.06V16.07Z M18.35 21.4L12.58 16.25V9.06L18.35 14.84Z M21.24 16.33H19.51V14.36L13.39 8.25H21.24Z"/></svg></span>Perplexity</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFF3E8; --tile-bd:rgba(255,112,0,0.30);"><span class="lt" style="color:#FF7000;">M</span></span>Mistral</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#EAEEFF; --tile-bd:rgba(77,107,254,0.28);"><span class="lt sm" style="color:#4D6BFE;">DS</span></span>DeepSeek <span style="font-size:15px;color:var(--ink-300);">China-hosted</span></span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#EAEEFF; --tile-bd:rgba(77,107,254,0.28);"><span class="lt sm" style="color:#4D6BFE;">DS</span></span>DeepSeek</span>
             </div>
           </div>
         </div>
@@ -2316,7 +2593,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       19 · WAY TWO · IN YOUR APPS
+       28 · WAY TWO · IN YOUR APPS
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="In apps">
 
@@ -2349,12 +2626,11 @@ deck-stage { background: #0a0a0a; }
                   <span>Hosting GmbH</span><span>£220.00</span><span class="ok">RC ✓</span>
                   <span>Deel Inc</span><span>£1,240.00</span><span class="bad">20% · reverse charge?</span>
                 </div>
-                <span class="cb-flag">⚠ It queried 1 of 38. You answer it. The other 37 still get your eyes.</span>
               </div>
             </div>
             <div class="way-rule a">
               <span class="rl">The stat</span>
-              <p class="rt">Best system tested: <em>12%</em> at fixing errors in real workbooks. 35% at whole jobs.<span class="rs">SpreadsheetBench 2, June 2026</span></p>
+              <p class="rt">Best system tested: <em>12%</em> at fixing errors in real workbooks.</p>
             </div>
           </div>
 
@@ -2365,7 +2641,6 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude for Excel</h3>
-                  <p class="way-tline">Reads the whole workbook. On every paid plan.</p>
                 </div>
                 <span class="way-star">With care</span>
               </div>
@@ -2373,21 +2648,19 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Microsoft 365 Copilot</h3>
-                  <p class="way-tline">Edit with Copilot in Excel, if you're licensed.</p>
                 </div>
               </div>
               <div class="way-tool">
                 <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(19,181,234,0.35);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#13B5EA"/><path d="M7.6 7.6 L16.4 16.4 M16.4 7.6 L7.6 16.4" stroke="#fff" stroke-width="3"/></svg></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Xero + Claude</h3>
-                  <p class="way-tline">Since Xerocon, Claude can read the ledger. I let it read, not post.</p>
                 </div>
               </div>
             </div>
 
             <p class="way-label">Also out there</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(19,181,234,0.35);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#13B5EA"/><path d="M7.6 7.6 L16.4 16.4 M16.4 7.6 L7.6 16.4" stroke="#fff" stroke-width="3"/></svg></span>Xero JAX <span style="font-size:15px;color:var(--ink-300);">beta</span></span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(19,181,234,0.35);"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10.5" fill="#13B5EA"/><path d="M7.6 7.6 L16.4 16.4 M16.4 7.6 L7.6 16.4" stroke="#fff" stroke-width="3"/></svg></span>Xero JAX</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(66,133,244,0.30);"><svg viewBox="0 0 24 24"><path d="M12 1A11.3 11.3 0 0 0 23 12A11.3 11.3 0 0 0 12 23A11.3 11.3 0 0 0 1 12A11.3 11.3 0 0 0 12 1Z" fill="#4285F4"/></svg></span>Gemini in Sheets</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#E6F4E4; --tile-bd:rgba(44,160,28,0.30);"><span class="lt sm" style="color:#2CA01C;">qb</span></span>Intuit Assist</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#E5F7E6; --tile-bd:rgba(6,127,60,0.28);"><span class="lt" style="color:#067F3C;">S</span></span>Sage Copilot</span>
@@ -2402,7 +2675,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       20 · WAY THREE · AGENTS
+       29 · WAY THREE · AGENTS
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Agents">
 
@@ -2449,7 +2722,6 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude Cowork</h3>
-                  <p class="way-tline">The one I trust most. I still keep it away from the ledger.</p>
                 </div>
                 <span class="way-star">Watching</span>
               </div>
@@ -2457,7 +2729,7 @@ deck-stage { background: #0a0a0a; }
 
             <p class="way-label">Also out there</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt sm" style="color:#fff;">GPT</span></span>ChatGPT Work</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>ChatGPT Work</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(66,133,244,0.30);"><svg viewBox="0 0 24 24"><path d="M12 1A11.3 11.3 0 0 0 23 12A11.3 11.3 0 0 0 12 23A11.3 11.3 0 0 0 1 12A11.3 11.3 0 0 0 12 1Z" fill="#4285F4"/></svg></span>Gemini Spark</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Copilot agents</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt" style="color:#fff;">B</span></span>Basis</span>
@@ -2465,7 +2737,7 @@ deck-stage { background: #0a0a0a; }
 
             <div class="way-rule r" style="margin-top: 28px;">
               <span class="rl">Note</span>
-              <p class="rt" style="font-size: 23px;">The vendors say "a human reviews it". Reviewing an agent means redoing the job. <em>Reviewing a tool's exceptions doesn't.</em></p>
+              <p class="rt" style="font-size: 23px;">Reviewing an agent means redoing the job. <em>Reviewing exceptions doesn't.</em></p>
             </div>
           </div>
         </div>
@@ -2476,7 +2748,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       21 · WAY FOUR · VIBE CODING
+       30 · WAY FOUR · VIBE CODING
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide cream" data-label="Vibe coding">
 
@@ -2504,17 +2776,16 @@ deck-stage { background: #0a0a0a; }
               </div>
               <div class="cli-body" style="font-size: 16px; padding: 26px 30px 24px;">
                 <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">claude "build me a reconciliation tool"</span></span>
-                <span class="cli-line cli-out green">✓ Built. 48 checks pass on last year's numbers.</span>
-                <span class="cli-line cli-out"> </span>
-                <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">recon-tool --client acme --period Q1</span></span>
-                <span class="cli-line cli-out green">✓ 214 matched · code, not AI · same answer every run</span>
+                <span class="cli-line cli-out green">✓ Built.</span>
+                <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cmd">recon-tool --client acme</span></span>
+                <span class="cli-line cli-out green">✓ 214 matched · same answer every run</span>
                 <span class="cli-line cli-out">⚠ <span style="color:#e8a020;">3 exceptions flagged</span> · over to you</span>
                 <span class="cli-line"><span class="cli-prompt">❯ </span><span class="cli-cursor"></span></span>
               </div>
             </div>
             <div class="way-rule c">
               <span class="rl">The point</span>
-              <p class="rt">GenAI is probabilistic. Code isn't. <em>Test it once and it stays tested.</em></p>
+              <p class="rt">Code isn't probabilistic. <em>Test once, stays tested.</em></p>
             </div>
           </div>
 
@@ -2525,15 +2796,13 @@ deck-stage { background: #0a0a0a; }
                 <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude Code</h3>
-                  <p class="way-tline">An agent too, but nothing ships until I've read it. Built this deck.</p>
                 </div>
                 <span class="way-star">The one</span>
               </div>
               <div class="way-tool">
-                <span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt sm" style="color:#fff;">GPT</span></span>
+                <span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Codex in ChatGPT</h3>
-                  <p class="way-tline">OpenAI's coder. I use it to review Claude's work.</p>
                 </div>
               </div>
             </div>
@@ -2541,11 +2810,8 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">Also out there</p>
             <div class="way-others">
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.14);"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#14120B" d="M12 0L22.39 6L22.39 18L12 24L1.61 18L1.61 6Z M2.66 6.34L21.21 6.34L12 22.92L12 12.34Z"/></svg></span>Cursor</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#24292F; --tile-bd:#24292F;"><span class="lt sm" style="color:#fff;">GH</span></span>GitHub Copilot</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFF4F0; --tile-bd:rgba(243,112,47,0.32);"><svg viewBox="0 0 24 24"><path fill="#F3702F" d="M7.08 0A7.09 7.09 0 0 1 14.16 7.1V9.8h2.36A7.09 7.09 0 0 1 16.52 24H0V7.1A7.09 7.09 0 0 1 7.08 0Z"/></svg></span>Lovable</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 23 24"><defs><linearGradient id="lov-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4B73FF"/><stop offset="0.45" stop-color="#FF4FA3"/><stop offset="0.8" stop-color="#FF8A3D"/><stop offset="1" stop-color="#FFC83D"/></linearGradient></defs><path fill="url(#lov-g)" d="M6.89785 0C10.7074 0 13.7957 3.17898 13.7957 7.10046V9.79908H16.0913C19.9009 9.79908 22.9892 12.9781 22.9892 16.8995C22.9892 20.821 19.9009 24 16.0913 24H0V7.10046C0 3.17898 3.08827 0 6.89785 0Z"/></svg></span>Lovable</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FDEBDD; --tile-bd:rgba(242,98,7,0.30);"><span class="lt" style="color:#F26207;">R</span></span>Replit</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt sm" style="color:#fff;">v0</span></span>v0</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#2DA6FF; --tile-bd:#2DA6FF;"><svg viewBox="0 0 24 24"><path d="M13.2 2 L5 13.5 H10.8 L9.4 22 L19 9.8 H12.6 Z" fill="#fff"/></svg></span>Bolt.new</span>
             </div>
           </div>
         </div>
@@ -2556,9 +2822,9 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       22 · WAY FIVE · THE REST
+       31 · WAY FIVE · AI NOTE TAKERS
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="The rest">
+  <section class="slide paper-soft" data-label="AI note takers">
 
     <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.14) 0%, transparent 70%);"></div>
 
@@ -2568,7 +2834,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
           <div>
-            <h2 class="display" style="font-size: 84px;">The rest. <em>Small stuff that works.</em></h2>
+            <h2 class="display" style="font-size: 84px;">AI <em>note takers.</em></h2>
           </div>
           <span class="way-verdict p">Small wins</span>
         </div>
@@ -2580,26 +2846,12 @@ deck-stage { background: #0a0a0a; }
                 <span class="appw-dot" style="background:#ff5f57;"></span>
                 <span class="appw-dot" style="background:#febc2e;"></span>
                 <span class="appw-dot" style="background:#28c840;"></span>
-                <span class="appw-title">dictation + meeting notes</span>
+                <span class="appw-title">meeting notes</span>
               </div>
               <div class="appw-body oe-stack" style="gap: 14px;">
-                <div class="oe-row">
-                  <span class="oe-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
-                  <span class="oe-wave">
-                    <i style="height:28%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:44%"></i><i style="height:74%"></i><i style="height:32%"></i><i style="height:62%"></i><i style="height:96%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:26%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:36%"></i>
-                  </span>
-                </div>
-                <p class="oe-cap">"…then next steps as bullets, and copy the VAT team" <b>· typed as you talk</b></p>
-                <div class="oe-div"></div>
-                <p class="oe-hd">Meeting notes · auto-drafted</p>
                 <div class="oe-note"><span class="b"></span>Fees agreed: £1,850 a month from April</div>
                 <div class="oe-note"><span class="b"></span>Client sends the payroll CSV by Friday</div>
-                <span class="cb-flag">⚠ It met the client once. Check names and numbers.</span>
               </div>
-            </div>
-            <div class="way-rule p">
-              <span class="rl">The rule</span>
-              <p class="rt">Recording a client? <em>Say so, in words, every time.</em> A bot in the call doesn't count.</p>
             </div>
           </div>
 
@@ -2607,19 +2859,11 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#1A1A1A; --tile-bd:#1A1A1A;"><svg viewBox="0 0 24 24"><g stroke="#FFFFEB" stroke-width="3" stroke-linecap="round"><path d="M5 7 V17"/><path d="M9.7 10 V14"/><path d="M14.3 8.5 V15.5"/><path d="M19 7 V17"/></g></svg></span>
-                <div class="way-tbody">
-                  <h3 class="way-tname">Wispr Flow</h3>
-                  <p class="way-tline">Talk instead of type, in any app. It's cloud, so not for client secrets.</p>
-                </div>
-                <span class="way-star">Everywhere</span>
-              </div>
-              <div class="way-tool">
                 <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(155,74,176,0.30);"><svg viewBox="0 0 24 24"><defs><linearGradient id="ffg" x1="1" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#E82A73"/><stop offset="0.5" stop-color="#9B4AB0"/><stop offset="1" stop-color="#3B73FF"/></linearGradient></defs><g fill="url(#ffg)"><rect x="2.5" y="2.5" width="6" height="6"/><path d="M11 2.5 H17.5 A4 4 0 0 1 21.5 6.5 V8.5 H11 Z"/><rect x="11" y="11" width="6" height="6"/><path d="M2.5 11 H8.5 V21.5 H6.5 A4 4 0 0 1 2.5 17.5 Z"/></g></svg></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Fireflies</h3>
-                  <p class="way-tline">The calls I choose, summarised and actioned. Off for anything sensitive.</p>
                 </div>
+                <span class="way-star">Selected calls</span>
               </div>
             </div>
 
@@ -2629,7 +2873,6 @@ deck-stage { background: #0a0a0a; }
               <span class="way-other"><span class="app-tile" style="--tile-bg:#EFF3D6; --tile-bd:rgba(178,194,72,0.45);"><span class="lt" style="color:#5F6E10;">G</span></span>Granola</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#E3F0FF; --tile-bd:rgba(0,122,255,0.28);"><span class="lt" style="color:#007AFF;">O</span></span>Otter</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#E0F6FF; --tile-bd:rgba(0,146,200,0.30);"><span class="lt" style="color:#0092C8;">F</span></span>Fathom</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#EFEFEF; --tile-bd:rgba(30,30,70,0.12);"><span class="lt sm" style="color:#1E1E46;">SW</span></span>superwhisper <span style="font-size:15px;color:var(--ink-300);">on-device</span></span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#EDEDFA; --tile-bd:rgba(98,100,167,0.30);"><span class="lt" style="color:#6264A7;">T</span></span>Teams recap</span>
             </div>
           </div>
@@ -2641,7 +2884,45 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       23 · KEY TAKEAWAYS
+       32 · OTHER GENAI TOOLS I USE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="Other tools">
+
+    <div aria-hidden="true" style="position:absolute;right:-180px;top:-180px;width:540px;height:540px;border-radius:50%;background:radial-gradient(circle, rgba(168,176,248,0.16) 0%, transparent 70%);"></div>
+    <div aria-hidden="true" style="position:absolute;left:-170px;bottom:-170px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle, rgba(208,248,176,0.13) 0%, transparent 70%);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">How to use it <em>· five ways</em></p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 44px;">
+          <h2 class="display" style="font-size: 104px;">
+            Other GenAI tools <em>I use.</em>
+          </h2>
+        </div>
+
+        <div class="tk-rows ni">
+          <div class="tk-row">
+            <span class="tk-num">01</span>
+            <p class="tk-text">Dictation. <em>Wispr Flow.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">02</span>
+            <p class="tk-text">Creating slides, like these. <em>Claude Code.</em></p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-num">03</span>
+            <p class="tk-text">Branding and brand assets. <em>Claude Design.</em></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       33 · KEY TAKEAWAYS
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Takeaways">
 
@@ -2676,7 +2957,7 @@ deck-stage { background: #0a0a0a; }
           </div>
         </div>
 
-        <p class="sub" style="font-size: 24px; margin-top: 40px; margin-left: 52px; font-style: italic; color: var(--ink-500);">
+        <p class="sub" style="font-size: 24px; margin-top: 40px; margin-left: 52px; color: var(--ink-500);">
           Or at least, that's what I think.
         </p>
       </div>
@@ -2686,7 +2967,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       25 · THANK YOU
+       34 · THANK YOU
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Thank you"
     style="background: linear-gradient(150deg, #DDDCFC 0%, #EAE8FF 40%, #F5F3FF 100%);">
@@ -2747,7 +3028,7 @@ deck-stage { background: #0a0a0a; }
 
   <section class="slide" data-label="Screenshot">
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar"><p class="section-tag">Why the noise</p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">The Narrative</p><span class="page-chip"></span></div>
 
       LAYOUT A · headline over a full-width screenshot
       <div style="margin-bottom: 40px;">
@@ -2802,24 +3083,33 @@ deck-stage { background: #0a0a0a; }
      ════════════════════════════════════════════════════════════════════ -->
 <script type="application/json" id="speaker-notes">
 [
-  { "say": ["Three questions, in order: why the noise, can it deliver, how to use it.", "Nothing to sell. I use it all day. That is the whole credential."] },
+  { "say": ["Three acts, in order: the narrative, the reality, how to use it.", "Nothing to sell. I use it all day. That is the whole credential."] },
   { "say": ["Cold open. Let the room laugh at the card first.", "The 18 months line is Suleyman's; he named accounting."],
     "src": ["Fortune, 13 Feb 2026: Suleyman told the FT most tasks that involve sitting at a computer will be fully automated within a year or 18 months; named accounting, legal, marketing, project management."] },
   { "say": ["Same message from a founder, a vendor CEO and the trade press. That is not three data points; it is one story told three ways."],
     "src": ["Telegraph (Blomfield, Apr 2026); Fortune (Suleyman, 13 Feb 2026); TheStreet (Noah Weidner, 24 Apr 2026)."],
     "ask": "Yes the Big Four intake cuts are real (KPMG, Deloitte, EY, PwC 2025). My point is who gets the blame, not whether cuts happened." },
-  { "say": ["Three reasons the story is loud: the demo gap, the money, the sunk cost.", "'Big Tech' here means the hyperscalers' layoffs, not the firms in this room."],
+  { "say": ["Three reasons the story is loud: the demo gap, the money, and the tech being good enough to make it believable. People are losing jobs; the cause is over-hiring and rates, and AI is the convenient headline.", "'Big Tech' here means the hyperscalers' layoffs, not the firms in this room."],
     "src": ["OpenAI's reported losses and inference bill (tens of billions); hyperscaler capex 2025-26 in the hundreds of billions per year; MIT NANDA 2025 on pilots not paying back."],
     "ask": "Microsoft is profitable, yes. It still has hundreds of billions of data centres to fill, so it needs the story as much as the labs do." },
+  { "say": ["Side note, thirty seconds. This is my actual desk. I try everything early and bin most of it.", "If I am not doing something, you probably do not need to either; there is usually a reason, ask me.", "Permission slip: simplify, ignore the hype, focus on what matters."],
+    "ask": "'A one-man band telling a big firm what to do?' I am telling you what stuck at a desk that tries all of it. Discount accordingly." },
   { "say": ["This is self-reported, and it is my week: frontier models most of the day, weekly Max limit, sixty one-key tools, code shipped daily, zero unattended runs.", "The zero is not a preference. Nothing has earned it yet."],
     "ask": "'You use it 12 hours a day and call it inflated?' I use it more than anyone you will meet this week, which is how I know where it stops." },
-  { "say": ["Side note, thirty seconds. This is my actual desk. I try everything early and bin most of it.", "If I have stopped doing something there is usually a reason; ask me."],
-    "ask": "'A one-man band telling a big firm what to do?' I am telling you what stuck at a desk that tries all of it. Discount accordingly." },
-  { "say": ["Act two. Can it actually do the work? Three reasons I do not think so, then a fourth about the planet."] },
+  { "say": ["Act two. Before we ask whether it can do the work: what actually is it? Generative AI specifically, and how it works. Then what that means for accuracy, cost and the planet."] },
+  { "say": ["Transformer-based large language models. Strip the branding away and it is autocomplete: the same trick as the predictive strip on your phone, trained on most of the written internet.", "Pattern recognition, not understanding. It has no model of your client, your ledger or the law; it has a very good sense of what text usually comes next."],
+    "ask": "'Reasoning models think before they answer.' They generate more tokens before the final ones. Same mechanism, longer run; better results on many tasks, still no checker." },
   { "say": ["Prompt to tokens to a probability over the next token. The dropdown is the whole story: a ranking by plausibility, nothing checked.", "'Turn the randomness off and it is the same guess every run. Still a guess.'"],
     "ask": "Temperature zero: yes, that removes the sampling. It does not add a checker. The output is still the most plausible continuation, not a verified fact. OpenAI's own Sept 2025 hallucination paper: benchmarks reward guessing over abstaining." },
-  { "say": ["Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure."],
+  { "say": ["Beat. A plausible next token sounds harmless. Here is what it looks like on a real job."] },
+  { "say": ["Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure. The point is not which total is right; it is that you cannot rely on it for consistent, high-integrity output."],
     "ask": "'Your deployment runs the sums in code.' Mine too. The variance is in the judgement, and every close is full of judgement." },
+  { "say": ["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."] },
+  { "say": ["Three consequences. It will not do what you tell it every time; that is the maths, not a bug a guardrail fixes. It cannot verify its own output and will say it is right regardless. And a review of its work is a probably-correct review of a probably-correct answer.", "So a human looks at anything it produced on its own. Hold that thought; act three is built on it."],
+    "ask": "'Isn't this just the hallucination problem they are fixing?' Rates fall, the mechanism stays. OpenAI's own Sept 2025 paper: the training and the benchmarks reward a confident guess over an abstention." },
+  { "say": ["The objection: humans make mistakes too. Maybe it is better; it is certainly different. It fails in ways a person would not, it is confident either way, and it is very good at making a wrong answer look finished.", "It is being pushed into jobs we already have deterministic tools for. And the comparison nobody makes: it is not better than a human using GenAI the right way. That is the whole of act three."],
+    "ask": "'Your junior makes errors too.' Yes, and the errors are legible: you know where they come from and you can train them out. The model's errors are uncorrelated with difficulty and do not improve with telling it off." },
+  { "say": ["Beat. And it is not only accuracy. Two more things the pitch leaves out: what it costs, and what it burns."] },
   { "say": ["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.", "Any business case priced on today's rate is priced on a loss leader."],
     "ask": "'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed." },
   { "say": ["Two numbers, both from the source's own reports.", "Per answer it is getting cheaper (Google says a median Gemini prompt is about a quarter of a watt-hour). The total is what doubles."],
@@ -2830,6 +3120,8 @@ deck-stage { background: #0a0a0a; }
     "src": ["Cursor and others repriced heavy use in 2025; Anthropic introduced weekly caps on Max in 2025 because flat-rate heavy users were loss-making."] },
   { "say": ["Read the rows: it plans the steps its own way each run, matches on its own call each run, posts live with no undo, then decides its own work is correct.", "The button is the point: you are approving mistakes that have not happened yet."],
     "ask": "'You just described an audit: nobody reviews every output.' Right, and an auditor's name goes on it. Nobody's name is on the agent's when it is wrong." },
+  { "say": ["The pitch, summed up. Wired into the process, billed by the token, marking its own work: that is not a feature, it is a liability. It will be ripped out, slowly and expensively, like asbestos."] },
+  { "say": ["So what is a better approach? My opinion, from using it all day: the next few slides."] },
   { "say": ["My answer. Keep the model out of the process; have it write the tools that run the process. Code does the same thing every run. It drafts and flags; you take the exceptions and sign.", "This is also the vendors' own engineering guidance (Anthropic's Building effective agents, OpenAI's agent guide): simplest thing first, deterministic tools, human checkpoints."],
     "ask": "'Claude Code is an agent.' Yes. In a sandbox, on code I read before it ships. The line is not agent or not; it is can it touch live client data and is the output reviewable before it lands." },
   { "say": ["Left column for everyone: chat for thinking, Claude for Excel with your eyes on it, dictate, one keypress away. Client data only on a work plan with a contract.", "Right column if you build or pay someone who does: deterministic core, GenAI at the edges, a human signs anything that posts.", "Nobody sponsors this. I pay list price."],
@@ -2844,8 +3136,9 @@ deck-stage { background: #0a0a0a; }
     "ask": "'Cowork runs scheduled tasks unattended and Gemini Spark runs 24/7.' They do. The small print on both still says review the output." },
   { "say": ["Vibe coding is where it shines. It is an agent too, but nothing ships until I have read it. The tool it builds is code: test it once and it stays tested. Same answer every run.", "This deck was built with Claude Code."],
     "ask": "'Vibe coding means unread code.' Not here. Known inputs, known answers, checks on last year's numbers, and I read it." },
-  { "say": ["The quiet wins: dictation and notetakers. Wispr is cloud, so not for client secrets; superwhisper is the on-device one.", "Recording a client: say so in words every time; a bot in the participant list is not telling them. Know where the transcript goes."],
-    "ask": "'Consent isn't the UK GDPR test.' Agreed: lawful basis plus telling people. Saying it out loud, every time, with a policy behind it, is what keeps you on the right side. Otter and Granola both face live US class actions on recording." },
+  { "say": ["Note takers. Fireflies on the calls I choose, off for anything sensitive. Recording a client: say so in words every time; a bot in the participant list is not telling them. Know where the transcript goes."],
+    "ask": "'Consent isn't the UK GDPR test.' Agreed: lawful basis plus telling people. Saying it out loud, every time, with a policy behind it, keeps you on the right side. Otter and Granola both face live US class actions on recording." },
+  { "say": ["Other tools I actually use. Dictation: Wispr Flow in any app, talk instead of type; cloud, so not for client secrets. Slides: this deck was built with Claude Code. Branding and brand assets: Claude Design."] },
   { "say": ["Three takeaways. The work is not going away; someone has to rip the asbestos out. The narrative is hype powered by huge bets. Build with it, use it, do not let it run your accounting.", "Or at least, that is what I think."] },
   { "say": ["Thank you. Questions now or find me after."] }
 ]
@@ -2879,6 +3172,21 @@ deck-stage { background: #0a0a0a; }
   .np-body .ask { color: #F0C078; font-size: 15px; border-top: 1px solid rgba(255,255,255,0.10); padding-top: 8px; margin-top: 4px; }
   .np-body .ask b { color: #F5CE8C; font-weight: 600; }
   @media print { #notes-panel { display: none !important; } }
+.rd-row { font-size: 22px; padding: 9px 0; } .rd-row .auto { font-size: 17px; } .rd-btn { margin-top: 26px; } .rd-title { margin-bottom: 22px; }
+
+/* ── Projector pass (subtle): slightly darker card edges, hairlines and
+      pill fills so they survive a washed-out screen. Nothing else. ──── */
+.why-card, .env-card, .tk-rows, .use-card, .kb-mock, .rcpt, .tok-card, .perm-card, .appw, .mode-card, .press-card, .prob-card, .rec-col.most {
+  border: 1px solid rgba(30,30,70,0.14);
+}
+.tk-row + .tk-row, .wl-claim + .wl-claim, .way-tool + .way-tool, .way-rule { border-top-color: rgba(30,30,70,0.14); }
+.why-tagline { border-top-color: rgba(30,30,70,0.13); }
+.mode-pill.g, .way-verdict.g { background: rgba(109,168,60,0.18); }
+.mode-pill.a, .way-verdict.a { background: rgba(232,160,32,0.20); }
+.mode-pill.r, .way-verdict.r { background: rgba(168,69,94,0.16); }
+.mode-pill.t, .way-verdict.t, .way-verdict.c { background: rgba(217,119,87,0.19); }
+.mode-pill.p, .way-verdict.p { background: rgba(124,135,232,0.18); }
+.page-chip { border-color: rgba(30,30,70,0.2); }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
