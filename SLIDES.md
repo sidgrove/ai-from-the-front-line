@@ -412,7 +412,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 54 · Dictation
 
 - **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
+- **Headline:** Dictation. *Talk instead of type.*
 - **Sub:** A great way to prompt *the GenAI chat interface.*
 - **Mock (Aqua Voice · dictating):** “Summarise this thread into three bullets and draft a reply”
 - **What I use:** Aqua Voice
