@@ -58,16 +58,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Sub:** You're fine. We're in a hype bubble. *And they're already backtracking.*
 - **Image:** `Images/05 Hype bubble/reversal.png`
 
-## 06 · Why so strong
-
-- **Section tag:** The hype
-- **Headline:** So why so much *hype?*
-- **Cards:**
-  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
-  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
-  3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI. (AI" / "the accounts say — over-hired · rates · margins")
-
-## 07 · Why listen
+## 06 · Why listen
 
 - **Section tag:** Side note
 - **Headline:** Why listen to *me?*
@@ -75,6 +66,15 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   1. I try *all of it.*
   2. If it worked, *I'd be doing it.*
 - **Permission card:** So, officially — You have permission to simplify. *Ignore the hype. Focus on what matters.*
+
+## 07 · Why so strong
+
+- **Section tag:** The hype
+- **Headline:** So why so much *hype?*
+- **Cards:**
+  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
+  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
+  3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI. (AI" / "the accounts say — over-hired · rates · margins")
 
 ## 08 · The meter
 
@@ -107,7 +107,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** The reality
 - **Headline:** From quiet utility *to mass hype.*
 - **Sub:** The newest form of AI generates from scratch. *It hits awe, dopamine and fear at once.*
-- **Graphic (curve, 2000 → 2025):** Pre-2015 — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI quietly.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
+- **Graphic (curve, 2000 → 2025):** Pre-2015 — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
 
 ## 12 · Probabilistic
 
@@ -150,7 +150,6 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   1. 😎 Confident *either way.*
   2. 🎭 Hides its errors *well.*
   3. 🤝 Not better than a human *using it properly.*
-- **Sign-off:** Hold that thought. *Act three.*
 
 ## 17 · Added to that (beat)
 
@@ -178,27 +177,15 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 20 · How to use it (divider)
 
 - **Headline:** So how should we *use* it?
-- **Prompt bar:** It's brilliant. How do I use it *without handing it the keys?*
+- **Prompt bar:** And yet I use it all day. *So how, without handing it the keys?*
 
 ## 21 · Asbestos era
 
 - **Section tag:** What works *· the pitch*
 - **Lead-in:** Well… let's start with *what everyone's selling right now.*
 - **Headline:** The ~~agentic~~ *asbestos* era.
-- **Sub:** Embedded everywhere today. *Years ripping it out.*
 
-## 22 · Hooked
-
-- **Section tag:** What works *· the pitch*
-- **Headline:** They want you *hooked.*
-- **Sub:** The flat plan gets you in. *The agent bills you by the token.*
-- **Mock (⬢ AgentSuite Pro · Autopilot on):**
-  - Month-end close — 82%
-  - Tokens remaining — 41k of 3.0M
-  - Button: Top up · £299
-  - Fine print: auto-top-up on · pricing subject to change
-
-## 23 · Pre-authorised mistakes
+## 22 · Pre-authorised mistakes
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** Pre-authorised *mistakes.*
@@ -209,6 +196,17 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Post the journals
   - Decide it's all correct
   - Button: Approve future mistakes
+
+## 23 · Hooked
+
+- **Section tag:** What works *· the pitch*
+- **Headline:** They want you *hooked.*
+- **Sub:** The flat plan gets you in. *The agent bills you by the token.*
+- **Mock (⬢ AgentSuite Pro · Autopilot on):**
+  - Month-end close — 82%
+  - Tokens remaining — 41k of 3.0M
+  - Button: Top up · £299
+  - Fine print: auto-top-up on · pricing subject to change
 
 ## 24 · It's toxic
 
@@ -273,7 +271,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 33 · Daily cashflow
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
-- **Headline:** Daily cashflow. *Driven by API.*
+- **Headline:** Daily cashflow. *Straight from the bank.*
 - **Screenshot:** `Images/33 Daily cashflow/cashflow.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
 ## 34 · Bookkeeping
@@ -291,7 +289,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 36 · Management accounts
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
-- **Headline:** Management accounts. *Hosted, with notifications.*
+- **Headline:** Management accounts. *With notifications.*
 - **Screenshot:** `Images/36 Management accounts/management-accounts.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
 ## 37 · Payroll reviews
@@ -309,7 +307,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 39 · Month end
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
-- **Headline:** Month end. *One screen per posting.*
+- **Headline:** Month end. *Schedules to cover all postings.*
 - **Grid (4×2, seven thumbnails, eighth cell empty):** Accruals & prepayments (`Images/39 Month end/accruals.png`) · Deferred & accrued revenue (`accrued-income.png`) · Payroll reallocations (`payroll-realloc.png`) · Direct cost reallocations (`direct-costs.png`) · Corporation tax (`Images/40 Corporation tax/corp-tax.png`) · R&D credits (`rd.png`) · Loan notes (`cln.png`)
 
 ## 40 · Corporation tax
@@ -322,7 +320,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Your tools in. *One Slack message out.*
-- **Sub:** The app between my clients and the work. *Slack for live comms.*
+- **Sub:** The GenAI is in how it was built. *Not in what it posts.* *Slack for live comms.*
 - **Visual (from sidgrove.com):** Your tools (Xero · Excel · Sheets · Apron · Pleo · Paycircle) → Sidgrove Intelligence (synced & checked · month-end review · accruals & prepayments · building your report pack…) → Back to you (#your-finances Slack message · Management Accounts PDF · Ready)
 
 ## 42 · Slides
@@ -343,7 +341,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 44 · Brand assets
 
 - **Section tag:** 02 Build *· Brand assets*
-- **Kicker:** Built with Claude Code · 04 of 04
+- **Kicker:** Built with Claude Design · 04 of 04
 - **Headline:** Brand assets. *With Claude Design.*
 - **Line:** The Claude Code engine, *tailored for design.*
 - **Screenshot:** `Images/44 Brand assets/screenshot.png` — caption: Claude Design · brand assets
@@ -382,7 +380,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** How I use it *· 04 non-daily*
 - **Headline:** Spreadsheet add-ons. *Check everything.* — verdict: Non-daily
 - **Mock (creditors.xlsx · Claude for Excel):**
-  - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
+  - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 Reverse charge?
 - **What I use:** Claude for Excel · ChatGPT for Sheets
 
 ## 50 · MCP connections
@@ -391,16 +389,16 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** MCP connections. *Plugging it into your apps.* — verdict: Non-daily
 - **Rows:**
   1. 🔌 Xero, Slack, your inbox. *It can read them all.*
-  2. 🔑 Reading is one thing. *Writing is another.*
+  2. 🔑 I let it read. *I don’t let it post.*
   3. 🪤 Anything it reads can instruct it. *Prompt injection.*
 
 ## 51 · Claude Cowork
 
 - **Section tag:** How I use it *· 04 non-daily*
-- **Headline:** Oh, and *Cowork.* — verdict: Non-daily
+- **Headline:** Oh, and *Claude Cowork.* — verdict: Non-daily
 - **Sub:** I barely touch it.
 - **Rows:**
-  1. The product that does whole tasks, *end to end.*
+  1. The product that does whole tasks, end to end. *Probably correctly. Sometimes not.*
   2. *Niche* use cases.
   3. Lots of *hype.*
 - **Other options:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
