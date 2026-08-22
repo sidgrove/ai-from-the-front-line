@@ -236,17 +236,43 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· daily driver*
 - **Headline:** Vibe coding. *Where it shines.* — verdict: Use to build
-- **Mock (terminal · recon-tool · built with Claude Code):**
-  - ❯ claude "build me a reconciliation tool"
-  - ✓ Built.
-  - ❯ recon-tool --client acme
-  - ✓ 214 matched · same answer every run
-  - ⚠ 3 exceptions flagged · over to you
-- **The point:** Code isn't probabilistic. *Test once, stays tested.*
-- **What I use:** Claude Code · Codex in ChatGPT
-- **Also out there:** Cursor · Lovable · Replit
+- **Best uses:** Internal tools and *prototype apps.* · Slides, *like this deck.* · Simple websites, *like sidgrove.com.* · Brand assets, *with Claude Design.*
+- **Words of caution:** Nothing ships until *you've read it.* · Test it on known numbers. *Once.* · Keep it off *live client data.* · It's still an agent. *Review, then trust.*
 
-## 28 · AI note takers
+## 28 · Claude Code (divider)
+
+- **Headline:** Spotlight: *Claude Code.*
+- **Prompt bar:** What I've *actually built* with it.
+
+## 29 · Internal tools
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Internal tools and *prototype apps.*
+- **Line:** Sixty one-key tools. Code, written once, *same answer every run.*
+- **Screenshot:** `Images/29 Internal tools/screenshot.png` — caption: Claude Code · one of the tools
+
+## 30 · Slides
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Slides. *Like this deck.*
+- **Line:** Every slide you are looking at *was built in Claude Code.*
+- **Screenshot:** `Images/30 Slides/screenshot.png` — caption: Claude Code · building this deck
+
+## 31 · Websites
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Simple websites. *Like sidgrove.com.*
+- **Line:** Described, built, deployed. *No agency, no template.*
+- **Screenshot:** `Images/31 Websites/screenshot.png` — caption: sidgrove.com · built with Claude Code
+
+## 32 · Brand assets
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Brand assets. *With Claude Design.*
+- **Line:** The Claude Code engine, *tailored for design.*
+- **Screenshot:** `Images/32 Brand assets/screenshot.png` — caption: Claude Design · brand assets
+
+## 33 · AI note takers
 
 - **Section tag:** How I use it *· daily driver*
 - **Headline:** AI *note takers.* — verdict: Small wins
@@ -254,7 +280,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Fireflies
 - **Also out there:** Loom AI · Granola · Otter · Fathom · Teams recap
 
-## 29 · Other tools
+## 34 · Other tools
 
 - **Section tag:** How I use it *· daily driver*
 - **Headline:** Other GenAI tools *I use.*
@@ -263,12 +289,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. Creating slides, like these. *Claude Code.*
   3. Branding and brand assets. *Claude Design.*
 
-## 30 · With caution (beat)
+## 35 · With caution (beat)
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Sparingly, *with caution.*
 
-## 31 · Claude Cowork
+## 36 · Claude Cowork
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Claude Cowork. *With caution.* — verdict: With caution
@@ -283,7 +309,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Also out there:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 - **Note:** Reviewing an agent means redoing the job. *Reviewing exceptions doesn't.*
 
-## 32 · Spreadsheets
+## 37 · Spreadsheets
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
@@ -293,14 +319,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude for Excel · ChatGPT for Sheets · Xero + Claude
 - **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 33 · Do and don't
+## 38 · Do and don't
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 34 · Takeaways
+## 39 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -310,7 +336,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 35 · Thank you
+## 40 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
