@@ -357,13 +357,13 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 46 · 03 Small stuff (beat)
 
-- **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** *The small stuff.*
-- **Sub:** Note takers, dictation, *the everyday wins.*
+- **Section tag:** How I use it *· 03 everyday extras*
+- **Headline:** *Everyday extras.*
+- **Sub:** Note takers, dictation. *Daily, not core.*
 
 ## 47 · AI note takers
 
-- **Section tag:** How I use it *· 03 the small stuff*
+- **Section tag:** How I use it *· 03 everyday extras*
 - **Headline:** AI *note takers.*
 - **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
 - **What I use:** Loom
@@ -371,7 +371,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 48 · Dictation
 
-- **Section tag:** How I use it *· 03 the small stuff*
+- **Section tag:** How I use it *· 03 everyday extras*
 - **Headline:** Dictation. *Talk instead of type.*
 - **Sub:** A great way to prompt *the GenAI chat interface.*
 - **Mock (Aqua Voice · dictating):** “Summarise this thread into three bullets and draft a reply”
