@@ -1977,7 +1977,7 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <p class="sub" style="font-size: 28px; text-align: center; margin-top: 52px;">
-          It can't be relied on for <em>consistent, high-integrity output.</em>
+          It hallucinates by design, <em>not by mistake.</em>
         </p>
       </div>
 
@@ -2006,7 +2006,7 @@ deck-stage { background: #0a0a0a; }
         <div class="tk-rows ni">
           <div class="tk-row"><span class="tk-icon">🗣️</span><p class="tk-text">It doesn’t understand <em>what you’re asking it.</em></p></div>
           <div class="tk-row"><span class="tk-icon">🪞</span><p class="tk-text">It can’t check <em>its own work.</em></p></div>
-          <div class="tk-row"><span class="tk-icon">🔮</span><p class="tk-text">It hallucinates by design. <em>It’s not a bug.</em></p></div>
+          <div class="tk-row"><span class="tk-icon">🎲</span><p class="tk-text">It won’t always do what you tell it. <em>That’s the maths.</em></p></div>
         </div>
       </div>
 
@@ -3619,9 +3619,9 @@ deck-stage { background: #0a0a0a; }
   { "say": ["Prompt to tokens to a probability over the next token. The dropdown is the whole story: a ranking by plausibility, nothing checked.", "'Turn the randomness off and it is the same guess every run. Still a guess.'"],
     "ask": "Temperature zero: yes, that removes the sampling. It does not add a checker. The output is still the most plausible continuation, not a verified fact. OpenAI's own Sept 2025 hallucination paper: benchmarks reward guessing over abstaining." },
   { "say": ["Beat. A plausible next token sounds harmless. Here is what it looks like on a real job."] },
-  { "say": ["Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure. The point is not which total is right; it is that you cannot rely on it for consistent, high-integrity output."],
+  { "say": ["Same file, same question, two totals, 750 pounds apart. This is hallucination by design, not by mistake: it generates the most plausible next token, and when plausible and correct diverge, it cannot tell. Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure. The point is not which total is right; it is that you cannot rely on it for consistent, high-integrity output."],
     "ask": "'Your deployment runs the sums in code.' Mine too. The variance is in the judgement, and every close is full of judgement." },
-  { "say": ["It is not intelligent, in the true sense. It does not understand what you are asking it: it matches patterns in the words. It cannot check its own work: it will mark its own homework and tell you it passed. And it hallucinates by design. That is not a bug to be patched; it is what generating the most plausible next token means. When it does not know, it invents, with exactly the same confidence."] },
+  { "say": ["It is not intelligent, in the true sense. It does not understand what you are asking it: it matches patterns in the words. It cannot check its own work: it will mark its own homework and tell you it passed. And it will not always do what you tell it: that is the maths, not a bug a guardrail can fix."] },
   { "say": ["The objection: humans make mistakes too. Maybe it is better; it is certainly different. It fails in ways a person would not, it is confident either way, and it is very good at making a wrong answer look finished.", "It is being pushed into jobs we already have deterministic tools for. And the comparison nobody makes: it is not better than a human using GenAI the right way. That is the whole of act three."],
     "ask": "'Your junior makes errors too.' Yes, and the errors are legible: you know where they come from and you can train them out. The model's errors are uncorrelated with difficulty and do not improve with telling it off." },
   { "say": ["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."] },

@@ -130,14 +130,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Run A: Done. 206 fall in Q1, total *£128,400*. 8 look like next quarter.
   - Run B: Done. 209 fall in Q1, total *£129,150*. 5 look like next quarter.
   - Delta sticker: £750 apart
-- **Sub:** It can't be relied on for *consistent, high-integrity output.*
+- **Sub:** It hallucinates by design, *not by mistake.*
 
 ## 15 · Not intelligent
 
 - **Section tag:** The reality
 - **Headline:** It isn’t intelligent. *In the true sense.*
 - **Sub:** Pretend it is, and you’ll trust it too much.
-- **Rows:** 🗣️ It doesn’t understand *what you’re asking it.* · 🪞 It can’t check *its own work.* · 🔮 It hallucinates by design. *It’s not a bug.*
+- **Rows:** 🗣️ It doesn’t understand *what you’re asking it.* · 🪞 It can’t check *its own work.* · 🎲 It won’t always do what you tell it. *That’s the maths.*
 
 ## 16 · Better than a human?
 
