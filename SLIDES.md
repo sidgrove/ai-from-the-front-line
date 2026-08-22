@@ -79,8 +79,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 08 · An LLM
 
 - **Section tag:** The reality
-- **Headline:** Transformer-based *LLMs.*
-- **Sub:** A very advanced autocomplete. *Prediction, not understanding.*
+- **Headline:** Large language models *(LLMs).*
+- **Sub:** A very advanced autocomplete, *based on pattern recognition.*
 - **Mock (phone keyboard, predictive text):**
   - Them: Can you send over the Q1 figures before Friday?
   - Me (typing): Sure, I'll send the|

@@ -1729,10 +1729,10 @@ deck-stage { background: #0a0a0a; }
 
         <div>
           <h2 class="display" style="font-size: 104px; margin-bottom: 36px;">
-            Transformer-based<br><em>LLMs.</em>
+            Large language<br>models <em>(LLMs).</em>
           </h2>
           <p class="sub" style="font-size: 26px; max-width: 640px;">
-            A very advanced autocomplete. <em>Prediction, not understanding.</em>
+            A very advanced autocomplete, <em>based on pattern recognition.</em>
           </p>
         </div>
 
@@ -1775,18 +1775,28 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <div class="hc">
-          <svg class="hc-svg" viewBox="0 0 1600 560" aria-hidden="true">
-            <line x1="60" y1="500" x2="1560" y2="500" class="hc-axis"/>
-            <line x1="60" y1="500" x2="60" y2="30" class="hc-axis"/>
-            <path class="hc-line" d="M140 470 C 500 462, 860 455, 1080 420 S 1330 300, 1420 180 S 1490 70, 1510 50"/>
-            <circle class="hc-dot" cx="140" cy="470" r="7"/><circle class="hc-dot" cx="520" cy="464" r="7"/><circle class="hc-dot" cx="900" cy="452" r="7"/><circle class="hc-dot" cx="1180" cy="390" r="7"/><circle class="hc-dot" cx="1510" cy="50" r="7"/>
+          <svg class="hc-svg" viewBox="0 0 1600 620" aria-hidden="true">
+            <defs><marker id="hc-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1E1E46"/></marker></defs>
+            <path class="hc-area" d="M160 500 C 520 492, 860 480, 1080 440 S 1320 320, 1400 200 S 1470 70, 1490 45 L1490 540 L160 540 Z"/>
+            <line x1="80" y1="540" x2="1570" y2="540" class="hc-axis" marker-end="url(#hc-arrow)"/>
+            <line x1="80" y1="540" x2="80" y2="24" class="hc-axis" marker-end="url(#hc-arrow)"/>
+            <path class="hc-line" d="M160 500 C 520 492, 860 480, 1080 440 S 1320 320, 1400 200 S 1470 70, 1490 45"/>
+            <line class="hc-tick" x1="160" y1="540" x2="160" y2="556"/><line class="hc-tick" x1="1080" y1="540" x2="1080" y2="556"/><line class="hc-tick" x1="1490" y1="540" x2="1490" y2="556"/>
+            <line class="hc-link" x1="640" y1="388" x2="640" y2="488"/>
+            <line class="hc-link" x1="1080" y1="330" x2="1080" y2="440"/>
+            <line class="hc-link" x1="1400" y1="86" x2="1490" y2="45"/>
+            <circle class="hc-dot" cx="160" cy="500" r="10"/><circle class="hc-dot" cx="640" cy="488" r="10"/><circle class="hc-dot" cx="1080" cy="440" r="10"/><circle class="hc-dot" cx="1310" cy="330" r="10"/>
+            <circle class="hc-dot hc-dot-hot" cx="1490" cy="45" r="14"/>
           </svg>
           <span class="hc-ax hc-y">hype</span>
-          <span class="hc-ax hc-x0">2000</span>
-          <span class="hc-ax hc-x1">2025</span>
-          <div class="hc-card" style="left: 160px; top: 300px;"><span class="hc-when">Pre-2015</span><span class="hc-what">ML and OCR, <em>quietly improving.</em></span></div>
-          <div class="hc-card" style="left: 700px; top: 280px;"><span class="hc-when">2015</span><span class="hc-what">Cloud apps <em>embedding AI quietly.</em></span></div>
-          <div class="hc-card hc-hot" style="left: 1040px; top: 40px;"><span class="hc-when">2023</span><span class="hc-what">GenAI. <em>Text, images, video, code, from scratch.</em></span></div>
+          <span class="hc-ax" style="left: 135px; top: 562px;">2000</span>
+          <span class="hc-ax" style="left: 1052px; top: 562px;">2015</span>
+          <span class="hc-ax" style="left: 1462px; top: 562px;">2023</span>
+          <span class="hc-bang">!?</span>
+          <div class="hc-card" style="left: 430px; top: 290px;"><span class="hc-ico">🔤</span><div><span class="hc-when">Pre-2015</span><span class="hc-what">ML and OCR, <em>quietly improving.</em></span></div></div>
+          <div class="hc-card" style="left: 870px; top: 232px;"><span class="hc-ico">☁️</span><div><span class="hc-when">2015</span><span class="hc-what">Cloud apps <em>embedding AI quietly.</em></span></div></div>
+          <div class="hc-card hc-hot" style="left: 880px; top: 20px;"><span class="hc-ico">🤖</span><div><span class="hc-when">2023</span><span class="hc-what">GenAI. <em>Text, images, video, code, from scratch.</em></span></div></div>
+        </div>
         </div>
       </div>
 
@@ -3990,6 +4000,35 @@ deck-stage { background: #0a0a0a; }
 .hc-what em { font-style: normal; font-weight: 600; color: var(--periwinkle-700); }
 .hc-card.hc-hot { width: 500px; border-color: rgba(74,86,184,0.35); }
 .hc-card.hc-hot .hc-when { color: var(--periwinkle-700); }
+
+/* ── Hype curve · polish ───────────────────────────────────────── */
+.hc-area { fill: rgba(124,135,232,0.10); }
+.hc-line { stroke-width: 6; }
+.hc-dot { stroke-width: 4; }
+.hc-dot-hot { fill: var(--periwinkle-700); }
+.hc-ax { font-family: var(--font-serif); font-size: 26px; font-weight: 400; color: var(--ink); }
+.hc-y { left: 84px; top: 2px; }
+.hc-bang { position: absolute; right: 40px; top: -22px; font-family: var(--font-serif); font-size: 72px; line-height: 1; color: var(--periwinkle-700); }
+.hc-card { flex-direction: row; align-items: center; gap: 18px; padding: 16px 22px 16px 16px; width: 470px; }
+.hc-card > div { display: flex; flex-direction: column; gap: 2px; }
+.hc-ico { flex-shrink: 0; width: 64px; height: 64px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 32px; background: var(--periwinkle-50); border: 1px solid rgba(124,135,232,0.22); }
+.hc-card.hc-hot { width: 560px; }
+.hc-card.hc-hot .hc-ico { background: var(--periwinkle-700); border-color: var(--periwinkle-700); }
+
+/* ── Hype curve · clarity pass ─────────────────────────────────── */
+.hc { height: 620px; }
+.hc-axis { stroke-width: 4; }
+.hc-line { stroke: var(--ink); stroke-width: 8; }
+.hc-area { fill: rgba(124,135,232,0.14); }
+.hc-dot { fill: #fff; stroke: var(--ink); stroke-width: 5; }
+.hc-dot-hot { fill: var(--periwinkle-700); stroke: var(--periwinkle-700); }
+.hc-tick { stroke: var(--ink); stroke-width: 3; }
+.hc-link { stroke: var(--ink-300); stroke-width: 3; stroke-dasharray: 6 7; }
+.hc-ax { font-size: 28px; }
+.hc-y { left: 100px; top: 0; }
+.hc-bang { right: 30px; top: -30px; font-size: 84px; }
+.hc-card { width: 420px; padding: 14px 20px 14px 14px; }
+.hc-card.hc-hot { width: 520px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
