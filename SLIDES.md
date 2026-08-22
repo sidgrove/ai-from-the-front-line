@@ -393,7 +393,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** *With caution.*
-- **Sub:** Sparingly. *Spreadsheets, and Cowork.*
+- **Sub:** The ones I use sometimes. *Everything before this, I use daily.*
 
 ## 52 · Spreadsheets
 
