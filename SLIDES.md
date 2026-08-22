@@ -388,7 +388,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 04 non-daily*
 - **Headline:** Spreadsheet add-ons. *Used mindfully.* — verdict: Non-daily
-- **Image:** `Images/50 Spreadsheets/claude-for-excel.png` — Anthropic's Claude for Excel product shot (sidebar on the right)
+- **Image:** `Images/50 Spreadsheets/claude-for-excel.png` — Anthropic's Claude for Excel product shot, orange background replaced with paper (sidebar on the right)
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 Reverse charge?
 - **What I use:** Claude for Excel · ChatGPT for Sheets
 
@@ -423,7 +423,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
-- **Rows:**
+- **Cards (icon tiles):**
   1. The work isn't going away. *Someone has to rip the asbestos out.*
   2. The narrative is hype, powered by *massive financial bets.*
   3. Build with it. Use it. *Don't let it run your accounting.*
