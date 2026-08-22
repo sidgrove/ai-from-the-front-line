@@ -27,7 +27,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** The narrative
 - **Headline:** Tick *Tock.*
-- **Sub:** ...we're doomed, right?
+- **Sub:** ...AI is coming for us, right?
 - **Mock (redundancy pop-up):**
   - Title: Accountant Detected.
   - Rows: Data entry — AUTOMATABLE · Reconciliation — AUTOMATABLE · Tax preparation — AUTOMATABLE
