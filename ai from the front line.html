@@ -1559,29 +1559,21 @@ deck-stage { background: #0a0a0a; }
 
       <div class="why-grid">
         <div class="why-card t-teal">
-          <div class="why-vis">
-            <div class="wv-row"><span>the keynote demo</span><span class="stars">★★★★★</span></div>
-            <div class="wv-row"><span>tuesday, 4:45pm</span><span class="stars dim">★★☆☆☆</span></div>
-          </div>
+          <span class="tk-icon why-icon">✨</span>
           <p class="why-label">The GenAI mirage</p>
           <h3 class="why-headline">It looks great <em>from afar.</em></h3>
           <p class="why-tagline">Mind-blowing demo. Different reality.</p>
         </div>
 
         <div class="why-card t-amber">
-          <div class="why-vis">
-            <div class="wv-loop"><b>hype</b><span class="a">→</span><b>funding</b><span class="a">→</span><b>burn</b><span class="a">→</span><b>hype</b><span class="a">↻</span></div>
-          </div>
+          <span class="tk-icon why-icon">💸</span>
           <p class="why-label">The money</p>
           <h3 class="why-headline">The hype pays <em>their bills.</em></h3>
           <p class="why-tagline">Hundreds of billions bet. It has to be right.</p>
         </div>
 
         <div class="why-card t-rose">
-          <div class="why-vis">
-            <div class="wv-row"><span>the press release says</span><span class="wv-pill">AI</span></div>
-            <div class="wv-row"><span>the accounts say</span><span>over-hired · rates</span></div>
-          </div>
+          <span class="tk-icon why-icon">🧠</span>
           <p class="why-label">The tech is actually good</p>
           <h3 class="why-headline">Good enough to <em>believe.</em></h3>
           <p class="why-tagline">People are losing jobs. Just not to AI.</p>
@@ -4001,6 +3993,11 @@ deck-stage { background: #0a0a0a; }
 .vc-col .tk-row { padding: 18px 0; gap: 22px; }
 .vc-col .tk-text { font-size: 28px; }
 .vc-col .tk-icon { width: 60px; height: 60px; font-size: 30px; }
+
+.why-icon { width: 96px; height: 96px; font-size: 48px; border-radius: 26px; }
+.why-card.t-teal .why-icon { background: rgba(31,90,82,0.08); border-color: rgba(31,90,82,0.22); }
+.why-card.t-amber .why-icon { background: rgba(180,83,9,0.08); border-color: rgba(180,83,9,0.22); }
+.why-card.t-rose .why-icon { background: rgba(122,30,53,0.08); border-color: rgba(122,30,53,0.22); }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
