@@ -147,7 +147,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** The reality
 - **Headline:** Sold below *cost.*
-- **Sub:** Heavy seats are subsidised. They don't raise the price. *They shrink the limit.*
+- **Sub:** This isn't a software business. *What happens when they raise prices and cut the limits?*
 - **Cutting:** `Images/16 The economics/openai-losses.png` — caption: Leaked 2025 financials · a $38.5B loss
 
 ## 17 · Environment
