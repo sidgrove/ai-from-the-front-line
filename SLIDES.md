@@ -388,7 +388,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** Note takers *and dictation.* — verdict: Small wins
-- **Mock (meeting notes):** Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
+- **Mocks:** Fireflies · Acme catch-up · 32 min — Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday; Wispr Flow · dictating — “…then next steps as bullets, and copy the VAT team” · typed as you talk
 - **What I use:** Fireflies · Wispr Flow
 - **Others I use sparingly:** Loom AI · Granola · Otter · Fathom · Teams recap
 

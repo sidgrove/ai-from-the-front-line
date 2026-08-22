@@ -3214,16 +3214,30 @@ deck-stage { background: #0a0a0a; }
 
         <div class="way-body">
           <div>
-            <div class="appw">
-              <div class="appw-bar">
-                <span class="appw-dot" style="background:#ff5f57;"></span>
-                <span class="appw-dot" style="background:#febc2e;"></span>
-                <span class="appw-dot" style="background:#28c840;"></span>
-                <span class="appw-title">meeting notes</span>
+            <div class="nt-stack">
+              <div class="appw">
+                <div class="appw-bar">
+                  <span class="appw-dot" style="background:#ff5f57;"></span><span class="appw-dot" style="background:#febc2e;"></span><span class="appw-dot" style="background:#28c840;"></span>
+                  <span class="appw-title">Fireflies · Acme catch-up · 32 min</span>
+                </div>
+                <div class="appw-body oe-stack" style="gap: 12px;">
+                  <div class="nt-head"><span class="nt-pill">Summary ready</span><span class="nt-meta">2 action items</span></div>
+                  <div class="oe-note"><span class="b"></span>Fees agreed: £1,850 a month from April</div>
+                  <div class="oe-note"><span class="b"></span>Client sends the payroll CSV by Friday</div>
+                </div>
               </div>
-              <div class="appw-body oe-stack" style="gap: 14px;">
-                <div class="oe-note"><span class="b"></span>Fees agreed: £1,850 a month from April</div>
-                <div class="oe-note"><span class="b"></span>Client sends the payroll CSV by Friday</div>
+              <div class="appw">
+                <div class="appw-bar">
+                  <span class="appw-dot" style="background:#ff5f57;"></span><span class="appw-dot" style="background:#febc2e;"></span><span class="appw-dot" style="background:#28c840;"></span>
+                  <span class="appw-title">Wispr Flow · dictating</span>
+                </div>
+                <div class="appw-body oe-stack" style="gap: 14px;">
+                  <div class="oe-row">
+                    <span class="oe-mic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg></span>
+                    <span class="oe-wave"><i style="height:28%"></i><i style="height:55%"></i><i style="height:90%"></i><i style="height:44%"></i><i style="height:74%"></i><i style="height:32%"></i><i style="height:62%"></i><i style="height:96%"></i><i style="height:40%"></i><i style="height:70%"></i><i style="height:26%"></i><i style="height:52%"></i><i style="height:80%"></i><i style="height:36%"></i><i style="height:58%"></i><i style="height:30%"></i></span>
+                  </div>
+                  <p class="oe-cap">“…then next steps as bullets, and copy the VAT team” <b>· typed as you talk</b><span class="kb-caret"></span></p>
+                </div>
               </div>
             </div>
           </div>
@@ -4031,6 +4045,17 @@ deck-stage { background: #0a0a0a; }
 .hc-card { width: 420px; padding: 14px 20px 14px 14px; }
 .hc-card.hc-hot { width: 520px; }
 .ai-kicker { margin: 0 0 16px; font-family: var(--font-sans); font-size: 26px; font-weight: 600; color: var(--periwinkle-700); }
+
+/* ── Note takers and dictation · stacked windows ───────────────── */
+.nt-stack { display: flex; flex-direction: column; gap: 22px; }
+.nt-head { display: flex; align-items: center; gap: 14px; }
+.nt-pill { font-family: var(--font-sans); font-size: 16px; font-weight: 700; padding: 6px 12px; border-radius: 999px; background: var(--green-200); color: var(--green-600); }
+.nt-meta { font-family: var(--font-sans); font-size: 17px; color: var(--ink-500); }
+.nt-stack .oe-note { font-size: 22px; }
+.nt-stack .oe-cap { font-size: 21px; color: var(--ink); }
+.nt-stack .oe-cap b { color: var(--ink-500); font-weight: 500; }
+.nt-stack .oe-wave { height: 48px; }
+.nt-stack .oe-wave { height: 72px; gap: 6px; } .nt-stack .oe-wave i { width: 7px; } .nt-stack .oe-mic { width: 60px; height: 60px; } .nt-stack .oe-mic svg { width: 28px; height: 28px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
