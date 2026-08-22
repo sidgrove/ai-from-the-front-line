@@ -3437,7 +3437,7 @@ deck-stage { background: #0a0a0a; }
     <div class="frame">
       <div class="topbar"><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 7fr 5fr; gap: 96px; align-items: center;">
+      <div class="fill" style="display: grid; grid-template-columns: 5fr 8fr; gap: 64px; align-items: center;">
 
         <div>
           <h2 class="display" style="font-size: 200px; line-height: 0.94;">
@@ -3446,22 +3446,16 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <div class="contact-card">
-          <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 24px;">
-            <img src="Images/54%20Thank%20you/headshot.jpg" alt="Dave Sellick" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
-
-            <div>
-              <div style="font-family: var(--font-sans); font-size: 32px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
-              <div class="byline" style="margin-top: 10px;">Founder, Sidgrove</div>
+          <div class="ty-land">
+            <div class="ty-left">
+              <img src="Images/54%20Thank%20you/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
+              <div>
+                <div style="font-family: var(--font-sans); font-size: 34px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
+                <div class="byline" style="margin-top: 10px;">Founder, Sidgrove</div>
+              </div>
+              <a class="ty-follow" href="https://www.linkedin.com/in/davesellick/" aria-label="Dave Sellick on LinkedIn"> <svg viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.332 9.787v-4.71c0-2.52-.538-4.456-3.486-4.456-1.416 0-2.366.777-2.754 1.513h-.04V9.755h-2.56v8.582h2.667v-4.245c0-1.12.212-2.204 1.6-2.204 1.367 0 1.386 1.28 1.386 2.276v4.173z"/></svg> <span><b>Follow on LinkedIn</b> for more truth<small>/in/davesellick</small></span> </a>
             </div>
-
-            <div style="width: 100%; padding-top: 24px; border-top: 1px solid rgba(30,30,70,0.10); display: flex; justify-content: center;">
-              <a class="ty-follow" href="https://www.linkedin.com/in/davesellick/" aria-label="Dave Sellick on LinkedIn">
-                <svg viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.332 9.787v-4.71c0-2.52-.538-4.456-3.486-4.456-1.416 0-2.366.777-2.754 1.513h-.04V9.755h-2.56v8.582h2.667v-4.245c0-1.12.212-2.204 1.6-2.204 1.367 0 1.386 1.28 1.386 2.276v4.173z"/></svg>
-                <span><b>Follow on LinkedIn</b> for more truth<small>/in/davesellick</small></span>
-              </a>
-            </div>
-
-            <div class="qr-block">
+            <div class="qr-block land">
               <img src="Images/54%20Thank%20you/qr.png" alt="QR code: AI walkthrough recordings">
               <p>Scan for the <b>AI walkthrough recordings</b></p>
             </div>
@@ -4073,6 +4067,12 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .tw-card .tk-icon { width: 72px; height: 72px; font-size: 36px; border-radius: 20px; }
 .tw-num { font-family: var(--font-serif); font-style: italic; font-size: 40px; color: var(--periwinkle-700); }
 .tw-card .tk-text { font-size: 26px; line-height: 1.35; color: var(--ink-500); }
+/* ── Thank you: landscape card ───────────────────────────── */
+.ty-land { display: grid; grid-template-columns: 1fr auto; gap: 44px; align-items: center; }
+.ty-left { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; }
+.qr-block.land { width: auto; padding: 0 0 0 44px; border-top: 0; border-left: 1px solid rgba(30,30,70,0.10); }
+.qr-block.land img { width: 360px; height: 360px; }
+.qr-block.land p { max-width: 360px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
