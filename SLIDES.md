@@ -387,18 +387,26 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 50 · AI note takers
 
 - **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** Note takers *and dictation.* — verdict: Small wins
-- **Mocks:** Fireflies · Acme catch-up · 32 min — Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday; Wispr Flow · dictating — “…then next steps as bullets, and copy the VAT team” · typed as you talk
-- **What I use:** Fireflies · Wispr Flow
+- **Headline:** AI *note takers.* — verdict: Small wins
+- **Mock (Fireflies · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
+- **What I use:** Fireflies
 - **Others I use sparingly:** Loom AI · Granola · Otter · Fathom · Teams recap
 
-## 51 · 04 With caution (beat)
+## 51 · Dictation
+
+- **Section tag:** How I use it *· 03 the small stuff*
+- **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
+- **Mock (Wispr Flow · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
+- **What I use:** Wispr Flow
+- **Others I use sparingly:** superwhisper
+
+## 52 · 04 With caution (beat)
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** *With caution.*
 - **Sub:** The ones I use sometimes. *Everything before this, I use daily.*
 
-## 52 · Spreadsheets
+## 53 · Spreadsheets
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
@@ -408,7 +416,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude for Excel · ChatGPT for Sheets
 - **Others I use sparingly:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 53 · MCP connections
+## 54 · MCP connections
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** MCP connections. *With caution.* — verdict: With caution
@@ -418,7 +426,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. 🔑 Reading is one thing. *Writing is another.*
   3. 🪤 Anything it reads can instruct it. *Prompt injection.*
 
-## 54 · Claude Cowork
+## 55 · Claude Cowork
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** Oh, and *Cowork.* — verdict: With caution
@@ -429,14 +437,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. Lots of *hype.*
 - **Others I use sparingly:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 
-## 55 · Do and don't
+## 56 · Do and don't
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 56 · Takeaways
+## 57 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -446,7 +454,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 57 · Thank you
+## 58 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
