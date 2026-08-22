@@ -409,7 +409,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 53 · Spreadsheets
 
 - **Section tag:** How I use it *· 04 non-daily*
-- **Headline:** Spreadsheet add-ons. *Check everything.* — verdict: Sparingly
+- **Headline:** Spreadsheet add-ons. *Check everything.* — verdict: Non-daily
 - **Mock (creditors.xlsx · Claude for Excel):**
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
 - **What I use:** Claude for Excel · ChatGPT for Sheets
