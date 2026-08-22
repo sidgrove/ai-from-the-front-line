@@ -244,35 +244,73 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** Spotlight: *Claude Code.*
 - **Prompt bar:** What I've *actually built* with it.
 
-## 29 · Internal tools
+## 29 · Sidgrove Intelligence
 
 - **Section tag:** Claude Code *· spotlight*
-- **Headline:** Internal tools and *prototype apps.*
-- **Line:** Sixty one-key tools. Code, written once, *same answer every run.*
-- **Screenshot:** `Images/29 Internal tools/screenshot.png` — caption: Claude Code · one of the tools
+- **Headline:** Sidgrove *Intelligence.*
+- **Line:** The app that sits between my clients and the work. *Built with Claude Code.*
+- **Mock (app shell, Sidgrove Intelligence design tokens):** sidebar nav (Bookkeeping · Cashflow · Deadlines · **Month end** · Management accounts · Payroll · VAT) · eyebrow "Client · Acme Ltd" · title Month *end* · KPIs: Accruals 12 posted · Prepayments 8 posted · Deferred revenue £42,300 review · rows: Payroll postings (Posted) · Direct cost reallocations (Posted) · Corporation tax accrual (Needs review) · Loan postings (Scheduled)
 
-## 30 · Slides
+## 30 · What it does
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** What it *does.*
+- **Rows:**
+  1. Daily cashflow, *driven by API.*
+  2. Bookkeeping workflow *and comms.*
+  3. Deadline management and alerts, *integrated with the government platforms.*
+  4. Management accounts *hosting and notifications.*
+  5. Payroll reviews *and client review workflows.*
+  6. VAT reviews *and client review workflows.*
+
+## 31 · Month end
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Month-end schedules *and postings.*
+- **Rows:**
+  1. Accruals *and prepayments.*
+  2. Deferred *and accrued revenue.*
+  3. Payroll postings *and reallocations.*
+  4. Direct cost *reallocations.*
+  5. Corporation tax *and R&D credit accruals.*
+  6. Loan *postings.*
+
+## 32 · The hub
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** And *much more.*
+- **Sub:** The central app between my clients and the work I do.
+- **Visual:** Clients ⇄ Sidgrove Intelligence ⇄ Me — alongside *Slack* for live comms
+
+## 33 · In practice
+
+- **Section tag:** Claude Code *· spotlight*
+- **Headline:** Sidgrove Intelligence, *in practice.*
+- **Line:** One of the live screens. *Every line of it written in Claude Code.*
+- **Screenshot:** `Images/33 In practice/screenshot.png` — caption: Sidgrove Intelligence · live
+
+## 34 · Slides
 
 - **Section tag:** Claude Code *· spotlight*
 - **Headline:** Slides. *Like this deck.*
 - **Line:** Every slide you are looking at *was built in Claude Code.*
-- **Screenshot:** `Images/30 Slides/screenshot.png` — caption: Claude Code · building this deck
+- **Screenshot:** `Images/34 Slides/screenshot.png` — caption: Claude Code · building this deck
 
-## 31 · Websites
+## 35 · Websites
 
 - **Section tag:** Claude Code *· spotlight*
 - **Headline:** Simple websites. *Like sidgrove.com.*
 - **Line:** Described, built, deployed. *No agency, no template.*
-- **Screenshot:** `Images/31 Websites/screenshot.png` — caption: sidgrove.com · built with Claude Code
+- **Screenshot:** `Images/35 Websites/screenshot.png` — caption: sidgrove.com · built with Claude Code
 
-## 32 · Brand assets
+## 36 · Brand assets
 
 - **Section tag:** Claude Code *· spotlight*
 - **Headline:** Brand assets. *With Claude Design.*
 - **Line:** The Claude Code engine, *tailored for design.*
-- **Screenshot:** `Images/32 Brand assets/screenshot.png` — caption: Claude Design · brand assets
+- **Screenshot:** `Images/36 Brand assets/screenshot.png` — caption: Claude Design · brand assets
 
-## 33 · AI note takers
+## 37 · AI note takers
 
 - **Section tag:** How I use it *· daily driver*
 - **Headline:** AI *note takers.* — verdict: Small wins
@@ -280,7 +318,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Fireflies
 - **Also out there:** Loom AI · Granola · Otter · Fathom · Teams recap
 
-## 34 · Other tools
+## 38 · Other tools
 
 - **Section tag:** How I use it *· daily driver*
 - **Headline:** Other GenAI tools *I use.*
@@ -289,12 +327,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. Creating slides, like these. *Claude Code.*
   3. Branding and brand assets. *Claude Design.*
 
-## 35 · With caution (beat)
+## 39 · With caution (beat)
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Sparingly, *with caution.*
 
-## 36 · Claude Cowork
+## 40 · Claude Cowork
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Claude Cowork. *With caution.* — verdict: With caution
@@ -304,7 +342,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. *Niche* use cases.
   3. Lots of *hype.*
 
-## 37 · Spreadsheets
+## 41 · Spreadsheets
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
@@ -314,14 +352,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude for Excel · ChatGPT for Sheets · Xero + Claude
 - **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 38 · Do and don't
+## 42 · Do and don't
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 39 · Takeaways
+## 43 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -331,7 +369,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 40 · Thank you
+## 44 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
