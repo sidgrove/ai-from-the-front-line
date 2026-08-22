@@ -125,7 +125,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 14 · Two answers
 
 - **Section tag:** The reality
-- **Headline:** Same question. *Two answers.*
+- **Headline:** It’s not correct *every time.*
 - **Mock (two Claude runs, same prompt "Add up this quarter's invoices for me."):**
   - Run A: Done. 206 fall in Q1, total *£128,400*. 8 look like next quarter.
   - Run B: Done. 209 fall in Q1, total *£129,150*. 5 look like next quarter.
