@@ -192,7 +192,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 22 · How to use it (divider)
 
 - **Headline:** So how should we *use* it?
-- **Prompt bar:** And yet I use it all day. *So how, without handing it the keys?*
+- **Prompt bar:** And yet *I use it all day.*
 
 ## 23 · Asbestos era
 
