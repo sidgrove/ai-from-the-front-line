@@ -387,8 +387,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 50 · Spreadsheets
 
 - **Section tag:** How I use it *· 04 non-daily*
-- **Headline:** Spreadsheet add-ons. *Check everything.* — verdict: Non-daily
-- **Mock (creditors.xlsx · Claude for Excel):**
+- **Headline:** Spreadsheet add-ons. *Used mindfully.* — verdict: Non-daily
+- **Image:** `Images/50 Spreadsheets/claude-for-excel.png` — Anthropic's Claude for Excel product shot (sidebar on the right)
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 Reverse charge?
 - **What I use:** Claude for Excel · ChatGPT for Sheets
 
