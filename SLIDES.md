@@ -149,7 +149,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. Confident *either way.*
   3. Hides its errors *well.*
   4. Replacing tools *that already work.*
-  5. Not better than a human *using it properly.*
+  5. Not better than a human *+ GenAI used properly.*
 
 ## 17 · Just use it (beat)
 
