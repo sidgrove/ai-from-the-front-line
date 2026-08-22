@@ -3927,6 +3927,19 @@ deck-stage { background: #0a0a0a; }
 .slide::before, .slide.ink::before, .slide.peach::before, .slide.cream::before { background: none; }
 .slide::after { background: none; }
 .slide.ink::after { background: radial-gradient(ellipse at 50% 30%, transparent 60%, rgba(0,0,0,0.20) 100%); }
+
+
+/* ── Why listen: overlapping photos, claims in the right column ──── */
+.slide .wl-grid { display: block; position: relative; height: 740px; }
+.slide .wl-photos { position: static; display: block; }
+.slide .wl-photo { position: absolute; margin: 0; border: 6px solid #fff; border-radius: 22px; object-fit: cover; }
+.slide .wl-photo.a { left: 0; bottom: 0; width: 1000px; height: 620px; aspect-ratio: auto; z-index: 1; }
+.slide .wl-photo.b { right: 0; top: 0; width: 740px; height: 416px; aspect-ratio: auto; z-index: 2; box-shadow: 0 30px 70px -28px rgba(30,30,70,0.45); }
+.slide .wl-claims { position: absolute; right: 0; top: 446px; width: 560px; display: flex; flex-direction: column; gap: 0; z-index: 3; }
+.slide .wl-claim { padding: 14px 4px; }
+.slide .wl-claim + .wl-claim { border-top: 1px solid rgba(30,30,70,0.12); }
+.slide .wl-permission { margin-top: 16px; padding: 22px 26px; background: var(--ink); }
+.slide .wl-ptext { font-size: 30px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
