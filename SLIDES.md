@@ -241,11 +241,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 01 chat*
 - **Headline:** Chat. *The daily driver.* — verdict: Use daily
-- **Mock (claude.ai · new chat):**
-  - User: How do I explain this VAT position to a nervous client?
-  - AI: Plainly: nothing is owed today. Three ways to say it, **calmest first…**
-  - Input: Ask anything… · One keypress
-- **The rule:** Talk to it like a colleague. *Check it like a junior.*
+- **Screenshot:** `Images/28 Chat/claude-chat.png` — caption: claude.ai
 - **What I use:** Claude · Gemini
 - **Other options:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
 
