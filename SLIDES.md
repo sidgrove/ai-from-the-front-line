@@ -137,7 +137,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** The reality
 - **Headline:** It isn’t intelligent. *In the true sense.*
 - **Sub:** Pretend it is, and you’ll trust it too much.
-- **Rows:** 🗣️ It doesn’t understand *what you’re asking it.* · 🪞 It can’t check *its own work.* · 🎲 It won’t always do what you tell it. *That’s the maths.*
+- **Rows:** 🗣️ It doesn’t understand what you’re asking it. · 🪞 It can’t check its own work. · 🎲 It won’t always do what you tell it.
 
 ## 16 · Better than a human?
 
