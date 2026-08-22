@@ -471,5 +471,4 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 61 · Thank you
 
 - **Headline:** Thank *you.*
-- **Contact:** Dave Sellick — Founder, Sidgrove — LinkedIn /in/davesellick
-- **QR tile:** AI walkthrough recordings — Scan to watch the tools in action. (`Images/61 Thank you/qr.png`)
+- **Contact card:** Dave Sellick — Founder, Sidgrove — LinkedIn /in/davesellick — QR: Scan for the AI walkthrough recordings (`Images/61 Thank you/qr.png`)
