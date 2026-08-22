@@ -417,7 +417,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** What works *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thlighting.* · Build tools with *Claude Code.* · *Check* its work. · Make sure you *use it securely.* · Enhance and augment with tools like *AI dictation.* · Explore *spreadsheet add-ons.* · Create assets: *branding, sites and slides.*
-- **Don't — Hand it *the keys.*:** Let it *be the pilot.* · Let it run *autonomously, end to end.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
+- **Don't — Hand it *the keys.*:** Let it *be the pilot.* · Let it run *autonomously, end to end.* · Post anything *unreviewed.* · Buy the *agent pitch.*
 
 ## 54 · Takeaways
 
