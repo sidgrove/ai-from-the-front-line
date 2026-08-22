@@ -50,11 +50,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Sub:** What it could do, *versus what people actually use it for.*
 - **Image:** `Images/04 Anthropic's prediction/chart.png` — caption: Anthropic · theoretical capability vs observed usage, by occupation
 
-## 05 · Hype bubble (beat)
+## 05 · Hype bubble
 
 - **Section tag:** The narrative
 - **Headline:** But I think *they're wrong.*
-- **Sub:** You're fine. *We're in a hype bubble.*
+- **Sub:** You're fine. We're in a hype bubble. *And they're already backtracking.*
+- **Image:** `Images/05 Hype bubble/reversal.png` — caption: Already backtracking
 
 ## 06 · Why so strong
 
