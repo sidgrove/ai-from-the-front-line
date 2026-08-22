@@ -213,36 +213,16 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** How to use it *· my answer*
 - **Headline:** A copilot. *Never the pilot.*
 - **Sub:** Don't put it in the process. *Have it write the tools that run the process.*
-- **Flow:** Claude (the copilot) → → Fetch invoices (code) → Match (code) → Report (code) → You (exceptions, sign-off)
+- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Autonomous. *Marks its own work.* · ✓ The copilot — Claude → builds the tool → You sign off — Augments. *You stay in charge.*
 
-## 25 · Recommend
+## 25 · How I use it (divider)
 
-- **Section tag:** How to use it *· my answer*
-- **Headline:** What I *actually* recommend.
-- **Column 1 — 👋 For most people — Start in *chat.***
-  - Use claude.ai for *thinking.*
-  - Try Claude for Excel. *Check its work.*
-  - Talk to it. *Dictation beats typing.*
-  - Put it *one keypress* away.
-- **Column 2 — 🏗️ If you build, or pay someone who does — Build with *Code.***
-  - Build with Claude Code, *daily.*
-  - *Deterministic* core. GenAI at the edges.
-  - A *human* signs off on anything that posts.
+- **Headline:** Here's how I *use* GenAI.
+- **Prompt bar:** Daily drivers first. *Then the ones I use with caution.*
 
-## 26 · Five ways
+## 26 · Chat
 
-- **Section tag:** How to use it *· five ways*
-- **Headline:** Five ways to *use it.*
-- **Cards (verdict pill — line):**
-  1. Chat. — Use daily
-  2. In your apps. — Sparingly
-  3. Agents. — Last resort
-  4. Vibe coding. — Use to build
-  5. Note takers. — Small wins
-
-## 27 · Chat
-
-- **Section tag:** How to use it *· five ways*
+- **Section tag:** How I use it *· daily driver*
 - **Headline:** Chat. *The daily driver.* — verdict: Use daily
 - **Mock (claude.ai · new chat):**
   - User: How do I explain this VAT position to a nervous client?
@@ -252,19 +232,45 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude · Gemini
 - **Also out there:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
 
-## 28 · In apps
+## 27 · Vibe coding
 
-- **Section tag:** How to use it *· five ways*
-- **Headline:** In your apps. *Check everything.* — verdict: Sparingly
-- **Mock (creditors.xlsx · Claude for Excel):**
-  - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
-- **The stat:** Best system tested: *12%* at fixing errors in real workbooks.
-- **What I use:** Claude for Excel · Microsoft 365 Copilot · Xero + Claude
-- **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot · Notion AI
+- **Section tag:** How I use it *· daily driver*
+- **Headline:** Vibe coding. *Where it shines.* — verdict: Use to build
+- **Mock (terminal · recon-tool · built with Claude Code):**
+  - ❯ claude "build me a reconciliation tool"
+  - ✓ Built.
+  - ❯ recon-tool --client acme
+  - ✓ 214 matched · same answer every run
+  - ⚠ 3 exceptions flagged · over to you
+- **The point:** Code isn't probabilistic. *Test once, stays tested.*
+- **What I use:** Claude Code · Codex in ChatGPT
+- **Also out there:** Cursor · Lovable · Replit
 
-## 29 · Agents
+## 28 · AI note takers
 
-- **Section tag:** How to use it *· five ways*
+- **Section tag:** How I use it *· daily driver*
+- **Headline:** AI *note takers.* — verdict: Small wins
+- **Mock (meeting notes):** Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
+- **What I use:** Fireflies
+- **Also out there:** Loom AI · Granola · Otter · Fathom · Teams recap
+
+## 29 · Other tools
+
+- **Section tag:** How I use it *· daily driver*
+- **Headline:** Other GenAI tools *I use.*
+- **Rows:**
+  1. Dictation. *Wispr Flow.*
+  2. Creating slides, like these. *Claude Code.*
+  3. Branding and brand assets. *Claude Design.*
+
+## 30 · With caution (beat)
+
+- **Section tag:** How I use it *· with caution*
+- **Headline:** Sparingly, *with caution.*
+
+## 31 · Agents
+
+- **Section tag:** How I use it *· with caution*
 - **Headline:** Agents. *The last resort.* — verdict: Last resort
 - **Mock (acme · month-end agent · autopilot on):**
   - ✓ Pulled 214 invoices
@@ -277,38 +283,35 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Also out there:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 - **Note:** Reviewing an agent means redoing the job. *Reviewing exceptions doesn't.*
 
-## 30 · Vibe coding
+## 32 · Spreadsheets
 
-- **Section tag:** How to use it *· five ways*
-- **Headline:** Vibe coding. *Where it shines.* — verdict: Use to build
-- **Mock (terminal · recon-tool · built with Claude Code):**
-  - ❯ claude "build me a reconciliation tool"
-  - ✓ Built.
-  - ❯ recon-tool --client acme
-  - ✓ 214 matched · same answer every run
-  - ⚠ 3 exceptions flagged · over to you
-- **The point:** Code isn't probabilistic. *Test once, stays tested.*
-- **What I use:** Claude Code · Codex in ChatGPT
-- **Also out there:** Cursor · Lovable · Replit
+- **Section tag:** How I use it *· with caution*
+- **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
+- **Mock (creditors.xlsx · Claude for Excel):**
+  - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
+- **The stat:** Best system tested: *12%* at fixing errors in real workbooks.
+- **What I use:** Claude for Excel · ChatGPT for Sheets · Xero + Claude
+- **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 31 · AI note takers
+## 33 · Microsoft Copilot
 
-- **Section tag:** How to use it *· five ways*
-- **Headline:** AI *note takers.* — verdict: Small wins
-- **Mock (meeting notes):** Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
-- **What I use:** Fireflies
-- **Also out there:** Loom AI · Granola · Otter · Fathom · Teams recap
+- **Section tag:** How I use it *· with caution*
+- **Headline:** Microsoft Copilot. *If you're licensed.* — verdict: With caution
+- **Mock (engagement-letter.docx · Copilot):**
+  - User: Summarise the fee terms in this letter.
+  - AI: Monthly fee £1,850 from April, 30-day terms, **reviewed annually.**
+- **The point:** Microsoft retired *=COPILOT()* in Excel. Their own docs said not to rely on it for accuracy.
+- **What I use:** Microsoft 365 Copilot
+- **Also out there:** Copilot agents · Teams recap
 
-## 32 · Other tools
+## 34 · Do and don't
 
-- **Section tag:** How to use it *· five ways*
-- **Headline:** Other GenAI tools *I use.*
-- **Rows:**
-  1. Dictation. *Wispr Flow.*
-  2. Creating slides, like these. *Claude Code.*
-  3. Branding and brand assets. *Claude Design.*
+- **Section tag:** How to use it *· my answer*
+- **Headline:** Do and *don't.*
+- **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
+- **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 33 · Takeaways
+## 35 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -318,7 +321,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 34 · Thank you
+## 36 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
