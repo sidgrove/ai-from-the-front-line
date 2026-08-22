@@ -2552,19 +2552,19 @@ deck-stage { background: #0a0a0a; }
           <div class="use-col">
             <p class="use-title"><span class="vs-mark good">✓</span> Best uses</p>
             <div class="use-rows">
-              <p>Internal tools and <em>prototype apps.</em></p>
-              <p>Slides, <em>like this deck.</em></p>
-              <p>Simple websites, <em>like sidgrove.com.</em></p>
-              <p>Brand assets, <em>with Claude Design.</em></p>
+              <p><span class="tk-icon">🛠️</span><span>Internal tools and <em>prototype apps.</em></span></p>
+              <p><span class="tk-icon">🖥️</span><span>Slides, <em>like this deck.</em></span></p>
+              <p><span class="tk-icon">🌐</span><span>Simple websites, <em>like sidgrove.com.</em></span></p>
+              <p><span class="tk-icon">🎨</span><span>Brand assets, <em>with Claude Design.</em></span></p>
             </div>
           </div>
           <div class="use-col warn">
             <p class="use-title"><span class="vs-mark warn">!</span> Words of caution</p>
             <div class="use-rows">
-              <p>Nothing ships until <em>you've read it.</em></p>
-              <p>Test it on known numbers. <em>Once.</em></p>
-              <p>Keep it off <em>live client data.</em></p>
-              <p>It's still an agent. <em>Review, then trust.</em></p>
+              <p><span class="tk-icon">👀</span><span>Nothing ships until <em>you've read it.</em></span></p>
+              <p><span class="tk-icon">🧪</span><span>Test it on known numbers. <em>Once.</em></span></p>
+              <p><span class="tk-icon">🔒</span><span>Keep it off <em>live client data.</em></span></p>
+              <p><span class="tk-icon">🤖</span><span>It's still an agent. <em>Review, then trust.</em></span></p>
             </div>
           </div>
         </div>
@@ -3192,15 +3192,9 @@ deck-stage { background: #0a0a0a; }
     <div class="frame" style="--pad-y: 90px;">
       <div class="topbar"><p class="section-tag">Claude Code <em>· spotlight</em></p><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: center;">
-        <div>
-          <h2 class="display" style="font-size: 96px; margin-bottom: 32px;">Slides. <em>Like this deck.</em></h2>
-          <p class="sub" style="font-size: 28px;">Every slide you are looking at <em>was built in Claude Code.</em></p>
-        </div>
-        <figure class="shot window">
-          <img src="Images/48%20Slides/screenshot.png" alt="Claude Code · building this deck" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/34 Slides/screenshot.png'">
-          <figcaption>Claude Code · building this deck</figcaption>
-        </figure>
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 150px;">Slides.<br><em>Like this one.</em></h2>
+        <p class="sub" style="margin-top: 36px; font-size: 32px;">Every slide here was built in Claude Code. <em>You're looking at it.</em></p>
       </div>
 
       <div class="bottombar"></div>
@@ -3955,6 +3949,16 @@ deck-stage { background: #0a0a0a; }
 .press-grid.four .press-meta { flex-direction: row; align-items: baseline; gap: 12px; padding: 12px 22px 14px; }
 .press-grid.four .press-role { display: none; }
 .press-grid.four .press-name { font-size: 20px; }
+
+/* ── Vibe coding · no boxes, icon rows on the cream ─────────────── */
+.use-grid { gap: 72px; margin-top: 40px; }
+.use-col { background: none; border: 0; box-shadow: none; padding: 0; border-radius: 0; }
+.use-title { font-size: 26px; margin-bottom: 10px; }
+.use-rows p { display: flex; align-items: center; gap: 22px; padding: 18px 0; font-size: 28px; border-top: 1px solid rgba(31,24,21,0.12); }
+.use-rows p:first-child { border-top: 0; padding-top: 8px; }
+.use-rows .tk-icon { width: 62px; height: 62px; font-size: 30px; background: rgba(255,255,255,0.75); border-color: rgba(31,24,21,0.12); }
+.use-col.warn .tk-icon { background: rgba(217,119,87,0.10); border-color: rgba(217,119,87,0.28); }
+.use-col:not(.warn) .tk-icon { background: rgba(78,125,40,0.08); border-color: rgba(78,125,40,0.25); }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts

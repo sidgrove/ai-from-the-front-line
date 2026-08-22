@@ -377,9 +377,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 48 · Slides
 
 - **Section tag:** Claude Code *· spotlight*
-- **Headline:** Slides. *Like this deck.*
-- **Line:** Every slide you are looking at *was built in Claude Code.*
-- **Screenshot:** `Images/48 Slides/screenshot.png` — caption: Claude Code · building this deck
+- **Headline:** Slides. *Like this one.*
+- **Sub:** Every slide here was built in Claude Code. *You're looking at it.*
 
 ## 49 · Websites
 
