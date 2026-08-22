@@ -48,7 +48,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** The narrative
 - **Headline:** Anthropic's *prediction.*
 - **Sub:** Business & finance: it could do *nearly all of it.* It's used for *almost none.*
-- **Overlay:** periwinkle ring around the Business & finance spike
+- **Overlay:** periwinkle ring around the Business & finance sector, magnified in a matching loupe under the headline
 - **Image:** `Images/04 Anthropic's prediction/chart.png` — caption: Anthropic · theoretical capability vs observed usage, by occupation
 
 ## 05 · Hype bubble

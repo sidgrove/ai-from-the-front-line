@@ -1543,8 +1543,9 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 70px; align-items: center;">
         <div>
-          <h2 class="display" style="font-size: 104px; margin-bottom: 32px;">Anthropic's <em>prediction.</em></h2>
+          <h2 class="display" style="font-size: 96px; margin-bottom: 24px;">Anthropic's <em>prediction.</em></h2>
           <p class="sub" style="font-size: 28px;">Business &amp; finance: it could do <em>nearly all of it.</em> It's used for <em>almost none.</em></p>
+          <div class="rc-loupe" aria-hidden="true"></div>
         </div>
         <figure class="shot">
           <span class="rc-wrap"><img src="Images/04%20Anthropic's%20prediction/chart.png" alt="Anthropic radar chart: theoretical AI capability versus observed usage by occupational category" style="max-height: 860px;" onerror="this.closest('figure').classList.add('missing')"><span class="rc-ring" aria-hidden="true"></span></span>
@@ -4258,7 +4259,8 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 /* ── Anthropic chart: point at Business & finance ─────────── */
 .rc-wrap { position: relative; display: inline-block; line-height: 0; }
 .rc-wrap img { display: block; }
-.rc-ring { position: absolute; left: 51.5%; top: 8.6%; width: 19%; aspect-ratio: 1; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.22), inset 0 0 0 200px rgba(124,135,232,0.08); }
+.rc-ring { position: absolute; left: 44.1%; top: 12%; width: 34.5%; aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--periwinkle-700); box-shadow: 0 0 0 8px rgba(124,135,232,0.20); }
+.rc-loupe { width: 440px; height: 440px; margin-top: 34px; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.20), var(--shadow-lift); background: #fff url("Images/04%20Anthropic's%20prediction/chart.png") no-repeat; background-size: 1271px auto; background-position: -561px -150px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
