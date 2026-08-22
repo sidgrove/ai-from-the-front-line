@@ -436,7 +436,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Mock (creditors.xlsx · Claude for Excel):**
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
 - **The stat:** Best system tested: *12%* at fixing errors in real workbooks.
-- **What I use:** Claude for Excel · ChatGPT for Sheets · Xero + Claude
+- **What I use:** Claude for Excel · ChatGPT for Sheets
 - **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
 ## 56 · Claude Cowork
