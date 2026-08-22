@@ -423,7 +423,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
-- **Cards (icon tiles):**
+- **Cards (icon tiles):** 🫧 A hype bubble. — Massive financial bets, sold below cost. Usage nowhere near the claims. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Build deterministic tools with it. Don’t let it run the close. · ✅ Use it daily. Check everything. — Chat, dictation, note takers: daily. Add-ons, MCP, Cowork: mindfully.
   1. The work isn't going away. *Someone has to rip the asbestos out.*
   2. The narrative is hype, powered by *massive financial bets.*
   3. Build with it. Use it. *Don't let it run your accounting.*
