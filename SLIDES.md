@@ -356,7 +356,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 46 · AI note takers
 
 - **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** AI *note takers.* — verdict: Small wins
+- **Headline:** AI *note takers.*
 - **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
 - **What I use:** Loom
 - **Other options:** Fireflies · Vinyl · Granola · Fathom
@@ -364,8 +364,9 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 47 · Dictation
 
 - **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
-- **Mock (Aqua Voice · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
+- **Headline:** Dictation. *Talk instead of type.*
+- **Sub:** A great way to prompt *the GenAI chat interface.*
+- **Mock (Aqua Voice · dictating):** “Summarise this thread into three bullets and draft a reply”
 - **What I use:** Aqua Voice
 - **Other options:** Wispr Flow · superwhisper
 
