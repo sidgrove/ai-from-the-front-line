@@ -148,11 +148,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** The reality
 - **Headline:** Sold below *cost.*
 - **Sub:** Heavy seats are subsidised. They don't raise the price. *They shrink the limit.*
-- **Mock (receipt · GenAI Ltd · a heavy seat):**
-  - What you pay — flat fee
-  - What you cost them — more than that
-  - Who covers the gap — investors, for now
-  - How they get it back — shrink the limit
+- **Cutting:** `Images/16 The economics/openai-losses.png` — caption: Leaked 2025 financials · a $38.5B loss
 
 ## 17 · Environment
 
