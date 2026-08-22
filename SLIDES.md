@@ -413,7 +413,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
-- **Mock (Aqua Voice · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
+- **Sub:** A great way to prompt *the GenAI chat interface.*
+- **Mock (Aqua Voice · dictating):** “Summarise this thread into three bullets and draft a reply”
 - **What I use:** Aqua Voice
 - **Other options:** Wispr Flow · superwhisper
 
