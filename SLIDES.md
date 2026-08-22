@@ -298,16 +298,11 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Claude Cowork. *With caution.* — verdict: With caution
-- **Mock (acme · month-end agent · autopilot on):**
-  - ✓ Pulled 214 invoices
-  - ✓ Matched 196 of them
-  - ⚠ Matched 18 differently to last run
-  - ✗ Posted the same accrual twice
-  - Halt: Paused. Needs a human. · Step 4 of 9
-- **The stat:** Given a whole job to do unwatched, the best agents *still fail most of the time.*
-- **What I use:** Claude Cowork
-- **Also out there:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
-- **Note:** Reviewing an agent means redoing the job. *Reviewing exceptions doesn't.*
+- **Sub:** I barely touch it.
+- **Rows:**
+  1. The product that does whole tasks, *end to end.*
+  2. *Niche* use cases.
+  3. Lots of *hype.*
 
 ## 37 · Spreadsheets
 
