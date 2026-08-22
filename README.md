@@ -28,6 +28,10 @@ All fonts are self-hosted, so the deck renders identically **with no internet co
 - Type: Very Vogue (display serif), DM Sans (UI), JetBrains Mono (labels) — all served from `fonts/`
 - No build step, no dependencies, no CDN calls
 
+## Content plan
+
+`SLIDES.md` is the editable text of every slide, one section per slide, numbered to match the deck. Edit it and say **"pull from plan"** for the changes to be applied to the HTML; say **"push to plan"** to regenerate it from the current deck. Details at the top of the file.
+
 ## Assets
 
 `Images/` has **one folder per slide**, named `NN Slide title` to match the slide order (e.g. `03 The headlines/`), plus `Images/shared/` for assets used across slides (the Claude logo, headshot, spare logo files). Drop a slide's images into its numbered folder; in the HTML, URL-encode spaces in the `src` (`Images/06%20Why%20listen/setup-wide.jpg`). The folder set is kept in sync with the deck — when slides are added, removed, or reordered, the folders are renumbered to match.
