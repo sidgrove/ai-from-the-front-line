@@ -247,7 +247,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Input: Ask anything… · One keypress
 - **The rule:** Talk to it like a colleague. *Check it like a junior.*
 - **What I use:** Claude · Gemini
-- **Others I use sparingly:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
+- **Other options:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
 
 ## 29 · 02 Build (beat)
 
@@ -390,7 +390,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** AI *note takers.* — verdict: Small wins
 - **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
 - **What I use:** Loom
-- **Others I use sparingly:** Fireflies · Vinyl · Granola · Fathom
+- **Other options:** Fireflies · Vinyl · Granola · Fathom
 
 ## 51 · Dictation
 
@@ -398,7 +398,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
 - **Mock (Aqua Voice · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
 - **What I use:** Aqua Voice
-- **Others I use sparingly:** Wispr Flow · superwhisper
+- **Other options:** Wispr Flow · superwhisper
 
 ## 52 · 04 Non-daily (beat)
 
@@ -432,7 +432,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   1. The product that does whole tasks, *end to end.*
   2. *Niche* use cases.
   3. Lots of *hype.*
-- **Others I use sparingly:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
+- **Other options:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 
 ## 56 · Do and don't
 
