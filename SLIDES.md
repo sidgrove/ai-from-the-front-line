@@ -235,7 +235,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 01 chat*
 - **Headline:** *Chat.*
-- **Sub:** Four ways. *Three daily, one with caution.* First, the daily driver.
+- **Sub:** Four ways. *Three daily, one not.* First, the daily driver.
 
 ## 28 · Chat
 
@@ -388,9 +388,9 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** AI *note takers.* — verdict: Small wins
-- **Mock (Fireflies · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
-- **What I use:** Fireflies
-- **Others I use sparingly:** Loom AI · Granola · Otter · Fathom · Teams recap
+- **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
+- **What I use:** Loom
+- **Others I use sparingly:** Fireflies · Vinyl · Granola · Fathom
 
 ## 51 · Dictation
 
@@ -400,27 +400,24 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Aqua Voice
 - **Others I use sparingly:** Wispr Flow · superwhisper
 
-## 52 · 04 With caution (beat)
+## 52 · 04 Non-daily (beat)
 
-- **Section tag:** How I use it *· 04 with caution*
-- **Headline:** *With caution.*
-- **Sub:** The ones I use sometimes. *Everything before this, I use daily.*
+- **Section tag:** How I use it *· 04 non-daily*
+- **Headline:** Non-daily *use cases.*
+- **Sub:** *My reality.* Everything before this, I use daily.
 
 ## 53 · Spreadsheets
 
-- **Section tag:** How I use it *· 04 with caution*
-- **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
+- **Section tag:** How I use it *· 04 non-daily*
+- **Headline:** Spreadsheet add-ons. *Check everything.* — verdict: Sparingly
 - **Mock (creditors.xlsx · Claude for Excel):**
   - Rows: Stationery Ltd £84.20 20% ✓ · Hosting GmbH £220.00 RC ✓ · Deel Inc £1,240.00 20% · reverse charge?
-- **The stat:** Best system tested: *12%* at fixing errors in real workbooks.
 - **What I use:** Claude for Excel · ChatGPT for Sheets
-- **Others I use sparingly:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
 ## 54 · MCP connections
 
-- **Section tag:** How I use it *· 04 with caution*
-- **Headline:** MCP connections. *With caution.* — verdict: With caution
-- **Sub:** Plugging the model straight into your apps.
+- **Section tag:** How I use it *· 04 non-daily*
+- **Headline:** MCP connections. *Plugging it into your apps.* — verdict: Non-daily
 - **Rows:**
   1. 🔌 Xero, Slack, your inbox. *It can read them all.*
   2. 🔑 Reading is one thing. *Writing is another.*
@@ -428,8 +425,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 55 · Claude Cowork
 
-- **Section tag:** How I use it *· 04 with caution*
-- **Headline:** Oh, and *Cowork.* — verdict: With caution
+- **Section tag:** How I use it *· 04 non-daily*
+- **Headline:** Oh, and *Cowork.* — verdict: Non-daily
 - **Sub:** I barely touch it.
 - **Rows:**
   1. The product that does whole tasks, *end to end.*
