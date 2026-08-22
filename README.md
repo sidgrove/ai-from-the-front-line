@@ -2,7 +2,11 @@
 
 Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on the GenAI narrative in accounting: why it's so loud, why it's inflated, and how to actually use the tools.
 
-24 slides: the brutal narrative → why it's loud and why it's inflated (+ side note: why listen to me) → why it can't deliver (probabilistic by design, sold below cost, not exactly green) → their answer (the ~~agentic~~ asbestos era, hooked on tokens, pre-authorised mistakes) → my answer (a copilot never the pilot) → what I actually recommend → the five ways to use it, one page each with the products and logos (chat / in your apps / agents / vibe coding / the rest) → key takeaways → humans are going nowhere. No live demo; the deep-dive pages carry the tooling story.
+25 slides in three acts, each named by a quiet tag in the top-left corner and opened by a divider slide: **Why the noise** (Tick Tock, the headlines, follow the money, the usage meter, side note: why listen to me) → **Can it deliver** (probabilistic by design, same question two answers, sold below cost, not exactly green, with sourced numbers) → **How to use it** (the pitch: the ~~agentic~~ asbestos era, hooked on tokens, pre-authorised mistakes; my answer: a copilot never the pilot, what I actually recommend; five ways, one page each with products and logos: chat / in your apps / agents / vibe coding / the rest) → key takeaways → thank you. No live demo; the deep-dive pages carry the tooling story. Dave does the talking: slides are one headline and one visual each.
+
+## Adding screenshots
+
+Drop PNGs into `Images/screens/` with kebab-case names and no spaces (so the `src` needs no `%20`). Then paste the commented **TEMPLATE · SCREENSHOT SLIDE** block near the bottom of the HTML wherever the slide belongs, uncomment it, and point the `<img>` at the file: `<figure class="shot"><img src="Images/screens/foo.png" alt="…"><figcaption>Where it's from · when</figcaption></figure>`. The `.shot` frame gives any image the deck's card treatment; add `window` for a fake title bar or `tilt` for the receipt-style lean. Page chips renumber themselves, so slides can be inserted anywhere. Vercel caches `Images/` for a year, so if you replace a screenshot, give it a new filename rather than overwriting.
 
 ## Viewing
 
@@ -13,6 +17,8 @@ Locally, open `ai from the front line.html` in a browser, or serve the folder so
     npx serve .
 
 Navigate with the left / right arrow keys, number keys to jump, `R` to reset. Deep-link straight to a slide with `?slide=N` or `#N` (1-based). Slides are a fixed 1920x1080 canvas that scales to fit the viewport; `Print -> Save as PDF` exports one slide per page (verified — backgrounds, charts and shadows all survive).
+
+**Speaker notes.** Press `N` to toggle the notes panel (talking points, the source for every number on the slide, and the one-line answer if someone comes at it). For a presenter screen, open the deck a second time in the same browser with `?notes` on the URL: that window starts with the panel open and follows the projector window as you move through the slides. Notes live in the `#speaker-notes` JSON block near the bottom of the HTML, one entry per slide in order.
 
 All fonts are self-hosted, so the deck renders identically **with no internet connection** — safe for venue wifi.
 
