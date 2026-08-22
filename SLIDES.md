@@ -39,7 +39,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** The *headlines.*
 - **Sub:** The doomsaying, *in print.*
 - **Press cards:**
-  1. The Telegraph — Tom Blomfield — Monzo founder (`Blomfield.png`)
+  1. AAT — Two in five — would consider leaving accountancy (`AAT.png`)
   2. Fortune — Mustafa Suleyman — CEO, Microsoft AI (`Suleyman.png`)
   3. TheStreet — The Big Four — cutting benefits and hiring (`big four.png`)
 
