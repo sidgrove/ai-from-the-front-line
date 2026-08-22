@@ -4064,7 +4064,7 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 /* ── Layout nits from the full-send pass ─────────────────────── */
 .vs-card.good .vs-row { flex-wrap: wrap; row-gap: 12px; }
 .me-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-.me-grid > * { width: calc((100% - 72px) / 4); }
+.me-grid > * { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); box-sizing: border-box; }
 .rec-grid { align-items: center; }
 </style>
 <script>
