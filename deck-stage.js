@@ -220,6 +220,31 @@
       margin: 0 2px;
     }
 
+    /* Review badge — persistent slide number for the edit/review workflow.
+       Enabled with ?review in the URL; never shown in print. */
+    .review-badge {
+      position: fixed;
+      top: 14px;
+      left: 14px;
+      display: none;
+      align-items: baseline;
+      gap: 8px;
+      padding: 6px 12px;
+      background: rgba(0,0,0,0.82);
+      color: #fff;
+      border-radius: 8px;
+      font-size: 13px;
+      font-variant-numeric: tabular-nums;
+      letter-spacing: 0.01em;
+      z-index: 2147483001;
+      user-select: none;
+      pointer-events: none;
+    }
+    .review-badge[data-on] { display: flex; }
+    .review-badge .num { font-weight: 700; font-size: 15px; }
+    .review-badge .of { color: rgba(255,255,255,0.5); }
+    .review-badge .label { color: rgba(255,255,255,0.75); font-weight: 400; }
+
     /* ── Print: one page per slide, no chrome ────────────────────────────
        The screen layout stacks every slide at inset:0 inside a scaled
        canvas; for print we want them in document flow at the authored
@@ -261,7 +286,7 @@
         break-after: auto;
         page-break-after: auto;
       }
-      .overlay, .tapzones { display: none !important; }
+      .overlay, .tapzones, .review-badge { display: none !important; }
     }
   `;
 
@@ -377,7 +402,19 @@
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
 
-      this._root.append(style, stage, tapzones, overlay);
+      // Review badge: persistent slide number, on when ?review is in the URL.
+      const badge = document.createElement('div');
+      badge.className = 'review-badge export-hidden';
+      badge.setAttribute('aria-hidden', 'true');
+      badge.innerHTML = `<span class="num">1</span><span class="of">/ 1</span><span class="label"></span>`;
+      try {
+        if (new URLSearchParams(location.search).has('review')) badge.setAttribute('data-on', '');
+      } catch (e) { /* ignore */ }
+
+      this._root.append(style, stage, tapzones, overlay, badge);
+      this._badgeNum = badge.querySelector('.num');
+      this._badgeOf = badge.querySelector('.of');
+      this._badgeLabel = badge.querySelector('.label');
       this._canvas = canvas;
       this._slot = slot;
       this._overlay = overlay;
@@ -497,6 +534,13 @@
         else s.removeAttribute('data-deck-active');
       });
       if (this._countEl) this._countEl.textContent = String(curr + 1);
+      if (this._badgeNum) {
+        this._badgeNum.textContent = String(curr + 1);
+        this._badgeOf.textContent = '/ ' + this._slides.length;
+        const active = this._slides[curr];
+        const label = active ? (active.getAttribute('data-label') || '') : '';
+        this._badgeLabel.textContent = label;
+      }
       this._persistIndex();
 
       if (broadcast) {
