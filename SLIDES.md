@@ -132,20 +132,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Delta sticker: £750 apart
 - **Sub:** It can't be relied on for *consistent, high-integrity output.*
 
-## 15 · Just use it (beat)
-
-- **Section tag:** The reality
-- **Headline:** Just *use* it.
-- **Sub:** It makes mistakes, *all the time.*
-
-## 16 · Not intelligent
+## 15 · Not intelligent
 
 - **Section tag:** The reality
 - **Headline:** It isn’t intelligent. *In the true sense.*
 - **Sub:** Pretend it is, and you’ll trust it too much.
 - **Rows:** 🗣️ It doesn’t understand *what you’re asking it.* · 🪞 It can’t check *its own work.* · 🔮 It hallucinates by design. *It’s not a bug.*
 
-## 17 · Better than a human?
+## 16 · Better than a human?
 
 - **Section tag:** The reality
 - **Headline:** “But it’s better than *a human.”*
@@ -156,6 +150,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. Hides its errors *well.*
   4. Replacing tools *that already work.*
   5. Not better than a human *using it properly.*
+
+## 17 · Just use it (beat)
+
+- **Section tag:** The reality
+- **Headline:** Just *use* it.
+- **Sub:** It makes mistakes, *all the time.*
 
 ## 18 · Added to that (beat)
 
@@ -416,7 +416,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· my answer*
 - **Headline:** Do and *don't.*
-- **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
+- **Do — Use it *every day.*:** Chat, for *thlighting.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
 ## 54 · Takeaways
