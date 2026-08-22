@@ -396,9 +396,9 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** Dictation. *Talk instead of type.* — verdict: Small wins
-- **Mock (Wispr Flow · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
-- **What I use:** Wispr Flow
-- **Others I use sparingly:** superwhisper
+- **Mock (Aqua Voice · dictating):** “…then next steps as bullets, and copy the VAT team” · typed as you talk
+- **What I use:** Aqua Voice
+- **Others I use sparingly:** Wispr Flow · superwhisper
 
 ## 52 · 04 With caution (beat)
 
