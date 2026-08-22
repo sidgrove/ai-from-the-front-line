@@ -148,7 +148,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 17 · Better than a human?
 
 - **Section tag:** The reality
-- **Headline:** "But it's better than *a human."*
+- **Headline:** “But it’s better than *a human.”*
 - **Sub:** Maybe. *But it's different.*
 - **Rows:**
   1. Unpredictable, *unlike a person.*
