@@ -268,10 +268,10 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** How I use it *· with caution*
 - **Headline:** Sparingly, *with caution.*
 
-## 31 · Agents
+## 31 · Claude Cowork
 
 - **Section tag:** How I use it *· with caution*
-- **Headline:** Agents. *The last resort.* — verdict: Last resort
+- **Headline:** Claude Cowork. *With caution.* — verdict: With caution
 - **Mock (acme · month-end agent · autopilot on):**
   - ✓ Pulled 214 invoices
   - ✓ Matched 196 of them
@@ -293,25 +293,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude for Excel · ChatGPT for Sheets · Xero + Claude
 - **Also out there:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 33 · Microsoft Copilot
-
-- **Section tag:** How I use it *· with caution*
-- **Headline:** Microsoft Copilot. *If you're licensed.* — verdict: With caution
-- **Mock (engagement-letter.docx · Copilot):**
-  - User: Summarise the fee terms in this letter.
-  - AI: Monthly fee £1,850 from April, 30-day terms, **reviewed annually.**
-- **The point:** Microsoft retired *=COPILOT()* in Excel. Their own docs said not to rely on it for accuracy.
-- **What I use:** Microsoft 365 Copilot
-- **Also out there:** Copilot agents · Teams recap
-
-## 34 · Do and don't
+## 33 · Do and don't
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 35 · Takeaways
+## 34 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -321,7 +310,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 36 · Thank you
+## 35 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
