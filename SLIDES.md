@@ -200,19 +200,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Lead-in:** Well… let's start with *what everyone's selling right now.*
 - **Headline:** The ~~agentic~~ *asbestos* era.
 
-## 24 · Pre-authorised mistakes
-
-- **Section tag:** What works *· the pitch*
-- **Headline:** Pre-authorised *mistakes.*
-- **Sub:** If it’s guaranteed to make mistakes, *we’re pre-authorising incompetence before we even begin.*
-- **Mock (permission dialog · "Agent" wants to run your month-end · Full autonomy · no review):**
-  - Fetch the invoices
-  - Match & reconcile
-  - Post the journals
-  - Decide it's all correct
-  - Button: Approve future mistakes
-
-## 25 · Hooked
+## 24 · Hooked
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** They want you *hooked.*
@@ -223,11 +211,23 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Button: Top up · £299
   - Fine print: auto-top-up on · pricing subject to change
 
-## 26 · It's toxic
+## 25 · It's toxic
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** It's *toxic.*
 - **Sub:** It'll need ripping out, at huge cost. *Like asbestos.*
+
+## 26 · Pre-authorised mistakes
+
+- **Section tag:** What works *· the pitch*
+- **Headline:** Pre-authorised *mistakes.*
+- **Sub:** If it’s guaranteed to make mistakes, we’re pre-authorising incompetence before we even begin. *And we don’t know where they are.*
+- **Mock (permission dialog · "Agent" wants to run your month-end · Full autonomy · no review):**
+  - Fetch the invoices
+  - Match & reconcile
+  - Post the journals
+  - Decide it's all correct
+  - Button: Approve future mistakes
 
 ## 27 · Better approach (divider)
 
