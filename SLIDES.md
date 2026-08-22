@@ -204,7 +204,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** Pre-authorised *mistakes.*
-- **Sub:** It improvises the steps, *then marks its own homework.*
+- **Sub:** If it’s guaranteed to make mistakes, *we’re pre-authorising incompetence before we even begin.*
 - **Mock (permission dialog · "Agent" wants to run your month-end · Full autonomy · no review):**
   - Fetch the invoices
   - Match & reconcile
