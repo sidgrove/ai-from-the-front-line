@@ -251,15 +251,10 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** How I use it *· 02 build*
 - **Headline:** Vibe coding. *Where it shines.* — verdict: Use to build
-- **Cards (2×2):** 🛠️ Internal tools and *prototype apps.* · 🖥️ Slides, *like this deck.* · 🌐 Simple websites, *like sidgrove.com.* · 🎨 Brand assets, *with Claude Design.*
+- **Use it for:** 🛠️ Internal tools *and prototypes.* · 🖥️ Slides. · 🌐 Simple *websites.* · 🎨 Brand *assets.*
+- **Warnings:** 🔒 Security. *Get an engineer if it holds sensitive data.* · 🐇 Rabbit holes. *Don't overbuild.* · 🛒 If an app already does it, *buy it.*
 
-## 30 · Words of caution
-
-- **Section tag:** How I use it *· 02 build*
-- **Headline:** Words of *caution.*
-- **Rows:** 👀 Nothing ships until *you've read it.* · 🧪 Test it on known numbers. *Once.* · 🔒 Keep it off *live client data.* · 🤖 It's still an agent. *Review, then trust.*
-
-## 31 · Sidgrove Intelligence
+## 30 · Sidgrove Intelligence
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Kicker:** Built with Claude Code · 01 of 04
@@ -267,121 +262,121 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Line:** The app that sits between my clients and the work. *Built with Claude Code.*
 - **Mock (app shell, Sidgrove Intelligence design tokens):** sidebar nav (Bookkeeping · Cashflow · Deadlines · **Month end** · Management accounts · Payroll · VAT) · eyebrow "Client · Acme Ltd" · title Month *end* · KPIs: Accruals 12 posted · Prepayments 8 posted · Deferred revenue £42,300 review · rows: Payroll postings (Posted) · Direct cost reallocations (Posted) · Corporation tax accrual (Needs review) · Loan postings (Scheduled)
 
-## 32 · Daily cashflow
+## 31 · Daily cashflow
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Daily cashflow. *Driven by API.*
-- **Screenshot:** `Images/32 Daily cashflow/cashflow.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/31 Daily cashflow/cashflow.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 33 · Bookkeeping
+## 32 · Bookkeeping
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Bookkeeping workflow *and comms.*
-- **Screenshot:** `Images/33 Bookkeeping/bookkeeping.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/32 Bookkeeping/bookkeeping.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 34 · Deadlines
+## 33 · Deadlines
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Deadlines *and alerts.*
-- **Screenshot:** `Images/34 Deadlines/deadlines.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/33 Deadlines/deadlines.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 35 · Management accounts
+## 34 · Management accounts
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Management accounts. *Hosted, with notifications.*
-- **Screenshot:** `Images/35 Management accounts/management-accounts.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/34 Management accounts/management-accounts.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 36 · Payroll reviews
+## 35 · Payroll reviews
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Payroll reviews *and client sign-off.*
-- **Screenshot:** `Images/36 Payroll reviews/payroll.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/35 Payroll reviews/payroll.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 37 · VAT reviews
+## 36 · VAT reviews
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** VAT reviews *and client sign-off.*
-- **Screenshot:** `Images/37 VAT reviews/vat.png` — caption: Sidgrove Intelligence · Circle, the demo client
+- **Screenshot:** `Images/36 VAT reviews/vat.png` — caption: Sidgrove Intelligence · Circle, the demo client
 
-## 38 · Accruals
+## 37 · Accruals
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Accruals *and prepayments.*
-- **Screenshot:** `Images/38 Accruals/accruals.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/37 Accruals/accruals.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 39 · Accrued income
+## 38 · Accrued income
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Deferred *and accrued revenue.*
-- **Screenshot:** `Images/39 Accrued income/accrued-income.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/38 Accrued income/accrued-income.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 40 · Payroll postings
+## 39 · Payroll postings
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Payroll postings *and reallocations.*
-- **Screenshot:** `Images/40 Payroll postings/payroll-realloc.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/39 Payroll postings/payroll-realloc.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 41 · Direct costs
+## 40 · Direct costs
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Direct cost *reallocations.*
-- **Screenshot:** `Images/41 Direct costs/direct-costs.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/40 Direct costs/direct-costs.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 42 · Corporation tax
+## 41 · Corporation tax
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Corporation tax *accruals.*
-- **Screenshot:** `Images/42 Corporation tax/corp-tax.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/41 Corporation tax/corp-tax.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 43 · RD credits
+## 42 · RD credits
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** R&D credit *accruals.*
-- **Screenshot:** `Images/43 RD credits/rd.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/42 RD credits/rd.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 44 · Loan postings
+## 43 · Loan postings
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Loan *postings.*
-- **Screenshot:** `Images/44 Loan postings/cln.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
+- **Screenshot:** `Images/43 Loan postings/cln.png` — caption: Sidgrove Intelligence · Circle, the demo client · it proposes, I post
 
-## 45 · The hub
+## 44 · The hub
 
 - **Section tag:** 02 Build *· Sidgrove Intelligence*
 - **Headline:** Your tools in. *One Slack message out.*
 - **Sub:** The app between my clients and the work. *Slack for live comms.*
 - **Visual (from sidgrove.com):** Your tools (Xero · Excel · Sheets · Apron · Pleo · Paycircle) → Sidgrove Intelligence (synced & checked · month-end review · accruals & prepayments · building your report pack…) → Back to you (#your-finances Slack message · Management Accounts PDF · Ready)
 
-## 46 · Slides
+## 45 · Slides
 
 - **Section tag:** 02 Build *· Slides*
 - **Kicker:** Built with Claude Code · 02 of 04
 - **Headline:** This deck. *No PowerPoint.*
 - **Sub:** Every slide here was built in Claude Code. *You're looking at it.*
 
-## 47 · Websites
+## 46 · Websites
 
 - **Section tag:** 02 Build *· Websites*
 - **Kicker:** Built with Claude Code · 03 of 04
 - **Headline:** Simple websites. *Like sidgrove.com.*
 - **Line:** Described, built, deployed. *No agency, no template.*
-- **Screenshot:** `Images/47 Websites/screenshot.png` — caption: sidgrove.com · built with Claude Code
+- **Screenshot:** `Images/46 Websites/screenshot.png` — caption: sidgrove.com · built with Claude Code
 
-## 48 · Brand assets
+## 47 · Brand assets
 
 - **Section tag:** 02 Build *· Brand assets*
 - **Kicker:** Built with Claude Code · 04 of 04
 - **Headline:** Brand assets. *With Claude Design.*
 - **Line:** The Claude Code engine, *tailored for design.*
-- **Screenshot:** `Images/48 Brand assets/screenshot.png` — caption: Claude Design · brand assets
+- **Screenshot:** `Images/47 Brand assets/screenshot.png` — caption: Claude Design · brand assets
 
-## 49 · 03 Small stuff (beat)
+## 48 · 03 Small stuff (beat)
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** *The small stuff.*
 - **Sub:** Note takers, dictation, *the everyday wins.*
 
-## 50 · AI note takers
+## 49 · AI note takers
 
 - **Section tag:** How I use it *· 03 the small stuff*
 - **Headline:** Note takers *and dictation.* — verdict: Small wins
@@ -389,13 +384,13 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Fireflies · Wispr Flow
 - **Others I use sparingly:** Loom AI · Granola · Otter · Fathom · Teams recap
 
-## 51 · 04 With caution (beat)
+## 50 · 04 With caution (beat)
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** *With caution.*
 - **Sub:** The ones I use sometimes. *Everything before this, I use daily.*
 
-## 52 · Spreadsheets
+## 51 · Spreadsheets
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** In your spreadsheets. *Check everything.* — verdict: Sparingly
@@ -405,7 +400,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **What I use:** Claude for Excel · ChatGPT for Sheets
 - **Others I use sparingly:** Xero JAX · Gemini in Sheets · Intuit Assist · Sage Copilot
 
-## 53 · MCP connections
+## 52 · MCP connections
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** MCP connections. *With caution.* — verdict: With caution
@@ -415,7 +410,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. 🔑 Reading is one thing. *Writing is another.*
   3. 🪤 Anything it reads can instruct it. *Prompt injection.*
 
-## 54 · Claude Cowork
+## 53 · Claude Cowork
 
 - **Section tag:** How I use it *· 04 with caution*
 - **Headline:** Oh, and *Cowork.* — verdict: With caution
@@ -426,14 +421,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. Lots of *hype.*
 - **Others I use sparingly:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
 
-## 55 · Do and don't
+## 54 · Do and don't
 
 - **Section tag:** How to use it *· my answer*
 - **Headline:** Do and *don't.*
 - **Do — Use it *every day.*:** Chat, for *thinking.* · Talk to it. *Dictate.* · Build tools with *Claude Code.* · *Check* its work.
 - **Don't — Hand it *the keys.*:** Let it *run the close.* · Post anything *unreviewed.* · Client data on a *personal plan.* · Buy the *agent pitch.*
 
-## 56 · Takeaways
+## 55 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
@@ -443,7 +438,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. 🏗️ Build with it. Use it. *Don't let it run your accounting.*
 - **Sign-off:** Or at least, that's what I think.
 
-## 57 · Thank you
+## 56 · Thank you
 
 - **Headline:** Thank *you.*
 - **Line:** Questions welcome, now or after.
