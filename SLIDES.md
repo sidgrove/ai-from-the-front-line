@@ -404,7 +404,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 53 · AI note takers
 
 - **Section tag:** How I use it *· 03 the small stuff*
-- **Headline:** AI *note takers.* — verdict: Small wins
+- **Headline:** AI *note takers.*
 - **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
 - **What I use:** Loom
 - **Other options:** Fireflies · Vinyl · Granola · Fathom
