@@ -328,7 +328,9 @@ deck-stage { background: #0a0a0a; }
   box-shadow: var(--shadow-lift);
   border: 1px solid rgba(255,255,255,0.9);
   display: flex; flex-direction: column; gap: 22px;
-  min-height: 420px;
+  /* border-box, or the 420px floor sits on top of 90px of padding and every
+     card carries a 60px hole under the tagline. */
+  box-sizing: border-box; min-height: 420px;
   position: relative; overflow: hidden;
 }
 .why-label {
@@ -346,9 +348,10 @@ deck-stage { background: #0a0a0a; }
   letter-spacing: -0.005em;
   margin: auto 0 0; padding-top: 26px;
   border-top: 1px solid rgba(168,176,248,0.18);
-  /* Reserve three lines so the hairline sits at the same height on all three
-     cards whether the tagline runs to two lines or three. */
-  min-height: calc(26px + 3 * 1.5 * 23px);
+  /* Reserve two lines (plus the padding above the hairline) so the hairline
+     sits at the same height on all three cards whether the tagline runs to
+     one line or two. */
+  box-sizing: border-box; min-height: calc(26px + 2 * 1.5 * 23px);
   text-wrap: pretty;
 }
 .why-card.t-teal  .why-label, .why-card.t-teal  .why-headline em { color: #1F5A52; }
@@ -599,7 +602,7 @@ deck-stage { background: #0a0a0a; }
 .prob-body { padding: 32px 30px; display: flex; flex-direction: column; gap: 18px; }
 .prob-user { background: linear-gradient(170deg, #2B2D5E 0%, #1E1E46 100%); color: var(--paper); border-radius: 16px 16px 6px 16px; padding: 15px 20px; font-size: 21px; align-self: flex-end; max-width: 85%; line-height: 1.4; font-family: var(--font-sans); box-shadow: inset 0 1px 0 rgba(255,255,255,0.10), 0 8px 18px -8px rgba(30,30,70,0.45); text-align: left; }
 .prob-attach { display: block; margin-top: 8px; font-family: var(--font-sans); font-size: 15px; color: rgba(255,255,255,0.62); }
-.prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 17px 22px; font-size: 21px; color: var(--ink); line-height: 1.5; max-width: 92%; border: 1px solid rgba(168,176,248,0.28); font-family: var(--font-sans); box-shadow: 0 6px 14px -8px rgba(74,86,184,0.3); }
+.prob-ai { background: var(--periwinkle-50); border-radius: 16px 16px 16px 6px; padding: 17px 22px; font-size: 21px; color: var(--ink); line-height: 1.5; max-width: 92%; border: 1px solid rgba(168,176,248,0.28); font-family: var(--font-sans); box-shadow: 0 6px 14px -8px rgba(74,86,184,0.3); text-align: left; }
 .prob-ai em { font-style: normal; font-weight: 600; color: var(--periwinkle-700); }
 .prob-run-label { font-family: var(--font-sans); font-size: 14px; font-weight: 500; color: var(--ink-300); text-align: center; padding: 12px; background: rgba(168,176,248,0.05); border-top: 1px solid rgba(168,176,248,0.12); }
 
@@ -1183,12 +1186,12 @@ deck-stage { background: #0a0a0a; }
 .way-verdict.p { background: rgba(124,135,232,0.14); color: var(--periwinkle-700); }
 
 .way-body { display: grid; grid-template-columns: 1.02fr 1fr; gap: 60px; }
-/* The five pages carry different amounts of content, so a top-anchored body
-   left each one ending at a different height with a hole underneath. Centre
-   the body in the space below the head: every page is balanced, and they
-   agree with the vertically centred slides either side of them. */
-.fill:has(> .way-body) { display: flex; flex-direction: column; }
-.fill > .way-body { margin: auto 0; }
+/* The pages carry different amounts of content. Centre head and body together
+   as one block, so a short page (note takers, dictation) doesn't leave the
+   headline stranded at the top with the mock floating in the middle, and a
+   tall page (chat) still fills the frame from the top. */
+.fill:has(> .way-body) { display: flex; flex-direction: column; justify-content: center; }
+.fill > .way-body { margin: 0; }
 .way-body > div:first-child { display: flex; flex-direction: column; }
 .way-body > div:first-child .way-rule { margin-top: auto; padding-top: 24px; }
 .way-side { display: flex; flex-direction: column; }
@@ -1544,7 +1547,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 70px; align-items: center;">
         <div>
           <h2 class="display" style="font-size: 96px; margin-bottom: 24px;">Anthropic's <em>prediction.</em></h2>
-          <p class="sub" style="font-size: 28px;">Business &amp; finance: theoretically, <em>GenAI is almost entirely taking our job.</em></p>
+          <p class="sub" style="font-size: 28px;">Business &amp; finance: in theory, <em>GenAI can do almost all of our job.</em></p>
           <div class="rc-loupe" aria-hidden="true"></div>
         </div>
         <figure class="shot">
@@ -1562,8 +1565,7 @@ deck-stage { background: #0a0a0a; }
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="Hype bubble">
 
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
+    <!-- No backdrop rings here: the bubble graphic is the circle. -->
 
     <div class="frame">
       <div class="topbar"><p class="section-tag">The hype</p><span class="page-chip"></span></div>
@@ -1841,7 +1843,7 @@ deck-stage { background: #0a0a0a; }
             <line class="hc-link" x1="640" y1="458" x2="640" y2="598"/>
             <line class="hc-link" x1="1080" y1="380" x2="1080" y2="530"/>
             <line class="hc-link" x1="1400" y1="86" x2="1490" y2="45"/>
-            <circle class="hc-dot" cx="160" cy="610" r="10"/><circle class="hc-dot" cx="640" cy="598" r="10"/><circle class="hc-dot" cx="1080" cy="530" r="10"/><circle class="hc-dot" cx="1310" cy="395" r="10"/>
+            <circle class="hc-dot" cx="160" cy="610" r="10"/><circle class="hc-dot" cx="640" cy="598" r="10"/><circle class="hc-dot" cx="1080" cy="530" r="10"/>
             <circle class="hc-dot hc-dot-hot" cx="1510" cy="40" r="14"/>
           </svg>
           <span class="hc-ax hc-y">hype</span>
@@ -2077,7 +2079,7 @@ deck-stage { background: #0a0a0a; }
           Just <em>use</em> it.
         </h2>
         <p class="sub" style="margin-top: 36px; font-size: 32px;">
-          It makes mistakes, <em>all the time.</em>
+          Don't take my word for it. <em>It makes mistakes, all the time.</em>
         </p>
       </div>
 
@@ -2127,7 +2129,7 @@ deck-stage { background: #0a0a0a; }
 
         <figure class="shot">
           <img src="Images/19%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
-          <figcaption>OpenAI's leaked 2025 financials · a $38.5B loss</figcaption>
+          <figcaption>Quartz · OpenAI's leaked 2025 financials · a $38.5B loss</figcaption>
         </figure>
       </div>
 
@@ -2177,16 +2179,16 @@ deck-stage { background: #0a0a0a; }
 
     <div aria-hidden="true" style="position:absolute;right:-160px;top:-160px;width:480px;height:480px;border-radius:50%;border:1px solid rgba(168,176,248,0.10);"></div>
 
-    <div class="frame" style="--pad-y: 70px;">
+    <div class="frame" style="--pad-y: 84px;">
       <div class="topbar" style="margin-bottom: 10px;"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
-        <div style="margin-bottom: 22px;">
+        <div style="margin-bottom: 34px;">
           <h2 class="display" style="font-size: 84px;">It's not just me <em>saying it.</em></h2>
         </div>
         <div class="press-grid four">
           <div class="press-card">
-            <img src="Images/21%20Environment%20press/economist.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
+            <img src="Images/21%20Environment%20press/economist-cut.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
             <div class="press-meta">
               <p class="press-source">The Economist</p>
               <p class="press-name">Consumer electronics</p>
@@ -2194,7 +2196,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/21%20Environment%20press/un.png" alt="UN asks AI companies to reveal full environmental impacts" style="object-position: left bottom;">
+            <img src="Images/21%20Environment%20press/un-cut.png" alt="UN asks AI companies to reveal full environmental impacts">
             <div class="press-meta">
               <p class="press-source">Climate Home News</p>
               <p class="press-name">The UN</p>
@@ -2202,7 +2204,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/21%20Environment%20press/eesi.png" alt="EESI: data centers are hotbeds of health risks">
+            <img src="Images/21%20Environment%20press/eesi-cut.png" alt="EESI: data centers are hotbeds of health risks">
             <div class="press-meta">
               <p class="press-source">EESI</p>
               <p class="press-name">Public health</p>
@@ -2210,7 +2212,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/21%20Environment%20press/civicus.png" alt="Civicus: the cost of the AI boom, communities take on datacentres">
+            <img src="Images/21%20Environment%20press/civicus-cut.png" alt="Civicus: the cost of the AI boom, communities take on datacentres">
             <div class="press-meta">
               <p class="press-source">Civicus Lens</p>
               <p class="press-name">Communities</p>
@@ -2439,7 +2441,10 @@ deck-stage { background: #0a0a0a; }
 
         <div class="vs-grid">
           <div class="vs-card bad">
-            <p class="vs-title"><span class="vs-mark">✗</span> The pilot</p>
+            <div class="vs-head">
+              <p class="vs-title"><span class="vs-mark">✗</span> The pilot</p>
+              <p class="vs-line">Autonomous. <em>Marks its own work.</em></p>
+            </div>
             <div class="vs-row">
               <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
@@ -2447,10 +2452,12 @@ deck-stage { background: #0a0a0a; }
               <span class="vs-arr">→</span>
               <span class="vs-chip">posts it</span>
             </div>
-            <p class="vs-line">Autonomous. <em>Marks its own work.</em></p>
           </div>
           <div class="vs-card good">
-            <p class="vs-title"><span class="vs-mark">✓</span> The copilot</p>
+            <div class="vs-head">
+              <p class="vs-title"><span class="vs-mark">✓</span> The copilot</p>
+              <p class="vs-line">Augments. <em>You stay in charge.</em></p>
+            </div>
             <div class="vs-row">
               <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
@@ -2460,7 +2467,6 @@ deck-stage { background: #0a0a0a; }
               <span class="vs-arr">→</span>
               <span class="vs-chip you">You sign off</span>
             </div>
-            <p class="vs-line">Augments. <em>You stay in charge.</em></p>
           </div>
         </div>
       </div>
@@ -2479,7 +2485,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 01 chat</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 01 chat</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">01 <span>of 04</span></p>
@@ -2498,7 +2504,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 01 chat</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 01 chat</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
@@ -2512,7 +2518,7 @@ deck-stage { background: #0a0a0a; }
         <div class="way-body">
           <div>
             <figure class="shot window">
-              <img src="Images/30%20Chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 720px;">
+              <img src="Images/30%20Chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 560px;">
               <figcaption>claude.ai</figcaption>
             </figure>
           </div>
@@ -2559,7 +2565,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 02 build</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">02 <span>of 04</span></p>
@@ -2577,7 +2583,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="Deterministic">
 
     <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 02 build</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 44px;">
@@ -2610,7 +2616,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 02 build</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div class="way-head" style="margin-bottom: 40px;">
@@ -2647,13 +2653,13 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: center;">
         <div>
-          <p class="build-kicker">Built with Claude Code · 01 of 04</p>
+          <p class="build-kicker">Built with Claude Code</p>
           <h2 class="display" style="font-size: 104px; margin-bottom: 32px;">Sidgrove <em>Intelligence.</em></h2>
-          <p class="sub" style="font-size: 28px;">The app that sits between my clients and the work. <em>Built with Claude Code.</em></p>
+          <p class="sub" style="font-size: 28px;">The app that sits between <em>my clients and the work.</em></p>
         </div>
 
         <div class="si-app">
@@ -2698,7 +2704,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Daily cashflow. <em>Straight from the bank.</em></h2>
@@ -2721,7 +2727,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Bookkeeping workflow <em>and comms.</em></h2>
@@ -2762,7 +2768,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Deadlines <em>and alerts.</em></h2>
@@ -2774,7 +2780,7 @@ deck-stage { background: #0a0a0a; }
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          
+          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
@@ -2801,7 +2807,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Management accounts. <em>With notifications.</em></h2>
@@ -2846,7 +2852,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Payroll reviews <em>and client sign-off.</em></h2>
@@ -2886,7 +2892,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">VAT reviews <em>and client sign-off.</em></h2>
@@ -2929,7 +2935,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div style="margin-bottom: 36px;">
         <h2 class="display" style="font-size: 84px;">Month end. <em>Schedules to cover all postings.</em></h2>
@@ -2957,7 +2963,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Sidgrove Intelligence</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div style="margin-bottom: 48px;">
@@ -2985,7 +2991,7 @@ deck-stage { background: #0a0a0a; }
             <div class="wf-app">
               <div class="wf-app-header">
                 <span class="appw-dot" style="background:#ff5f57;"></span><span class="appw-dot" style="background:#febc2e;"></span><span class="appw-dot" style="background:#28c840;"></span>
-                <span class="wf-app-title">Sidgrove Intelligence</span>
+                <span class="wf-app-title">Circle · month end</span>
               </div>
               <div class="wf-row"><span class="wf-tick">✓</span> Data synced &amp; checked</div>
               <div class="wf-row"><span class="wf-tick">✓</span> Month-end review</div>
@@ -3033,10 +3039,10 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Slides</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
-        <p class="build-kicker" style="justify-content:center;">Built with Claude Code · 02 of 04</p>
+        <p class="build-kicker" style="justify-content:center;">Built with Claude Code</p>
         <h2 class="display" style="font-size: 150px;">This deck.<br><em>No PowerPoint.</em></h2>
         <p class="sub" style="margin-top: 36px; font-size: 32px;"><em>You’re looking at it.</em></p>
       </div>
@@ -3052,17 +3058,17 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Websites</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 4fr 9fr; gap: 56px; align-items: center;">
         <div>
-          <p class="build-kicker">Built with Claude Code · 03 of 04</p>
+          <p class="build-kicker">Built with Claude Code</p>
           <h2 class="display" style="font-size: 96px; margin-bottom: 32px;">Simple websites. <em>Like sidgrove.com.</em></h2>
           <p class="sub" style="font-size: 28px;">Described, built, deployed. <em>No agency, no template.</em></p>
         </div>
         <figure class="shot window">
           <img src="Images/44%20Websites/screenshot.png" alt="sidgrove.com · built with Claude Code" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/35 Websites/screenshot.png'">
-          <figcaption>sidgrove.com · built with Claude Code</figcaption>
+          <figcaption>sidgrove.com</figcaption>
         </figure>
       </div>
 
@@ -3077,17 +3083,17 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 90px;">
-      <div class="topbar"><p class="section-tag">02 Build <em>· Brand assets</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="display: grid; grid-template-columns: 4fr 9fr; gap: 56px; align-items: center;">
         <div>
-          <p class="build-kicker">Built with Claude Design · 04 of 04</p>
+          <p class="build-kicker">Built with Claude Design</p>
           <h2 class="display" style="font-size: 96px; margin-bottom: 32px;">Brand assets. <em>With Claude Design.</em></h2>
           <p class="sub" style="font-size: 28px;">The Claude Code engine, <em>tailored for design.</em></p>
         </div>
         <figure class="shot window">
           <img src="Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/36 Brand assets/screenshot.png'">
-          <figcaption>Claude Design · brand assets</figcaption>
+          <figcaption>Claude Design</figcaption>
         </figure>
       </div>
 
@@ -3104,7 +3110,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">03 <span>of 04</span></p>
@@ -3123,7 +3129,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
@@ -3182,13 +3188,13 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
           <div>
             <h2 class="display" style="font-size: 84px;">Dictation. <em>Talk instead of type.</em></h2>
-            <p class="sub" style="font-size: 30px; margin-top: 18px;">A great way to prompt <em>the GenAI chat interface.</em></p>
+            <p class="sub" style="font-size: 30px; margin-top: 18px;">The quickest way to <em>write a prompt.</em></p>
           </div>
         </div>
 
@@ -3244,7 +3250,7 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">04 <span>of 04</span></p>
@@ -3264,7 +3270,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
@@ -3312,7 +3318,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div class="way-head" style="margin-bottom: 44px;">
@@ -3339,7 +3345,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">How I use it <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
         <div class="way-head" style="margin-bottom: 44px;">
@@ -3415,7 +3421,7 @@ deck-stage { background: #0a0a0a; }
           <div class="tw-card">
             <div class="tw-top"><span class="tk-icon">✅</span><span class="tw-num">04</span></div>
             <h3 class="tw-title">Use it every day.</h3>
-            <p class="tk-text">Chat. Build tools with Claude Code. Augment: dictation, add-ons, brand, sites, slides.</p>
+            <p class="tk-text">Chat. Build tools with Claude Code. Dictation and note takers for the small stuff.</p>
           </div>
         </div>
       </div>
@@ -3568,7 +3574,8 @@ deck-stage { background: #0a0a0a; }
   { "say": ["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."] },
   { "say": ["Beat. And it is not only accuracy. Two more things the pitch leaves out: what it costs, and what it burns."] },
   { "say": ["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.", "Any business case priced on today's rate is priced on a loss leader."],
-    "ask": "'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed." },
+    "src": ["Quartz (Jun 2026), from audited 2025 accounts obtained by Ed Zitron and verified by the FT: revenue $13.1B, costs $34B, operating loss $20.9B, net loss $38.5B."],
+    "ask": "'The $38.5B is mostly a one-off.' Correct: about $41.5B of it is a non-cash charge from the for-profit conversion. Strip it out and it is still a $21B operating loss on $13B of revenue, so the point stands. 'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed." },
   { "say": ["And the bit the pitch never mentions: the environmental and the societal cost. It haemorrhages power and water. It is hoarding memory and components, so your electricity and your electronics cost more. And the data centres are landing on communities that did not ask for them."],
     "ask": "'Per query it is tiny.' Per answer, yes, and falling. The total is what doubles, and the total is what the grid, the water table and the next-door town feel." },
   { "say": ["Not just me saying it. The Economist on memory prices; the UN asking AI firms to disclose emissions, water and energy; EESI on health risks around data centres; Civicus on communities pushing back."],
@@ -3660,27 +3667,31 @@ deck-stage { background: #0a0a0a; }
 .page-chip { border-color: rgba(30,30,70,0.2); }
 
 /* ── 24 · Copilot vs pilot ─────────────────────────────────────── */
-.vs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 64px; }
+/* Two full-width rows rather than two columns: the copilot chain has four
+   steps and wrapped mid-arrow when it shared the width with the pilot card.
+   Title and verdict sit left, the chain runs left to right beside them. */
+.vs-grid { display: grid; grid-template-columns: 1fr; gap: 24px; margin-top: 56px; }
 .vs-card {
   background: var(--paper-card); border: 1px solid rgba(30,30,70,0.14); border-radius: 30px;
-  padding: 52px 52px 46px; box-shadow: var(--shadow-lift);
-  display: flex; flex-direction: column; gap: 28px;
+  padding: 38px 44px; box-shadow: var(--shadow-lift);
+  display: grid; grid-template-columns: 440px 1fr; align-items: center; gap: 40px;
 }
+.vs-head { display: flex; flex-direction: column; gap: 12px; }
 .vs-title { margin: 0; font-family: var(--font-sans); font-weight: 600; font-size: 32px; color: var(--ink); display: flex; align-items: center; gap: 12px; }
 .vs-mark { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%; font-size: 22px; color: #fff; }
 .vs-card.bad .vs-mark { background: #7A1E35; }
 .vs-card.good .vs-mark { background: var(--green-600); }
 .vs-row { display: flex; align-items: center; gap: 14px; }
 .vs-chip {
-  font-family: var(--font-sans); font-size: 27px; font-weight: 500; color: var(--ink);
-  padding: 20px 26px; border-radius: 18px; background: #F1F1F8; border: 1px solid rgba(30,30,70,0.08);
+  font-family: var(--font-sans); font-size: 25px; font-weight: 500; color: var(--ink);
+  padding: 18px 22px; border-radius: 18px; background: #F1F1F8; border: 1px solid rgba(30,30,70,0.08);
   display: inline-flex; align-items: center; gap: 10px; white-space: nowrap;
 }
-.vs-chip img { width: 32px; height: 32px; }
+.vs-chip img { width: 30px; height: 30px; }
 .vs-chip.you { background: var(--ink); color: #fff; border-color: var(--ink); }
 .vs-card.bad .vs-chip:not(.who) { background: rgba(122,30,53,0.08); border-color: rgba(122,30,53,0.18); color: #7A1E35; }
 .vs-arr { font-size: 24px; color: var(--periwinkle-500); }
-.vs-line { margin: auto 0 0; font-family: var(--font-sans); font-size: 28px; color: var(--ink-500); }
+.vs-line { margin: 0; font-family: var(--font-sans); font-size: 25px; color: var(--ink-500); }
 .vs-line em { font-style: normal; font-weight: 600; }
 .vs-card.bad .vs-line em { color: #7A1E35; }
 .vs-card.good .vs-line em { color: var(--green-600); }
@@ -3743,16 +3754,25 @@ deck-stage { background: #0a0a0a; }
 .ic-card .tk-text { font-size: 28px; }
 
 /* ── The hub · Sidgrove Intelligence flow (from sidgrove.com, static) ── */
-.wf-flow { display: grid; grid-template-columns: auto 1fr auto 1fr auto; align-items: center; gap: 0; }
-.wf-stage { display: flex; flex-direction: column; align-items: center; }
-.wf-stage-label { font-family: var(--font-sans); font-size: 17px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--periwinkle-700); margin-bottom: 18px; }
+/* Two grid rows: the three stage labels share row 1 so they sit on one line,
+   the three stages and two connectors share row 2 and centre on each other.
+   .wf-stage is display: contents so its label and body land in the grid. */
+.wf-flow { display: grid; grid-template-columns: auto 1fr auto 1fr auto; grid-template-rows: auto auto; align-items: center; column-gap: 0; row-gap: 20px; }
+.wf-stage { display: contents; }
+.wf-flow > .wf-stage:nth-child(1) > * { grid-column: 1; }
+.wf-flow > .wf-connector:nth-child(2) { grid-column: 2; grid-row: 2; }
+.wf-flow > .wf-stage:nth-child(3) > * { grid-column: 3; }
+.wf-flow > .wf-connector:nth-child(4) { grid-column: 4; grid-row: 2; }
+.wf-flow > .wf-stage:nth-child(5) > * { grid-column: 5; }
+.wf-stage-label { grid-row: 1; align-self: end; justify-self: center; font-family: var(--font-sans); font-size: 21px; font-weight: 600; letter-spacing: -0.005em; color: var(--periwinkle-700); margin: 0; }
+.wf-sources, .wf-app, .wf-outputs { grid-row: 2; align-self: center; }
 .wf-sources { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .wf-chip { display: flex; align-items: center; gap: 12px; background: #fff; border: 1px solid rgba(30,30,70,0.12); border-radius: 14px; padding: 12px 22px 12px 14px; box-shadow: var(--shadow-card); font-family: var(--font-sans); font-weight: 600; font-size: 21px; color: var(--ink); }
 .wf-chip img { width: 30px; height: 30px; object-fit: contain; }
-.wf-connector { height: 3px; margin: 28px 24px 0; border-radius: 3px; background: linear-gradient(90deg, var(--periwinkle-500), #F0B25C); }
+.wf-connector { height: 3px; margin: 0 24px; border-radius: 3px; background: linear-gradient(90deg, var(--periwinkle-500), #F0B25C); }
 .wf-app { width: 400px; background: #fff; border: 1px solid rgba(30,30,70,0.12); border-radius: 22px; box-shadow: var(--shadow-lift); padding: 24px 28px 20px; }
 .wf-app-header { display: flex; align-items: center; gap: 7px; padding-bottom: 16px; margin-bottom: 10px; border-bottom: 1px solid rgba(30,30,70,0.08); }
-.wf-app-title { margin-left: 8px; font-family: var(--font-sans); font-size: 15px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-300); }
+.wf-app-title { margin-left: 8px; font-family: var(--font-sans); font-size: 15px; font-weight: 500; letter-spacing: 0.08em; color: var(--ink-300); }
 .wf-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; font-family: var(--font-sans); font-size: 21px; font-weight: 500; color: var(--ink); }
 .wf-tick { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--green-200); color: var(--green-600); display: flex; align-items: center; justify-content: center; font-size: 15px; font-weight: 700; }
 .wf-row-live { color: var(--ink-500); }
@@ -3774,7 +3794,9 @@ deck-stage { background: #0a0a0a; }
 
 /* ── Environment press · 2x2 cuttings ──────────────────────────── */
 .press-grid.four { grid-template-columns: 1fr 1fr; gap: 20px; }
-.press-grid.four .press-card img { aspect-ratio: 16 / 6.4; object-position: bottom center; }
+/* The cuttings are pre-cropped to masthead + headline (the *-cut.png files),
+   all at 2.75:1, so the band shows the whole cutting and no site chrome. */
+.press-grid.four .press-card img { aspect-ratio: 2.75; object-position: top center; }
 .press-grid.four .press-meta { flex-direction: row; align-items: baseline; gap: 12px; padding: 12px 22px 14px; }
 .press-grid.four .press-role { display: none; }
 .press-grid.four .press-name { font-size: 20px; }
@@ -3798,7 +3820,7 @@ deck-stage { background: #0a0a0a; }
 /* ── Not intelligent · two columns of icon rows ─────────────────── */
 .ni-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .ni-grid .tk-rows { padding: 18px 40px 12px; }
-.ni-title { margin: 6px 0 4px; font-family: var(--font-sans); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--periwinkle-700); }
+.ni-title { margin: 6px 0 4px; font-family: var(--font-sans); font-weight: 600; font-size: 18px; letter-spacing: -0.005em; color: var(--periwinkle-700); }
 .ni-grid .tk-row { padding: 20px 0; gap: 22px; }
 .ni-grid .tk-text { font-size: 28px; }
 .ni-grid .tk-icon { width: 60px; height: 60px; font-size: 30px; }
@@ -3858,7 +3880,8 @@ deck-stage { background: #0a0a0a; }
 /* ── Vibe coding · uses + warnings ─────────────────────────────── */
 .vc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
 .vc-col { padding: 20px 40px 14px; }
-.vc-title { margin: 6px 0 4px; font-family: var(--font-sans); font-weight: 700; font-size: 18px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--green-600); }
+/* Sentence case, like every other slide-level label (no tracked caps). */
+.vc-title { margin: 6px 0 4px; font-family: var(--font-sans); font-weight: 600; font-size: 18px; letter-spacing: -0.005em; color: var(--green-600); }
 .vc-col.warn .vc-title { color: #B45309; }
 .vc-col.warn .tk-text em { color: #B45309; }
 .vc-col .tk-row { padding: 18px 0; gap: 22px; }
@@ -4051,7 +4074,6 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .tk-rows .ni-title { font-size: 20px; }
 .tk-foot .way-label { font-size: 22px; }
 /* ── Layout nits from the full-send pass ─────────────────────── */
-.vs-card.good .vs-row { flex-wrap: wrap; row-gap: 12px; }
 .me-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
 .me-grid > * { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); box-sizing: border-box; }
 .rec-grid { align-items: center; }
