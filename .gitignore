@@ -8,3 +8,6 @@ desktop.ini
 *.swp
 .claude/
 .worktrees/
+
+# Vercel local project link
+.vercel/
