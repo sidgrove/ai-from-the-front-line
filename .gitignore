@@ -11,3 +11,6 @@ desktop.ini
 
 # Vercel local project link
 .vercel/
+
+# Exported deck (rebuild with Print -> Save as PDF)
+*.pdf
