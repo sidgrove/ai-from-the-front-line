@@ -9,6 +9,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   your changes to the HTML.
 - Say **"push to plan"** — Claude regenerates this file from the current deck so it
   matches what's live (do this after slides have been edited directly).
+- A ` · ` between sentences in a **Sub** means each sentence is its own bulleted line, never a wrapped paragraph.
 - `*italics*` marks the serif accent (`<em>`) inside a heading or line — keep the
   asterisks around whichever words should get the accent treatment.
 - Keep the `## NN · Title` headings intact; they're how Claude maps a section to a
@@ -36,8 +37,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 03 · The headlines
 
 - **Section tag:** The hype
-- **Headline:** The *headlines.*
-- **Sub:** The doomsaying, *in print.*
+- **Headline:** The narrative is *relentless.*
 - **Press cards:**
   1. AAT — Two in five — would consider leaving accountancy (`AAT.png`)
   2. Fortune — Mustafa Suleyman — CEO, Microsoft AI (`Suleyman.png`)
@@ -55,7 +55,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** The hype
 - **Headline:** But I think *they're wrong.*
-- **Sub:** You're fine. We're in a hype bubble. *And they're already backtracking.*
+- **Sub:** You're fine. · We're in a hype bubble. · *And they're already backtracking.*
 - **Image:** `Images/05 Hype bubble/reversal.png`
 
 ## 06 · Why listen
@@ -63,20 +63,11 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Section tag:** Side note
 - **Headline:** Why listen to *me?*
 - **Claims:**
-  1. I try *all of it.*
+  1. I’m an obsessive *early adopter.*
   2. If it worked, *I'd be doing it.*
-- **Permission card:** So, officially — You have permission to simplify. *Ignore the hype. Focus on what matters.*
+- **Permission card:** So, officially — You have permission *to simplify.* — quieter line under it: Ignore the hype. Focus on what matters.
 
-## 07 · Why so strong
-
-- **Section tag:** The hype
-- **Headline:** So why so much *hype?*
-- **Cards:**
-  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
-  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
-  3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI.
-
-## 08 · The meter
+## 07 · The meter
 
 - **Section tag:** The hype
 - **Headline:** If full autonomy worked, *I'd be using it.*
@@ -86,28 +77,37 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Claude Max subscription — limit hit · weekly
   - Fully autonomous, unreviewed — 0 · not worth the risk yet
 
+## 08 · Why so strong
+
+- **Section tag:** The hype
+- **Headline:** So why so much *hype?*
+- **Cards:**
+  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
+  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
+  3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI.
+
 ## 09 · What is it? (divider)
 
 - **Headline:** So what actually *is* it?
 - **Prompt bar:** Generative AI, specifically. *How does it actually work?*
 
-## 10 · An LLM
-
-- **Section tag:** The reality
-- **Kicker:** ‘AI’, as most people mean it, is GenAI:
-- **Headline:** Transformer-based *LLMs.*
-- **Sub:** Large language models. A very advanced autocomplete, *based on pattern recognition.*
-- **Mock (phone keyboard, predictive text):**
-  - Them: Can you send over the Q1 figures before Friday?
-  - Me (typing): Sure, I'll send the|
-  - Suggestions: file · **figures** · invoice
-
-## 11 · Hype curve
+## 10 · Hype curve
 
 - **Section tag:** The reality
 - **Headline:** From quiet utility *to mass hype.*
 - **Sub:** The newest form of AI generates from scratch. *It hits awe, dopamine and fear at once.*
 - **Graphic (curve, 2000 → 2025):** Pre-2015 — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
+
+## 11 · An LLM
+
+- **Section tag:** The reality
+- **Kicker:** ‘AI’, as most people mean it, is GenAI:
+- **Headline:** Transformer-based *LLMs.*
+- **Sub:** Large language models. · A very advanced autocomplete, *based on pattern recognition.*
+- **Mock (phone keyboard, predictive text):**
+  - Them: Can you send over the Q1 figures before Friday?
+  - Me (typing): Sure, I'll send the|
+  - Suggestions: file · **figures** · invoice
 
 ## 12 · Probabilistic
 
@@ -145,11 +145,10 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** “But it’s better than *a human.”*
 - **Sub:** Maybe. *But it's different.*
 - **Rows:**
-  1. Unpredictable, *unlike a person.*
-  2. Confident *either way.*
-  3. Hides its errors *well.*
-  4. Replacing tools *that already work.*
-  5. Not better than a human *+ GenAI used properly.*
+  1. More unpredictable than a human.
+  2. Confident - regardless of whether it's correct.
+  3. Incredible at hiding errors.
+  4. Not better than a human + GenAI used properly.
 
 ## 17 · Just use it (beat)
 
@@ -166,7 +165,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** The reality
 - **Headline:** Sold below *cost.*
-- **Sub:** This isn't a software business. *What happens when they raise prices and cut the limits?*
+- **Sub:** This isn't a software business. · *What happens when they raise prices and cut the limits?*
 - **Cutting:** `Images/19 The economics/openai-losses.png` — caption: Quartz · OpenAI's leaked 2025 financials · a $38.5B loss
 
 ## 20 · Environment
@@ -204,24 +203,18 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** They want you *hooked.*
-- **Sub:** The flat plan gets you in. *The agent bills you by the token.*
+- **Sub:** Using agents to perform end to end work creates reliance on *high token usage.*
 - **Mock (⬢ AgentSuite Pro · Autopilot on):**
   - Month-end close — 82%
   - Tokens remaining — 41k of 3.0M
   - Button: Top up · £299
   - Fine print: auto-top-up on · pricing subject to change
 
-## 25 · It's toxic
-
-- **Section tag:** What works *· the pitch*
-- **Headline:** It's *toxic.*
-- **Sub:** It'll need ripping out, at huge cost. *Like asbestos.*
-
-## 26 · Pre-authorised mistakes
+## 25 · Pre-authorised mistakes
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** Pre-authorised *mistakes.*
-- **Sub:** If it’s guaranteed to make mistakes, we’re pre-authorising incompetence before we even begin. *And we don’t know where they are.*
+- **Sub:** Mistakes are guaranteed. · We’re pre-authorising incompetence *before we’ve even started the work.*
 - **Mock (permission dialog · "Agent" wants to run your month-end · Full autonomy · no review):**
   - Fetch the invoices
   - Match & reconcile
@@ -229,37 +222,41 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Decide it's all correct
   - Button: Approve future mistakes
 
+## 26 · It's toxic
+
+- **Section tag:** What works *· the pitch*
+- **Headline:** It's *toxic.*
+- **Sub:** It'll need ripping out, at huge cost. *Like asbestos.*
+
 ## 27 · Better approach (divider)
 
-- **Headline:** So what's a *better* approach?
-- **Prompt bar:** In my opinion, *anyway.*
+- **Headline:** So what's *my* approach?
 
 ## 28 · Copilot, never the pilot
 
 - **Section tag:** What works *· my answer*
 - **Headline:** A copilot. *Never the pilot.*
-- **Sub:** Don't put it in the process. *Have it write the tools that run the process.*
-- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Autonomous. *Marks its own work.* · ✓ The copilot — Claude → builds the tool → You sign off — Augments. *You stay in charge.*
+- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Agentic AI autonomously completing end-to-end task completion. · ✓ The copilot — Claude → builds the tool → You sign off — Augments. *We stay in charge.*
 
 ## 29 · 01 Chat (beat)
 
-- **Section tag:** What works *· 01 chat*
-- **Headline:** *Chat.*
-- **Sub:** Four ways. *Three daily, one not.* First, the daily driver.
+- **Section tag:** What works *· 01 AI chat interfaces*
+- **Headline:** *AI Chat Interfaces.*
 
 ## 30 · Chat
 
-- **Section tag:** What works *· 01 chat*
-- **Headline:** Chat. *The daily driver.* — verdict: Use daily
+- **Section tag:** What works *· 01 AI chat interfaces*
+- **Headline:** AI Chat Interfaces. *The daily driver.* — verdict: Use daily
+- **Sub:** The expert co-pilot you can use *on the fly at any time.*
 - **Screenshot:** `Images/30 Chat/claude-chat.png` — caption: claude.ai
-- **What I use:** Claude · Gemini
-- **Other options:** ChatGPT · Microsoft Copilot · Perplexity · Mistral · DeepSeek
+- **What I use:** Claude · Gemini · ChatGPT
+- **Other options:** Microsoft Copilot · Perplexity · DeepSeek
 
 ## 31 · 02 Build (beat)
 
 - **Section tag:** What works *· 02 build*
 - **Headline:** *Build.*
-- **Sub:** Vibe coding, and what I've built *with Claude Code.*
+- **Sub:** Build tools that run without GenAI. *With AI.*
 
 ## 32 · Deterministic
 
@@ -281,7 +278,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Kicker:** Built with Claude Code
 - **Headline:** Sidgrove *Intelligence.*
 - **Line:** The app that sits between *my clients and the work.*
-- **Mock (app shell, Sidgrove Intelligence design tokens):** sidebar nav (Bookkeeping · Cashflow · Deadlines · **Month end** · Management accounts · Payroll · VAT) · eyebrow "Client · Acme Ltd" · title Month *end* · KPIs: Accruals 12 posted · Prepayments 8 posted · Deferred revenue £42,300 review · rows: Payroll postings (Posted) · Direct cost reallocations (Posted) · Corporation tax accrual (Needs review) · Loan postings (Scheduled)
+- **Layout:** ink hero slide; kicker, headline and line centred, the practice-overview window below running off the bottom edge
+- **Screenshot:** `Images/34 Sidgrove Intelligence/practice-overview.png` — the real practice overview in demo mode — window title: Sidgrove Intelligence · practice overview · demo mode
 
 ## 35 · Daily cashflow
 
@@ -343,8 +341,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· 02 build*
 - **Kicker:** Built with Claude Code
-- **Headline:** Simple websites. *Like sidgrove.com.*
-- **Line:** Described, built, deployed. *No agency, no template.*
+- **Headline:** Simple websites. *Like my own, sidgrove.com.*
 - **Screenshot:** `Images/44 Websites/screenshot.png` — caption: sidgrove.com
 
 ## 45 · Brand assets
@@ -357,13 +354,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 46 · 03 Small stuff (beat)
 
-- **Section tag:** What works *· 03 everyday extras*
-- **Headline:** *Everyday extras.*
-- **Sub:** Note takers, dictation. *Daily, not core.*
+- **Section tag:** What works *· 03 other daily (Gen)AI tools*
+- **Headline:** *Other Daily (Gen)AI Tools.*
 
 ## 47 · AI note takers
 
-- **Section tag:** What works *· 03 everyday extras*
+- **Section tag:** What works *· 03 other daily (Gen)AI tools*
 - **Headline:** AI *note takers.*
 - **Mock (Loom · Acme catch-up · 32 min):** Summary ready · 2 action items — Fees agreed: £1,850 a month from April · Client sends the payroll CSV by Friday
 - **What I use:** Loom
@@ -371,7 +367,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 48 · Dictation
 
-- **Section tag:** What works *· 03 everyday extras*
+- **Section tag:** What works *· 03 other daily (Gen)AI tools*
 - **Headline:** Dictation. *Talk instead of type.*
 - **Sub:** The quickest way to *write a prompt.*
 - **Mock (Aqua Voice · dictating):** “Summarise this thread into three bullets and draft a reply”
@@ -382,7 +378,6 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· 04 non-daily*
 - **Headline:** Non-daily *use cases.*
-- **Sub:** *My reality.* Everything before this, I use daily.
 
 ## 50 · Spreadsheets
 
@@ -395,28 +390,31 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 51 · MCP connections
 
 - **Section tag:** What works *· 04 non-daily*
-- **Headline:** MCP connections. *Plugging it into your apps.* — verdict: Non-daily
+- **Headline:** MCP *connections.* — verdict: Non-daily
+- **Sub:** Model context protocol. *I barely touch these too.*
 - **Rows:**
-  1. 🔌 Xero, Slack, your inbox. *It can read them all.*
-  2. 🔑 I let it read. *I don’t let it post.*
-  3. 🪤 Anything it reads can instruct it. *Prompt injection.*
+  1. 🔌 A mechanism that allows GenAI chat interfaces and agents to access APIs.
+  2. 🎯 Nice for niche ad hoc data pulls where it’s not mission critical.
+  3. ⚠️ Pointless for recurring data connections that we need to be correct. MCPs just add risk for no reason.
 
 ## 52 · Claude Cowork
 
 - **Section tag:** What works *· 04 non-daily*
 - **Headline:** Oh, and *Claude Cowork.* — verdict: Non-daily
-- **Sub:** I barely touch it.
+- **Sub:** I barely touch it. · Cowork and orchestration layers are a shortcut with shortcomings, IMO. *Like junk food, or Ozempic.*
 - **Rows:**
-  1. The product that does whole tasks, end to end. *Probably correctly. Sometimes not.*
-  2. *Niche* use cases.
-  3. Lots of *hype.*
-- **Other options:** ChatGPT Work · Gemini Spark · Copilot agents · Basis
+  1. The product that does whole tasks, end to end.
+  2. Probably correctly. *Sometimes not.*
+  3. Niche use cases *(I think so anyway).*
+  4. Lots of *hype.*
+- **Other options:** ChatGPT Work · Copilot agents · Orchestration layer products
+- **Right column:** one big Claude chat box reading "Grab the year end working papers file and perform the entire year end review."
 
 ## 53 · Takeaways
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
-- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Never autonomous, end to end. Nothing posted unreviewed. · ✅ Use it every day. — Chat. Build tools with Claude Code. Dictation and note takers for the small stuff.
+- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Never autonomous, end to end. Nothing posted unreviewed. · ✅ Use it every day. — Chat. Build tools with Claude Code. Dictation and note takers.
   1. The work isn't going away. *Someone has to rip the asbestos out.*
   2. The narrative is hype, powered by *massive financial bets.*
   3. Build with it. Use it. *Don't let it run your accounting.*

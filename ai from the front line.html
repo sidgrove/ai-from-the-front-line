@@ -202,6 +202,17 @@ deck-stage { background: #0a0a0a; }
   color: var(--periwinkle-700);
 }
 .slide.ink .sub em { color: var(--green); }
+/* A sub with more than one point: one point per line, never a wrapped
+   paragraph. <span class="pt"> per sentence. */
+.sub .pt, .wl-ptext .pt { display: block; position: relative; padding-left: 1.1em; }
+.sub .pt + .pt { margin-top: 0.9em; }
+.wl-ptext .pt + .pt { margin-top: 0.4em; }
+.sub .pt::before, .wl-ptext .pt::before {
+  content: ''; position: absolute; left: 0; top: 0.56em;
+  width: 0.36em; height: 0.36em; border-radius: 50%;
+  background: var(--periwinkle-500);
+}
+.slide.ink .sub .pt::before, .wl-ptext .pt::before { background: var(--green); }
 
 
 /* ── 01 · Cover ─────────────────────────────────────────────────── */
@@ -1498,11 +1509,8 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div style="margin-bottom: 52px;">
           <h2 class="display" style="font-size: 104px;">
-            The <em>headlines.</em>
+            The narrative is <em>relentless.</em>
           </h2>
-          <p class="sub" style="margin-top: 20px; font-size: 27px;">
-            The doomsaying, <em>in print.</em>
-          </p>
         </div>
         <div class="press-grid">
           <div class="press-card">
@@ -1573,7 +1581,11 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center;">
         <div>
           <h2 class="display" style="font-size: 112px; margin-bottom: 28px;">But I think <em>they're wrong.</em></h2>
-          <p class="sub" style="font-size: 30px; margin-bottom: 44px;">You're fine. We're in a hype bubble. <em>And they're already backtracking.</em></p>
+          <p class="sub" style="font-size: 30px; margin-bottom: 44px;">
+            <span class="pt">You're fine.</span>
+            <span class="pt">We're in a hype bubble.</span>
+            <span class="pt"><em>And they're already backtracking.</em></span>
+          </p>
           <figure class="shot bub-cut">
             <img src="Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
           </figure>
@@ -1616,7 +1628,7 @@ deck-stage { background: #0a0a0a; }
             <div class="wl-claim">
               <span class="wl-num">01</span>
               <div class="wl-ctext">
-                <h3 class="wl-ctitle">I try <em>all of it.</em></h3>
+                <h3 class="wl-ctitle">I’m an obsessive <em>early adopter.</em></h3>
               </div>
             </div>
             <div class="wl-claim">
@@ -1627,7 +1639,8 @@ deck-stage { background: #0a0a0a; }
             </div>
             <div class="wl-permission">
               <p class="wl-plabel">So, officially</p>
-              <p class="wl-ptext">You have permission to simplify. <em>Ignore the hype. Focus on what&nbsp;matters.</em></p>
+              <p class="wl-ptext">You have permission <em>to simplify.</em></p>
+              <p class="wl-pline">Ignore the hype. Focus on what matters.</p>
             </div>
           </div>
         </div>
@@ -1638,51 +1651,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       07 · WHY THE NARRATIVE IS SO STRONG
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="Why so strong">
-
-
-    <div class="frame">
-      <div class="topbar"><p class="section-tag">The hype</p><span class="page-chip"></span></div>
-
-      <div class="fill center-y">
-      <div style="margin-bottom: 52px;">
-        <h2 class="display" style="font-size: 116px;">
-          So why so much <em>hype?</em>
-        </h2>
-      </div>
-
-      <div class="why-grid">
-        <div class="why-card t-teal">
-          <span class="tk-icon why-icon">✨</span>
-          <p class="why-label">The GenAI mirage</p>
-          <h3 class="why-headline">It looks great <em>from afar.</em></h3>
-          <p class="why-tagline">Mind-blowing demo. Different reality.</p>
-        </div>
-
-        <div class="why-card t-amber">
-          <span class="tk-icon why-icon">💸</span>
-          <p class="why-label">The money</p>
-          <h3 class="why-headline">The hype pays <em>their bills.</em></h3>
-          <p class="why-tagline">Hundreds of billions bet. It has to be right.</p>
-        </div>
-
-        <div class="why-card t-rose">
-          <span class="tk-icon why-icon">🧠</span>
-          <p class="why-label">The tech is actually good</p>
-          <h3 class="why-headline">Good enough to <em>believe.</em></h3>
-          <p class="why-tagline">People are losing jobs. Just not to AI.</p>
-        </div>
-      </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       08 · THE NARRATIVE · THE METER
+       07 · THE NARRATIVE · THE METER
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="The meter">
 
@@ -1743,6 +1712,50 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
+       08 · WHY THE NARRATIVE IS SO STRONG
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="Why so strong">
+
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The hype</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+      <div style="margin-bottom: 52px;">
+        <h2 class="display" style="font-size: 116px;">
+          So why so much <em>hype?</em>
+        </h2>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card t-teal">
+          <span class="tk-icon why-icon">✨</span>
+          <p class="why-label">The GenAI mirage</p>
+          <h3 class="why-headline">It looks great <em>from afar.</em></h3>
+          <p class="why-tagline">Mind-blowing demo. Different reality.</p>
+        </div>
+
+        <div class="why-card t-amber">
+          <span class="tk-icon why-icon">💸</span>
+          <p class="why-label">The money</p>
+          <h3 class="why-headline">The hype pays <em>their bills.</em></h3>
+          <p class="why-tagline">Hundreds of billions bet. It has to be right.</p>
+        </div>
+
+        <div class="why-card t-rose">
+          <span class="tk-icon why-icon">🧠</span>
+          <p class="why-label">The tech is actually good</p>
+          <h3 class="why-headline">Good enough to <em>believe.</em></h3>
+          <p class="why-tagline">People are losing jobs. Just not to AI.</p>
+        </div>
+      </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
        09 · DIVIDER · SO WHAT ACTUALLY IS IT?
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="What is it?">
@@ -1774,52 +1787,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       10 · THE REALITY · A VERY ADVANCED AUTOCOMPLETE
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="An LLM">
-
-
-    <div class="frame">
-      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
-
-      <div class="fill split">
-
-        <div>
-          <p class="ai-kicker">‘AI’, as most people mean it, is GenAI:</p>
-          <h2 class="display" style="font-size: 104px; margin-bottom: 36px;">
-            Transformer-based<br><em>LLMs.</em>
-          </h2>
-          <p class="sub" style="font-size: 26px; max-width: 640px;">
-            Large language models. A very advanced autocomplete, <em>based on pattern recognition.</em>
-          </p>
-        </div>
-
-        <div class="kb-mock">
-          <div class="kb-screen">
-            <div class="kb-bubble them">Can you send over the Q1 figures before Friday?</div>
-            <div class="kb-bubble me">Sure, I'll send the<span class="kb-caret"></span></div>
-          </div>
-          <div class="kb-suggest">
-            <span class="kb-sug">file</span>
-            <span class="kb-sug hi">figures</span>
-            <span class="kb-sug">invoice</span>
-          </div>
-          <div class="kb-keys">
-            <div class="kb-rowk"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i></div>
-            <div class="kb-rowk"><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i></div>
-            <div class="kb-rowk"><i class="w">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i>m</i><i class="w">⌫</i></div>
-            <div class="kb-rowk"><i class="w">123</i><i class="space">space</i><i class="w">return</i></div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       11 · THE REALITY · FROM QUIET UTILITY TO MASS HYPE
+       10 · THE REALITY · FROM QUIET UTILITY TO MASS HYPE
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Hype curve">
 
@@ -1856,6 +1824,52 @@ deck-stage { background: #0a0a0a; }
           <div class="hc-card hc-hot" style="left: 880px; top: 20px;"><span class="hc-ico">🤖</span><div><span class="hc-when">2023</span><span class="hc-what">GenAI. <em>Text, images, video, code, from scratch.</em></span></div></div>
         </div>
         </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       11 · THE REALITY · A VERY ADVANCED AUTOCOMPLETE
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide paper-soft" data-label="An LLM">
+
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
+
+      <div class="fill split">
+
+        <div>
+          <p class="ai-kicker">‘AI’, as most people mean it, is GenAI:</p>
+          <h2 class="display" style="font-size: 104px; margin-bottom: 36px;">
+            Transformer-based<br><em>LLMs.</em>
+          </h2>
+          <p class="sub" style="font-size: 26px; max-width: 640px;">
+            <span class="pt">Large language models.</span>
+            <span class="pt">A very advanced autocomplete, <em>based on pattern recognition.</em></span>
+          </p>
+        </div>
+
+        <div class="kb-mock">
+          <div class="kb-screen">
+            <div class="kb-bubble them">Can you send over the Q1 figures before Friday?</div>
+            <div class="kb-bubble me">Sure, I'll send the<span class="kb-caret"></span></div>
+          </div>
+          <div class="kb-suggest">
+            <span class="kb-sug">file</span>
+            <span class="kb-sug hi">figures</span>
+            <span class="kb-sug">invoice</span>
+          </div>
+          <div class="kb-keys">
+            <div class="kb-rowk"><i>q</i><i>w</i><i>e</i><i>r</i><i>t</i><i>y</i><i>u</i><i>i</i><i>o</i><i>p</i></div>
+            <div class="kb-rowk"><i>a</i><i>s</i><i>d</i><i>f</i><i>g</i><i>h</i><i>j</i><i>k</i><i>l</i></div>
+            <div class="kb-rowk"><i class="w">⇧</i><i>z</i><i>x</i><i>c</i><i>v</i><i>b</i><i>n</i><i>m</i><i class="w">⌫</i></div>
+            <div class="kb-rowk"><i class="w">123</i><i class="space">space</i><i class="w">return</i></div>
+          </div>
+        </div>
+
       </div>
 
       <div class="bottombar"></div>
@@ -2038,23 +2052,19 @@ deck-stage { background: #0a0a0a; }
         <div class="tk-rows ni">
           <div class="tk-row">
             <span class="tk-icon">🎲</span>
-            <p class="tk-text">Unpredictable, <em>unlike a person.</em></p>
+            <p class="tk-text">More unpredictable than a human.</p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">😎</span>
-            <p class="tk-text">Confident <em>either way.</em></p>
+            <p class="tk-text">Confident - regardless of whether it's correct.</p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">🎭</span>
-            <p class="tk-text">Hides its errors <em>well.</em></p>
-          </div>
-          <div class="tk-row">
-            <span class="tk-icon">🧰</span>
-            <p class="tk-text">Replacing tools <em>that already work.</em></p>
+            <p class="tk-text">Incredible at hiding errors.</p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">🤝</span>
-            <p class="tk-text">Not better than a human <em>+ GenAI used properly.</em></p>
+            <p class="tk-text">Not better than a human + GenAI used properly.</p>
           </div>
         </div>
       </div>
@@ -2123,7 +2133,8 @@ deck-stage { background: #0a0a0a; }
             Sold below<br><em>cost.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 700px;">
-            This isn't a software business. <em>What happens when they raise prices and cut the limits?</em>
+            <span class="pt">This isn't a software business.</span>
+            <span class="pt"><em>What happens when they raise prices and cut the limits?</em></span>
           </p>
         </div>
 
@@ -2142,6 +2153,7 @@ deck-stage { background: #0a0a0a; }
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="Environment">
 
+    <span class="corner-emoji" aria-hidden="true">🤫</span>
 
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">The reality</p><span class="page-chip"></span></div>
@@ -2295,8 +2307,8 @@ deck-stage { background: #0a0a0a; }
           <h2 class="display" style="font-size: 116px; margin-bottom: 40px;">
             They want you<br><em>hooked.</em>
           </h2>
-          <p class="sub" style="font-size: 29px; max-width: 620px;">
-            The flat plan gets you in. <em>The agent bills you by the token.</em>
+          <p class="sub" style="font-size: 29px; max-width: 760px;">
+            Using agents to perform end to end work creates reliance on <em>high token usage.</em>
           </p>
         </div>
 
@@ -2326,30 +2338,7 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       25 · THE PITCH · IT'S TOXIC
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide ink" data-label="It's toxic" style="background: radial-gradient(ellipse at 50% 40%, #2a1f3d 0%, #0F1030 70%);">
-
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(240,178,92,0.10);"></div>
-
-    <div class="frame">
-      <div class="topbar"><p class="section-tag">What works <em>· the pitch</em></p><span class="page-chip"></span></div>
-
-      <div class="fill center-y" style="align-items: center; text-align: center;">
-        <h2 class="display" style="font-size: 190px;">
-          It's <em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">toxic.</em>
-        </h2>
-        <p class="sub" style="margin-top: 36px; font-size: 34px;">
-          It'll need ripping out, at huge cost. <em style="color:#f0b25c;">Like asbestos.</em>
-        </p>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       26 · AND IT DOESN'T WORK · PRE-AUTHORISED MISTAKES
+       25 · AND IT DOESN'T WORK · PRE-AUTHORISED MISTAKES
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide paper-soft" data-label="Pre-authorised mistakes">
 
@@ -2363,7 +2352,8 @@ deck-stage { background: #0a0a0a; }
             Pre-authorised<br><em>mistakes.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 620px;">
-            If it’s guaranteed to make mistakes, we’re pre-authorising incompetence before we even begin. <em>And we don’t know where they are.</em>
+            <span class="pt">Mistakes are guaranteed.</span>
+            <span class="pt">We’re pre-authorising incompetence <em>before we’ve even started the work.</em></span>
           </p>
         </div>
 
@@ -2392,6 +2382,29 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
+       26 · THE PITCH · IT'S TOXIC
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="It's toxic" style="background: radial-gradient(ellipse at 50% 40%, #2a1f3d 0%, #0F1030 70%);">
+
+    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(240,178,92,0.10);"></div>
+
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">What works <em>· the pitch</em></p><span class="page-chip"></span></div>
+
+      <div class="fill center-y" style="align-items: center; text-align: center;">
+        <h2 class="display" style="font-size: 190px;">
+          It's <em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">toxic.</em>
+        </h2>
+        <p class="sub" style="margin-top: 36px; font-size: 34px;">
+          It'll need ripping out, at huge cost. <em style="color:#f0b25c;">Like asbestos.</em>
+        </p>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
        27 · DIVIDER · SO WHAT'S A BETTER APPROACH?
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="Better approach">
@@ -2404,18 +2417,8 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <h2 class="display" style="font-size: 150px;">
-          So what's a<br><em>better</em> approach?
+          So what's <em>my</em> approach?
         </h2>
-
-        <div class="cover-prompt dark" style="margin-top: 56px;">
-          <span class="cover-prompt-icon">
-            <img src="Images/shared/claude-logo.svg" alt="">
-          </span>
-          <span class="cover-prompt-text">
-            In my opinion, <em>anyway.</em><span class="cover-prompt-cursor"></span>
-          </span>
-          <span class="cover-prompt-kbd"><span class="arrow">↵</span> Return</span>
-        </div>
       </div>
 
       <div class="bottombar"></div>
@@ -2435,15 +2438,12 @@ deck-stage { background: #0a0a0a; }
         <h2 class="display" style="font-size: 116px;">
           A copilot. <em>Never the pilot.</em>
         </h2>
-        <p class="sub" style="margin-top: 24px; font-size: 28px;">
-          Don't put it in the process. <em>Have it write the tools that run the process.</em>
-        </p>
 
         <div class="vs-grid">
           <div class="vs-card bad">
             <div class="vs-head">
               <p class="vs-title"><span class="vs-mark">✗</span> The pilot</p>
-              <p class="vs-line">Autonomous. <em>Marks its own work.</em></p>
+              <p class="vs-line">Agentic AI autonomously completing end-to-end task completion.</p>
             </div>
             <div class="vs-row">
               <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
@@ -2456,7 +2456,7 @@ deck-stage { background: #0a0a0a; }
           <div class="vs-card good">
             <div class="vs-head">
               <p class="vs-title"><span class="vs-mark">✓</span> The copilot</p>
-              <p class="vs-line">Augments. <em>You stay in charge.</em></p>
+              <p class="vs-line">Augments. <em>We stay in charge.</em></p>
             </div>
             <div class="vs-row">
               <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
@@ -2477,7 +2477,7 @@ deck-stage { background: #0a0a0a; }
 
 
   <!-- ════════════════════════════════════════════════════════════════
-       29 · STAGE · CHAT.
+       29 · STAGE · AI CHAT INTERFACES.
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="01 Chat">
 
@@ -2485,12 +2485,11 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">What works <em>· 01 chat</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 01 AI chat interfaces</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">01 <span>of 04</span></p>
-        <h2 class="display" style="font-size: 150px;"><em>Chat.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Four ways. <em>Three daily, one not.</em> First, the daily driver.</p>
+        <h2 class="display" style="font-size: 150px;"><em>AI Chat Interfaces.</em></h2>
       </div>
 
       <div class="bottombar"></div>
@@ -2504,13 +2503,13 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 01 chat</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 01 AI chat interfaces</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
           <div>
-            <h2 class="display" style="font-size: 84px;">Chat. <em>The daily driver.</em></h2>
-            <p class="sub" style="font-size: 30px; margin-top: 18px;">Talk to it like a colleague. <em>Check it like a junior.</em></p>
+            <h2 class="display" style="font-size: 84px;">AI Chat Interfaces. <em>The daily driver.</em></h2>
+            <p class="sub" style="font-size: 30px; margin-top: 18px;">The expert co-pilot you can use <em>on the fly at any time.</em></p>
           </div>
           <span class="way-verdict g">Use daily</span>
         </div>
@@ -2538,15 +2537,19 @@ deck-stage { background: #0a0a0a; }
                   <h3 class="way-tname">Gemini</h3>
                 </div>
               </div>
+              <div class="way-tool">
+                <span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>
+                <div class="way-tbody">
+                  <h3 class="way-tname">ChatGPT</h3>
+                </div>
+              </div>
             </div>
 
             <p class="way-label">Other options</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>ChatGPT</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Microsoft Copilot</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(32,128,141,0.30);"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#20808D" d="M22.4 7.09H20.09V0.07L12.58 6.42V0.16H11.42V6.35L4.49 0V7.09H1.6V17.49H4.49V24L11.42 17.64V23.84H12.58V17.79L19.51 23.98V17.49H22.4Z M18.93 2.56V7.09H13.58Z M5.65 2.63L10.51 7.09H5.65Z M2.76 16.33V8.25H10.61L4.49 14.36V16.33Z M5.65 21.37V14.84L11.42 9.06V16.07Z M18.35 21.4L12.58 16.25V9.06L18.35 14.84Z M21.24 16.33H19.51V14.36L13.39 8.25H21.24Z"/></svg></span>Perplexity</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFF3E8; --tile-bd:rgba(255,112,0,0.30);"><span class="lt" style="color:#FF7000;">M</span></span>Mistral</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#EAEEFF; --tile-bd:rgba(77,107,254,0.28);"><span class="lt sm" style="color:#4D6BFE;">DS</span></span>DeepSeek</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(77,107,254,0.28);"><img src="Images/shared/logos/deepseek.png" alt="" style="width: calc(var(--ts) * 0.7); height: auto;"></span>DeepSeek</span>
             </div>
           </div>
         </div>
@@ -2570,7 +2573,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">02 <span>of 04</span></p>
         <h2 class="display" style="font-size: 150px;"><em>Build.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Vibe coding, and what I've built <em>with Claude Code.</em></p>
+        <p class="sub" style="margin-top: 28px; font-size: 32px;">Build tools that run without GenAI. <em>With AI.</em></p>
       </div>
 
       <div class="bottombar"></div>
@@ -2649,52 +2652,25 @@ deck-stage { background: #0a0a0a; }
   <!-- ════════════════════════════════════════════════════════════════
        34 · SPOTLIGHT · SIDGROVE INTELLIGENCE
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Sidgrove Intelligence">
+  <section class="slide ink" data-label="Sidgrove Intelligence">
 
+    <div aria-hidden="true" style="position:absolute;left:50%;top:46%;transform:translate(-50%,-50%);width:1100px;height:1100px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
 
-    <div class="frame" style="--pad-y: 90px;">
+    <div class="frame" style="--pad-y: 84px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 72px; align-items: center;">
-        <div>
-          <p class="build-kicker">Built with Claude Code</p>
-          <h2 class="display" style="font-size: 104px; margin-bottom: 32px;">Sidgrove <em>Intelligence.</em></h2>
-          <p class="sub" style="font-size: 28px;">The app that sits between <em>my clients and the work.</em></p>
-        </div>
-
-        <div class="si-app">
-          <aside class="si-side">
-            <img class="si-mark" src="Images/shared/sidgrove-wordmark-black.png" alt="Sidgrove">
-            <nav class="si-nav">
-              <span>Bookkeeping</span>
-              <span>Cashflow</span>
-              <span>Deadlines</span>
-              <span class="on">Month end</span>
-              <span>Management accounts</span>
-              <span>Payroll</span>
-              <span>VAT</span>
-            </nav>
-          </aside>
-          <main class="si-main">
-            <p class="si-eyebrow">Client · Acme Ltd</p>
-            <h3 class="si-title">Month <em>end</em></h3>
-            <div class="si-kpis">
-              <div class="si-kpi"><span class="si-k">Accruals</span><span class="si-v">12</span><span class="si-s ok">posted</span></div>
-              <div class="si-kpi"><span class="si-k">Prepayments</span><span class="si-v">8</span><span class="si-s ok">posted</span></div>
-              <div class="si-kpi"><span class="si-k">Deferred revenue</span><span class="si-v">£42,300</span><span class="si-s warn">review</span></div>
-            </div>
-            <div class="si-table">
-              <div class="si-tr"><span>Payroll postings</span><span class="si-chip ok">Posted</span></div>
-              <div class="si-tr"><span>Direct cost reallocations</span><span class="si-chip ok">Posted</span></div>
-              <div class="si-tr"><span>Corporation tax accrual</span><span class="si-chip warn">Needs review</span></div>
-              <div class="si-tr"><span>Loan postings</span><span class="si-chip">Scheduled</span></div>
-            </div>
-          </main>
-        </div>
+      <div class="fill" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 28px;">
+        <p class="build-kicker on-ink" style="justify-content: center;">Built with Claude Code</p>
+        <h2 class="display" style="font-size: 150px;">Sidgrove <em>Intelligence.</em></h2>
+        <p class="sub" style="font-size: 30px; margin-top: 22px;">The app that sits between <em>my clients and the work.</em></p>
       </div>
-
-      <div class="bottombar"></div>
     </div>
+
+    <!-- The product, not a feature: one wide window that runs off the bottom of the slide. -->
+    <figure class="shot window si-hero" aria-hidden="true">
+      <img src="Images/34%20Sidgrove%20Intelligence/practice-overview.png" alt="">
+      <figcaption>Sidgrove Intelligence · practice overview · demo mode</figcaption>
+    </figure>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
@@ -3060,14 +3036,13 @@ deck-stage { background: #0a0a0a; }
     <div class="frame" style="--pad-y: 90px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 4fr 9fr; gap: 56px; align-items: center;">
+      <div class="fill" style="display: grid; grid-template-columns: 5fr 8fr; gap: 56px; align-items: center;">
         <div>
           <p class="build-kicker">Built with Claude Code</p>
-          <h2 class="display" style="font-size: 96px; margin-bottom: 32px;">Simple websites. <em>Like sidgrove.com.</em></h2>
-          <p class="sub" style="font-size: 28px;">Described, built, deployed. <em>No agency, no template.</em></p>
+          <h2 class="display" style="font-size: 84px;">Simple websites. <em>Like my own, sidgrove.com.</em></h2>
         </div>
         <figure class="shot window">
-          <img src="Images/44%20Websites/screenshot.png" alt="sidgrove.com · built with Claude Code" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/35 Websites/screenshot.png'">
+          <img src="Images/44%20Websites/screenshot.png" alt="sidgrove.com · built with Claude Code" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/36 Websites/screenshot.png'">
           <figcaption>sidgrove.com</figcaption>
         </figure>
       </div>
@@ -3092,7 +3067,7 @@ deck-stage { background: #0a0a0a; }
           <p class="sub" style="font-size: 28px;">The Claude Code engine, <em>tailored for design.</em></p>
         </div>
         <figure class="shot window">
-          <img src="Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/36 Brand assets/screenshot.png'">
+          <img src="Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/37 Brand assets/screenshot.png'">
           <figcaption>Claude Design</figcaption>
         </figure>
       </div>
@@ -3110,12 +3085,11 @@ deck-stage { background: #0a0a0a; }
     <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(208,248,176,0.08);"></div>
 
     <div class="frame">
-      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 other daily (Gen)AI tools</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">03 <span>of 04</span></p>
-        <h2 class="display" style="font-size: 150px;"><em>Everyday extras.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Note takers, dictation. <em>Daily, not core.</em></p>
+        <h2 class="display" style="font-size: 150px;"><em>Other Daily (Gen)AI Tools.</em></h2>
       </div>
 
       <div class="bottombar"></div>
@@ -3129,7 +3103,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 other daily (Gen)AI tools</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
@@ -3188,7 +3162,7 @@ deck-stage { background: #0a0a0a; }
 
 
     <div class="frame" style="--pad-y: 100px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 03 everyday extras</em></p><span class="page-chip"></span></div>
+      <div class="topbar"><p class="section-tag">What works <em>· 03 other daily (Gen)AI tools</em></p><span class="page-chip"></span></div>
 
       <div class="fill" style="padding-top: 30px;">
         <div class="way-head">
@@ -3255,7 +3229,6 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">04 <span>of 04</span></p>
         <h2 class="display" style="font-size: 150px;">Non-daily <em>use cases.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;"><em>My reality.</em> Everything before this, I use daily.</p>
       </div>
 
       <div class="bottombar"></div>
@@ -3323,14 +3296,15 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="way-head" style="margin-bottom: 44px;">
           <div>
-            <h2 class="display" style="font-size: 104px;">MCP connections. <em>Plugging it into your apps.</em></h2>
+            <h2 class="display" style="font-size: 104px;">MCP <em>connections.</em></h2>
+            <p class="sub" style="margin-top: 18px; font-size: 30px;">Model context protocol. <em>I barely touch these too.</em></p>
           </div>
           <span class="way-verdict a">Non-daily</span>
         </div>
         <div class="tk-rows ni">
-          <div class="tk-row"><span class="tk-icon">🔌</span><p class="tk-text">Xero, Slack, your inbox. <em>It can read them all.</em></p></div>
-          <div class="tk-row"><span class="tk-icon">🔑</span><p class="tk-text">I let it read. <em>I don’t let it post.</em></p></div>
-          <div class="tk-row"><span class="tk-icon">🪤</span><p class="tk-text">Anything it reads can instruct it. <em>Prompt injection.</em></p></div>
+          <div class="tk-row"><span class="tk-icon">🔌</span><p class="tk-text">A mechanism that allows GenAI chat interfaces and agents to access APIs.</p></div>
+          <div class="tk-row"><span class="tk-icon">🎯</span><p class="tk-text">Nice for niche ad hoc data pulls where it’s not mission critical.</p></div>
+          <div class="tk-row"><span class="tk-icon">⚠️</span><p class="tk-text">Pointless for recurring data connections that we need to be correct. MCPs just add risk for no reason.</p></div>
         </div>
       </div>
 
@@ -3348,22 +3322,30 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">What works <em>· 04 non-daily</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 44px;">
+        <div class="way-head" style="margin-bottom: 28px;">
           <div>
-            <h2 class="display" style="font-size: 104px;">Oh, and <em>Claude Cowork.</em></h2>
-            <p class="sub" style="margin-top: 18px; font-size: 30px;">I barely touch it.</p>
+            <h2 class="display" style="font-size: 88px;">Oh, and <em>Claude Cowork.</em></h2>
+            <p class="sub" style="margin-top: 14px; font-size: 27px; max-width: 1280px;">
+              <span class="pt">I barely touch it.</span>
+              <span class="pt">Cowork and orchestration layers are a shortcut with shortcomings, IMO. <em>Like junk food, or Ozempic.</em></span>
+            </p>
           </div>
           <span class="way-verdict a">Non-daily</span>
         </div>
 
+        <div class="cw-grid">
         <div class="tk-rows ni">
           <div class="tk-row">
             <span class="tk-icon">🧩</span>
-            <p class="tk-text">The product that does whole tasks, end to end. <em>Probably correctly. Sometimes not.</em></p>
+            <p class="tk-text">The product that does whole tasks, end to end.</p>
+          </div>
+          <div class="tk-row">
+            <span class="tk-icon">🎲</span>
+            <p class="tk-text">Probably correctly. <em>Sometimes not.</em></p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">🔬</span>
-            <p class="tk-text"><em>Niche</em> use cases.</p>
+            <p class="tk-text">Niche use cases <em>(I think so anyway).</em></p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">📣</span>
@@ -3373,9 +3355,16 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">Other options</p>
             <div class="way-others">
             <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><svg viewBox="0 0 2406 2406" aria-hidden="true"><use href="#oai-mark"/></svg></span>ChatGPT Work</span>
-            <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(66,133,244,0.30);"><svg viewBox="0 0 24 24"><path d="M12 1A11.3 11.3 0 0 0 23 12A11.3 11.3 0 0 0 12 23A11.3 11.3 0 0 0 1 12A11.3 11.3 0 0 0 12 1Z" fill="#4285F4"/></svg></span>Gemini Spark</span>
             <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.12);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Copilot agents</span>
-            <span class="way-other"><span class="app-tile" style="--tile-bg:#101014; --tile-bd:#101014;"><span class="lt" style="color:#fff;">B</span></span>Basis</span>
+            <span class="way-other"><span class="app-tile" style="--tile-bg:#EFF1FE; --tile-bd:rgba(124,135,232,0.3);"><span class="lt" style="font-size: 18px;">🔗</span></span>Orchestration layer products</span>
+            </div>
+          </div>
+        </div>
+
+          <div class="cw-simple">
+            <div class="cover-prompt cw-box">
+              <span class="cover-prompt-icon"><img src="Images/shared/claude-logo.svg" alt=""></span>
+              <span class="cover-prompt-text">Grab the year end working papers file and perform the entire year end review.<span class="cover-prompt-cursor"></span></span>
             </div>
           </div>
         </div>
@@ -3421,7 +3410,7 @@ deck-stage { background: #0a0a0a; }
           <div class="tw-card">
             <div class="tw-top"><span class="tk-icon">✅</span><span class="tw-num">04</span></div>
             <h3 class="tw-title">Use it every day.</h3>
-            <p class="tk-text">Chat. Build tools with Claude Code. Dictation and note takers for the small stuff.</p>
+            <p class="tk-text">Chat. Build tools with Claude Code. Dictation and note takers.</p>
           </div>
         </div>
       </div>
@@ -3543,82 +3532,60 @@ deck-stage { background: #0a0a0a; }
      ════════════════════════════════════════════════════════════════════ -->
 <script type="application/json" id="speaker-notes">
 [
-  { "say": ["Three acts, in order: the narrative, the reality, how to use it.", "Nothing to sell. I use it all day. That is the whole credential."] },
-  { "say": ["Cold open. Let the room laugh at the card first.", "The 18 months line is Suleyman's; he named accounting."],
-    "src": ["Fortune, 13 Feb 2026: Suleyman told the FT most tasks that involve sitting at a computer will be fully automated within a year or 18 months; named accounting, legal, marketing, project management."] },
-  { "say": ["Same message from a founder, a vendor CEO and the trade press. That is not three data points; it is one story told three ways."],
-    "src": ["AAT (two in five would consider a career change due to AI); Fortune (Suleyman, 13 Feb 2026); TheStreet (Noah Weidner, 24 Apr 2026)."],
-    "ask": "Yes the Big Four intake cuts are real (KPMG, Deloitte, EY, PwC 2025). My point is who gets the blame, not whether cuts happened." },
-  { "say": ["Anthropic's own chart. Blue is what the model could theoretically do by occupation: office and admin, legal, business and finance, all near the edge. Red is what people actually use it for: a small blob in the middle. The capability is the story; the usage is the reality."],
-    "src": ["Anthropic Economic Index: theoretical capability vs observed usage by occupational category."] },
-  { "say": ["And I think they are wrong about where that goes. You are fine. We are in a hype bubble, and the rest of this talk is why."] },
-  { "say": ["Side note, thirty seconds. This is my actual desk. I try everything early and bin most of it.", "If I am not doing something, you probably do not need to either; there is usually a reason, ask me.", "Permission slip: simplify, ignore the hype, focus on what matters."],
-    "ask": "'A one-man band telling a big firm what to do?' I am telling you what stuck at a desk that tries all of it. Discount accordingly." },
-  { "say": ["Three reasons the story is loud: the demo gap, the money, and the tech being good enough to make it believable. People are losing jobs; the cause is over-hiring and rates, and AI is the convenient headline.", "'Big Tech' here means the hyperscalers' layoffs, not the firms in this room."],
-    "src": ["OpenAI's reported losses and inference bill (tens of billions); hyperscaler capex 2025-26 in the hundreds of billions per year; MIT NANDA 2025 on pilots not paying back."],
-    "ask": "Microsoft is profitable, yes. It still has hundreds of billions of data centres to fill, so it needs the story as much as the labs do." },
-  { "say": ["This is self-reported, and it is my week: frontier models most of the day, weekly Max limit, sixty one-key tools, code shipped daily, zero unattended runs.", "The zero is not a preference. Nothing has earned it yet."],
-    "ask": "'You use it 12 hours a day and call it inflated?' I use it more than anyone you will meet this week, which is how I know where it stops." },
-  { "say": ["Act two. Before we ask whether it can do the work: what actually is it? Generative AI specifically, and how it works. Then what that means for accuracy, cost and the planet."] },
-  { "say": ["Transformer-based large language models. Strip the branding away and it is autocomplete: the same trick as the predictive strip on your phone, trained on most of the written internet.", "Pattern recognition, not understanding. It has no model of your client, your ledger or the law; it has a very good sense of what text usually comes next."],
-    "ask": "'Reasoning models think before they answer.' They generate more tokens before the final ones. Same mechanism, longer run; better results on many tasks, still no checker." },
-  { "say": ["AI has been in your tools for twenty years: machine learning and OCR quietly improving, cloud apps embedding it without telling you. Nobody got excited. 2023 is different because generative AI makes things from scratch - text, images, video, code - and that hits three buttons at once: awe, dopamine, and fear. That is why the curve goes vertical, and why the narrative is so loud."] },
-  { "say": ["Prompt to tokens to a probability over the next token. The dropdown is the whole story: a ranking by plausibility, nothing checked.", "'Turn the randomness off and it is the same guess every run. Still a guess.'"],
-    "ask": "Temperature zero: yes, that removes the sampling. It does not add a checker. The output is still the most plausible continuation, not a verified fact. OpenAI's own Sept 2025 hallucination paper: benchmarks reward guessing over abstaining." },
-  { "say": ["Beat. A plausible next token sounds harmless. Here is what it looks like on a real job."] },
-  { "say": ["Same file, same question, two totals, 750 pounds apart. This is hallucination by design, not by mistake: it generates the most plausible next token, and when plausible and correct diverge, it cannot tell. Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure. The point is not which total is right; it is that you cannot rely on it for consistent, high-integrity output."],
-    "ask": "'Your deployment runs the sums in code.' Mine too. The variance is in the judgement, and every close is full of judgement." },
-  { "say": ["It is not intelligent, in the true sense. It does not understand what you are asking it: it matches patterns in the words. It cannot check its own work: it will mark its own homework and tell you it passed. And it will not always do what you tell it: that is the maths, not a bug a guardrail can fix."] },
-  { "say": ["The objection: humans make mistakes too. Maybe it is better; it is certainly different. It fails in ways a person would not, it is confident either way, and it is very good at making a wrong answer look finished.", "It is being pushed into jobs we already have deterministic tools for. And the comparison nobody makes: it is not better than a human using GenAI the right way. That is the whole of act three."],
-    "ask": "'Your junior makes errors too.' Yes, and the errors are legible: you know where they come from and you can train them out. The model's errors are uncorrelated with difficulty and do not improve with telling it off." },
-  { "say": ["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."] },
-  { "say": ["Beat. And it is not only accuracy. Two more things the pitch leaves out: what it costs, and what it burns."] },
-  { "say": ["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.", "Any business case priced on today's rate is priced on a loss leader."],
-    "src": ["Quartz (Jun 2026), from audited 2025 accounts obtained by Ed Zitron and verified by the FT: revenue $13.1B, costs $34B, operating loss $20.9B, net loss $38.5B."],
-    "ask": "'The $38.5B is mostly a one-off.' Correct: about $41.5B of it is a non-cash charge from the for-profit conversion. Strip it out and it is still a $21B operating loss on $13B of revenue, so the point stands. 'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed." },
-  { "say": ["And the bit the pitch never mentions: the environmental and the societal cost. It haemorrhages power and water. It is hoarding memory and components, so your electricity and your electronics cost more. And the data centres are landing on communities that did not ask for them."],
-    "ask": "'Per query it is tiny.' Per answer, yes, and falling. The total is what doubles, and the total is what the grid, the water table and the next-door town feel." },
-  { "say": ["Not just me saying it. The Economist on memory prices; the UN asking AI firms to disclose emissions, water and energy; EESI on health risks around data centres; Civicus on communities pushing back."],
-    "src": ["The Economist, 'Memory lapse': the AI frenzy is creating a big problem for consumer electronics (2026).", "Climate Home News, 23 Jun 2026: Guterres asks AI companies to reveal full environmental impacts.", "EESI, 27 Jul 2026: Data Centers Are Hotbeds of Health Risks.", "Civicus Lens: The cost of the AI boom, communities take on datacentres."] },
-  { "say": ["Act three. It is brilliant. So how do we use it without handing it the keys? First their answer, then mine."] },
-  { "say": ["The pitch is agents everywhere. We are wiring it into everything now and will spend years pulling it back out."] },
-  { "say": ["The flat plan gets you in. The agent bills by the token, and the meter is where they make it back.", "The mock is a parody, not a product."],
-    "src": ["Cursor and others repriced heavy use in 2025; Anthropic introduced weekly caps on Max in 2025 because flat-rate heavy users were loss-making."] },
-  { "say": ["The pitch, summed up. Wired into the process, billed by the token, marking its own work: that is not a feature, it is a liability. It will be ripped out, slowly and expensively, like asbestos."] },
-  { "say": ["Read the rows: it plans the steps its own way each run, matches on its own call each run, posts live with no undo, then decides its own work is correct.", "The button is the point: you are approving mistakes that have not happened yet."],
-    "ask": "'You just described an audit: nobody reviews every output.' Right, and an auditor's name goes on it. Nobody's name is on the agent's when it is wrong." },
-  { "say": ["So what is a better approach? My opinion, from using it all day: the next few slides."] },
-  { "say": ["My answer. Keep the model out of the process; have it write the tools that run the process. Code does the same thing every run. It drafts and flags; you take the exceptions and sign.", "This is also the vendors' own engineering guidance (Anthropic's Building effective agents, OpenAI's agent guide): simplest thing first, deterministic tools, human checkpoints."],
-    "ask": "'Claude Code is an agent.' Yes. In a sandbox, on code I read before it ships. The line is not agent or not; it is can it touch live client data and is the output reviewable before it lands." },
-  { "say": ["Stage one of four: chat. The daily driver."] },
-  { "say": ["Chat is the daily driver. Talk to it like a colleague, check it like a junior.", "Also out there: check where the data goes before client work; DeepSeek's app is China-hosted."] },
-  { "say": ["Stage two: build. Vibe coding, and then a proper look at what I have actually built with Claude Code."] },
-  { "say": ["The key to building: deterministic, not probabilistic. Deterministic means pre-set logic - predictable, the same answer every run, testable once. Probabilistic is the model itself: pattern-matched, plausible, different every run. Build deterministic wherever you can; let the probabilistic layer augment it, never replace it."] },
-  { "say": ["Vibe coding is where it shines: describe it, it codes it. Four things I actually build with it: internal tools and prototypes, slides, simple websites, brand assets."] },
-  { "say": ["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo."] },
-  { "say": ["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same."] },
-  { "say": ["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."] },
-  { "say": ["Deadlines and alerts, integrated with the government platforms, so nothing depends on someone remembering."] },
-  { "say": ["Management accounts hosted in the app, with notifications when a pack is ready and when it has been read."] },
-  { "say": ["Payroll reviews with a client review workflow: I review, the client signs off, the trail is kept."] },
-  { "say": ["VAT reviews with the same client review workflow."] },
-  { "say": ["Month end, one screen per posting. Seven of them: accruals and prepayments, deferred and accrued revenue, payroll reallocations, direct cost reallocations, corporation tax, R&D credits, loan notes.", "Each screen works the posting out from the ledger and waits for me. The model wrote the screens; the screens do not use the model."] },
-  { "say": ["And much more. It has become the central app between my clients and the work, with Slack alongside for live comms. The GenAI is in how it was built, not in what it posts."] },
-  { "say": ["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."] },
-  { "say": ["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."] },
-  { "say": ["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."] },
-  { "say": ["Stage three: the everyday extras. Note takers and dictation: daily, but not core."] },
-  { "say": ["Note takers. Loom on the calls I choose, off for anything sensitive. Recording a client: say so in words every time; a bot in the participant list is not telling them. Know where the transcript goes."],
-    "ask": "'Consent isn't the UK GDPR test.' Agreed: lawful basis plus telling people. Saying it out loud, every time, with a policy behind it, keeps you on the right side. Otter and Granola both face live US class actions on recording." },
-  { "say": ["Dictation. Aqua Voice: talk instead of type, in any app. Cloud, so not for client secrets; Wispr Flow is the other big one, superwhisper the on-device option. This is the single biggest everyday win."] },
-  { "say": ["Now the two I use with caution: the spreadsheet add-ins, and Cowork."] },
-  { "say": ["In your apps: it queried one supplier with a reason; you still answer it and the other 37 still get your eyes.", "The stat is deliberately the hard one: fixing errors in real workbooks."],
-    "src": ["SpreadsheetBench 2 (arXiv 2606.29955, 29 Jun 2026): 321 real multi-sheet tasks; best model 34.89% overall, 12.00% on debugging.", "Deel Inc: reverse charge is right for a US-established B2B supplier; if a UK Deel entity billed with a GB VAT number, 20% would be right, which is why the tool queries rather than decides."] },
-  { "say": ["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],
-    "ask": "'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not." },
-  { "say": ["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."] },
-  { "say": ["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."] },
-  { "say": ["Thank you. Questions now or find me after."] }
+  {"say":["Three acts, in order: the narrative, the reality, how to use it.","Nothing to sell. I use it all day. That is the whole credential."]},
+  {"say":["Cold open. Let the room laugh at the card first.","The 18 months line is Suleyman's; he named accounting."],"src":["Fortune, 13 Feb 2026: Suleyman told the FT most tasks that involve sitting at a computer will be fully automated within a year or 18 months; named accounting, legal, marketing, project management."]},
+  {"say":["Same message from a founder, a vendor CEO and the trade press. That is not three data points; it is one story told three ways."],"src":["AAT (two in five would consider a career change due to AI); Fortune (Suleyman, 13 Feb 2026); TheStreet (Noah Weidner, 24 Apr 2026)."],"ask":"Yes the Big Four intake cuts are real (KPMG, Deloitte, EY, PwC 2025). My point is who gets the blame, not whether cuts happened."},
+  {"say":["Anthropic's own chart. Blue is what the model could theoretically do by occupation: office and admin, legal, business and finance, all near the edge. Red is what people actually use it for: a small blob in the middle. The capability is the story; the usage is the reality."],"src":["Anthropic Economic Index: theoretical capability vs observed usage by occupational category."]},
+  {"say":["And I think they are wrong about where that goes. You are fine. We are in a hype bubble, and the rest of this talk is why."]},
+  {"say":["Side note, thirty seconds. This is my actual desk. I try everything early and bin most of it.","If I am not doing something, you probably do not need to either; there is usually a reason, ask me.","Permission slip: simplify, ignore the hype, focus on what matters."],"ask":"'A one-man band telling a big firm what to do?' I am telling you what stuck at a desk that tries all of it. Discount accordingly."},
+  {"say":["This is self-reported, and it is my week: frontier models most of the day, weekly Max limit, sixty one-key tools, code shipped daily, zero unattended runs.","The zero is not a preference. Nothing has earned it yet."],"ask":"'You use it 12 hours a day and call it inflated?' I use it more than anyone you will meet this week, which is how I know where it stops."},
+  {"say":["Three reasons the story is loud: the demo gap, the money, and the tech being good enough to make it believable. People are losing jobs; the cause is over-hiring and rates, and AI is the convenient headline.","'Big Tech' here means the hyperscalers' layoffs, not the firms in this room."],"src":["OpenAI's reported losses and inference bill (tens of billions); hyperscaler capex 2025-26 in the hundreds of billions per year; MIT NANDA 2025 on pilots not paying back."],"ask":"Microsoft is profitable, yes. It still has hundreds of billions of data centres to fill, so it needs the story as much as the labs do."},
+  {"say":["Act two. Before we ask whether it can do the work: what actually is it? Generative AI specifically, and how it works. Then what that means for accuracy, cost and the planet."]},
+  {"say":["AI has been in your tools for twenty years: machine learning and OCR quietly improving, cloud apps embedding it without telling you. Nobody got excited. 2023 is different because generative AI makes things from scratch - text, images, video, code - and that hits three buttons at once: awe, dopamine, and fear. That is why the curve goes vertical, and why the narrative is so loud."]},
+  {"say":["Transformer-based large language models. Strip the branding away and it is autocomplete: the same trick as the predictive strip on your phone, trained on most of the written internet.","Pattern recognition, not understanding. It has no model of your client, your ledger or the law; it has a very good sense of what text usually comes next."],"ask":"'Reasoning models think before they answer.' They generate more tokens before the final ones. Same mechanism, longer run; better results on many tasks, still no checker."},
+  {"say":["Prompt to tokens to a probability over the next token. The dropdown is the whole story: a ranking by plausibility, nothing checked.","'Turn the randomness off and it is the same guess every run. Still a guess.'"],"ask":"Temperature zero: yes, that removes the sampling. It does not add a checker. The output is still the most plausible continuation, not a verified fact. OpenAI's own Sept 2025 hallucination paper: benchmarks reward guessing over abstaining."},
+  {"say":["Beat. A plausible next token sounds harmless. Here is what it looks like on a real job."]},
+  {"say":["Same file, same question, two totals, 750 pounds apart. This is hallucination by design, not by mistake: it generates the most plausible next token, and when plausible and correct diverge, it cannot tell. Same file, same question, two runs. It can add up a column with code and get the same total twice. What it cannot outsource is the call on which invoices belong in the quarter. Both runs sound sure. The point is not which total is right; it is that you cannot rely on it for consistent, high-integrity output."],"ask":"'Your deployment runs the sums in code.' Mine too. The variance is in the judgement, and every close is full of judgement."},
+  {"say":["It is not intelligent, in the true sense. It does not understand what you are asking it: it matches patterns in the words. It cannot check its own work: it will mark its own homework and tell you it passed. And it will not always do what you tell it: that is the maths, not a bug a guardrail can fix."]},
+  {"say":["The objection: humans make mistakes too. Maybe it is better; it is certainly different. It fails in ways a person would not, it is confident either way, and it is very good at making a wrong answer look finished.","It is being pushed into jobs we already have deterministic tools for. And the comparison nobody makes: it is not better than a human using GenAI the right way. That is the whole of act three."],"ask":"'Your junior makes errors too.' Yes, and the errors are legible: you know where they come from and you can train them out. The model's errors are uncorrelated with difficulty and do not improve with telling it off."},
+  {"say":["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."]},
+  {"say":["Beat. And it is not only accuracy. Two more things the pitch leaves out: what it costs, and what it burns."]},
+  {"say":["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.","Any business case priced on today's rate is priced on a loss leader."],"src":["Quartz (Jun 2026), from audited 2025 accounts obtained by Ed Zitron and verified by the FT: revenue $13.1B, costs $34B, operating loss $20.9B, net loss $38.5B."],"ask":"'The $38.5B is mostly a one-off.' Correct: about $41.5B of it is a non-cash charge from the for-profit conversion. Strip it out and it is still a $21B operating loss on $13B of revenue, so the point stands. 'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed."},
+  {"say":["And the bit the pitch never mentions: the environmental and the societal cost. It haemorrhages power and water. It is hoarding memory and components, so your electricity and your electronics cost more. And the data centres are landing on communities that did not ask for them."],"ask":"'Per query it is tiny.' Per answer, yes, and falling. The total is what doubles, and the total is what the grid, the water table and the next-door town feel."},
+  {"say":["Not just me saying it. The Economist on memory prices; the UN asking AI firms to disclose emissions, water and energy; EESI on health risks around data centres; Civicus on communities pushing back."],"src":["The Economist, 'Memory lapse': the AI frenzy is creating a big problem for consumer electronics (2026).","Climate Home News, 23 Jun 2026: Guterres asks AI companies to reveal full environmental impacts.","EESI, 27 Jul 2026: Data Centers Are Hotbeds of Health Risks.","Civicus Lens: The cost of the AI boom, communities take on datacentres."]},
+  {"say":["Act three. It is brilliant. So how do we use it without handing it the keys? First their answer, then mine."]},
+  {"say":["The pitch is agents everywhere. We are wiring it into everything now and will spend years pulling it back out."]},
+  {"say":["The flat plan gets you in. The agent bills by the token, and the meter is where they make it back.","The mock is a parody, not a product."],"src":["Cursor and others repriced heavy use in 2025; Anthropic introduced weekly caps on Max in 2025 because flat-rate heavy users were loss-making."]},
+  {"say":["Read the rows: it plans the steps its own way each run, matches on its own call each run, posts live with no undo, then decides its own work is correct.","The button is the point: you are approving mistakes that have not happened yet."],"ask":"'You just described an audit: nobody reviews every output.' Right, and an auditor's name goes on it. Nobody's name is on the agent's when it is wrong."},
+  {"say":["The pitch, summed up. Wired into the process, billed by the token, marking its own work: that is not a feature, it is a liability. It will be ripped out, slowly and expensively, like asbestos."]},
+  {"say":["So what is a better approach? My opinion, from using it all day: the next few slides."]},
+  {"say":["My answer. Keep the model out of the process; have it write the tools that run the process. Code does the same thing every run. It drafts and flags; you take the exceptions and sign.","This is also the vendors' own engineering guidance (Anthropic's Building effective agents, OpenAI's agent guide): simplest thing first, deterministic tools, human checkpoints."],"ask":"'Claude Code is an agent.' Yes. In a sandbox, on code I read before it ships. The line is not agent or not; it is can it touch live client data and is the output reviewable before it lands."},
+  {"say":["Stage one of four: chat. The daily driver."]},
+  {"say":["Chat is the daily driver. Talk to it like a colleague, check it like a junior.","Also out there: check where the data goes before client work; DeepSeek's app is China-hosted."]},
+  {"say":["Stage two: build. Vibe coding, and then a proper look at what I have actually built with Claude Code."]},
+  {"say":["The key to building: deterministic, not probabilistic. Deterministic means pre-set logic - predictable, the same answer every run, testable once. Probabilistic is the model itself: pattern-matched, plausible, different every run. Build deterministic wherever you can; let the probabilistic layer augment it, never replace it."]},
+  {"say":["Vibe coding is where it shines: describe it, it codes it. Four things I actually build with it: internal tools and prototypes, slides, simple websites, brand assets."]},
+  {"say":["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo."]},
+  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same."]},
+  {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
+  {"say":["Deadlines and alerts, integrated with the government platforms, so nothing depends on someone remembering."]},
+  {"say":["Management accounts hosted in the app, with notifications when a pack is ready and when it has been read."]},
+  {"say":["Payroll reviews with a client review workflow: I review, the client signs off, the trail is kept."]},
+  {"say":["VAT reviews with the same client review workflow."]},
+  {"say":["Month end, one screen per posting. Seven of them: accruals and prepayments, deferred and accrued revenue, payroll reallocations, direct cost reallocations, corporation tax, R&D credits, loan notes.","Each screen works the posting out from the ledger and waits for me. The model wrote the screens; the screens do not use the model."]},
+  {"say":["And much more. It has become the central app between my clients and the work, with Slack alongside for live comms. The GenAI is in how it was built, not in what it posts."]},
+  {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
+  {"say":["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."]},
+  {"say":["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."]},
+  {"say":["Stage three: the everyday extras. Note takers and dictation: daily, but not core."]},
+  {"say":["Note takers. Loom on the calls I choose, off for anything sensitive. Recording a client: say so in words every time; a bot in the participant list is not telling them. Know where the transcript goes."],"ask":"'Consent isn't the UK GDPR test.' Agreed: lawful basis plus telling people. Saying it out loud, every time, with a policy behind it, keeps you on the right side. Otter and Granola both face live US class actions on recording."},
+  {"say":["Dictation. Aqua Voice: talk instead of type, in any app. Cloud, so not for client secrets; Wispr Flow is the other big one, superwhisper the on-device option. This is the single biggest everyday win."]},
+  {"say":["Now the two I use with caution: the spreadsheet add-ins, and Cowork."]},
+  {"say":["In your apps: it queried one supplier with a reason; you still answer it and the other 37 still get your eyes.","The stat is deliberately the hard one: fixing errors in real workbooks."],"src":["SpreadsheetBench 2 (arXiv 2606.29955, 29 Jun 2026): 321 real multi-sheet tasks; best model 34.89% overall, 12.00% on debugging.","Deel Inc: reverse charge is right for a US-established B2B supplier; if a UK Deel entity billed with a GB VAT number, 20% would be right, which is why the tool queries rather than decides."]},
+  {"say":["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],"ask":"'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not."},
+  {"say":["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."]},
+  {"say":["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."]},
+  {"say":["Thank you. Questions now or find me after."]}
 ]
 </script>
 
@@ -3746,6 +3713,13 @@ deck-stage { background: #0a0a0a; }
 .hub-arr { font-size: 34px; color: var(--periwinkle-500); }
 .hub-foot { margin: 44px 0 0; font-family: var(--font-sans); font-size: 28px; color: var(--ink-500); }
 .hub-foot em { font-style: normal; font-weight: 600; color: var(--periwinkle-700); }
+
+/* ── One big emoji in the top-right corner (Don't mention the environment) ── */
+.corner-emoji {
+  position: absolute; right: var(--pad-x); top: 190px; z-index: 3;
+  font-size: 200px; line-height: 1; filter: var(--shadow-emoji);
+  pointer-events: none;
+}
 
 /* ── Icon tiles on list slides ─────────────────────────────────── */
 .tk-icon { flex-shrink: 0; width: 68px; height: 68px; border-radius: 18px; display: inline-flex; align-items: center; justify-content: center; font-size: 34px; background: var(--periwinkle-50); border: 1px solid rgba(124,135,232,0.22); }
@@ -3876,12 +3850,37 @@ deck-stage { background: #0a0a0a; }
 
 .build-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-family: var(--font-sans); font-size: 20px; font-weight: 600; color: var(--periwinkle-700); }
 .build-kicker::before { content: ''; width: 34px; height: 34px; border-radius: 9px; background: url('Images/shared/claude-logo.svg') center/22px no-repeat, #FBF1EB; border: 1px solid rgba(217,119,87,0.28); }
+.build-kicker.on-ink { color: var(--periwinkle-200); }
+
+/* Sidgrove Intelligence hero: the app window sits centred below the headline
+   and runs off the bottom edge of the slide, product-launch style. */
+.si-hero {
+  position: absolute; left: 50%; top: 520px; transform: translateX(-50%);
+  width: 1480px; z-index: 3; margin: 0;
+  box-shadow: 0 -10px 80px -20px rgba(0,0,0,0.55), 0 40px 90px -30px rgba(0,0,0,0.6);
+  border-color: rgba(255,255,255,0.14);
+}
+.si-hero img { max-height: none; }
+.slide.ink .si-hero figcaption { color: var(--ink-300); }
+
+/* Claude Cowork page: list left, a Cowork task window right. */
+.cw-grid { display: grid; grid-template-columns: 1fr 700px; gap: 40px; align-items: start; }
+.cw-grid .tk-rows.ni { padding: 6px 36px; }
+.cw-grid .tk-rows.ni .tk-text { font-size: 26px; }
+.cw-grid .tk-rows.ni .tk-row { padding: 15px 0; gap: 22px; }
+.cw-grid .tk-icon { width: 60px; height: 60px; font-size: 30px; }
+.cw-simple { display: flex; align-items: stretch; align-self: stretch; }
+.cw-box { width: 100%; max-width: none; align-items: flex-start; padding: 30px 32px 34px; border-radius: 26px; box-shadow: var(--shadow-lift); }
+.cw-box .cover-prompt-icon { width: 48px; height: 48px; border-radius: 14px; }
+.cw-box .cover-prompt-icon img { width: 24px; height: 24px; }
+.cw-box .cover-prompt-text { font-size: 30px; line-height: 1.35; color: var(--ink); padding-top: 4px; }
+.cw-box .cover-prompt-cursor { height: 28px; }
 
 /* ── Vibe coding · uses + warnings ─────────────────────────────── */
 .vc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
-.vc-col { padding: 20px 40px 14px; }
+.vc-col { padding: 30px 40px 18px; }
 /* Sentence case, like every other slide-level label (no tracked caps). */
-.vc-title { margin: 6px 0 4px; font-family: var(--font-sans); font-weight: 600; font-size: 18px; letter-spacing: -0.005em; color: var(--green-600); }
+.vc-title { margin: 0 0 10px; font-family: var(--font-sans); font-weight: 600; font-size: 24px; letter-spacing: -0.01em; color: var(--green-600); }
 .vc-col.warn .vc-title { color: #B45309; }
 .vc-col.warn .tk-text em { color: #B45309; }
 .vc-col .tk-row { padding: 18px 0; gap: 22px; }
@@ -3909,11 +3908,23 @@ deck-stage { background: #0a0a0a; }
 .slide .wl-photo { position: absolute; margin: 0; border: 6px solid #fff; border-radius: 22px; object-fit: cover; }
 .slide .wl-photo.a { left: 0; bottom: 0; width: 1000px; height: 620px; aspect-ratio: auto; z-index: 1; }
 .slide .wl-photo.b { right: 0; top: 0; width: 740px; height: 416px; aspect-ratio: auto; z-index: 2; box-shadow: 0 30px 70px -28px rgba(30,30,70,0.45); }
-.slide .wl-claims { position: absolute; right: 0; top: 446px; width: 560px; display: flex; flex-direction: column; gap: 0; z-index: 3; }
-.slide .wl-claim { padding: 14px 4px; }
-.slide .wl-claim + .wl-claim { border-top: 1px solid rgba(30,30,70,0.12); }
-.slide .wl-permission { margin-top: 16px; padding: 22px 26px; background: var(--ink); }
-.slide .wl-ptext { font-size: 30px; }
+/* One card carries the whole right column: the two claims as hairline rows,
+   the permission block as an ink footer inside the same card. */
+.slide .wl-claims {
+  position: absolute; right: 0; top: 408px; width: 600px; z-index: 3;
+  display: flex; flex-direction: column; gap: 0;
+  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.14);
+  border-radius: 26px; padding: 10px; box-shadow: var(--shadow-lift);
+}
+.slide .wl-claim { padding: 18px 22px; }
+.slide .wl-claim + .wl-claim { border-top: 1px solid rgba(30,30,70,0.09); }
+.slide .wl-num { font-size: 38px; width: 54px; }
+.slide .wl-ctitle { font-size: 33px; }
+.slide .wl-permission { margin: 8px 0 0; border-radius: 18px; padding: 22px 26px 24px; background: var(--ink); }
+.slide .wl-plabel { font-size: 17px; margin-bottom: 8px; }
+.slide .wl-ptext { font-family: var(--font-sans); font-size: 29px; font-weight: 500; letter-spacing: -0.015em; line-height: 1.2; }
+.slide .wl-ptext em { font-family: var(--font-sans); font-style: normal; font-weight: 500; color: var(--green); }
+.wl-pline { margin: 9px 0 0; font-family: var(--font-sans); font-size: 20px; line-height: 1.4; color: rgba(255,255,255,0.62); }
 
 /* ── Hype curve ────────────────────────────────────────────────── */
 .hc { position: relative; width: 100%; height: 560px; }
@@ -4048,7 +4059,7 @@ figure.shot figcaption, .shot.window figcaption { font-size: 20px; }
 .prob-hdr .prob-hdr-label, .prob-hdr .prob-run { font-size: 20px; } .prob-grid .prob-delta { font-size: 22px; }
 .tok-head .tok-pill { font-size: 20px; } .tok-sec .tok-lbl { font-size: 22px; } .tok-card .tok-btn { font-size: 23px; }
 p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions .perm-btn { font-size: 23px; }
-.tk-rows .vc-title { font-size: 22px; }
+.tk-rows .vc-title { font-size: 24px; }
 .si-main .si-eyebrow { font-size: 20px; } .si-kpi .si-k { font-size: 20px; } .si-kpi .si-s { font-size: 19px; } .si-tr .si-chip { font-size: 19px; } .si-nav span { font-size: 22px; } .si-tr > span { font-size: 23px; }
 .slack-inset { zoom: 0.8; right: -44px; bottom: -36px; }
 .slide[data-label="Management accounts"] .slack-inset { zoom: 0.76; }
