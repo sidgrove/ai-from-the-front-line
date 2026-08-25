@@ -67,38 +67,28 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. If it worked, *I'd be doing it.*
 - **Permission card:** So, officially — You have permission *to simplify.* — quieter line under it: Ignore the hype. Focus on what matters.
 
-## 07 · The meter
+## 07 · Why so strong
 
 - **Section tag:** The hype
-- **Headline:** If full autonomy worked, *I'd be using it.*
-- **Sub:** Nothing to sell. *I just use it, a lot.*
-- **Mock (usage card, "a normal week"):**
-  - Frontier models, hands on — ~12 hrs / day
-  - Claude Max subscription — limit hit · weekly
-  - Fully autonomous, unreviewed — 0 · not worth the risk yet
-
-## 08 · Why so strong
-
-- **Section tag:** The hype
-- **Headline:** So why so much *hype?*
+- **Headline:** So why so much *hype (& fear)?*
 - **Cards:**
-  1. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
-  2. **The money** — The hype pays *their bills.* — Hundreds of billions bet. It has to be right.
+  1. **The money** — Hype & fear pay *their bills.* — Hundreds of billions bet. It has to be right.
+  2. **The GenAI mirage** — It looks great *from afar.* — Mind-blowing demo. Different reality.
   3. **The tech is actually good** — Good enough to *believe.* — People are losing jobs. Just not to AI.
 
-## 09 · What is it? (divider)
+## 08 · What is it? (divider)
 
 - **Headline:** So what actually *is* it?
 - **Prompt bar:** Generative AI, specifically. *How does it actually work?*
 
-## 10 · Hype curve
+## 09 · Hype curve
 
 - **Section tag:** The reality
 - **Headline:** From quiet utility *to mass hype.*
 - **Sub:** The newest form of AI generates from scratch. *It hits awe, dopamine and fear at once.*
 - **Graphic (curve, 2000 → 2025):** Pre-2015 — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
 
-## 11 · An LLM
+## 10 · An LLM
 
 - **Section tag:** The reality
 - **Kicker:** ‘AI’, as most people mean it, is GenAI:
@@ -109,7 +99,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Me (typing): Sure, I'll send the|
   - Suggestions: file · **figures** · invoice
 
-## 12 · Probabilistic
+## 11 · Probabilistic
 
 - **Section tag:** The reality
 - **Headline:** It's probabilistic. *By design.*
@@ -117,12 +107,12 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Popover (under the last chip):** cashflow 34% · the VAT return 22% · a holiday 1.8%
 - **Sub:** Confidently, *probably* correct.
 
-## 13 · Why a problem? (beat)
+## 12 · Why a problem? (beat)
 
 - **Section tag:** The reality
 - **Headline:** OK, so why is that a problem, *particularly in accounting?*
 
-## 14 · Two answers
+## 13 · Two answers
 
 - **Section tag:** The reality
 - **Headline:** It’s not correct *every time.*
@@ -132,14 +122,14 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Delta sticker: £750 apart
 - **Sub:** It hallucinates by design, *not by mistake.*
 
-## 15 · Not intelligent
+## 14 · Not intelligent
 
 - **Section tag:** The reality
 - **Headline:** It isn’t intelligent. *In the true sense.*
 - **Sub:** Pretend it is, and you’ll trust it too much.
 - **Rows:** 🗣️ It doesn’t understand what you’re asking it. · 🪞 It can’t check its own work. · 🎲 It won’t always do what you tell it.
 
-## 16 · Better than a human?
+## 15 · Better than a human?
 
 - **Section tag:** The reality
 - **Headline:** “But it’s better than *a human.”*
@@ -150,25 +140,25 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. Incredible at hiding errors.
   4. Not better than a human + GenAI used properly.
 
-## 17 · Just use it (beat)
+## 16 · Just use it (beat)
 
 - **Section tag:** The reality
 - **Headline:** Just *use* it.
 - **Sub:** Don't take my word for it. *It makes mistakes, all the time.*
 
-## 18 · Added to that (beat)
+## 17 · Added to that (beat)
 
 - **Section tag:** The reality
 - **Headline:** And *added* to that…
 
-## 19 · The economics
+## 18 · The economics
 
 - **Section tag:** The reality
 - **Headline:** Sold below *cost.*
 - **Sub:** This isn't a software business. · *What happens when they raise prices and cut the limits?*
-- **Cutting:** `Images/19 The economics/openai-losses.png` — caption: Quartz · OpenAI's leaked 2025 financials · a $38.5B loss
+- **Cutting:** `Images/18 The economics/openai-losses.png` — caption: Quartz · OpenAI's leaked 2025 financials · a $38.5B loss
 
-## 20 · Environment
+## 19 · Environment
 
 - **Section tag:** The reality
 - **Headline:** Don't mention the *environment.*
@@ -178,7 +168,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   2. 🔌 It hoards components. *Your electricity, and your electronics, cost more.*
   3. 🏘️ It's disrupting *local communities.*
 
-## 21 · Environment press
+## 20 · Environment press
 
 - **Section tag:** The reality
 - **Headline:** It's not just me *saying it.*
@@ -188,18 +178,18 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   3. EESI — Public health — data centres as hotbeds of health risks (`eesi-cut.png`)
   4. Civicus Lens — Communities — taking on data centres over energy and water (`civicus-cut.png`)
 
-## 22 · How to use it (divider)
+## 21 · How to use it (divider)
 
 - **Headline:** So how should we *use* it?
 - **Prompt bar:** And yet *I use it all day.*
 
-## 23 · Asbestos era
+## 22 · Asbestos era
 
 - **Section tag:** What works *· the pitch*
 - **Lead-in:** Well… let's start with *what everyone's selling right now.*
 - **Headline:** The ~~agentic~~ *asbestos* era.
 
-## 24 · Hooked
+## 23 · Hooked
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** They want you *hooked.*
@@ -210,7 +200,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Button: Top up · £299
   - Fine print: auto-top-up on · pricing subject to change
 
-## 25 · Pre-authorised mistakes
+## 24 · Pre-authorised mistakes
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** Pre-authorised *mistakes.*
@@ -222,11 +212,20 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
   - Decide it's all correct
   - Button: Approve future mistakes
 
-## 26 · It's toxic
+## 25 · It's toxic
 
 - **Section tag:** What works *· the pitch*
 - **Headline:** It's *toxic.*
 - **Sub:** It'll need ripping out, at huge cost. *Like asbestos.*
+
+## 26 · The meter
+
+- **Section tag:** What works *· the pitch*
+- **Headline:** If full autonomy worked, *I'd be using it.*
+- **Mock (usage card, "a normal week"):**
+  - Frontier models, hands on — ~12 hrs / day
+  - Claude Max subscription — limit hit · weekly
+  - Fully autonomous, unreviewed — 0 · not worth the risk yet
 
 ## 27 · Better approach (divider)
 
@@ -236,7 +235,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· my answer*
 - **Headline:** A copilot. *Never the pilot.*
-- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Agentic AI autonomously completing end-to-end task completion. · ✓ The copilot — Claude → builds the tool → You sign off — Augments. *We stay in charge.*
+- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Agentic AI autonomously completing end-to-end task completion. · ✓ The copilot — Claude → builds the tool → You sign off — two bullets: Augments. *We stay in charge.* · An exception layer. *It flags; you choose to act.*
 
 ## 29 · 01 Chat (beat)
 
