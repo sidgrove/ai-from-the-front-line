@@ -85,8 +85,8 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** The reality
 - **Headline:** From quiet utility *to mass hype.*
-- **Sub:** The newest form of AI generates from scratch. *It hits awe, dopamine and fear at once.*
-- **Graphic (curve, 2000 → 2025):** Pre-2015 — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
+- **Sub:** ‘AI’ is nothing new. The newest form generates from scratch. *It hits awe, dopamine and fear at once.*
+- **Graphic (curve, 1950s → 2025):** 1950s — Rule-based AI. *Deep Blue wins in ’97.* · 2000s — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
 
 ## 10 · An LLM
 
