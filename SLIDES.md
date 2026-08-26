@@ -27,7 +27,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 02 · Tick Tock
 
 - **Section tag:** The hype
-- **Headline:** Tick *Tock.*
+- **Headline:** We're *doomed.*
 - **Sub:** ...AI is coming for us, right?
 - **Mock (redundancy pop-up):**
   - Title: Accountant Detected.
@@ -65,7 +65,6 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Claims:**
   1. I’m an obsessive *early adopter.*
   2. If it worked, *I'd be doing it.*
-- **Permission card:** So, officially — You have permission *to simplify.* — quieter line under it: Ignore the hype. Focus on what matters.
 
 ## 07 · Why so strong
 
@@ -78,14 +77,13 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 ## 08 · What is it? (divider)
 
-- **Headline:** So what actually *is* it?
-- **Prompt bar:** Generative AI, specifically. *How does it actually work?*
+- **Headline:** So what actually is this *‘AI’* we're referring to?
 
 ## 09 · Hype curve
 
 - **Section tag:** The reality
-- **Headline:** From quiet utility *to mass hype.*
-- **Sub:** ‘AI’ is nothing new. The newest form generates from scratch. *It hits awe, dopamine and fear at once.*
+- **Headline:** The journey to *GenAI mania.*
+- **Source note:** (Source: vibes based.)
 - **Graphic (curve, 1950s → 2025):** 1950s — Rule-based AI. *Deep Blue wins in ’97.* · 2000s — ML and OCR, *quietly improving.* · 2015 — Cloud apps *embedding AI, unnoticed.* · 2023 — GenAI. *Text, images, video, code, from scratch.*
 
 ## 10 · An LLM
@@ -235,7 +233,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· my answer*
 - **Headline:** A copilot. *Never the pilot.*
-- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Agentic AI autonomously completing end-to-end task completion. · ✓ The copilot — Claude → builds the tool → You sign off — two bullets: Augments. *We stay in charge.* · An exception layer. *It flags; you choose to act.*
+- **Visual (two cards):** ✗ The pilot — Claude → runs the close → posts it — Agentic AI autonomously completing end-to-end task completion. · ✓ The copilot — Claude → builds the tool → You sign off — three bullets: Augments. *We stay in charge.* · An exception layer. *It flags; you choose to act.* · Breaks down steep learning curves.
 
 ## 29 · 01 Chat (beat)
 
@@ -255,7 +253,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· 02 build*
 - **Headline:** *Build.*
-- **Sub:** Build tools that run without GenAI. *With AI.*
+- **Sub:** Build tools that run without GenAI. *With AI. Leveraging workflow like vibecoding.*
 
 ## 32 · Deterministic
 
@@ -263,6 +261,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 - **Headline:** Build deterministic, *wherever possible.*
 - **Sub:** Probabilistic *augments* it. It doesn't replace it.
 - **Cards:** ⚙️ Deterministic — Pre-set logic. Predictable. *Same answer every run.* · vs · 🎲 Probabilistic — Pattern-matched. Plausible. *Different answer every run.*
+- **In practice (chips):** Deterministic — Formulas · Power Query · VBA · Apps Script · Rules · APIs · RPA · vs · Probabilistic — LLM chat · OCR capture · ML categorisation
 
 ## 33 · Vibe coding
 
@@ -313,7 +312,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 ## 40 · VAT reviews
 
 - **Section tag:** What works *· 02 build*
-- **Headline:** VAT reviews *and client sign-off.*
+- **Headline:** VAT (Sales Tax) reviews *and client sign-off.*
 - **Screenshot:** `Images/40 VAT reviews/vat.png` — window bar only, no caption (Circle is the demo client; say so out loud)
 
 ## 41 · Month end
@@ -333,7 +332,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· 02 build*
 - **Kicker:** Built with Claude Code
-- **Headline:** This deck. *No PowerPoint.*
+- **Headline:** Slides like *this deck.*
 - **Sub:** Every slide here was built in Claude Code. *You're looking at it.*
 
 ## 44 · Websites
@@ -413,7 +412,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** Wrapping up
 - **Headline:** Key *takeaways.*
-- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Never autonomous, end to end. Nothing posted unreviewed. · ✅ Use it every day. — Chat. Build tools with Claude Code. Dictation and note takers.
+- **Cards (icon tiles):** 🫧 It won’t replace us. — Not as claimed, anyway. It’s being oversold. · 🎲 Probabilistic, not intelligent. — Not correct every time. It hallucinates by design. · 🛠️ Copilot, never the pilot. — Be wary of autonomous end to end agentic GenAI for accounting work. · ✅ Use it every day. — Chat as a daily copilot. Build tools with Claude Code. Use tools like AI dictation to augment workflow. (It's still incredible tech.)
   1. The work isn't going away. *Someone has to rip the asbestos out.*
   2. The narrative is hype, powered by *massive financial bets.*
   3. Build with it. Use it. *Don't let it run your accounting.*
