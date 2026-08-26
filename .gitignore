@@ -14,3 +14,8 @@ desktop.ini
 
 # Exported deck (rebuild with Print -> Save as PDF)
 *.pdf
+
+# Exported deck (rebuild from the deck: PDF via print, PPTX via the export script)
+*.pptx
+# Office lock files
+~$*

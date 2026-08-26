@@ -389,7 +389,7 @@ deck (and the `Images/NN Title/` folders, and the `?review` badge).
 
 - **Section tag:** What works *· 04 non-daily*
 - **Headline:** MCP *connections.* — verdict: Non-daily
-- **Sub:** Model context protocol. *I barely touch these too.*
+- **Sub:** Model context protocol. *I barely touch these for accounting workflow (albeit used in vibecoding).*
 - **Rows:**
   1. 🔌 A mechanism that allows GenAI chat interfaces and agents to access APIs.
   2. 🎯 Nice for niche ad hoc data pulls where it’s not mission critical.
