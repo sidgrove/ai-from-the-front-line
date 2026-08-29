@@ -2647,10 +2647,38 @@ deck-stage { background: #0a0a0a; }
       <div style="margin-bottom: 28px;">
         <h2 class="display" style="font-size: 84px;">Daily cashflow. <em>Straight from the bank.</em></h2>
       </div>
-      <div class="fill center-y">
+      <div class="fill center-y" style="display: grid; grid-template-columns: 8fr 5fr; gap: 52px; align-items: center;">
         <figure class="shot window">
-          <img src="Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 640px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
+        </figure>
+        <figure class="shot window slk-wrap">
+          <div class="slk">
+            <div class="slk-head">
+              <span class="slk-avatar">S</span>
+              <div>
+                <p class="slk-who">Sidgrove Intelligence <span class="slk-app">APP</span> <span class="slk-time">9:00 AM</span></p>
+                <p class="slk-title">📊 Circle · Weekly Cashflow</p>
+                <p class="slk-date">📅 27th Jul – 2nd Aug 2026</p>
+              </div>
+            </div>
+            <div class="slk-stats">
+              <div><p class="slk-k">💰 Cash Balance</p><p class="slk-v">£346,587</p></div>
+              <div><p class="slk-k">📈 Net Mth to Date</p><p class="slk-v">+£23,943</p></div>
+              <div><p class="slk-k">💸 Week spend</p><p class="slk-v">£13,700</p></div>
+              <div><p class="slk-k">💵 Week income</p><p class="slk-v">£20,848</p></div>
+            </div>
+            <div class="slk-sec">
+              <p class="slk-k">Spend last week</p>
+              <p class="slk-row">👤 Nexus Development · <b>£5,082</b></p>
+              <p class="slk-row">🏢 Wework · <b>£4,200</b></p>
+              <p class="slk-row">👤 Sarah Truthwell · <b>£2,011</b></p>
+              <p class="slk-row">🎥 Brandhype · <b>£799</b></p>
+              <p class="slk-row slk-more">+ 8 more…</p>
+            </div>
+            <span class="slk-btn">↗ Open Dashboard</span>
+          </div>
+          <figcaption>Weekly report · straight into Slack</figcaption>
         </figure>
       </div>
 
@@ -3639,7 +3667,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["Deterministic is the core of the practice: pre-set logic, the same answer every run, testable once. This toolkit - rules, APIs, RPA, formulas, Power Query, VBA, Apps Script, Stream Deck, SaaS - is what most of my accounting still runs on. AI - OCR, ML, GenAI - augments that core; it never replaces it."]},
   {"say":["So how do I build those deterministic tools? Vibe coding: describe it, it codes it. Everything in this section - the app, the slides, the websites, the brand - was built this way."]},
   {"say":["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo."]},
-  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same."]},
+  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same.","And the weekly cashflow report lands in Slack automatically: balance, net, spend, income, top payments. Nobody has to open the app."]},
   {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
   {"say":["Deadlines and alerts, integrated with the government platforms, so nothing depends on someone remembering."]},
   {"say":["Management accounts hosted in the app, with notifications when a pack is ready and when it has been read."]},
@@ -4090,6 +4118,25 @@ deck-stage { background: #0a0a0a; }
 
 .hc-line { stroke-width: 5; }
 .hc-area { fill: rgba(124,135,232,0.10); }
+
+/* ── Slack weekly cashflow mock (slide 35) ─────────────────────── */
+.slk-wrap { background: #FFFFFF; }
+.slk { padding: 30px 34px 28px; font-family: var(--font-sans); text-align: left; }
+.slk-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
+.slk-avatar { flex-shrink: 0; width: 52px; height: 52px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 700; font-size: 26px; display: inline-flex; align-items: center; justify-content: center; }
+.slk-who { margin: 0; font-size: 21px; font-weight: 700; color: #1D1C1D; }
+.slk-app { font-size: 13px; font-weight: 700; color: #616061; background: #EBEAEB; border-radius: 4px; padding: 2px 6px; vertical-align: 2px; }
+.slk-time { font-size: 16px; font-weight: 400; color: #616061; }
+.slk-title { margin: 8px 0 0; font-size: 23px; font-weight: 700; color: #1D1C1D; }
+.slk-date { margin: 6px 0 0; font-size: 18px; color: #1D1C1D; }
+.slk-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; padding: 16px 0 18px; border-top: 1px solid #DDDDDD; }
+.slk-k { margin: 0; font-size: 18px; font-weight: 700; color: #1D1C1D; }
+.slk-v { margin: 3px 0 0; font-size: 19px; color: #1D1C1D; }
+.slk-sec { padding: 16px 0 18px; border-top: 1px solid #DDDDDD; }
+.slk-row { margin: 9px 0 0; font-size: 18px; color: #1D1C1D; }
+.slk-row b { font-weight: 700; }
+.slk-more { color: #616061; }
+.slk-btn { display: inline-block; margin-top: 4px; padding: 9px 16px; border: 1px solid #BBBABB; border-radius: 6px; font-size: 17px; font-weight: 700; color: #1D1C1D; background: #fff; }
 
 /* ── Deterministic toolkit tiles (ported from the vibecoding deck) ─ */
 .tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
