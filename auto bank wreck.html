@@ -3413,7 +3413,8 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="sub" style="font-size: 30px; margin-bottom: 28px; color: rgba(255,255,255,0.92);">Given everything I've said… <em style="color:#f0b25c;">one worked example.</em></p>
         <h2 class="display" style="font-size: 150px;">Spotlight: <em>auto bank rec.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 30px;">How AI is being deployed, <em>vs how it should be.</em></p>
+        <p class="sub" style="margin-top: 28px; font-size: 30px;">Xero's JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
+        <p class="sub" style="margin-top: 14px; font-size: 26px; color: rgba(255,255,255,0.68);">How AI is being deployed, <em>vs how it should be.</em></p>
       </div>
 
       <div class="bottombar"></div>
@@ -3429,18 +3430,31 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 40px;">
+        <div class="way-head" style="margin-bottom: 36px;">
           <div>
             <h2 class="display" style="font-size: 104px;">Why it <em>doesn't work.</em></h2>
             <p class="sub" style="font-size: 29px; margin-top: 18px;">The model runs the process, <em>end to end.</em></p>
           </div>
           <span class="way-verdict r">As deployed</span>
         </div>
-        <div class="tk-rows ni">
-          <div class="tk-row"><span class="tk-icon">🎲</span><p class="tk-text">Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
-          <div class="tk-row"><span class="tk-icon">😃</span><p class="tk-text">Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
-          <div class="tk-row"><span class="tk-icon">📝</span><p class="tk-text">It marks <em>its own homework.</em> No independent check before it posts.</p></div>
-          <div class="tk-row"><span class="tk-icon">📉</span><p class="tk-text">Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
+        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
+          <div class="tk-rows ni" style="padding: 6px 40px;">
+            <div class="tk-row"><span class="tk-icon">🎲</span><p class="tk-text">Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
+            <div class="tk-row"><span class="tk-icon">😃</span><p class="tk-text">Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
+            <div class="tk-row"><span class="tk-icon">📝</span><p class="tk-text">It marks <em>its own homework.</em> No independent check before it posts.</p></div>
+            <div class="tk-row"><span class="tk-icon">📉</span><p class="tk-text">Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
+          </div>
+          <div class="xr-card">
+            <div class="xr-head">
+              <span class="xr-logo">✕</span>
+              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">42 of 51 lines reconciled automatically</p></div>
+              <span class="xr-pill">Auto on</span>
+            </div>
+            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Reconciled · Match</p></div><span class="xr-tick">✓</span></div>
+            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Coded to <b>Sales</b> · Prediction</p></div><span class="xr-tick">✓</span></div>
+            <div class="xr-row ok"><div><p class="xr-payee">Software subscription <span class="xr-amt">£191</span></p><p class="xr-how">Coded to <b>Travel</b>, VAT wrong · Memory</p></div><span class="xr-tick">✓</span></div>
+            <p class="xr-foot">Every row is green. <b>Two of them are wrong.</b></p>
+          </div>
         </div>
       </div>
 
@@ -3457,18 +3471,31 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 40px;">
+        <div class="way-head" style="margin-bottom: 36px;">
           <div>
             <h2 class="display" style="font-size: 104px;">How it <em>could work.</em></h2>
             <p class="sub" style="font-size: 29px; margin-top: 18px;">The model builds and watches the process. <em>It never runs it.</em></p>
           </div>
           <span class="way-verdict g">Optimised</span>
         </div>
-        <div class="tk-rows ni">
-          <div class="tk-row"><span class="tk-icon">⚙️</span><p class="tk-text">Deterministic rules do the bulk. <em>Same answer every run. Testable once.</em></p></div>
-          <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Use GenAI to <em>build the rules,</em> not run the rec.</p></div>
-          <div class="tk-row"><span class="tk-icon">🚨</span><p class="tk-text">AI as the exception layer. <em>It raises a flag, not a posting.</em></p></div>
-          <div class="tk-row"><span class="tk-icon">✍️</span><p class="tk-text">A human takes the exceptions <em>and signs.</em></p></div>
+        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
+          <div class="tk-rows ni" style="padding: 6px 40px;">
+            <div class="tk-row"><span class="tk-icon">⚙️</span><p class="tk-text">Deterministic rules do the bulk. <em>Same answer every run. Testable once.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Use GenAI to <em>build the rules,</em> not run the rec.</p></div>
+            <div class="tk-row"><span class="tk-icon">🚨</span><p class="tk-text">AI as the exception layer. <em>It raises a flag, not a posting.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">✍️</span><p class="tk-text">A human takes the exceptions <em>and signs.</em></p></div>
+          </div>
+          <div class="xr-card">
+            <div class="xr-head">
+              <span class="xr-logo g">⚙</span>
+              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">46 of 51 lines matched by rules</p></div>
+              <span class="xr-pill g">Rules + review</span>
+            </div>
+            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Rule · exact match, <b>same every run</b></p></div><span class="xr-tick">✓</span></div>
+            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Rule · account-to-account</p></div><span class="xr-tick">✓</span></div>
+            <div class="xr-row warn"><div><p class="xr-payee">Unknown payee <span class="xr-amt">£4,120</span></p><p class="xr-how">No rule matched · <b>flagged, not posted</b></p></div><span class="xr-btn">Review</span></div>
+            <p class="xr-foot">The rules post. The exceptions <b>wait for you.</b></p>
+          </div>
         </div>
       </div>
 
@@ -3686,8 +3713,8 @@ deck-stage { background: #0a0a0a; }
   {"say":["In your apps: it queried one supplier with a reason; you still answer it and the other 37 still get your eyes.","The stat is deliberately the hard one: fixing errors in real workbooks."],"src":["SpreadsheetBench 2 (arXiv 2606.29955, 29 Jun 2026): 321 real multi-sheet tasks; best model 34.89% overall, 12.00% on debugging.","Deel Inc: reverse charge is right for a US-established B2B supplier; if a UK Deel entity billed with a GB VAT number, 20% would be right, which is why the tool queries rather than decides."]},
   {"say":["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],"ask":"'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not."},
   {"say":["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."]},
-  {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. How it is being deployed, versus how I believe it should be."]},
-  {"say":["Why it does not work as deployed: probabilistic matching inside the process, so a different answer on a different day. Wrong with confidence - a bad match looks exactly like a good one. It marks its own homework, and it posts to the live ledger, so the errors compound quietly into the accounts."]},
+  {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. Xero's JAX - Just Ask Xero - reconciles via four methods: Rule, Match, Memory, Prediction. The stated goal is 80%-plus of statement lines auto-reconciled in real time; over 100 million transactions reconciled in beta. How it is being deployed, versus how I believe it should be."],"src":["Xero blog: automatic bank reconciliation with JAX (beta), four methods, 80%+ goal, 100m+ transactions.","Practitioner testing (digit.business, Mar 2026): intercompany transfers coded wrong, batch and part payments mishandled, memory coding firing before the bill arrives, same subscription coded differently across weeks."]},
+  {"say":["Why it does not work as deployed: probabilistic matching inside the process, so a different answer on a different day - practitioners found the same subscription coded correctly one week and wrong the next. Wrong with confidence: the mock on the right is the point - every row is green, a transfer coded to sales and a subscription with the wrong VAT look exactly like the good match. It marks its own homework, and it posts to the live ledger, so the errors compound quietly into the accounts."]},
   {"say":["How it could work, using everything from act three: deterministic rules do the bulk - same answer every run, testable once. Use GenAI to build the rules, not run the rec. Then AI as the exception layer on top: it raises a flag, not a posting, and a human takes the exceptions and signs."]},
   {"say":["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."]},
   {"say":["Thank you. Questions now or find me after."]}
@@ -4118,6 +4145,28 @@ deck-stage { background: #0a0a0a; }
 
 .hc-line { stroke-width: 5; }
 .hc-area { fill: rgba(124,135,232,0.10); }
+
+/* ── Xero-style bank rec mocks (finale spotlight) ──────────────── */
+.xr-card { background: var(--paper-card); border: 1px solid rgba(30,30,70,0.25); border-radius: 26px; padding: 30px 34px; box-shadow: var(--shadow-lift); font-family: var(--font-sans); }
+.xr-head { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 2px solid rgba(30,30,70,0.18); }
+.xr-logo { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: #13B5EA; color: #fff; font-size: 26px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.xr-logo.g { background: var(--green-600); }
+.xr-title { margin: 0; font-size: 24px; font-weight: 700; color: var(--ink); }
+.xr-sub { margin: 3px 0 0; font-size: 18px; color: var(--ink-500); }
+.xr-pill { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 8px 16px; border-radius: 999px; background: rgba(19,181,234,0.12); color: #0E7FA3; }
+.xr-pill.g { background: rgba(109,168,60,0.16); color: var(--green-600); }
+.xr-row { display: flex; align-items: center; gap: 18px; padding: 18px 0; }
+.xr-row + .xr-row { border-top: 1px solid rgba(30,30,70,0.14); }
+.xr-payee { margin: 0; font-size: 21px; font-weight: 600; color: var(--ink); }
+.xr-amt { font-weight: 700; color: var(--ink-500); margin-left: 8px; }
+.xr-how { margin: 4px 0 0; font-size: 17px; color: var(--ink-500); }
+.xr-row.ok .xr-how b { color: #A8462A; }
+.xr-row.warn .xr-how b { color: #8b5a10; }
+.xr-tick { margin-left: auto; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: rgba(109,168,60,0.16); color: var(--green-600); font-size: 21px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
+.xr-btn { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 9px 18px; border-radius: 10px; background: rgba(232,160,32,0.18); color: #8b5a10; border: 1px solid rgba(232,160,32,0.4); }
+.xr-foot { margin: 6px 0 0; padding-top: 18px; border-top: 2px solid rgba(30,30,70,0.18); font-size: 19px; color: var(--ink-500); }
+.xr-foot b { color: var(--ink); }
+.xr-row .xr-how b:only-child { color: inherit; }
 
 /* ── Slack weekly cashflow mock (slide 35) ─────────────────────── */
 .slk-wrap { background: #FFFFFF; }
