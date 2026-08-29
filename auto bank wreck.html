@@ -1430,7 +1430,9 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="max-width: 1500px;">
         <h1 class="display" style="font-size: 200px;">
           Auto Bank<br>
-          <span class="wreck"><em>Wreck.</em><svg class="wr-circle" viewBox="0 0 640 300" aria-hidden="true"><path d="M 95 155 C 68 70, 260 22, 395 32 C 540 44, 610 105, 588 170 C 562 240, 330 272, 185 250 C 62 231, 38 180, 92 128" fill="none"/><path d="M 105 130 C 130 62, 300 30, 430 42 C 555 55, 600 120, 575 185" fill="none" opacity="0.55"/></svg></span>
+          <span class="wreck2">
+            <span class="ins ins-w"><em>W</em><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>Rec<span class="ins ins-k"><em>k</em><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>.
+          </span>
         </h1>
 
         <div class="cover-prompt big" style="margin-top: 56px;">
@@ -4141,16 +4143,18 @@ deck-stage { background: #0a0a0a; }
 .hc-line { stroke-width: 5; }
 .hc-area { fill: rgba(124,135,232,0.10); }
 
-/* ── Cover · hand-scrawled circle around Wreck ─────────────────── */
-.wreck { position: relative; display: inline-block; }
-.wr-circle {
-  position: absolute; left: -7%; top: -13%; width: 116%; height: 130%;
-  overflow: visible; pointer-events: none; transform: rotate(-2deg);
+/* ── Cover · "Rec" corrected into "Wreck" with inserted letters ── */
+.wreck2 { position: relative; display: inline-block; }
+.ins { position: relative; display: inline-block; }
+.ins em { display: inline-block; color: var(--periwinkle-700); }
+.ins-w em { font-size: 1.06em; transform: rotate(-7deg) translateY(-0.14em); margin-right: -0.02em; }
+.ins-k em { font-size: 0.98em; transform: rotate(6deg) translateY(-0.10em); margin-left: 0.01em; margin-right: -0.05em; }
+.ins-caret {
+  position: absolute; width: 0.24em; height: 0.16em;
+  left: 50%; transform: translateX(-50%); bottom: -0.10em;
+  overflow: visible; pointer-events: none;
 }
-.wr-circle path {
-  stroke: var(--periwinkle-700); stroke-width: 8;
-  stroke-linecap: round; stroke-linejoin: round;
-}
+.ins-caret path { stroke: var(--periwinkle-700); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Cover prompt card, sized up */
 .cover-prompt.big { max-width: 1080px; padding: 18px 18px 18px 26px; border-radius: 26px; gap: 18px; }
