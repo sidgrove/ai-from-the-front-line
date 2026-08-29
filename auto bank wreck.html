@@ -1430,10 +1430,10 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="max-width: 1500px;">
         <h1 class="display" style="font-size: 200px;">
           Auto Bank<br>
-          <span style="text-decoration: line-through; text-decoration-thickness: 0.06em; text-decoration-color: rgba(74,86,184,0.75); color: var(--ink-300);">Rec</span> <em>Wreck.</em>
+          <span class="wreck"><em>Wreck.</em><svg class="wr-circle" viewBox="0 0 640 300" aria-hidden="true"><path d="M 95 155 C 68 70, 260 22, 395 32 C 540 44, 610 105, 588 170 C 562 240, 330 272, 185 250 C 62 231, 38 180, 92 128" fill="none"/><path d="M 105 130 C 130 62, 300 30, 430 42 C 555 55, 600 120, 575 185" fill="none" opacity="0.55"/></svg></span>
         </h1>
 
-        <div class="cover-prompt" style="margin-top: 56px;">
+        <div class="cover-prompt big" style="margin-top: 56px;">
           <span class="cover-prompt-icon">
             <img src="Images/shared/claude-logo.svg" alt="">
           </span>
@@ -4140,6 +4140,23 @@ deck-stage { background: #0a0a0a; }
 
 .hc-line { stroke-width: 5; }
 .hc-area { fill: rgba(124,135,232,0.10); }
+
+/* ── Cover · hand-scrawled circle around Wreck ─────────────────── */
+.wreck { position: relative; display: inline-block; }
+.wr-circle {
+  position: absolute; left: -7%; top: -13%; width: 116%; height: 130%;
+  overflow: visible; pointer-events: none; transform: rotate(-2deg);
+}
+.wr-circle path {
+  stroke: var(--periwinkle-700); stroke-width: 8;
+  stroke-linecap: round; stroke-linejoin: round;
+}
+
+/* Cover prompt card, sized up */
+.cover-prompt.big { max-width: 1080px; padding: 18px 18px 18px 26px; border-radius: 26px; gap: 18px; }
+.cover-prompt.big .cover-prompt-text { font-size: 31px; }
+.cover-prompt.big .cover-prompt-icon { width: 48px; height: 48px; border-radius: 14px; }
+.cover-prompt.big .cover-prompt-icon img { width: 24px; height: 24px; }
 
 /* ── Xero-style bank rec mocks (finale spotlight) ──────────────── */
 .xr-card { background: var(--paper-card); border: 1px solid rgba(30,30,70,0.25); border-radius: 26px; padding: 30px 34px; box-shadow: var(--shadow-lift); font-family: var(--font-sans); }
