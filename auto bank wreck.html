@@ -1431,7 +1431,7 @@ deck-stage { background: #0a0a0a; }
         <h1 class="display" style="font-size: 200px;">
           Auto Bank<br>
           <span class="wreck2">
-            <span class="ins ins-w"><em>W</em><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>Rec<span class="ins ins-k"><em>k</em><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>.
+            <span class="ins ins-w"><svg class="ins-letter lw" viewBox="0 0 130 104" aria-hidden="true"><path d="M9 12 C14 34, 22 66, 31 90 C40 68, 50 40, 60 24 C69 42, 79 70, 89 90 C99 64, 110 32, 121 10" fill="none"/><path d="M13 16 C18 36, 25 62, 32 82" fill="none" opacity="0.45"/></svg><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>Rec<span class="ins ins-k"><svg class="ins-letter lk" viewBox="0 0 74 104" aria-hidden="true"><path d="M16 6 C13 34, 13 66, 15 96" fill="none"/><path d="M62 22 C48 36, 32 50, 17 58" fill="none"/><path d="M26 54 C38 66, 50 80, 60 94" fill="none"/><path d="M19 10 C16 34, 16 60, 17 88" fill="none" opacity="0.45"/></svg><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>.
           </span>
         </h1>
 
@@ -4146,9 +4146,10 @@ deck-stage { background: #0a0a0a; }
 /* ── Cover · "Rec" corrected into "Wreck" with inserted letters ── */
 .wreck2 { position: relative; display: inline-block; }
 .ins { position: relative; display: inline-block; }
-.ins em { display: inline-block; color: var(--periwinkle-700); }
-.ins-w em { font-size: 1.06em; transform: rotate(-7deg) translateY(-0.14em); margin-right: -0.02em; }
-.ins-k em { font-size: 0.98em; transform: rotate(6deg) translateY(-0.10em); margin-left: 0.01em; margin-right: -0.05em; }
+.ins-letter { overflow: visible; pointer-events: none; }
+.ins-letter path { stroke: var(--periwinkle-700); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
+.ins-letter.lw { width: 0.82em; height: 0.66em; transform: rotate(-8deg) translateY(-0.16em); margin-right: 0.015em; }
+.ins-letter.lk { width: 0.46em; height: 0.64em; transform: rotate(7deg) translateY(-0.12em); margin-left: 0.02em; margin-right: -0.02em; }
 .ins-caret {
   position: absolute; width: 0.24em; height: 0.16em;
   left: 50%; transform: translateX(-50%); bottom: -0.10em;
@@ -4157,8 +4158,8 @@ deck-stage { background: #0a0a0a; }
 .ins-caret path { stroke: var(--periwinkle-700); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
 
 /* Cover prompt card, sized up */
-.cover-prompt.big { max-width: 1240px; padding: 26px 26px 26px 34px; border-radius: 30px; gap: 24px; background: rgba(255,255,255,0.88); }
-.cover-prompt.big .cover-prompt-text { font-size: 38px; line-height: 1.3; color: var(--ink); font-weight: 500; }
+.cover-prompt.big { max-width: 1140px; padding: 22px 22px 22px 30px; border-radius: 28px; gap: 20px; background: rgba(255,255,255,0.88); }
+.cover-prompt.big .cover-prompt-text { font-size: 33px; line-height: 1.3; color: var(--ink); font-weight: 500; }
 .cover-prompt.big .cover-prompt-text em { font-weight: 600; }
 .cover-prompt.big .cover-prompt-icon { width: 58px; height: 58px; border-radius: 16px; }
 .cover-prompt.big .cover-prompt-icon img { width: 30px; height: 30px; }
