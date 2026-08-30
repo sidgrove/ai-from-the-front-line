@@ -1,4 +1,15 @@
-# AI from the Front Line
+# Sidgrove Presentations
+
+This repository is the home for Sidgrove presentation decks.
+
+## Current presentations
+
+- `presentations/ai-from-the-front-line/index.html`
+- `presentations/auto-bank-wreck/index.html`
+
+The original root HTML files remain available as compatibility copies while the new structure is checked. New presentation-specific images belong under `presentations/<presentation-name>/images/`. See `presentations/README.md` for the folder convention and the Auto Bank Wreck cashflow image drop location.
+
+## AI from the Front Line
 
 Talk deck by Dave Sellick (Sidgrove) — a self-contained HTML presentation on the GenAI narrative in accounting: why it's so loud, why it's inflated, and how to actually use the tools.
 

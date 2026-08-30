@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Auto Bank Wreck - Dave Sellick</title>
+<title>AI from the front line - Dave Sellick</title>
 <style>
 /* Self-hosted (variable woff2, latin) — the deck must not depend on venue wifi. */
-@font-face { font-family: "DM Sans"; src: url("fonts/web/dm-sans-variable.woff2") format("woff2"); font-weight: 100 1000; font-style: normal; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/web/jetbrains-mono-variable.woff2") format("woff2"); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("../../fonts/web/dm-sans-variable.woff2") format("woff2"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../../fonts/web/jetbrains-mono-variable.woff2") format("woff2"); font-weight: 100 800; font-style: normal; font-display: swap; }
 
-@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
-@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Very Vogue"; src: url("../../fonts/nicky-laatz-very-vogue-display.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue"; src: url("../../fonts/nicky-laatz-very-vogue-display-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("../../fonts/nicky-laatz-very-vogue-text.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("../../fonts/nicky-laatz-very-vogue-text-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
 
 :root {
   --periwinkle:       #A8B0F8;
@@ -1353,7 +1353,7 @@ deck-stage { background: #0a0a0a; }
 .oe-div { height: 1px; background: rgba(30,30,70,0.08); margin: 6px 0; }
 
 /* ── Screenshot frame · for the real screenshots Dave drops in ─────────
-   Usage: <figure class="shot"><img src="Images/NN%20Slide%20title/foo.png" alt="…">
+   Usage: <figure class="shot"><img src="../../Images/NN%20Slide%20title/foo.png" alt="…">
             <figcaption>Where it's from · date</figcaption></figure>
    The image gets the deck's card treatment (radius, hairline, lift shadow).
    Add .shot.window for a fake title bar with traffic lights, .shot.tilt for
@@ -1429,22 +1429,25 @@ deck-stage { background: #0a0a0a; }
     <div class="frame">
       <div class="fill center-y" style="max-width: 1500px;">
         <h1 class="display" style="font-size: 200px;">
-          Auto Bank<br>
-          <span class="wreck2">
-            <span class="ins ins-w"><svg class="ins-letter lw" viewBox="0 0 130 104" aria-hidden="true"><path d="M9 12 C14 34, 22 66, 31 90 C40 68, 50 40, 60 24 C69 42, 79 70, 89 90 C99 64, 110 32, 121 10" fill="none"/><path d="M13 16 C18 36, 25 62, 32 82" fill="none" opacity="0.45"/></svg><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>Rec<span class="ins ins-k"><svg class="ins-letter lk" viewBox="0 0 74 104" aria-hidden="true"><path d="M16 6 C13 34, 13 66, 15 96" fill="none"/><path d="M62 22 C48 36, 32 50, 17 58" fill="none"/><path d="M26 54 C38 66, 50 80, 60 94" fill="none"/><path d="M19 10 C16 34, 16 60, 17 88" fill="none" opacity="0.45"/></svg><svg class="ins-caret" viewBox="0 0 60 40" aria-hidden="true"><path d="M6 34 L30 8 L54 34" fill="none"/></svg></span>.
-          </span>
+          AI from the<br>
+          <em>front&nbsp;line.</em>
         </h1>
 
-        <div class="cover-prompt big" style="margin-top: 56px;">
+        <div class="cover-prompt" style="margin-top: 56px;">
           <span class="cover-prompt-icon">
-            <img src="Images/shared/claude-logo.svg" alt="">
+            <img src="../../Images/shared/claude-logo.svg" alt="">
           </span>
           <span class="cover-prompt-text">
-            Why autonomous AI agents on end-to-end accounting <em>will never work</em> and what to do instead.<span class="cover-prompt-cursor"></span>
+            ...this is what you actually <em>need to know.</em><span class="cover-prompt-cursor"></span>
           </span>
           <span class="cover-prompt-kbd"><span class="arrow">↵</span> Return</span>
         </div>
 
+        <div class="cover-sugg">
+          <span class="cs"><b>01</b>The hype.</span>
+          <span class="cs"><b>02</b>The reality.</span>
+          <span class="cs"><b>03</b>What works.</span>
+        </div>
       </div>
 
       <div class="bottombar" style="font-size: 20px; color: var(--ink-700); justify-content: flex-end;">
@@ -1453,7 +1456,7 @@ deck-stage { background: #0a0a0a; }
             <div style="font-family: var(--font-sans); font-size: 30px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
             <div class="byline" style="margin-top: 8px; font-size: 17px;">Founder, Sidgrove</div>
           </div>
-          <img src="Images/01%20Cover/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
+          <img src="../../Images/01%20Cover/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
         </div>
       </div>
     </div>
@@ -1512,7 +1515,7 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="press-grid">
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/AAT.png" alt="AAT: two in five people would consider a career change in accountancy due to AI">
+            <img src="../../Images/03%20The%20headlines/AAT.png" alt="AAT: two in five people would consider a career change in accountancy due to AI">
             <div class="press-meta">
               <p class="press-source">AAT</p>
               <p class="press-name">Two in five</p>
@@ -1520,7 +1523,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
+            <img src="../../Images/03%20The%20headlines/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
             <div class="press-meta">
               <p class="press-source">Fortune</p>
               <p class="press-name">Mustafa Suleyman</p>
@@ -1528,7 +1531,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/big%20four.png" alt="Big Four accounting: choosing AI over humans, cutting benefits and hiring">
+            <img src="../../Images/03%20The%20headlines/big%20four.png" alt="Big Four accounting: choosing AI over humans, cutting benefits and hiring">
             <div class="press-meta">
               <p class="press-source">TheStreet</p>
               <p class="press-name">The Big Four</p>
@@ -1557,7 +1560,7 @@ deck-stage { background: #0a0a0a; }
           <div class="rc-loupe" aria-hidden="true"></div>
         </div>
         <figure class="shot">
-          <span class="rc-wrap"><img src="Images/04%20Anthropic's%20prediction/chart.png" alt="Anthropic radar chart: theoretical AI capability versus observed usage by occupational category" style="max-height: 860px;" onerror="this.closest('figure').classList.add('missing')"><span class="rc-ring" aria-hidden="true"></span></span>
+          <span class="rc-wrap"><img src="../../Images/04%20Anthropic's%20prediction/chart.png" alt="Anthropic radar chart: theoretical AI capability versus observed usage by occupational category" style="max-height: 860px;" onerror="this.closest('figure').classList.add('missing')"><span class="rc-ring" aria-hidden="true"></span></span>
           <figcaption>Anthropic · theoretical capability vs observed usage, by occupation</figcaption>
         </figure>
       </div>
@@ -1585,7 +1588,7 @@ deck-stage { background: #0a0a0a; }
             <span class="pt"><em>And they're already backtracking.</em></span>
           </p>
           <figure class="shot bub-cut">
-            <img src="Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
+            <img src="../../Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
           </figure>
         </div>
         <svg class="bub" viewBox="0 0 800 800" aria-hidden="true">
@@ -1600,6 +1603,48 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
+  <!-- ════════════════════════════════════════════════════════════════
+       06 · SIDE NOTE · WHY LISTEN TO ME
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="Why listen">
+
+
+    <div class="frame" style="--pad-y: 96px;">
+      <div class="topbar"><p class="section-tag">Side note</p><span class="page-chip"></span></div>
+
+      <div class="fill center-y">
+        <div style="margin-bottom: 44px;">
+          <h2 class="display" style="font-size: 104px;">
+            Why listen to <em>me?</em>
+          </h2>
+        </div>
+
+        <div class="wl-grid">
+          <div class="wl-photos">
+            <img class="wl-photo a" src="../../Images/06%20Why%20listen/setup-wide.jpg" alt="Dave's studio: two monitors of Excel above a wall of Stream Decks">
+            <img class="wl-photo b" src="../../Images/06%20Why%20listen/setup-angle.jpg" alt="The same desk from the side: more Stream Decks than sense">
+          </div>
+
+          <div class="wl-claims">
+            <div class="wl-claim">
+              <span class="wl-num">01</span>
+              <div class="wl-ctext">
+                <h3 class="wl-ctitle">I’m an obsessive <em>early adopter.</em></h3>
+              </div>
+            </div>
+            <div class="wl-claim">
+              <span class="wl-num">02</span>
+              <div class="wl-ctext">
+                <h3 class="wl-ctitle">If it worked, <em>I'd be doing it.</em></h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
 
   <!-- ════════════════════════════════════════════════════════════════
        08 · WHY THE NARRATIVE IS SO STRONG
@@ -1850,7 +1895,7 @@ deck-stage { background: #0a0a0a; }
         <div class="prob-grid">
           <div class="prob-window">
             <div class="prob-hdr">
-              <img src="Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <img src="../../Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
               <span class="prob-hdr-label" style="flex:1;">Claude</span>
               <span class="prob-run a">Run A</span>
             </div>
@@ -1862,7 +1907,7 @@ deck-stage { background: #0a0a0a; }
 
           <div class="prob-window">
             <div class="prob-hdr">
-              <img src="Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <img src="../../Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
               <span class="prob-hdr-label" style="flex:1;">Claude</span>
               <span class="prob-run b">Run B</span>
             </div>
@@ -2012,8 +2057,8 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill split">
         <div>
-          <h2 class="display" style="font-size: 96px; margin-bottom: 40px;">
-            We're being<br><em>massively subsidised.</em>
+          <h2 class="display" style="font-size: 116px; margin-bottom: 40px;">
+            Sold below<br><em>cost.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 700px;">
             <span class="pt">This isn't a software business.</span>
@@ -2022,7 +2067,7 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <figure class="shot">
-          <img src="Images/18%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
+          <img src="../../Images/18%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
           <figcaption>Quartz · OpenAI's leaked 2025 financials · a $38.5B loss</figcaption>
         </figure>
       </div>
@@ -2083,7 +2128,7 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="press-grid four">
           <div class="press-card">
-            <img src="Images/20%20Environment%20press/economist-cut.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
+            <img src="../../Images/20%20Environment%20press/economist-cut.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
             <div class="press-meta">
               <p class="press-source">The Economist</p>
               <p class="press-name">Consumer electronics</p>
@@ -2091,7 +2136,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card tall">
-            <img src="Images/20%20Environment%20press/guardian-cut.png" alt="The Guardian: two planned datacentres will have higher UK carbon emissions than ExxonMobil">
+            <img src="../../Images/20%20Environment%20press/guardian-cut.png" alt="The Guardian: two planned datacentres will have higher UK carbon emissions than ExxonMobil">
             <div class="press-meta">
               <p class="press-source">The Guardian</p>
               <p class="press-name">UK carbon</p>
@@ -2099,7 +2144,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/20%20Environment%20press/eesi-cut.png" alt="EESI: data centers are hotbeds of health risks">
+            <img src="../../Images/20%20Environment%20press/eesi-cut.png" alt="EESI: data centers are hotbeds of health risks">
             <div class="press-meta">
               <p class="press-source">EESI</p>
               <p class="press-name">Public health</p>
@@ -2132,7 +2177,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="cover-prompt dark" style="margin-top: 56px;">
           <span class="cover-prompt-icon">
-            <img src="Images/shared/claude-logo.svg" alt="">
+            <img src="../../Images/shared/claude-logo.svg" alt="">
           </span>
           <span class="cover-prompt-text">
             And yet <em>I use it all day.</em><span class="cover-prompt-cursor"></span>
@@ -2162,7 +2207,6 @@ deck-stage { background: #0a0a0a; }
         <h2 class="display" style="font-size: 170px; margin-bottom: 48px;">
           The <span style="text-decoration: line-through; text-decoration-thickness: 0.07em; text-decoration-color: rgba(240,178,92,0.9); color: rgba(255,255,255,0.59);">agentic</span><br><em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">asbestos</em> era.
         </h2>
-        <p class="sub" style="font-size: 28px; color: rgba(255,255,255,0.72);">End-to-end workflow, no human in the loop. <em style="color:#f0b25c;">E.g. auto bank rec.</em> Hold that thought.</p>
       </div>
 
       <div class="bottombar"></div>
@@ -2300,7 +2344,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="use-card">
           <div class="use-head">
-            <span class="use-avatar"><img src="Images/shared/Headshot%20normal.jpg" alt="Dave"></span>
+            <span class="use-avatar"><img src="../../Images/shared/Headshot%20normal.jpg" alt="Dave"></span>
             <div class="use-who">
               <span class="use-name">Dave Sellick</span>
             </div>
@@ -2380,7 +2424,7 @@ deck-stage { background: #0a0a0a; }
               <p class="vs-line">Agentic AI autonomously completing end-to-end task completion.</p>
             </div>
             <div class="vs-row">
-              <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
+              <span class="vs-chip who"><img src="../../Images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
               <span class="vs-chip">runs the close</span>
               <span class="vs-arr">→</span>
@@ -2395,7 +2439,7 @@ deck-stage { background: #0a0a0a; }
               <p class="vs-line vs-bullet">Breaks down steep learning curves.</p>
             </div>
             <div class="vs-row">
-              <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
+              <span class="vs-chip who"><img src="../../Images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
               <span class="vs-chip">builds the tool</span>
               <span class="vs-arr">→</span>
@@ -2453,7 +2497,7 @@ deck-stage { background: #0a0a0a; }
         <div class="way-body">
           <div>
             <figure class="shot window">
-              <img src="Images/30%20Chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 560px;">
+              <img src="../../Images/30%20Chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 560px;">
               <figcaption>claude.ai</figcaption>
             </figure>
           </div>
@@ -2462,7 +2506,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="../../Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude</h3>
                 </div>
@@ -2485,7 +2529,7 @@ deck-stage { background: #0a0a0a; }
             <div class="way-others">
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Microsoft Copilot</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(32,128,141,0.30);"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#20808D" d="M22.4 7.09H20.09V0.07L12.58 6.42V0.16H11.42V6.35L4.49 0V7.09H1.6V17.49H4.49V24L11.42 17.64V23.84H12.58V17.79L19.51 23.98V17.49H22.4Z M18.93 2.56V7.09H13.58Z M5.65 2.63L10.51 7.09H5.65Z M2.76 16.33V8.25H10.61L4.49 14.36V16.33Z M5.65 21.37V14.84L11.42 9.06V16.07Z M18.35 21.4L12.58 16.25V9.06L18.35 14.84Z M21.24 16.33H19.51V14.36L13.39 8.25H21.24Z"/></svg></span>Perplexity</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(77,107,254,0.28);"><img src="Images/shared/logos/deepseek.png" alt="" style="width: calc(var(--ts) * 0.7); height: auto;"></span>DeepSeek</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(77,107,254,0.28);"><img src="../../Images/shared/logos/deepseek.png" alt="" style="width: calc(var(--ts) * 0.7); height: auto;"></span>DeepSeek</span>
             </div>
           </div>
         </div>
@@ -2509,7 +2553,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <p class="stage-num">02 <span>of 04</span></p>
         <h2 class="display" style="font-size: 150px;"><em>Build.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Use GenAI to build deterministic tools <em>that run without it.</em> The default for the practice.</p>
+        <p class="sub" style="margin-top: 28px; font-size: 32px;">Build tools that run without GenAI. <em>With AI. Leveraging workflow like vibecoding.</em></p>
       </div>
 
       <div class="bottombar"></div>
@@ -2517,32 +2561,39 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       32 · 02 BUILD · DETERMINISTIC IS THE CORE
+       32 · 02 BUILD · DETERMINISTIC, NOT PROBABILISTIC
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Deterministic">
 
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="fill center-y" style="align-items: center; text-align: center;">
+      <div class="fill center-y">
         <div style="margin-bottom: 44px;">
-          <h2 class="display" style="font-size: 104px;">Deterministic. <em>The core of the practice.</em></h2>
-          <p class="sub" style="margin-top: 18px; font-size: 30px;">AI (OCR, ML, GenAI) <em>augments</em> it. It doesn't replace it.</p>
+          <h2 class="display" style="font-size: 104px;">Build deterministic, <em>wherever possible.</em></h2>
+          <p class="sub" style="margin-top: 18px; font-size: 30px;">Probabilistic <em>augments</em> it. It doesn't replace it.</p>
         </div>
-        <div class="tile-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1320px;">
-          <span class="tile"><span class="ic ic-purple"><svg viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></svg></span><span class="tile-label">Rules</span></span>
-          <span class="tile"><span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="M12 22v-5"/><path d="M9 8V2"/><path d="M15 8V2"/><path d="M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></svg></span><span class="tile-label">APIs</span></span>
-          <span class="tile"><span class="ic ic-violet"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span><span class="tile-label">RPA</span></span>
-          <span class="tile"><span class="ic ic-green"><svg viewBox="0 0 24 24"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg></span><span class="tile-label">Formulas</span></span>
-          <span class="tile"><span class="ic ic-amber"><svg viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg></span><span class="tile-label">Power Query</span></span>
-          <span class="tile"><span class="ic ic-blue"><svg viewBox="0 0 24 24"><polyline points="4 17 10 11 4 5"/><line x1="12" x2="20" y1="19" y2="19"/></svg></span><span class="tile-label">VBA</span></span>
-          <span class="tile"><span class="ic ic-rose"><svg viewBox="0 0 24 24"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg></span><span class="tile-label">Apps Script</span></span>
-          <span class="tile"><span class="ic ic-blue"><svg viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg></span><span class="tile-label">Stream Deck</span></span>
-          <span class="tile"><span class="ic ic-teal"><svg viewBox="0 0 24 24"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg></span><span class="tile-label">SaaS</span></span>
+        <div class="det-grid">
+          <div class="det-card good">
+            <span class="tk-icon">⚙️</span>
+            <p class="det-title">Deterministic</p>
+            <p class="det-line">Pre-set logic. Predictable. <em>Same answer every run.</em></p>
+            <div class="det-eg">
+              <span class="det-eg-label">In practice</span>
+              <div class="det-eg-row"><span class="det-chip">Formulas</span><span class="det-chip">Power Query</span><span class="det-chip">VBA</span><span class="det-chip">Apps Script</span><span class="det-chip">Rules</span><span class="det-chip">APIs</span><span class="det-chip">RPA</span></div>
+            </div>
+          </div>
+          <div class="det-vs">vs</div>
+          <div class="det-card bad">
+            <span class="tk-icon">🎲</span>
+            <p class="det-title">Probabilistic</p>
+            <p class="det-line">Pattern-matched. Plausible. <em>Different answer every run.</em></p>
+            <div class="det-eg">
+              <span class="det-eg-label">In practice</span>
+              <div class="det-eg-row"><span class="det-chip">LLM chat</span><span class="det-chip">OCR capture</span><span class="det-chip">ML categorisation</span></div>
+            </div>
+          </div>
         </div>
-        <p style="font-family: var(--font-sans); font-weight: 600; font-size: 32px; color: var(--ink); letter-spacing: -0.012em; margin: 44px 0 0;">
-          Most of my accounting <em style="font-style: italic; color: var(--periwinkle-700);">still runs on this.</em>
-        </p>
       </div>
 
       <div class="bottombar"></div>
@@ -2550,16 +2601,36 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       32b · 02 BUILD · VIBE CODING INTRO
+       33 · DAILY DRIVER · VIBE CODING
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Vibe coding intro">
+  <section class="slide" data-label="Vibe coding">
+
 
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="fill center-y" style="align-items: center; text-align: center;">
-        <h2 class="display" style="font-size: 130px;">How? <em>Vibe coding.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 32px;">Describe it, <em>it codes it.</em> Everything that follows was built this way.</p>
+      <div class="fill center-y">
+        <div class="way-head" style="margin-bottom: 40px;">
+          <div>
+            <h2 class="display" style="font-size: 104px;">Vibe coding. <em>Where it shines.</em></h2>
+          </div>
+          <span class="way-verdict c">Use to build</span>
+        </div>
+        <div class="vc-grid">
+          <div class="tk-rows ni vc-col">
+            <p class="vc-title">Use it for</p>
+            <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Internal tools <em>and prototypes.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🖥️</span><p class="tk-text">Slides.</p></div>
+            <div class="tk-row"><span class="tk-icon">🌐</span><p class="tk-text">Simple <em>websites.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🎨</span><p class="tk-text">Brand <em>assets.</em></p></div>
+          </div>
+          <div class="tk-rows ni vc-col warn">
+            <p class="vc-title">Warnings</p>
+            <div class="tk-row"><span class="tk-icon">🔒</span><p class="tk-text">Security. <em>Get an engineer if it holds sensitive data.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🐇</span><p class="tk-text">Rabbit holes. <em>Don't overbuild.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🛒</span><p class="tk-text">If an app already does it, <em>buy it.</em></p></div>
+          </div>
+        </div>
       </div>
 
       <div class="bottombar"></div>
@@ -2585,7 +2656,7 @@ deck-stage { background: #0a0a0a; }
 
     <!-- The product, not a feature: one wide window that runs off the bottom of the slide. -->
     <figure class="shot window si-hero" aria-hidden="true">
-      <img src="Images/34%20Sidgrove%20Intelligence/practice-overview.png" alt="">
+      <img src="../../Images/34%20Sidgrove%20Intelligence/practice-overview.png" alt="">
       <figcaption>Sidgrove Intelligence · practice overview · demo mode</figcaption>
     </figure>
   </section>
@@ -2603,16 +2674,10 @@ deck-stage { background: #0a0a0a; }
         <h2 class="display" style="font-size: 84px;">Daily cashflow. <em>Straight from the bank.</em></h2>
       </div>
       <div class="fill center-y">
-        <div class="shot-wrap">
-          <figure class="shot window">
-            <img src="Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-            <figcaption></figcaption>
-          </figure>
-          <div class="slack-inset cashflow-slack" aria-hidden="true">
-            <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-            <img class="sk-image" src="Images/35%20Daily%20cashflow/slack-preview.png" alt="">
-          </div>
-        </div>
+        <figure class="shot window">
+          <img src="../../Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <figcaption></figcaption>
+        </figure>
       </div>
 
       <div class="bottombar"></div>
@@ -2634,16 +2699,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/36%20Bookkeeping/bookkeeping.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="../../Images/36%20Bookkeeping/bookkeeping.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="../../Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-bookkeeping.png" alt="">
+              <img class="sk-banner" src="../../Images/shared/slack/banner-bookkeeping.png" alt="">
               <p class="sk-header">📒 Bookkeeping · Circle</p>
               <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s books are up to date as of 22 Aug 2026. We've reconciled what we can - <b>42 unreconciled items</b> need your answers.</p>
               <p class="sk-section">Answer the flagged items, hit <b>Send responses</b>, and we finalise the month.</p>
@@ -2675,16 +2740,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/37%20Deadlines/deadlines.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="../../Images/37%20Deadlines/deadlines.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="../../Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-deadlines.png" alt="">
+              <img class="sk-banner" src="../../Images/shared/slack/banner-deadlines.png" alt="">
               <p class="sk-context">📅 Sat 22 Aug 2026  ·  📋 Annual accounts <b>2</b> open  ·  🏛️ Confirmation statements <b>1</b> open</p>
               <div class="sk-att" style="border-left-color:#6874b4">📋 <b>Annual accounts</b> (2)<br>🔵  <b>31 Oct 2026</b> (70d) - <u>Circle</u> · <i>period ending 31 Jan 2026</i> · <u>Open →</u><br>🔵  <b>31 Dec 2026</b> (131d) - <u>Circle</u> · <i>period ending 31 Mar 2026</i> · <u>Open →</u></div>
               <div class="sk-att" style="border-left-color:#9aa3c8">🏛️ <b>Confirmation statements</b> (1)<br>⚪  <b>16 Mar 2027</b> (206d) - <u>Circle</u> · <i>period to 2 Mar 2027</i> · <u>Open →</u></div>
@@ -2714,16 +2779,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/38%20Management%20accounts/management-accounts.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="../../Images/38%20Management%20accounts/management-accounts.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="../../Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-reporting.png" alt="">
+              <img class="sk-banner" src="../../Images/shared/slack/banner-reporting.png" alt="">
               <p class="sk-header">📊  Circle - Management Pack</p>
               <p class="sk-context"><b>Period:</b> 2025-10-31  │  <b>Type:</b> PDF</p>
               <hr class="sk-divider">
@@ -2732,7 +2797,7 @@ deck-stage { background: #0a0a0a; }
               <p class="sk-context">Revenue dropped sharply this month; monitor consultancy pipeline to avoid sustained operating losses.</p>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn">Open the October 2025 pack</span></div>
-              <p class="sk-context"><img class="sk-icon" src="Images/shared/slack/google-drive.png" alt=""> Opens in Google Drive</p>
+              <p class="sk-context"><img class="sk-icon" src="../../Images/shared/slack/google-drive.png" alt=""> Opens in Google Drive</p>
               <p class="sk-context">Sent via <b>Sidgrove Intelligence</b></p>
             </div>
           </div>
@@ -2759,16 +2824,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/39%20Payroll%20reviews/payroll.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="../../Images/39%20Payroll%20reviews/payroll.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="../../Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-payroll.png" alt="">
+              <img class="sk-banner" src="../../Images/shared/slack/banner-payroll.png" alt="">
               <p class="sk-header">Approve May 2026 payroll</p>
               <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s <b>May 2026</b> payroll is ready for approval.</p>
               <hr class="sk-divider">
@@ -2799,11 +2864,11 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/40%20VAT%20reviews/vat.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="../../Images/40%20VAT%20reviews/vat.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="../../Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
@@ -2811,7 +2876,7 @@ deck-stage { background: #0a0a0a; }
               <p class="sk-header">🧾 Sign off Jul - Sep 2025 VAT - Circle</p>
               <p class="sk-section"><span class="sk-mention">@channel</span></p>
               <p class="sk-section"><b>Circle</b>'s <b>Jul - Sep 2025</b> VAT return is ready for you to review. Sign it off in the app and we file it with HMRC.</p>
-              <img class="sk-image" src="Images/shared/slack/vat-cover.png" alt="">
+              <img class="sk-image" src="../../Images/shared/slack/vat-cover.png" alt="">
               <div class="sk-fields"><div><b>Period</b><br>Jul - Sep 2025</div><div><b>VAT to pay HMRC</b><br>💷 <b>£10,885.36</b></div><div><b>Pay HMRC by</b><br>7 Nov 2025</div></div>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn primary">✅ Review and sign off</span></div>
@@ -2841,13 +2906,13 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <div class="me-grid">
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accruals.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accrued-income.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/payroll-realloc.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/direct-costs.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/corp-tax.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/rd.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/cln.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/accruals.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/accrued-income.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/payroll-realloc.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/direct-costs.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/corp-tax.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/rd.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
+          <figure class="me-tile"><img src="../../Images/41%20Month%20end/cln.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
         </div>
       </div>
 
@@ -2873,12 +2938,12 @@ deck-stage { background: #0a0a0a; }
           <div class="wf-stage">
             <div class="wf-stage-label">Your tools</div>
             <div class="wf-sources">
-              <div class="wf-chip"><img class="" src="Images/shared/site/xero.svg" alt="">Xero</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/excel.png" alt="">Excel</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/sheets.png" alt="">Sheets</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/apron.svg" alt="">Apron</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/pleo.png" alt="">Pleo</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/paycircle.png" alt="">Paycircle</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/xero.svg" alt="">Xero</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/excel.png" alt="">Excel</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/sheets.png" alt="">Sheets</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/apron.svg" alt="">Apron</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/pleo.png" alt="">Pleo</div>
+              <div class="wf-chip"><img class="" src="../../Images/shared/site/paycircle.png" alt="">Paycircle</div>
             </div>
           </div>
 
@@ -2904,7 +2969,7 @@ deck-stage { background: #0a0a0a; }
             <div class="wf-stage-label">Back to you</div>
             <div class="wf-outputs">
               <div class="wf-out">
-                <div class="wf-out-head"><img src="Images/shared/site/slack.svg" alt="">#your-finances</div>
+                <div class="wf-out-head"><img src="../../Images/shared/site/slack.svg" alt="">#your-finances</div>
                 <div class="wf-slack-msg">
                   <div class="wf-avatar">S</div>
                   <div>
@@ -2963,7 +3028,7 @@ deck-stage { background: #0a0a0a; }
           <h2 class="display" style="font-size: 84px;">Simple websites. <em>Like my own, sidgrove.com.</em></h2>
         </div>
         <figure class="shot window">
-          <img src="Images/44%20Websites/sidgrove-1260.png" alt="sidgrove.com · built with Claude Code" style="max-height: 700px;" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/36 Websites/screenshot.png'">
+          <img src="../../Images/44%20Websites/sidgrove-1260.png" alt="sidgrove.com · built with Claude Code" style="max-height: 700px;" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='../../Images/36 Websites/screenshot.png'">
           <figcaption>sidgrove.com</figcaption>
         </figure>
       </div>
@@ -2988,46 +3053,9 @@ deck-stage { background: #0a0a0a; }
           <p class="sub" style="font-size: 28px;">The Claude Code engine, <em>tailored for design.</em></p>
         </div>
         <figure class="shot window">
-          <img src="Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/37 Brand assets/screenshot.png'">
+          <img src="../../Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='../../Images/37 Brand assets/screenshot.png'">
           <figcaption>Claude Design</figcaption>
         </figure>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       45b · 02 BUILD · VIBE CODING · THE GOOD AND THE BAD
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Vibe coding">
-
-
-    <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 40px;">
-          <div>
-            <h2 class="display" style="font-size: 104px;">Vibe coding. <em>The good and the bad.</em></h2>
-          </div>
-          <span class="way-verdict c">Use to build</span>
-        </div>
-        <div class="vc-grid">
-          <div class="tk-rows ni vc-col">
-            <p class="vc-title">Use it for</p>
-            <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Internal tools <em>and prototypes.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🖥️</span><p class="tk-text">Slides.</p></div>
-            <div class="tk-row"><span class="tk-icon">🌐</span><p class="tk-text">Simple <em>websites.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🎨</span><p class="tk-text">Brand <em>assets.</em></p></div>
-          </div>
-          <div class="tk-rows ni vc-col warn">
-            <p class="vc-title">Warnings</p>
-            <div class="tk-row"><span class="tk-icon">🔒</span><p class="tk-text">Security. <em>Get an engineer if it holds sensitive data.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🐇</span><p class="tk-text">Rabbit holes. <em>Don't overbuild.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🛒</span><p class="tk-text">If an app already does it, <em>buy it.</em></p></div>
-          </div>
-        </div>
       </div>
 
       <div class="bottombar"></div>
@@ -3091,7 +3119,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/site/loom.png" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/site/loom.png" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Loom</h3>
                 </div>
@@ -3100,10 +3128,10 @@ deck-stage { background: #0a0a0a; }
 
             <p class="way-label">Other options</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/fireflies.png" alt=""></span>Fireflies</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/vinyl.png" alt=""></span>Vinyl</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/granola.png" alt=""></span>Granola</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/fathom.png" alt=""></span>Fathom</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/fireflies.png" alt=""></span>Fireflies</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/vinyl.png" alt=""></span>Vinyl</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/granola.png" alt=""></span>Granola</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/fathom.png" alt=""></span>Fathom</span>
             </div>
           </div>
         </div>
@@ -3153,7 +3181,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/aquavoice.png" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/aquavoice.png" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Aqua Voice</h3>
                 </div>
@@ -3162,8 +3190,8 @@ deck-stage { background: #0a0a0a; }
 
             <p class="way-label">Other options</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:#1A1A1A;"><img src="Images/shared/logos/wisprflow.png" alt=""></span>Wispr Flow</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/superwhisper.png" alt=""></span>superwhisper</span>            </div>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:#1A1A1A;"><img src="../../Images/shared/logos/wisprflow.png" alt=""></span>Wispr Flow</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="../../Images/shared/logos/superwhisper.png" alt=""></span>superwhisper</span>            </div>
           </div>
         </div>
       </div>
@@ -3212,14 +3240,14 @@ deck-stage { background: #0a0a0a; }
 
         <div class="way-body">
           <div>
-            <figure class="shot xl-shot"><img src="Images/50%20Spreadsheets/claude-for-excel.png" alt="Claude for Excel: a spreadsheet with the Claude sidebar on the right" onerror="this.closest('figure').classList.add('missing')"></figure>
+            <figure class="shot xl-shot"><img src="../../Images/50%20Spreadsheets/claude-for-excel.png" alt="Claude for Excel: a spreadsheet with the Claude sidebar on the right" onerror="this.closest('figure').classList.add('missing')"></figure>
           </div>
 
           <div class="way-side">
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="../../Images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude for Excel</h3>
                 </div>
@@ -3320,7 +3348,7 @@ deck-stage { background: #0a0a0a; }
 
           <div class="cw-simple">
             <figure class="shot" style="align-self: center; width: 100%;">
-              <img src="Images/52%20Claude%20Cowork/cowork.png" alt="Claude Cowork: grab the year end working papers file and perform the entire year end review" onerror="this.closest('figure').classList.add('missing')">
+              <img src="../../Images/52%20Claude%20Cowork/cowork.png" alt="Claude Cowork: grab the year end working papers file and perform the entire year end review" onerror="this.closest('figure').classList.add('missing')">
               <figcaption>Claude Cowork</figcaption>
             </figure>
           </div>
@@ -3331,110 +3359,6 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-
-  <!-- ════════════════════════════════════════════════════════════════
-       52a · FINALE · SPOTLIGHT · AUTO BANK REC
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide ink" data-label="Spotlight auto bank rec">
-
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(240,178,92,0.10);"></div>
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
-
-    <div class="frame">
-      <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
-
-      <div class="fill center-y" style="align-items: center; text-align: center;">
-        <p class="sub" style="font-size: 30px; margin-bottom: 28px; color: rgba(255,255,255,0.92);">Given everything I've said… <em style="color:#f0b25c;">one worked example.</em></p>
-        <h2 class="display" style="font-size: 150px;">Spotlight: <em>auto bank rec.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 30px;">Xero's JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
-        <p class="sub" style="margin-top: 14px; font-size: 26px; color: rgba(255,255,255,0.68);">How AI is being deployed, <em>vs how it should be.</em></p>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       52b · FINALE · WHY IT DOESN'T WORK
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="Why it doesn't work">
-
-    <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
-
-      <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 36px;">
-          <div>
-            <h2 class="display" style="font-size: 104px;">Why it <em>doesn't work.</em></h2>
-            <p class="sub" style="font-size: 29px; margin-top: 18px;">The model runs the process, <em>end to end.</em></p>
-          </div>
-          <span class="way-verdict r">As deployed</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
-          <div class="tk-rows ni" style="padding: 6px 40px;">
-            <div class="tk-row"><span class="tk-icon">🎲</span><p class="tk-text">Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
-            <div class="tk-row"><span class="tk-icon">😃</span><p class="tk-text">Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
-            <div class="tk-row"><span class="tk-icon">📝</span><p class="tk-text">It marks <em>its own homework.</em> No independent check before it posts.</p></div>
-            <div class="tk-row"><span class="tk-icon">📉</span><p class="tk-text">Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
-          </div>
-          <div class="xr-card">
-            <div class="xr-head">
-              <span class="xr-logo">✕</span>
-              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">42 of 51 lines reconciled automatically</p></div>
-              <span class="xr-pill">Auto on</span>
-            </div>
-            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Reconciled · Match</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Coded to <b>Sales</b> · Prediction</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Software subscription <span class="xr-amt">£191</span></p><p class="xr-how">Coded to <b>Travel</b>, VAT wrong · Memory</p></div><span class="xr-tick">✓</span></div>
-            <p class="xr-foot">Every row is green. <b>Two of them are wrong.</b></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       52c · FINALE · HOW IT COULD WORK
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="How it could work">
-
-    <div class="frame" style="--pad-y: 96px;">
-      <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
-
-      <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 36px;">
-          <div>
-            <h2 class="display" style="font-size: 104px;">How it <em>could work.</em></h2>
-            <p class="sub" style="font-size: 29px; margin-top: 18px;">The model builds and watches the process. <em>It never runs it.</em></p>
-          </div>
-          <span class="way-verdict g">Optimised</span>
-        </div>
-        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
-          <div class="tk-rows ni" style="padding: 6px 40px;">
-            <div class="tk-row"><span class="tk-icon">⚙️</span><p class="tk-text">Deterministic rules do the bulk. <em>Same answer every run. Testable once.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Use GenAI to <em>build the rules,</em> not run the rec.</p></div>
-            <div class="tk-row"><span class="tk-icon">🚨</span><p class="tk-text">AI as the exception layer. <em>It raises a flag, not a posting.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">✍️</span><p class="tk-text">A human takes the exceptions <em>and signs.</em></p></div>
-          </div>
-          <div class="xr-card">
-            <div class="xr-head">
-              <span class="xr-logo g">⚙</span>
-              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">46 of 51 lines matched by rules</p></div>
-              <span class="xr-pill g">Rules + review</span>
-            </div>
-            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Rule · exact match, <b>same every run</b></p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Rule · account-to-account</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row warn"><div><p class="xr-payee">Unknown payee <span class="xr-amt">£4,120</span></p><p class="xr-how">No rule matched · <b>flagged, not posted</b></p></div><span class="xr-btn">Review</span></div>
-            <p class="xr-foot">The rules post. The exceptions <b>wait for you.</b></p>
-          </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
 
   <!-- ════════════════════════════════════════════════════════════════
        53 · KEY TAKEAWAYS
@@ -3504,7 +3428,7 @@ deck-stage { background: #0a0a0a; }
         <div class="contact-card">
           <div class="ty-land">
             <div class="ty-left">
-              <img src="Images/54%20Thank%20you/headshot.jpg" alt="Dave Sellick" style="width: 190px; height: 190px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
+              <img src="../../Images/54%20Thank%20you/headshot.jpg" alt="Dave Sellick" style="width: 190px; height: 190px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
               <div>
                 <div style="font-family: var(--font-sans); font-size: 34px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
                 <div class="byline" style="margin-top: 10px;">Founder, Sidgrove</div>
@@ -3512,7 +3436,7 @@ deck-stage { background: #0a0a0a; }
               <a class="ty-follow" href="https://www.linkedin.com/in/davesellick/" aria-label="Dave Sellick on LinkedIn"> <span class="ty-li-tile"><svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.332 9.787v-4.71c0-2.52-.538-4.456-3.486-4.456-1.416 0-2.366.777-2.754 1.513h-.04V9.755h-2.56v8.582h2.667v-4.245c0-1.12.212-2.204 1.6-2.204 1.367 0 1.386 1.28 1.386 2.276v4.173z"/></svg></span> <span class="ty-li-text"><b>Follow on LinkedIn</b><small>for more truth · /in/davesellick</small></span> </a>
             </div>
             <div class="qr-block land">
-              <img src="Images/54%20Thank%20you/qr.png" alt="QR code: AI walkthrough recordings">
+              <img src="../../Images/54%20Thank%20you/qr.png" alt="QR code: AI walkthrough recordings">
               <p>Scan for the <b>AI walkthrough recordings</b></p>
             </div>
           </div>
@@ -3526,7 +3450,7 @@ deck-stage { background: #0a0a0a; }
   <!-- ════════════════════════════════════════════════════════════════
        TEMPLATE · SCREENSHOT SLIDE  (copy, paste, uncomment, fill in)
        ────────────────────────────────────────────────────────────────
-       1. Drop the PNG in the slide's numbered folder (Images/NN Slide title/);
+       1. Drop the PNG in the slide's numbered folder (../../Images/NN Slide title/);
           URL-encode spaces in the src (%20).
        2. Paste this block where the slide belongs (page chips renumber
           themselves). Swap the section tag for the act it sits in.
@@ -3546,7 +3470,7 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <figure class="shot">
-          <img src="Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
+          <img src="../../Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
           <figcaption>Where it's from · when</figcaption>
         </figure>
       </div>
@@ -3558,7 +3482,7 @@ deck-stage { background: #0a0a0a; }
           <p class="sub" style="font-size: 27px;">One plain sentence, if it needs one.</p>
         </div>
         <figure class="shot">
-          <img src="Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
+          <img src="../../Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
           <figcaption>Where it's from · when</figcaption>
         </figure>
       </div>
@@ -3581,7 +3505,7 @@ deck-stage { background: #0a0a0a; }
     });
   })();
 </script>
-<script src="deck-stage.js"></script>
+<script src="../../deck-stage.js"></script>
 
 <!-- ════════════════════════════════════════════════════════════════════
      SPEAKER NOTES · one entry per slide, in order.
@@ -3598,6 +3522,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["Same message from a founder, a vendor CEO and the trade press. That is not three data points; it is one story told three ways."],"src":["AAT (two in five would consider a career change due to AI); Fortune (Suleyman, 13 Feb 2026); TheStreet (Noah Weidner, 24 Apr 2026)."],"ask":"Yes the Big Four intake cuts are real (KPMG, Deloitte, EY, PwC 2025). My point is who gets the blame, not whether cuts happened."},
   {"say":["Anthropic's own chart. Blue is what the model could theoretically do by occupation: office and admin, legal, business and finance, all near the edge. Red is what people actually use it for: a small blob in the middle. The capability is the story; the usage is the reality."],"src":["Anthropic Economic Index: theoretical capability vs observed usage by occupational category."]},
   {"say":["And I think they are wrong about where that goes. You are fine. We are in a hype bubble, and the rest of this talk is why."]},
+  {"say":["Side note, thirty seconds. This is my actual desk. I try everything early and bin most of it.","If I am not doing something, you probably do not need to either; there is usually a reason, ask me.","Permission slip: simplify, ignore the hype, focus on what matters."],"ask":"'A one-man band telling a big firm what to do?' I am telling you what stuck at a desk that tries all of it. Discount accordingly."},
   {"say":["Three reasons the story is loud: the money, the demo gap, and the tech being good enough to make it believable. Hype and fear both pay the same bills; the excitement sells and the fear of missing out sells harder. People are losing jobs; the cause is over-hiring and rates, and AI is the convenient headline.","'Big Tech' here means the hyperscalers' layoffs, not the firms in this room."],"src":["OpenAI's reported losses and inference bill (tens of billions); hyperscaler capex 2025-26 in the hundreds of billions per year; MIT NANDA 2025 on pilots not paying back."],"ask":"Microsoft is profitable, yes. It still has hundreds of billions of data centres to fill, so it needs the story as much as the labs do."},
   {"say":["Act two. Before we ask whether it can do the work: what actually is it? Generative AI specifically, and how it works. Then what that means for accuracy, cost and the planet."]},
   {"say":["'AI' is not new: the term is from the 1950s, and rule-based systems go back decades - Deep Blue beat Kasparov in 1997, before the millennium. Then twenty years of it in your tools: machine learning and OCR quietly improving, cloud apps embedding it without telling you. Nobody got excited. 2023 is different because generative AI makes things from scratch - text, images, video, code - and that hits three buttons at once: awe, dopamine, and fear. That is why the curve goes vertical, and why the narrative is so loud."]},
@@ -3613,7 +3538,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["And the bit the pitch never mentions: the environmental and the societal cost. It haemorrhages power and water. It is hoarding memory and components, so your electricity and your electronics cost more. And the data centres are landing on communities that did not ask for them."],"ask":"'Per query it is tiny.' Per answer, yes, and falling. The total is what doubles, and the total is what the grid, the water table and the next-door town feel."},
   {"say":["Not just me saying it. The Economist on memory prices; the UN asking AI firms to disclose emissions, water and energy; EESI on health risks around data centres; Civicus on communities pushing back."],"src":["The Economist, 'Memory lapse': the AI frenzy is creating a big problem for consumer electronics (2026).","Climate Home News, 23 Jun 2026: Guterres asks AI companies to reveal full environmental impacts.","EESI, 27 Jul 2026: Data Centers Are Hotbeds of Health Risks.","Civicus Lens: The cost of the AI boom, communities take on datacentres."]},
   {"say":["Act three. It is brilliant. So how do we use it without handing it the keys? First their answer, then mine."]},
-  {"say":["The pitch is agents everywhere. We are wiring it into everything now and will spend years pulling it back out.","The flagship example: fully automated end-to-end workflow, like auto bank rec. Hold that thought - it is the whole finale of this talk."]},
+  {"say":["The pitch is agents everywhere. We are wiring it into everything now and will spend years pulling it back out."]},
   {"say":["The flat plan gets you in. The agent bills by the token, and the meter is where they make it back.","The mock is a parody, not a product."],"src":["Cursor and others repriced heavy use in 2025; Anthropic introduced weekly caps on Max in 2025 because flat-rate heavy users were loss-making."]},
   {"say":["Read the rows: it plans the steps its own way each run, matches on its own call each run, posts live with no undo, then decides its own work is correct.","The button is the point: you are approving mistakes that have not happened yet."],"ask":"'You just described an audit: nobody reviews every output.' Right, and an auditor's name goes on it. Nobody's name is on the agent's when it is wrong."},
   {"say":["The pitch, summed up. Wired into the process, billed by the token, marking its own work: that is not a feature, it is a liability. It will be ripped out, slowly and expensively, like asbestos."]},
@@ -3622,11 +3547,11 @@ deck-stage { background: #0a0a0a; }
   {"say":["My answer. Keep the model out of the process; have it write the tools that run the process. Code does the same thing every run. It drafts and flags; you take the exceptions and sign.","The other shape that works is an ancillary layer: the deterministic process already runs, and the model sits on top of it as an exception layer, reading the output and raising a call to action only when something needs a human. Nothing moves unless you move it.","This is also the vendors' own engineering guidance (Anthropic's Building effective agents, OpenAI's agent guide): simplest thing first, deterministic tools, human checkpoints."],"ask":"'Claude Code is an agent.' Yes. In a sandbox, on code I read before it ships. The line is not agent or not; it is can it touch live client data and is the output reviewable before it lands."},
   {"say":["Stage one of four: chat. The daily driver."]},
   {"say":["Chat is the daily driver. Talk to it like a colleague, check it like a junior.","Also out there: check where the data goes before client work; DeepSeek's app is China-hosted."]},
-  {"say":["Stage two: build. The default for the practice: use GenAI to build deterministic tools that run without it. Then a proper look at what I have actually built with Claude Code."]},
-  {"say":["Deterministic is the core of the practice: pre-set logic, the same answer every run, testable once. This toolkit - rules, APIs, RPA, formulas, Power Query, VBA, Apps Script, Stream Deck, SaaS - is what most of my accounting still runs on. AI - OCR, ML, GenAI - augments that core; it never replaces it."]},
-  {"say":["So how do I build those deterministic tools? Vibe coding: describe it, it codes it. Everything in this section - the app, the slides, the websites, the brand - was built this way."]},
+  {"say":["Stage two: build. Vibe coding, and then a proper look at what I have actually built with Claude Code."]},
+  {"say":["The key to building: deterministic, not probabilistic. Deterministic means pre-set logic - predictable, the same answer every run, testable once. Probabilistic is the model itself: pattern-matched, plausible, different every run. Build deterministic wherever you can; let the probabilistic layer augment it, never replace it."]},
+  {"say":["Vibe coding is where it shines: describe it, it codes it. Four things I actually build with it: internal tools and prototypes, slides, simple websites, brand assets."]},
   {"say":["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo."]},
-  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same.","And the weekly cashflow report lands in Slack automatically: balance, net, spend, income, top payments. Nobody has to open the app."]},
+  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same."]},
   {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
   {"say":["Deadlines and alerts, integrated with the government platforms, so nothing depends on someone remembering."]},
   {"say":["Management accounts hosted in the app, with notifications when a pack is ready and when it has been read."]},
@@ -3637,7 +3562,6 @@ deck-stage { background: #0a0a0a; }
   {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
   {"say":["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."]},
   {"say":["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."]},
-  {"say":["The wrap on vibe coding, having seen it all: use it for internal tools and prototypes, slides, simple websites, brand assets. The warnings: get an engineer if it holds sensitive data, do not disappear down rabbit holes overbuilding, and if an app already does it, buy it."]},
   {"say":["Stage three: the everyday extras. Note takers and dictation: daily, but not core."]},
   {"say":["Note takers. Loom on the calls I choose, off for anything sensitive. Recording a client: say so in words every time; a bot in the participant list is not telling them. Know where the transcript goes."],"ask":"'Consent isn't the UK GDPR test.' Agreed: lawful basis plus telling people. Saying it out loud, every time, with a policy behind it, keeps you on the right side. Otter and Granola both face live US class actions on recording."},
   {"say":["Dictation. Aqua Voice: talk instead of type, in any app. Cloud, so not for client secrets; Wispr Flow is the other big one, superwhisper the on-device option. This is the single biggest everyday win."]},
@@ -3645,9 +3569,6 @@ deck-stage { background: #0a0a0a; }
   {"say":["In your apps: it queried one supplier with a reason; you still answer it and the other 37 still get your eyes.","The stat is deliberately the hard one: fixing errors in real workbooks."],"src":["SpreadsheetBench 2 (arXiv 2606.29955, 29 Jun 2026): 321 real multi-sheet tasks; best model 34.89% overall, 12.00% on debugging.","Deel Inc: reverse charge is right for a US-established B2B supplier; if a UK Deel entity billed with a GB VAT number, 20% would be right, which is why the tool queries rather than decides."]},
   {"say":["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],"ask":"'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not."},
   {"say":["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."]},
-  {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. Xero's JAX - Just Ask Xero - reconciles via four methods: Rule, Match, Memory, Prediction. The stated goal is 80%-plus of statement lines auto-reconciled in real time; over 100 million transactions reconciled in beta. How it is being deployed, versus how I believe it should be."],"src":["Xero blog: automatic bank reconciliation with JAX (beta), four methods, 80%+ goal, 100m+ transactions.","Practitioner testing (digit.business, Mar 2026): intercompany transfers coded wrong, batch and part payments mishandled, memory coding firing before the bill arrives, same subscription coded differently across weeks."]},
-  {"say":["Why it does not work as deployed: probabilistic matching inside the process, so a different answer on a different day - practitioners found the same subscription coded correctly one week and wrong the next. Wrong with confidence: the mock on the right is the point - every row is green, a transfer coded to sales and a subscription with the wrong VAT look exactly like the good match. It marks its own homework, and it posts to the live ledger, so the errors compound quietly into the accounts."]},
-  {"say":["How it could work, using everything from act three: deterministic rules do the bulk - same answer every run, testable once. Use GenAI to build the rules, not run the rec. Then AI as the exception layer on top: it raises a flag, not a posting, and a human takes the exceptions and signs."]},
   {"say":["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."]},
   {"say":["Thank you. Questions now or find me after."]}
 ]
@@ -3901,7 +3822,6 @@ deck-stage { background: #0a0a0a; }
 .slack-inset .si-name { margin: 0; }
 .sk-banner { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(29,28,29,0.13); }
 .sk-image { width: 100%; height: auto; display: block; border-radius: 8px; border: 1px solid rgba(29,28,29,0.13); }
-.cashflow-slack .sk-image { border: 0; border-radius: 0; }
 .sk-header { margin: 2px 0 0; font-family: var(--font-sans); font-weight: 800; font-size: 18px; line-height: 1.25; color: #1d1c1d; }
 .sk-section { margin: 0; font-family: var(--font-sans); font-size: 14.5px; line-height: 1.42; color: #1d1c1d; }
 .sk-section b, .sk-context b { font-weight: 700; }
@@ -3923,7 +3843,7 @@ deck-stage { background: #0a0a0a; }
 .stage-kicker { margin: 0 0 14px; font-family: var(--font-sans); font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.76); }
 
 .build-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-family: var(--font-sans); font-size: 20px; font-weight: 600; color: var(--periwinkle-700); }
-.build-kicker::before { content: ''; width: 34px; height: 34px; border-radius: 9px; background: url('Images/shared/claude-logo.svg') center/22px no-repeat, #FBF1EB; border: 1px solid rgba(217,119,87,0.28); }
+.build-kicker::before { content: ''; width: 34px; height: 34px; border-radius: 9px; background: url('../../Images/shared/claude-logo.svg') center/22px no-repeat, #FBF1EB; border: 1px solid rgba(217,119,87,0.28); }
 .build-kicker.on-ink { color: var(--periwinkle-200); }
 
 /* Sidgrove Intelligence hero: the app window sits centred below the headline
@@ -4079,89 +3999,6 @@ deck-stage { background: #0a0a0a; }
 .hc-line { stroke-width: 5; }
 .hc-area { fill: rgba(124,135,232,0.10); }
 
-/* ── Cover · "Rec" corrected into "Wreck" with inserted letters ── */
-.wreck2 { position: relative; display: inline-block; }
-.ins { position: relative; display: inline-block; }
-.ins-letter { overflow: visible; pointer-events: none; }
-.ins-letter path { stroke: var(--periwinkle-700); stroke-width: 10; stroke-linecap: round; stroke-linejoin: round; }
-.ins-letter.lw { width: 0.82em; height: 0.66em; transform: rotate(-8deg) translateY(-0.16em); margin-right: 0.015em; }
-.ins-letter.lk { width: 0.46em; height: 0.64em; transform: rotate(7deg) translateY(-0.12em); margin-left: 0.02em; margin-right: -0.02em; }
-.ins-caret {
-  position: absolute; width: 0.24em; height: 0.16em;
-  left: 50%; transform: translateX(-50%); bottom: -0.10em;
-  overflow: visible; pointer-events: none;
-}
-.ins-caret path { stroke: var(--periwinkle-700); stroke-width: 9; stroke-linecap: round; stroke-linejoin: round; }
-
-/* Cover prompt card, sized up */
-.cover-prompt.big { max-width: 1140px; padding: 22px 22px 22px 30px; border-radius: 28px; gap: 20px; background: rgba(255,255,255,0.88); }
-.cover-prompt.big .cover-prompt-text { font-size: 33px; line-height: 1.3; color: var(--ink); font-weight: 500; }
-.cover-prompt.big .cover-prompt-text em { font-weight: 600; }
-.cover-prompt.big .cover-prompt-icon { width: 58px; height: 58px; border-radius: 16px; }
-.cover-prompt.big .cover-prompt-icon img { width: 30px; height: 30px; }
-
-/* ── Xero-style bank rec mocks (finale spotlight) ──────────────── */
-.xr-card { background: var(--paper-card); border: 1px solid rgba(30,30,70,0.25); border-radius: 26px; padding: 30px 34px; box-shadow: var(--shadow-lift); font-family: var(--font-sans); }
-.xr-head { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 2px solid rgba(30,30,70,0.18); }
-.xr-logo { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: #13B5EA; color: #fff; font-size: 26px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
-.xr-logo.g { background: var(--green-600); }
-.xr-title { margin: 0; font-size: 24px; font-weight: 700; color: var(--ink); }
-.xr-sub { margin: 3px 0 0; font-size: 18px; color: var(--ink-500); }
-.xr-pill { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 8px 16px; border-radius: 999px; background: rgba(19,181,234,0.12); color: #0E7FA3; }
-.xr-pill.g { background: rgba(109,168,60,0.16); color: var(--green-600); }
-.xr-row { display: flex; align-items: center; gap: 18px; padding: 18px 0; }
-.xr-row + .xr-row { border-top: 1px solid rgba(30,30,70,0.14); }
-.xr-payee { margin: 0; font-size: 21px; font-weight: 600; color: var(--ink); }
-.xr-amt { font-weight: 700; color: var(--ink-500); margin-left: 8px; }
-.xr-how { margin: 4px 0 0; font-size: 17px; color: var(--ink-500); }
-.xr-row.ok .xr-how b { color: #A8462A; }
-.xr-row.warn .xr-how b { color: #8b5a10; }
-.xr-tick { margin-left: auto; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: rgba(109,168,60,0.16); color: var(--green-600); font-size: 21px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
-.xr-btn { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 9px 18px; border-radius: 10px; background: rgba(232,160,32,0.18); color: #8b5a10; border: 1px solid rgba(232,160,32,0.4); }
-.xr-foot { margin: 6px 0 0; padding-top: 18px; border-top: 2px solid rgba(30,30,70,0.18); font-size: 19px; color: var(--ink-500); }
-.xr-foot b { color: var(--ink); }
-.xr-row .xr-how b:only-child { color: inherit; }
-
-/* ── Slack weekly cashflow mock (slide 35) ─────────────────────── */
-.slk-wrap { background: #FFFFFF; }
-.slk { padding: 30px 34px 28px; font-family: var(--font-sans); text-align: left; }
-.slk-head { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 20px; }
-.slk-avatar { flex-shrink: 0; width: 52px; height: 52px; border-radius: 10px; background: var(--ink); color: #fff; font-weight: 700; font-size: 26px; display: inline-flex; align-items: center; justify-content: center; }
-.slk-who { margin: 0; font-size: 21px; font-weight: 700; color: #1D1C1D; }
-.slk-app { font-size: 13px; font-weight: 700; color: #616061; background: #EBEAEB; border-radius: 4px; padding: 2px 6px; vertical-align: 2px; }
-.slk-time { font-size: 16px; font-weight: 400; color: #616061; }
-.slk-title { margin: 8px 0 0; font-size: 23px; font-weight: 700; color: #1D1C1D; }
-.slk-date { margin: 6px 0 0; font-size: 18px; color: #1D1C1D; }
-.slk-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 22px; padding: 16px 0 18px; border-top: 1px solid #DDDDDD; }
-.slk-k { margin: 0; font-size: 18px; font-weight: 700; color: #1D1C1D; }
-.slk-v { margin: 3px 0 0; font-size: 19px; color: #1D1C1D; }
-.slk-sec { padding: 16px 0 18px; border-top: 1px solid #DDDDDD; }
-.slk-row { margin: 9px 0 0; font-size: 18px; color: #1D1C1D; }
-.slk-row b { font-weight: 700; }
-.slk-more { color: #616061; }
-.slk-btn { display: inline-block; margin-top: 4px; padding: 9px 16px; border: 1px solid #BBBABB; border-radius: 6px; font-size: 17px; font-weight: 700; color: #1D1C1D; background: #fff; }
-
-/* ── Deterministic toolkit tiles (ported from the vibecoding deck) ─ */
-.tile-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.tile {
-  display: flex; align-items: center; gap: 20px;
-  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.07);
-  border-radius: 18px; padding: 18px 26px; box-shadow: var(--shadow-card);
-}
-.tile-label { font-family: var(--font-sans); font-weight: 600; font-size: 27px; letter-spacing: -0.015em; color: var(--ink); }
-.ic {
-  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
-  width: 64px; height: 64px; border-radius: 18px; border: 1px solid;
-}
-.ic svg { width: 31px; height: 31px; fill: none; stroke-width: 2.1; stroke-linecap: round; stroke-linejoin: round; }
-.ic-purple { background:#EEF0F7; border-color:#C5CCE0; } .ic-purple svg { stroke:#3D4785; }
-.ic-green  { background:#DCEFE4; border-color:#A8D4BA; } .ic-green  svg { stroke:#1F5A32; }
-.ic-amber  { background:#FDF3D6; border-color:#E6D4A3; } .ic-amber  svg { stroke:#7A5E1E; }
-.ic-rose   { background:#FDE7EC; border-color:rgba(168,69,94,0.34); } .ic-rose svg { stroke:#7A1E35; }
-.ic-violet { background:#F3E3EE; border-color:#D8B8CC; } .ic-violet svg { stroke:#7A3D6F; }
-.ic-blue   { background:#E2ECF6; border-color:rgba(74,120,168,0.34); } .ic-blue svg { stroke:#1F4D8A; }
-.ic-teal   { background:#D4EBE6; border-color:#A3CFC4; } .ic-teal svg { stroke:#1F5A52; }
-
 /* ── Deterministic vs probabilistic ────────────────────────────── */
 .det-grid { display: grid; grid-template-columns: 1fr auto 1fr; gap: 36px; align-items: stretch; }
 .det-vs { align-self: center; }
@@ -4258,7 +4095,7 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .rc-wrap { position: relative; display: inline-block; line-height: 0; }
 .rc-wrap img { display: block; }
 .rc-ring { position: absolute; left: 46.8%; top: 12%; width: 34.5%; aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--periwinkle-700); box-shadow: 0 0 0 8px rgba(124,135,232,0.20); }
-.rc-loupe { width: 440px; height: 440px; margin-top: 34px; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.20), var(--shadow-lift); background: #fff url("Images/04%20Anthropic's%20prediction/chart.png") no-repeat; background-size: 1271px auto; background-position: -596px -150px; }
+.rc-loupe { width: 440px; height: 440px; margin-top: 34px; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.20), var(--shadow-lift); background: #fff url("../../Images/04%20Anthropic's%20prediction/chart.png") no-repeat; background-size: 1271px auto; background-position: -596px -150px; }
 .tk-rows .ni-title { font-size: 20px; }
 .tk-foot .way-label { font-size: 22px; }
 /* ── Layout nits from the full-send pass ─────────────────────── */

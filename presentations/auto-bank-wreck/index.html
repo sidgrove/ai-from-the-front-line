@@ -6,13 +6,13 @@
 <title>Auto Bank Wreck - Dave Sellick</title>
 <style>
 /* Self-hosted (variable woff2, latin) — the deck must not depend on venue wifi. */
-@font-face { font-family: "DM Sans"; src: url("fonts/web/dm-sans-variable.woff2") format("woff2"); font-weight: 100 1000; font-style: normal; font-display: swap; }
-@font-face { font-family: "JetBrains Mono"; src: url("fonts/web/jetbrains-mono-variable.woff2") format("woff2"); font-weight: 100 800; font-style: normal; font-display: swap; }
+@font-face { font-family: "DM Sans"; src: url("../../fonts/web/dm-sans-variable.woff2") format("woff2"); font-weight: 100 1000; font-style: normal; font-display: swap; }
+@font-face { font-family: "JetBrains Mono"; src: url("../../fonts/web/jetbrains-mono-variable.woff2") format("woff2"); font-weight: 100 800; font-style: normal; font-display: swap; }
 
-@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Very Vogue"; src: url("fonts/nicky-laatz-very-vogue-display-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
-@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
-@font-face { font-family: "Very Vogue Text"; src: url("fonts/nicky-laatz-very-vogue-text-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Very Vogue"; src: url("../../fonts/nicky-laatz-very-vogue-display.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue"; src: url("../../fonts/nicky-laatz-very-vogue-display-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("../../fonts/nicky-laatz-very-vogue-text.otf") format("opentype"); font-weight: 400 700; font-style: normal; font-display: swap; }
+@font-face { font-family: "Very Vogue Text"; src: url("../../fonts/nicky-laatz-very-vogue-text-italic.otf") format("opentype"); font-weight: 400 700; font-style: italic; font-display: swap; }
 
 :root {
   --periwinkle:       #A8B0F8;
@@ -1353,7 +1353,7 @@ deck-stage { background: #0a0a0a; }
 .oe-div { height: 1px; background: rgba(30,30,70,0.08); margin: 6px 0; }
 
 /* ── Screenshot frame · for the real screenshots Dave drops in ─────────
-   Usage: <figure class="shot"><img src="Images/NN%20Slide%20title/foo.png" alt="…">
+   Usage: <figure class="shot"><img src="images/slides/NN-semantic-title/foo.png" alt="…">
             <figcaption>Where it's from · date</figcaption></figure>
    The image gets the deck's card treatment (radius, hairline, lift shadow).
    Add .shot.window for a fake title bar with traffic lights, .shot.tilt for
@@ -1437,7 +1437,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="cover-prompt big" style="margin-top: 56px;">
           <span class="cover-prompt-icon">
-            <img src="Images/shared/claude-logo.svg" alt="">
+            <img src="images/shared/claude-logo.svg" alt="">
           </span>
           <span class="cover-prompt-text">
             Why autonomous AI agents on end-to-end accounting <em>will never work</em> and what to do instead.<span class="cover-prompt-cursor"></span>
@@ -1453,7 +1453,7 @@ deck-stage { background: #0a0a0a; }
             <div style="font-family: var(--font-sans); font-size: 30px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
             <div class="byline" style="margin-top: 8px; font-size: 17px;">Founder, Sidgrove</div>
           </div>
-          <img src="Images/01%20Cover/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
+          <img src="images/slides/01-cover/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
         </div>
       </div>
     </div>
@@ -1512,7 +1512,7 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="press-grid">
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/AAT.png" alt="AAT: two in five people would consider a career change in accountancy due to AI">
+            <img src="images/slides/03-the-headlines/AAT.png" alt="AAT: two in five people would consider a career change in accountancy due to AI">
             <div class="press-meta">
               <p class="press-source">AAT</p>
               <p class="press-name">Two in five</p>
@@ -1520,7 +1520,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
+            <img src="images/slides/03-the-headlines/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
             <div class="press-meta">
               <p class="press-source">Fortune</p>
               <p class="press-name">Mustafa Suleyman</p>
@@ -1528,7 +1528,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/big%20four.png" alt="Big Four accounting: choosing AI over humans, cutting benefits and hiring">
+            <img src="images/slides/03-the-headlines/big%20four.png" alt="Big Four accounting: choosing AI over humans, cutting benefits and hiring">
             <div class="press-meta">
               <p class="press-source">TheStreet</p>
               <p class="press-name">The Big Four</p>
@@ -1557,7 +1557,7 @@ deck-stage { background: #0a0a0a; }
           <div class="rc-loupe" aria-hidden="true"></div>
         </div>
         <figure class="shot">
-          <span class="rc-wrap"><img src="Images/04%20Anthropic's%20prediction/chart.png" alt="Anthropic radar chart: theoretical AI capability versus observed usage by occupational category" style="max-height: 860px;" onerror="this.closest('figure').classList.add('missing')"><span class="rc-ring" aria-hidden="true"></span></span>
+          <span class="rc-wrap"><img src="images/slides/04-anthropics-prediction/chart.png" alt="Anthropic radar chart: theoretical AI capability versus observed usage by occupational category" style="max-height: 860px;" onerror="this.closest('figure').classList.add('missing')"><span class="rc-ring" aria-hidden="true"></span></span>
           <figcaption>Anthropic · theoretical capability vs observed usage, by occupation</figcaption>
         </figure>
       </div>
@@ -1585,7 +1585,7 @@ deck-stage { background: #0a0a0a; }
             <span class="pt"><em>And they're already backtracking.</em></span>
           </p>
           <figure class="shot bub-cut">
-            <img src="Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
+            <img src="images/slides/05-hype-bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
           </figure>
         </div>
         <svg class="bub" viewBox="0 0 800 800" aria-hidden="true">
@@ -1850,7 +1850,7 @@ deck-stage { background: #0a0a0a; }
         <div class="prob-grid">
           <div class="prob-window">
             <div class="prob-hdr">
-              <img src="Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <img src="images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
               <span class="prob-hdr-label" style="flex:1;">Claude</span>
               <span class="prob-run a">Run A</span>
             </div>
@@ -1862,7 +1862,7 @@ deck-stage { background: #0a0a0a; }
 
           <div class="prob-window">
             <div class="prob-hdr">
-              <img src="Images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
+              <img src="images/shared/claude-logo.svg" alt="" style="width: 22px; height: 22px; flex-shrink: 0;">
               <span class="prob-hdr-label" style="flex:1;">Claude</span>
               <span class="prob-run b">Run B</span>
             </div>
@@ -2022,7 +2022,7 @@ deck-stage { background: #0a0a0a; }
         </div>
 
         <figure class="shot">
-          <img src="Images/18%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
+          <img src="images/slides/17-the-economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
           <figcaption>Quartz · OpenAI's leaked 2025 financials · a $38.5B loss</figcaption>
         </figure>
       </div>
@@ -2083,7 +2083,7 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="press-grid four">
           <div class="press-card">
-            <img src="Images/20%20Environment%20press/economist-cut.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
+            <img src="images/slides/19-environment-press/economist-cut.png" alt="The Economist: the AI frenzy is creating a big problem for consumer electronics">
             <div class="press-meta">
               <p class="press-source">The Economist</p>
               <p class="press-name">Consumer electronics</p>
@@ -2091,7 +2091,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card tall">
-            <img src="Images/20%20Environment%20press/guardian-cut.png" alt="The Guardian: two planned datacentres will have higher UK carbon emissions than ExxonMobil">
+            <img src="images/slides/19-environment-press/guardian-cut.png" alt="The Guardian: two planned datacentres will have higher UK carbon emissions than ExxonMobil">
             <div class="press-meta">
               <p class="press-source">The Guardian</p>
               <p class="press-name">UK carbon</p>
@@ -2099,7 +2099,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/20%20Environment%20press/eesi-cut.png" alt="EESI: data centers are hotbeds of health risks">
+            <img src="images/slides/19-environment-press/eesi-cut.png" alt="EESI: data centers are hotbeds of health risks">
             <div class="press-meta">
               <p class="press-source">EESI</p>
               <p class="press-name">Public health</p>
@@ -2132,7 +2132,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="cover-prompt dark" style="margin-top: 56px;">
           <span class="cover-prompt-icon">
-            <img src="Images/shared/claude-logo.svg" alt="">
+            <img src="images/shared/claude-logo.svg" alt="">
           </span>
           <span class="cover-prompt-text">
             And yet <em>I use it all day.</em><span class="cover-prompt-cursor"></span>
@@ -2300,7 +2300,7 @@ deck-stage { background: #0a0a0a; }
 
         <div class="use-card">
           <div class="use-head">
-            <span class="use-avatar"><img src="Images/shared/Headshot%20normal.jpg" alt="Dave"></span>
+            <span class="use-avatar"><img src="images/shared/Headshot%20normal.jpg" alt="Dave"></span>
             <div class="use-who">
               <span class="use-name">Dave Sellick</span>
             </div>
@@ -2380,7 +2380,7 @@ deck-stage { background: #0a0a0a; }
               <p class="vs-line">Agentic AI autonomously completing end-to-end task completion.</p>
             </div>
             <div class="vs-row">
-              <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
+              <span class="vs-chip who"><img src="images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
               <span class="vs-chip">runs the close</span>
               <span class="vs-arr">→</span>
@@ -2395,7 +2395,7 @@ deck-stage { background: #0a0a0a; }
               <p class="vs-line vs-bullet">Breaks down steep learning curves.</p>
             </div>
             <div class="vs-row">
-              <span class="vs-chip who"><img src="Images/shared/claude-logo.svg" alt="">Claude</span>
+              <span class="vs-chip who"><img src="images/shared/claude-logo.svg" alt="">Claude</span>
               <span class="vs-arr">→</span>
               <span class="vs-chip">builds the tool</span>
               <span class="vs-arr">→</span>
@@ -2453,7 +2453,7 @@ deck-stage { background: #0a0a0a; }
         <div class="way-body">
           <div>
             <figure class="shot window">
-              <img src="Images/30%20Chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 560px;">
+              <img src="images/slides/29-chat/claude-chat.png" alt="Claude answering: what are the current tax rate bands" style="max-height: 560px;">
               <figcaption>claude.ai</figcaption>
             </figure>
           </div>
@@ -2462,7 +2462,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude</h3>
                 </div>
@@ -2485,7 +2485,7 @@ deck-stage { background: #0a0a0a; }
             <div class="way-others">
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><svg viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="9" height="9" fill="#F25022"/><rect x="12.5" y="2.5" width="9" height="9" fill="#7FBA00"/><rect x="2.5" y="12.5" width="9" height="9" fill="#00A4EF"/><rect x="12.5" y="12.5" width="9" height="9" fill="#FFB900"/></svg></span>Microsoft Copilot</span>
               <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(32,128,141,0.30);"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" fill="#20808D" d="M22.4 7.09H20.09V0.07L12.58 6.42V0.16H11.42V6.35L4.49 0V7.09H1.6V17.49H4.49V24L11.42 17.64V23.84H12.58V17.79L19.51 23.98V17.49H22.4Z M18.93 2.56V7.09H13.58Z M5.65 2.63L10.51 7.09H5.65Z M2.76 16.33V8.25H10.61L4.49 14.36V16.33Z M5.65 21.37V14.84L11.42 9.06V16.07Z M18.35 21.4L12.58 16.25V9.06L18.35 14.84Z M21.24 16.33H19.51V14.36L13.39 8.25H21.24Z"/></svg></span>Perplexity</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(77,107,254,0.28);"><img src="Images/shared/logos/deepseek.png" alt="" style="width: calc(var(--ts) * 0.7); height: auto;"></span>DeepSeek</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(77,107,254,0.28);"><img src="images/shared/logos/deepseek.png" alt="" style="width: calc(var(--ts) * 0.7); height: auto;"></span>DeepSeek</span>
             </div>
           </div>
         </div>
@@ -2585,7 +2585,7 @@ deck-stage { background: #0a0a0a; }
 
     <!-- The product, not a feature: one wide window that runs off the bottom of the slide. -->
     <figure class="shot window si-hero" aria-hidden="true">
-      <img src="Images/34%20Sidgrove%20Intelligence/practice-overview.png" alt="">
+      <img src="images/slides/33-sidgrove-intelligence/practice-overview.png" alt="">
       <figcaption>Sidgrove Intelligence · practice overview · demo mode</figcaption>
     </figure>
   </section>
@@ -2605,12 +2605,12 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
           <figure class="shot window">
-            <img src="Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+            <img src="images/slides/34-daily-cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
             <figcaption></figcaption>
           </figure>
           <div class="slack-inset cashflow-slack" aria-hidden="true">
-            <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-            <img class="sk-image" src="Images/35%20Daily%20cashflow/slack-preview.png" alt="">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <img class="sk-image" src="images/slides/34-daily-cashflow/slack-preview.png" alt="">
           </div>
         </div>
       </div>
@@ -2634,16 +2634,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/36%20Bookkeeping/bookkeeping.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="images/slides/35-bookkeeping/bookkeeping.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-bookkeeping.png" alt="">
+              <img class="sk-banner" src="images/shared/slack/banner-bookkeeping.png" alt="">
               <p class="sk-header">📒 Bookkeeping · Circle</p>
               <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s books are up to date as of 22 Aug 2026. We've reconciled what we can - <b>42 unreconciled items</b> need your answers.</p>
               <p class="sk-section">Answer the flagged items, hit <b>Send responses</b>, and we finalise the month.</p>
@@ -2675,16 +2675,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/37%20Deadlines/deadlines.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="images/slides/36-deadlines/deadlines.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-deadlines.png" alt="">
+              <img class="sk-banner" src="images/shared/slack/banner-deadlines.png" alt="">
               <p class="sk-context">📅 Sat 22 Aug 2026  ·  📋 Annual accounts <b>2</b> open  ·  🏛️ Confirmation statements <b>1</b> open</p>
               <div class="sk-att" style="border-left-color:#6874b4">📋 <b>Annual accounts</b> (2)<br>🔵  <b>31 Oct 2026</b> (70d) - <u>Circle</u> · <i>period ending 31 Jan 2026</i> · <u>Open →</u><br>🔵  <b>31 Dec 2026</b> (131d) - <u>Circle</u> · <i>period ending 31 Mar 2026</i> · <u>Open →</u></div>
               <div class="sk-att" style="border-left-color:#9aa3c8">🏛️ <b>Confirmation statements</b> (1)<br>⚪  <b>16 Mar 2027</b> (206d) - <u>Circle</u> · <i>period to 2 Mar 2027</i> · <u>Open →</u></div>
@@ -2714,16 +2714,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/38%20Management%20accounts/management-accounts.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="images/slides/37-management-accounts/management-accounts.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-reporting.png" alt="">
+              <img class="sk-banner" src="images/shared/slack/banner-reporting.png" alt="">
               <p class="sk-header">📊  Circle - Management Pack</p>
               <p class="sk-context"><b>Period:</b> 2025-10-31  │  <b>Type:</b> PDF</p>
               <hr class="sk-divider">
@@ -2732,7 +2732,7 @@ deck-stage { background: #0a0a0a; }
               <p class="sk-context">Revenue dropped sharply this month; monitor consultancy pipeline to avoid sustained operating losses.</p>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn">Open the October 2025 pack</span></div>
-              <p class="sk-context"><img class="sk-icon" src="Images/shared/slack/google-drive.png" alt=""> Opens in Google Drive</p>
+              <p class="sk-context"><img class="sk-icon" src="images/shared/slack/google-drive.png" alt=""> Opens in Google Drive</p>
               <p class="sk-context">Sent via <b>Sidgrove Intelligence</b></p>
             </div>
           </div>
@@ -2759,16 +2759,16 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/39%20Payroll%20reviews/payroll.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="images/slides/38-payroll-reviews/payroll.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="Images/shared/slack/banner-payroll.png" alt="">
+              <img class="sk-banner" src="images/shared/slack/banner-payroll.png" alt="">
               <p class="sk-header">Approve May 2026 payroll</p>
               <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s <b>May 2026</b> payroll is ready for approval.</p>
               <hr class="sk-divider">
@@ -2799,11 +2799,11 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/40%20VAT%20reviews/vat.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="images/slides/39-vat-reviews/vat.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="Images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
           <div class="si-msg">
             <span class="si-av">S</span>
             <div class="si-body">
@@ -2811,7 +2811,7 @@ deck-stage { background: #0a0a0a; }
               <p class="sk-header">🧾 Sign off Jul - Sep 2025 VAT - Circle</p>
               <p class="sk-section"><span class="sk-mention">@channel</span></p>
               <p class="sk-section"><b>Circle</b>'s <b>Jul - Sep 2025</b> VAT return is ready for you to review. Sign it off in the app and we file it with HMRC.</p>
-              <img class="sk-image" src="Images/shared/slack/vat-cover.png" alt="">
+              <img class="sk-image" src="images/shared/slack/vat-cover.png" alt="">
               <div class="sk-fields"><div><b>Period</b><br>Jul - Sep 2025</div><div><b>VAT to pay HMRC</b><br>💷 <b>£10,885.36</b></div><div><b>Pay HMRC by</b><br>7 Nov 2025</div></div>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn primary">✅ Review and sign off</span></div>
@@ -2841,13 +2841,13 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <div class="me-grid">
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accruals.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accrued-income.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/payroll-realloc.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/direct-costs.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/corp-tax.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/rd.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/cln.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/accruals.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/accrued-income.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/payroll-realloc.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/direct-costs.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/corp-tax.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/rd.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
+          <figure class="me-tile"><img src="images/slides/40-month-end/cln.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
         </div>
       </div>
 
@@ -2873,12 +2873,12 @@ deck-stage { background: #0a0a0a; }
           <div class="wf-stage">
             <div class="wf-stage-label">Your tools</div>
             <div class="wf-sources">
-              <div class="wf-chip"><img class="" src="Images/shared/site/xero.svg" alt="">Xero</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/excel.png" alt="">Excel</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/sheets.png" alt="">Sheets</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/apron.svg" alt="">Apron</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/pleo.png" alt="">Pleo</div>
-              <div class="wf-chip"><img class="" src="Images/shared/site/paycircle.png" alt="">Paycircle</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/xero.svg" alt="">Xero</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/excel.png" alt="">Excel</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/sheets.png" alt="">Sheets</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/apron.svg" alt="">Apron</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/pleo.png" alt="">Pleo</div>
+              <div class="wf-chip"><img class="" src="images/shared/site/paycircle.png" alt="">Paycircle</div>
             </div>
           </div>
 
@@ -2904,7 +2904,7 @@ deck-stage { background: #0a0a0a; }
             <div class="wf-stage-label">Back to you</div>
             <div class="wf-outputs">
               <div class="wf-out">
-                <div class="wf-out-head"><img src="Images/shared/site/slack.svg" alt="">#your-finances</div>
+                <div class="wf-out-head"><img src="images/shared/site/slack.svg" alt="">#your-finances</div>
                 <div class="wf-slack-msg">
                   <div class="wf-avatar">S</div>
                   <div>
@@ -2963,7 +2963,7 @@ deck-stage { background: #0a0a0a; }
           <h2 class="display" style="font-size: 84px;">Simple websites. <em>Like my own, sidgrove.com.</em></h2>
         </div>
         <figure class="shot window">
-          <img src="Images/44%20Websites/sidgrove-1260.png" alt="sidgrove.com · built with Claude Code" style="max-height: 700px;" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/36 Websites/screenshot.png'">
+          <img src="images/slides/43-websites/sidgrove-1260.png" alt="sidgrove.com · built with Claude Code" style="max-height: 700px;" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='images/slides/43-websites/sidgrove-1260.png'">
           <figcaption>sidgrove.com</figcaption>
         </figure>
       </div>
@@ -2988,7 +2988,7 @@ deck-stage { background: #0a0a0a; }
           <p class="sub" style="font-size: 28px;">The Claude Code engine, <em>tailored for design.</em></p>
         </div>
         <figure class="shot window">
-          <img src="Images/45%20Brand%20assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='Images/37 Brand assets/screenshot.png'">
+          <img src="images/slides/44-brand-assets/screenshot.png" alt="Claude Design · brand assets" onerror="this.closest('figure').classList.add('missing'); this.dataset.path='images/slides/44-brand-assets/screenshot.png'">
           <figcaption>Claude Design</figcaption>
         </figure>
       </div>
@@ -3091,7 +3091,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/site/loom.png" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/site/loom.png" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Loom</h3>
                 </div>
@@ -3100,10 +3100,10 @@ deck-stage { background: #0a0a0a; }
 
             <p class="way-label">Other options</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/fireflies.png" alt=""></span>Fireflies</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/vinyl.png" alt=""></span>Vinyl</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/granola.png" alt=""></span>Granola</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/fathom.png" alt=""></span>Fathom</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/fireflies.png" alt=""></span>Fireflies</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/vinyl.png" alt=""></span>Vinyl</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/granola.png" alt=""></span>Granola</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/fathom.png" alt=""></span>Fathom</span>
             </div>
           </div>
         </div>
@@ -3153,7 +3153,7 @@ deck-stage { background: #0a0a0a; }
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/aquavoice.png" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/aquavoice.png" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Aqua Voice</h3>
                 </div>
@@ -3162,8 +3162,8 @@ deck-stage { background: #0a0a0a; }
 
             <p class="way-label">Other options</p>
             <div class="way-others">
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:#1A1A1A;"><img src="Images/shared/logos/wisprflow.png" alt=""></span>Wispr Flow</span>
-              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="Images/shared/logos/superwhisper.png" alt=""></span>superwhisper</span>            </div>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:#1A1A1A;"><img src="images/shared/logos/wisprflow.png" alt=""></span>Wispr Flow</span>
+              <span class="way-other"><span class="app-tile" style="--tile-bg:#FFFFFF; --tile-bd:rgba(30,30,70,0.21);"><img src="images/shared/logos/superwhisper.png" alt=""></span>superwhisper</span>            </div>
           </div>
         </div>
       </div>
@@ -3212,14 +3212,14 @@ deck-stage { background: #0a0a0a; }
 
         <div class="way-body">
           <div>
-            <figure class="shot xl-shot"><img src="Images/50%20Spreadsheets/claude-for-excel.png" alt="Claude for Excel: a spreadsheet with the Claude sidebar on the right" onerror="this.closest('figure').classList.add('missing')"></figure>
+            <figure class="shot xl-shot"><img src="images/slides/50-spreadsheets/claude-for-excel.png" alt="Claude for Excel: a spreadsheet with the Claude sidebar on the right" onerror="this.closest('figure').classList.add('missing')"></figure>
           </div>
 
           <div class="way-side">
             <p class="way-label">What I use</p>
             <div class="way-tools">
               <div class="way-tool lead">
-                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="Images/shared/claude-logo.svg" alt=""></span>
+                <span class="app-tile" style="--tile-bg:#FBF1EB; --tile-bd:rgba(217,119,87,0.28);"><img src="images/shared/claude-logo.svg" alt=""></span>
                 <div class="way-tbody">
                   <h3 class="way-tname">Claude for Excel</h3>
                 </div>
@@ -3320,7 +3320,7 @@ deck-stage { background: #0a0a0a; }
 
           <div class="cw-simple">
             <figure class="shot" style="align-self: center; width: 100%;">
-              <img src="Images/52%20Claude%20Cowork/cowork.png" alt="Claude Cowork: grab the year end working papers file and perform the entire year end review" onerror="this.closest('figure').classList.add('missing')">
+              <img src="images/slides/52-claude-cowork/cowork.png" alt="Claude Cowork: grab the year end working papers file and perform the entire year end review" onerror="this.closest('figure').classList.add('missing')">
               <figcaption>Claude Cowork</figcaption>
             </figure>
           </div>
@@ -3504,7 +3504,7 @@ deck-stage { background: #0a0a0a; }
         <div class="contact-card">
           <div class="ty-land">
             <div class="ty-left">
-              <img src="Images/54%20Thank%20you/headshot.jpg" alt="Dave Sellick" style="width: 190px; height: 190px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
+              <img src="images/slides/57-thank-you/headshot.jpg" alt="Dave Sellick" style="width: 190px; height: 190px; border-radius: 50%; object-fit: cover; box-shadow: 0 12px 28px rgba(30,30,70,0.22); border: 4px solid rgba(255,255,255,0.85);">
               <div>
                 <div style="font-family: var(--font-sans); font-size: 34px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
                 <div class="byline" style="margin-top: 10px;">Founder, Sidgrove</div>
@@ -3512,7 +3512,7 @@ deck-stage { background: #0a0a0a; }
               <a class="ty-follow" href="https://www.linkedin.com/in/davesellick/" aria-label="Dave Sellick on LinkedIn"> <span class="ty-li-tile"><svg viewBox="0 0 24 24" width="26" height="26" fill="#fff"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zM8.339 18.337V9.755H5.667v8.582zM7.005 8.55a1.55 1.55 0 1 0 0-3.1 1.55 1.55 0 0 0 0 3.1zm11.332 9.787v-4.71c0-2.52-.538-4.456-3.486-4.456-1.416 0-2.366.777-2.754 1.513h-.04V9.755h-2.56v8.582h2.667v-4.245c0-1.12.212-2.204 1.6-2.204 1.367 0 1.386 1.28 1.386 2.276v4.173z"/></svg></span> <span class="ty-li-text"><b>Follow on LinkedIn</b><small>for more truth · /in/davesellick</small></span> </a>
             </div>
             <div class="qr-block land">
-              <img src="Images/54%20Thank%20you/qr.png" alt="QR code: AI walkthrough recordings">
+              <img src="images/slides/57-thank-you/qr.png" alt="QR code: AI walkthrough recordings">
               <p>Scan for the <b>AI walkthrough recordings</b></p>
             </div>
           </div>
@@ -3526,8 +3526,8 @@ deck-stage { background: #0a0a0a; }
   <!-- ════════════════════════════════════════════════════════════════
        TEMPLATE · SCREENSHOT SLIDE  (copy, paste, uncomment, fill in)
        ────────────────────────────────────────────────────────────────
-       1. Drop the PNG in the slide's numbered folder (Images/NN Slide title/);
-          URL-encode spaces in the src (%20).
+       1. Drop the PNG in the slide's numbered folder (images/slides/NN-semantic-title/).
+          Use a kebab-case filename so the src has no spaces.
        2. Paste this block where the slide belongs (page chips renumber
           themselves). Swap the section tag for the act it sits in.
        3. Big screenshot: use layout A. Text beside a screenshot: layout B.
@@ -3546,7 +3546,7 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <figure class="shot">
-          <img src="Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
+          <img src="images/slides/NN-semantic-title/example.png" alt="What the screenshot shows">
           <figcaption>Where it's from · when</figcaption>
         </figure>
       </div>
@@ -3558,7 +3558,7 @@ deck-stage { background: #0a0a0a; }
           <p class="sub" style="font-size: 27px;">One plain sentence, if it needs one.</p>
         </div>
         <figure class="shot">
-          <img src="Images/NN%20Slide%20title/example.png" alt="What the screenshot shows">
+          <img src="images/slides/NN-semantic-title/example.png" alt="What the screenshot shows">
           <figcaption>Where it's from · when</figcaption>
         </figure>
       </div>
@@ -3581,7 +3581,7 @@ deck-stage { background: #0a0a0a; }
     });
   })();
 </script>
-<script src="deck-stage.js"></script>
+<script src="../../deck-stage.js"></script>
 
 <!-- ════════════════════════════════════════════════════════════════════
      SPEAKER NOTES · one entry per slide, in order.
@@ -3923,7 +3923,7 @@ deck-stage { background: #0a0a0a; }
 .stage-kicker { margin: 0 0 14px; font-family: var(--font-sans); font-size: 22px; font-weight: 600; color: rgba(255,255,255,0.76); }
 
 .build-kicker { display: flex; align-items: center; gap: 10px; margin: 0 0 18px; font-family: var(--font-sans); font-size: 20px; font-weight: 600; color: var(--periwinkle-700); }
-.build-kicker::before { content: ''; width: 34px; height: 34px; border-radius: 9px; background: url('Images/shared/claude-logo.svg') center/22px no-repeat, #FBF1EB; border: 1px solid rgba(217,119,87,0.28); }
+.build-kicker::before { content: ''; width: 34px; height: 34px; border-radius: 9px; background: url('images/shared/claude-logo.svg') center/22px no-repeat, #FBF1EB; border: 1px solid rgba(217,119,87,0.28); }
 .build-kicker.on-ink { color: var(--periwinkle-200); }
 
 /* Sidgrove Intelligence hero: the app window sits centred below the headline
@@ -4258,7 +4258,7 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .rc-wrap { position: relative; display: inline-block; line-height: 0; }
 .rc-wrap img { display: block; }
 .rc-ring { position: absolute; left: 46.8%; top: 12%; width: 34.5%; aspect-ratio: 1; border-radius: 50%; border: 5px solid var(--periwinkle-700); box-shadow: 0 0 0 8px rgba(124,135,232,0.20); }
-.rc-loupe { width: 440px; height: 440px; margin-top: 34px; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.20), var(--shadow-lift); background: #fff url("Images/04%20Anthropic's%20prediction/chart.png") no-repeat; background-size: 1271px auto; background-position: -596px -150px; }
+.rc-loupe { width: 440px; height: 440px; margin-top: 34px; border-radius: 50%; border: 6px solid var(--periwinkle-700); box-shadow: 0 0 0 10px rgba(124,135,232,0.20), var(--shadow-lift); background: #fff url("images/slides/04-anthropics-prediction/chart.png") no-repeat; background-size: 1271px auto; background-position: -596px -150px; }
 .tk-rows .ni-title { font-size: 20px; }
 .tk-foot .way-label { font-size: 22px; }
 /* ── Layout nits from the full-send pass ─────────────────────── */
