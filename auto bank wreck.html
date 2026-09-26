@@ -57,8 +57,8 @@
     0 28px 56px -28px rgba(30,30,70,0.18);
   --shadow-lift:
     0 1px 2px rgba(30,30,70,0.05),
-    0 18px 36px -18px rgba(74,86,184,0.22),
-    0 44px 88px -36px rgba(30,30,70,0.24);
+    0 16px 32px -18px rgba(74,86,184,0.20),
+    0 36px 72px -36px rgba(30,30,70,0.18);
 }
 
 html, body {
@@ -154,8 +154,8 @@ deck-stage { background: #0a0a0a; }
   background: transparent;
   border: 1px solid rgba(30,30,70,0.18);
   font-family: var(--font-mono); font-size: 16px;
-  color: var(--ink-500); letter-spacing: 0.12em;
-  font-weight: 500;
+  color: var(--ink-500); letter-spacing: 0.04em;
+  font-weight: 500; font-variant-numeric: tabular-nums;
 }
 .page-chip .n { color: var(--ink); font-weight: 600; }
 .slide.ink .page-chip { border-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.69); }
@@ -3337,21 +3337,22 @@ deck-stage { background: #0a0a0a; }
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide ink" data-label="Spotlight auto bank rec">
 
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:920px;height:920px;border-radius:50%;border:1px solid rgba(240,178,92,0.10);"></div>
-    <div aria-hidden="true" style="position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(168,176,248,0.08);"></div>
-
-    <div class="frame">
+    <div class="frame" style="--pad-y: 84px;">
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
-      <div class="fill center-y" style="align-items: center; text-align: center;">
-        <p class="sub" style="font-size: 30px; margin-bottom: 28px; color: rgba(255,255,255,0.92);">Given everything I've said… <em style="color:#f0b25c;">one worked example.</em></p>
-        <h2 class="display" style="font-size: 150px;">Spotlight: <em>auto bank rec.</em></h2>
-        <p class="sub" style="margin-top: 28px; font-size: 30px;">Xero's JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
-        <p class="sub" style="margin-top: 14px; font-size: 26px; color: rgba(255,255,255,0.68);">How AI is being deployed, <em>vs how it should be.</em></p>
+      <div class="fill abr-intro">
+        <p class="sub abr-kicker">Given everything I've said… <em>one worked example.</em></p>
+        <h2 class="display" style="font-size: 132px;">Spotlight: <em>auto bank rec.</em></h2>
+        <p class="sub abr-claim"><img src="presentations/auto-bank-wreck/images/shared/site/xero.svg" alt="Xero">Xero's JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
       </div>
-
-      <div class="bottombar"></div>
     </div>
+
+    <!-- Xero's own product shot (xero.com, Nov 2025): the Reconciled page JAX
+         fills, each line tagged Rule, Match, Memory or Prediction. It runs off
+         the bottom of the slide like the Sidgrove Intelligence hero. -->
+    <figure class="abr-hero">
+      <img src="presentations/auto-bank-wreck/images/slides/53-spotlight-auto-bank-rec/xero-reconciled-transactions.png" alt="Xero's Reconciled transactions page: 96 of 120 statement lines auto-reconciled by JAX, each tagged Rule, Match, Memory or Prediction">
+    </figure>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
@@ -3362,33 +3363,35 @@ deck-stage { background: #0a0a0a; }
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
-      <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 36px;">
-          <div>
-            <h2 class="display" style="font-size: 104px;">Why it <em>doesn't work.</em></h2>
-            <p class="sub" style="font-size: 29px; margin-top: 18px;">The model runs the process, <em>end to end.</em></p>
+      <div class="fill abr-grid">
+        <div class="abr-copy">
+          <h2 class="display">Why it <em>doesn't work.</em></h2>
+          <p class="sub">The model runs the process, <em>end to end.</em></p>
+          <div class="abr-points r">
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg></span><p>Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span><p>Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span><p>It marks <em>its own homework.</em> No independent check before it posts.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 17 13.5 8.5l-5 5L2 7"/><path d="M16 17h6v-6"/></svg></span><p>Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
           </div>
-          <span class="way-verdict r">As deployed</span>
         </div>
-        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
-          <div class="tk-rows ni" style="padding: 6px 40px;">
-            <div class="tk-row"><span class="tk-icon">🎲</span><p class="tk-text">Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
-            <div class="tk-row"><span class="tk-icon">😃</span><p class="tk-text">Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
-            <div class="tk-row"><span class="tk-icon">📝</span><p class="tk-text">It marks <em>its own homework.</em> No independent check before it posts.</p></div>
-            <div class="tk-row"><span class="tk-icon">📉</span><p class="tk-text">Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
-          </div>
-          <div class="xr-card">
-            <div class="xr-head">
-              <span class="xr-logo">✕</span>
-              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">42 of 51 lines reconciled automatically</p></div>
-              <span class="xr-pill">Auto on</span>
+
+        <!-- Laid out as Xero's own Reconciled page (see slide 53): the same
+             chrome, the same method tags. Every line looks settled. -->
+        <figure class="abr-exhibit">
+          <div class="xw" aria-label="Xero bank reconciliation, auto on">
+            <div class="xw-nav"><img src="presentations/auto-bank-wreck/images/shared/site/xero-wordmark-white.svg" alt="Xero"></div>
+            <div class="xw-title"><span class="xw-x" aria-hidden="true"></span><p>Bank reconciliation</p><span class="xw-chip jax">Auto on</span></div>
+            <div class="xw-body">
+              <p class="xw-banner"><span class="xw-ok" aria-hidden="true"></span>42 of 51 lines reconciled automatically</p>
+              <div class="xw-table">
+                <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">Reconciled</p></div><span class="xw-amt">£19,439</span><span class="xw-chip jax">Match</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row"><div><p class="xw-payee">Transfer to savings</p><p class="xw-how">Coded to <b class="bad">Sales</b></p></div><span class="xw-amt">£5,000</span><span class="xw-chip jax">Prediction</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row"><div><p class="xw-payee">Software subscription</p><p class="xw-how">Coded to <b class="bad">Travel</b>, VAT wrong</p></div><span class="xw-amt">£191</span><span class="xw-chip jax">Memory</span><span class="xw-tick" aria-hidden="true"></span></div>
+              </div>
             </div>
-            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Reconciled · Match</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Coded to <b>Sales</b> · Prediction</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Software subscription <span class="xr-amt">£191</span></p><p class="xr-how">Coded to <b>Travel</b>, VAT wrong · Memory</p></div><span class="xr-tick">✓</span></div>
-            <p class="xr-foot">Every row is green. <b>Two of them are wrong.</b></p>
           </div>
-        </div>
+          <figcaption><span class="way-verdict r">As deployed</span><span>Every row is green. <b>Two of them are wrong.</b></span></figcaption>
+        </figure>
       </div>
 
       <div class="bottombar"></div>
@@ -3403,33 +3406,35 @@ deck-stage { background: #0a0a0a; }
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
-      <div class="fill center-y">
-        <div class="way-head" style="margin-bottom: 36px;">
-          <div>
-            <h2 class="display" style="font-size: 104px;">How it <em>could work.</em></h2>
-            <p class="sub" style="font-size: 29px; margin-top: 18px;">The model builds and watches the process. <em>It never runs it.</em></p>
+      <div class="fill abr-grid">
+        <div class="abr-copy">
+          <h2 class="display">How it <em>could work.</em></h2>
+          <p class="sub">The model builds and watches the process. <em>It never runs it.</em></p>
+          <div class="abr-points g">
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span><p>Deterministic rules do the bulk. <em>Same answer every run. Testable once.</em></p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></span><p>Use GenAI to <em>build the rules,</em> not run the rec.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><path d="M4 22v-7"/></svg></span><p>AI as the exception layer. <em>It raises a flag, not a posting.</em></p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg></span><p>A human takes the exceptions <em>and signs.</em></p></div>
           </div>
-          <span class="way-verdict g">Optimised</span>
         </div>
-        <div style="display: grid; grid-template-columns: 7fr 6fr; gap: 52px; align-items: center;">
-          <div class="tk-rows ni" style="padding: 6px 40px;">
-            <div class="tk-row"><span class="tk-icon">⚙️</span><p class="tk-text">Deterministic rules do the bulk. <em>Same answer every run. Testable once.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🛠️</span><p class="tk-text">Use GenAI to <em>build the rules,</em> not run the rec.</p></div>
-            <div class="tk-row"><span class="tk-icon">🚨</span><p class="tk-text">AI as the exception layer. <em>It raises a flag, not a posting.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">✍️</span><p class="tk-text">A human takes the exceptions <em>and signs.</em></p></div>
-          </div>
-          <div class="xr-card">
-            <div class="xr-head">
-              <span class="xr-logo g">⚙</span>
-              <div><p class="xr-title">Bank reconciliation</p><p class="xr-sub">46 of 51 lines matched by rules</p></div>
-              <span class="xr-pill g">Rules + review</span>
+
+        <!-- The same Xero page run the other way: rules post, and the one line
+             no rule covers waits for a person. Rule tags carry no JAX sparkle. -->
+        <figure class="abr-exhibit">
+          <div class="xw" aria-label="Xero bank reconciliation, rules and review">
+            <div class="xw-nav"><img src="presentations/auto-bank-wreck/images/shared/site/xero-wordmark-white.svg" alt="Xero"></div>
+            <div class="xw-title"><span class="xw-x" aria-hidden="true"></span><p>Bank reconciliation</p><span class="xw-chip">Rules + review</span></div>
+            <div class="xw-body">
+              <p class="xw-banner"><span class="xw-ok" aria-hidden="true"></span>46 of 51 lines matched by rules</p>
+              <div class="xw-table">
+                <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">exact match, <b>same every run</b></p></div><span class="xw-amt">£19,439</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row"><div><p class="xw-payee">Transfer to savings</p><p class="xw-how">account-to-account</p></div><span class="xw-amt">£5,000</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row flag"><div><p class="xw-payee">Unknown payee</p><p class="xw-how">No rule matched · <b>flagged, not posted</b></p></div><span class="xw-amt">£4,120</span><span class="xw-btn">Review</span></div>
+              </div>
             </div>
-            <div class="xr-row ok"><div><p class="xr-payee">Stripe Payout <span class="xr-amt">£19,439</span></p><p class="xr-how">Rule · exact match, <b>same every run</b></p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row ok"><div><p class="xr-payee">Transfer to savings <span class="xr-amt">£5,000</span></p><p class="xr-how">Rule · account-to-account</p></div><span class="xr-tick">✓</span></div>
-            <div class="xr-row warn"><div><p class="xr-payee">Unknown payee <span class="xr-amt">£4,120</span></p><p class="xr-how">No rule matched · <b>flagged, not posted</b></p></div><span class="xr-btn">Review</span></div>
-            <p class="xr-foot">The rules post. The exceptions <b>wait for you.</b></p>
           </div>
-        </div>
+          <figcaption><span class="way-verdict g">Optimised</span><span>The rules post. The exceptions <b>wait for you.</b></span></figcaption>
+        </figure>
       </div>
 
       <div class="bottombar"></div>
@@ -3645,7 +3650,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["In your apps: it queried one supplier with a reason; you still answer it and the other 37 still get your eyes.","The stat is deliberately the hard one: fixing errors in real workbooks."],"src":["SpreadsheetBench 2 (arXiv 2606.29955, 29 Jun 2026): 321 real multi-sheet tasks; best model 34.89% overall, 12.00% on debugging.","Deel Inc: reverse charge is right for a US-established B2B supplier; if a UK Deel entity billed with a GB VAT number, 20% would be right, which is why the tool queries rather than decides."]},
   {"say":["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],"ask":"'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not."},
   {"say":["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."]},
-  {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. Xero's JAX - Just Ask Xero - reconciles via four methods: Rule, Match, Memory, Prediction. The stated goal is 80%-plus of statement lines auto-reconciled in real time; over 100 million transactions reconciled in beta. How it is being deployed, versus how I believe it should be."],"src":["Xero blog: automatic bank reconciliation with JAX (beta), four methods, 80%+ goal, 100m+ transactions.","Practitioner testing (digit.business, Mar 2026): intercompany transfers coded wrong, batch and part payments mishandled, memory coding firing before the bill arrives, same subscription coded differently across weeks."]},
+  {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. Xero's JAX - Just Ask Xero - reconciles via four methods: Rule, Match, Memory, Prediction. The stated goal is 80%-plus of statement lines auto-reconciled in real time; over 100 million transactions reconciled in beta. How it is being deployed, versus how I believe it should be.","Joke: the tool that saves firms 4 hours per week per client, which would save me 32 hours per working day."],"src":["Xero blog: automatic bank reconciliation with JAX (beta), four methods, 80%+ goal, 100m+ transactions.","Practitioner testing (digit.business, Mar 2026): intercompany transfers coded wrong, batch and part payments mishandled, memory coding firing before the bill arrives, same subscription coded differently across weeks.","Slide image: Xero's own product shot of the Reconciled transactions page (xero.com/uk, automatic bank reconciliation page, Nov 2025). Slides 54-55 are laid out in the same Xero chrome; their rows are illustrative.","The 4 hours: Xero blog, What's new in Auto Bank Reconciliation, 14 Aug 2026, quoting one customer (Anthony Bishop, Sun City Legal Services): It saves probably about 4 hours a week. Per client is the joke, not Xero's claim."]},
   {"say":["Why it does not work as deployed: probabilistic matching inside the process, so a different answer on a different day - practitioners found the same subscription coded correctly one week and wrong the next. Wrong with confidence: the mock on the right is the point - every row is green, a transfer coded to sales and a subscription with the wrong VAT look exactly like the good match. It marks its own homework, and it posts to the live ledger, so the errors compound quietly into the accounts."]},
   {"say":["How it could work, using everything from act three: deterministic rules do the bulk - same answer every run, testable once. Use GenAI to build the rules, not run the rec. Then AI as the exception layer on top: it raises a flag, not a posting, and a human takes the exceptions and signs."]},
   {"say":["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."]},
@@ -4100,27 +4105,86 @@ deck-stage { background: #0a0a0a; }
 .cover-prompt.big .cover-prompt-icon { width: 58px; height: 58px; border-radius: 16px; }
 .cover-prompt.big .cover-prompt-icon img { width: 30px; height: 30px; }
 
-/* ── Xero-style bank rec mocks (finale spotlight) ──────────────── */
-.xr-card { background: var(--paper-card); border: 1px solid rgba(30,30,70,0.25); border-radius: 26px; padding: 30px 34px; box-shadow: var(--shadow-lift); font-family: var(--font-sans); }
-.xr-head { display: flex; align-items: center; gap: 16px; padding-bottom: 20px; border-bottom: 2px solid rgba(30,30,70,0.18); }
-.xr-logo { flex-shrink: 0; width: 52px; height: 52px; border-radius: 50%; background: #13B5EA; color: #fff; font-size: 26px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
-.xr-logo.g { background: var(--green-600); }
-.xr-title { margin: 0; font-size: 24px; font-weight: 700; color: var(--ink); }
-.xr-sub { margin: 3px 0 0; font-size: 18px; color: var(--ink-500); }
-.xr-pill { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 8px 16px; border-radius: 999px; background: rgba(19,181,234,0.12); color: #0E7FA3; }
-.xr-pill.g { background: rgba(109,168,60,0.16); color: var(--green-600); }
-.xr-row { display: flex; align-items: center; gap: 18px; padding: 18px 0; }
-.xr-row + .xr-row { border-top: 1px solid rgba(30,30,70,0.14); }
-.xr-payee { margin: 0; font-size: 21px; font-weight: 600; color: var(--ink); }
-.xr-amt { font-weight: 700; color: var(--ink-500); margin-left: 8px; }
-.xr-how { margin: 4px 0 0; font-size: 17px; color: var(--ink-500); }
-.xr-row.ok .xr-how b { color: #A8462A; }
-.xr-row.warn .xr-how b { color: #8b5a10; }
-.xr-tick { margin-left: auto; flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: rgba(109,168,60,0.16); color: var(--green-600); font-size: 21px; font-weight: 700; display: inline-flex; align-items: center; justify-content: center; }
-.xr-btn { margin-left: auto; flex-shrink: 0; font-size: 17px; font-weight: 700; padding: 9px 18px; border-radius: 10px; background: rgba(232,160,32,0.18); color: #8b5a10; border: 1px solid rgba(232,160,32,0.4); }
-.xr-foot { margin: 6px 0 0; padding-top: 18px; border-top: 2px solid rgba(30,30,70,0.18); font-size: 19px; color: var(--ink-500); }
-.xr-foot b { color: var(--ink); }
-.xr-row .xr-how b:only-child { color: inherit; }
+/* ── Finale spotlight: auto bank rec (53-55) ───────────────────── */
+/* 53: centred claim, Xero's real Reconciled page running off the bottom. */
+.abr-intro { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 12px; }
+.slide.ink p.abr-kicker { font-size: 28px; margin: 0 0 24px; color: rgba(255,255,255,0.72); }
+.slide.ink p.abr-claim { font-size: 30px; margin-top: 30px; color: rgba(255,255,255,0.9); }
+.abr-claim img { width: 42px; height: 42px; margin-right: 14px; vertical-align: -11px; }
+.abr-hero {
+  position: absolute; left: 50%; top: 470px; transform: translateX(-50%);
+  width: 1060px; margin: 0; z-index: 3;
+  filter: drop-shadow(0 36px 60px rgba(0,0,0,0.45));
+}
+.abr-hero img { display: block; width: 100%; height: auto; }
+
+/* 54-55: the title runs across the top, then two cards start and end level:
+   the points on the left, the Xero window on the right, its caption below.
+   (display: contents lets the heading, points, window and caption share one grid.) */
+/* Anchored from the top, not centred, so flipping 54 to 55 moves nothing. */
+.abr-grid { display: grid; grid-template-columns: minmax(0, 1fr) 700px; column-gap: 56px; align-content: start; padding-top: 44px; }
+.abr-copy, .abr-exhibit { display: contents; }
+.abr-copy .display { grid-column: 1 / -1; font-size: 92px; }
+.abr-copy .sub { grid-column: 1 / -1; font-size: 29px; margin-top: 18px; }
+/* A clean card, as in Sidgrove Intelligence: white, one quiet hairline, a
+   low shadow, the same corners as the Xero window beside it. */
+.abr-points {
+  grid-column: 1; grid-row: 3; margin-top: 44px;
+  display: flex; flex-direction: column; padding: 4px 36px;
+  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.16);
+  border-radius: 16px; box-shadow: var(--shadow-card);
+}
+.abr-pt { flex: 1; display: flex; align-items: center; gap: 26px; padding: 22px 0; }
+.abr-pt + .abr-pt { border-top: 2px solid rgba(30,30,70,0.13); }
+.abr-pt p { margin: 0; font-size: 28px; font-weight: 500; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); text-wrap: pretty; }
+.abr-pt em { font-style: normal; color: var(--periwinkle-700); }
+/* Icon tiles as in Sidgrove Intelligence: a soft fill, one hue, no border. */
+.abr-ic { flex-shrink: 0; width: 60px; height: 60px; border-radius: 16px; display: inline-flex; align-items: center; justify-content: center; }
+.abr-ic svg { width: 28px; height: 28px; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.abr-points.r .abr-ic { background: #FBE1E6; } .abr-points.r .abr-ic svg { stroke: #7A1E36; }
+.abr-points.g .abr-ic { background: #DCEFE4; } .abr-points.g .abr-ic svg { stroke: #155A31; }
+
+.abr-exhibit .xw { grid-column: 2; grid-row: 3; margin-top: 44px; }
+.abr-exhibit figcaption { grid-column: 2; grid-row: 4; margin-top: 24px; display: flex; align-items: center; gap: 18px; font-family: var(--font-sans); font-size: 23px; line-height: 1.3; color: var(--ink-500); }
+.abr-exhibit figcaption b { font-weight: 600; color: var(--ink); }
+.abr-exhibit .way-verdict { font-size: 20px; padding: 10px 18px; gap: 10px; }
+.abr-exhibit .way-verdict::before { width: 9px; height: 9px; }
+
+/* The Xero window: chrome, colours and method tags sampled from Xero's
+   own Reconciled page (nav #0078C8, tag #F0F9FE / #003C64, page #F2F3F4). */
+.xw {
+  background: #fff; border-radius: 16px; overflow: hidden;
+  border: 1px solid rgba(30,30,70,0.16); box-shadow: var(--shadow-card);
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: 0; color: #000A1E;
+}
+.xw p { margin: 0; }
+.xw-nav { height: 60px; display: flex; align-items: center; padding: 0 26px; background: #0078C8; }
+.xw-nav img { display: block; height: 23px; width: auto; }
+.xw-title { display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E1E2E5; }
+.xw-title p { font-size: 24px; font-weight: 700; }
+.xw-title .xw-chip { margin-left: auto; }
+.xw-x { position: relative; flex-shrink: 0; width: 18px; height: 18px; }
+.xw-x::before, .xw-x::after { content: ''; position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; border-radius: 1px; background: #6A6F7B; }
+.xw-x::before { transform: translate(-50%, -50%) rotate(45deg); }
+.xw-x::after { transform: translate(-50%, -50%) rotate(-45deg); }
+.xw-body { display: flex; flex-direction: column; gap: 14px; padding: 18px 20px 20px; background: #F2F3F4; }
+.xw-banner { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #fff; border: 1px solid #D5D7DB; border-radius: 6px; font-size: 20px; }
+.xw-ok { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #209155 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+.xw-table { background: #fff; border: 1px solid #D5D7DB; border-radius: 6px; overflow: hidden; }
+.xw-row { display: grid; grid-template-columns: minmax(0, 1fr) auto 142px 30px; align-items: center; gap: 18px; padding: 16px 18px; }
+.xw-row + .xw-row { border-top: 1px solid #E5E6E8; }
+.xw-payee { font-size: 21px; text-decoration: underline; text-decoration-color: rgba(0,10,30,0.3); text-underline-offset: 4px; }
+.xw .xw-how { margin-top: 5px; font-size: 19px; color: #606673; }
+.xw-how b { font-weight: 700; color: #000A1E; }
+.xw-how b.bad { color: #A33343; }
+.xw-amt { font-size: 21px; font-variant-numeric: tabular-nums; text-align: right; }
+.xw-chip { justify-self: start; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 5px; background: #F0F9FE; color: #003C64; font-size: 19px; line-height: 1; white-space: nowrap; }
+/* JAX's sparkle marks a line the model decided. Rules carry none. */
+.xw-chip.jax::after { content: ''; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2313B5EA'/%3E%3Cstop offset='1' stop-color='%232562FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 1c.7 6 5 10.3 11 11-6 .7-10.3 5-11 11-.7-6-5-10.3-11-11 6-.7 10.3-5 11-11z' fill='url(%23s)'/%3E%3C/svg%3E") center / contain no-repeat; }
+.xw-tick { width: 30px; height: 30px; border-radius: 50%; background: #E3F4EA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='%23209155' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 17px no-repeat; }
+.xw-row.flag { background: #FFFBEF; }
+.xw-row.flag .xw-how b { color: #7A5E1E; white-space: nowrap; }
+.xw-btn { grid-column: 3 / span 2; justify-self: end; padding: 8px 16px; border-radius: 6px; background: #FDF3D6; border: 1px solid #DEC27E; color: #5C4012; font-size: 19px; font-weight: 700; }
 
 /* ── Slack weekly cashflow mock (slide 35) ─────────────────────── */
 .slk-wrap { background: #FFFFFF; }
