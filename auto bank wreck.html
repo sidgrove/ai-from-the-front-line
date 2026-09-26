@@ -157,7 +157,7 @@ deck-stage { background: #0a0a0a; }
   color: var(--ink-500); letter-spacing: 0.04em;
   font-weight: 500; font-variant-numeric: tabular-nums;
 }
-.page-chip .n { color: var(--ink); font-weight: 600; }
+.page-chip .n { color: var(--ink); font-weight: 600; display: inline-block; min-width: 1.4em; text-align: right; }
 .slide.ink .page-chip { border-color: rgba(255,255,255,0.14); color: rgba(255,255,255,0.69); }
 .slide.ink .page-chip .n { color: var(--paper); }
 
@@ -1471,7 +1471,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill split">
         <div>
           <h2 class="display" style="font-size: 200px; color: #7a1a0a; margin-bottom: 40px;">
-            We're<br>
+            We’re<br>
             <em style="color: #c04020;">doomed.</em>
           </h2>
           <p style="font-family: var(--font-serif); font-style: italic; font-size: 58px; color: rgba(80,20,10,0.92); letter-spacing: -0.02em; line-height: 1.3; margin: 0;">
@@ -1520,7 +1520,7 @@ deck-stage { background: #0a0a0a; }
             </div>
           </div>
           <div class="press-card">
-            <img src="Images/03%20The%20headlines/Suleyman.png" alt="Microsoft AI chief: 18 months for all white-collar work">
+            <img src="presentations/auto-bank-wreck/images/slides/03-the-headlines/suleyman-cut.png" style="object-fit: contain;" alt="Microsoft AI chief: 18 months for all white-collar work">
             <div class="press-meta">
               <p class="press-source">Fortune</p>
               <p class="press-name">Mustafa Suleyman</p>
@@ -1552,7 +1552,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill" style="display: grid; grid-template-columns: 5fr 7fr; gap: 70px; align-items: center;">
         <div>
-          <h2 class="display" style="font-size: 96px; margin-bottom: 24px;">Anthropic's <em>prediction.</em></h2>
+          <h2 class="display" style="font-size: 96px; margin-bottom: 24px;">Anthropic’s <em>prediction.</em></h2>
           <p class="sub" style="font-size: 28px;">Business &amp; finance: in theory, <em>GenAI can do almost all of our job.</em></p>
           <div class="rc-loupe" aria-hidden="true"></div>
         </div>
@@ -1578,11 +1578,11 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill" style="display: grid; grid-template-columns: 1.05fr 1fr; gap: 60px; align-items: center;">
         <div>
-          <h2 class="display" style="font-size: 112px; margin-bottom: 28px;">But I think <em>they're wrong.</em></h2>
+          <h2 class="display" style="font-size: 112px; margin-bottom: 28px;">But I think <em>they’re wrong.</em></h2>
           <p class="sub" style="font-size: 30px; margin-bottom: 44px;">
-            <span class="pt">You're fine.</span>
-            <span class="pt">We're in a hype bubble.</span>
-            <span class="pt"><em>And they're already backtracking.</em></span>
+            <span class="pt">You’re fine.</span>
+            <span class="pt">We’re in a hype bubble.</span>
+            <span class="pt"><em>And they’re already backtracking.</em></span>
           </p>
           <figure class="shot bub-cut">
             <img src="Images/05%20Hype%20bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
@@ -1658,7 +1658,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <h2 class="display" style="font-size: 132px;">
-          So what actually is this<br><em>‘AI’</em> we're referring to?
+          So what actually is this<br><em>‘AI’</em> we’re referring to?
         </h2>
       </div>
 
@@ -1687,8 +1687,8 @@ deck-stage { background: #0a0a0a; }
             <line x1="80" y1="650" x2="80" y2="24" class="hc-axis" marker-end="url(#hc-arrow)"/>
             <path class="hc-line" d="M160 610 C 520 600, 860 585, 1080 530 S 1320 390, 1420 225 S 1490 80, 1510 40"/>
             <line class="hc-tick" x1="160" y1="650" x2="160" y2="666"/><line class="hc-tick" x1="640" y1="650" x2="640" y2="666"/><line class="hc-tick" x1="1080" y1="650" x2="1080" y2="666"/><line class="hc-tick" x1="1510" y1="650" x2="1510" y2="666"/>
-            <line class="hc-link" x1="160" y1="560" x2="160" y2="596"/>
-            <line class="hc-link" x1="640" y1="458" x2="640" y2="598"/>
+            <line class="hc-link" x1="160" y1="500" x2="160" y2="596"/>
+            <line class="hc-link" x1="640" y1="360" x2="640" y2="584"/>
             <line class="hc-link" x1="1080" y1="380" x2="1080" y2="530"/>
             <line class="hc-link" x1="1400" y1="86" x2="1490" y2="45"/>
             <circle class="hc-dot" cx="160" cy="610" r="10"/><circle class="hc-dot" cx="640" cy="598" r="10"/><circle class="hc-dot" cx="1080" cy="530" r="10"/>
@@ -1738,7 +1738,7 @@ deck-stage { background: #0a0a0a; }
         <div class="kb-mock">
           <div class="kb-screen">
             <div class="kb-bubble them">Can you send over the Q1 figures before Friday?</div>
-            <div class="kb-bubble me">Sure, I'll send the<span class="kb-caret"></span></div>
+            <div class="kb-bubble me">Sure, I’ll send the<span class="kb-caret"></span></div>
           </div>
           <div class="kb-suggest">
             <span class="kb-sug">file</span>
@@ -1771,7 +1771,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <div style="margin-bottom: 90px;">
           <h2 class="display" style="font-size: 112px;">
-            It's probabilistic. <em>By design.</em>
+            It’s probabilistic. <em>By design.</em>
           </h2>
         </div>
 
@@ -1855,7 +1855,7 @@ deck-stage { background: #0a0a0a; }
               <span class="prob-run a">Run A</span>
             </div>
             <div class="prob-body">
-              <div class="prob-user">Add up this quarter's invoices for me.</div>
+              <div class="prob-user">Add up this quarter’s invoices for me.</div>
               <div class="prob-ai">Done. 206 fall in Q1, total <em>£128,400</em>. 8 look like next quarter.</div>
             </div>
           </div>
@@ -1867,7 +1867,7 @@ deck-stage { background: #0a0a0a; }
               <span class="prob-run b">Run B</span>
             </div>
             <div class="prob-body">
-              <div class="prob-user">Add up this quarter's invoices for me.</div>
+              <div class="prob-user">Add up this quarter’s invoices for me.</div>
               <div class="prob-ai">Done. 209 fall in Q1, total <em>£129,150</em>. 5 look like next quarter.</div>
             </div>
           </div>
@@ -1898,7 +1898,7 @@ deck-stage { background: #0a0a0a; }
         <div style="margin-bottom: 44px;">
           <h2 class="display" style="font-size: 112px;">It isn’t intelligent. <em>In the true sense.</em></h2>
           <p class="sub" style="margin-top: 20px; font-size: 27px;">
-            Pretend it is, and you'll trust it <em>too much.</em>
+            Pretend it is, and you’ll trust it <em>too much.</em>
           </p>
         </div>
 
@@ -1928,7 +1928,7 @@ deck-stage { background: #0a0a0a; }
             “But it’s better than <em>a human.”</em>
           </h2>
           <p class="sub" style="margin-top: 18px; font-size: 30px;">
-            Maybe. <em>But it's different.</em>
+            Maybe. <em>But it’s different.</em>
           </p>
         </div>
 
@@ -1939,7 +1939,7 @@ deck-stage { background: #0a0a0a; }
           </div>
           <div class="tk-row">
             <span class="tk-icon">😎</span>
-            <p class="tk-text">Confident - regardless of whether it's correct.</p>
+            <p class="tk-text">Confident - regardless of whether it’s correct.</p>
           </div>
           <div class="tk-row">
             <span class="tk-icon">🎭</span>
@@ -1972,7 +1972,7 @@ deck-stage { background: #0a0a0a; }
           Just <em>use</em> it.
         </h2>
         <p class="sub" style="margin-top: 36px; font-size: 32px;">
-          Don't take my word for it. <em>It makes mistakes, all the time.</em>
+          Don’t take my word for it. <em>It makes mistakes, all the time.</em>
         </p>
       </div>
 
@@ -2013,17 +2013,17 @@ deck-stage { background: #0a0a0a; }
       <div class="fill split">
         <div>
           <h2 class="display" style="font-size: 96px; margin-bottom: 40px;">
-            We're being<br><em>massively subsidised.</em>
+            We’re being<br><em>massively subsidised.</em>
           </h2>
           <p class="sub" style="font-size: 29px; max-width: 700px;">
-            <span class="pt">This isn't a software business.</span>
+            <span class="pt">This isn’t a software business.</span>
             <span class="pt"><em>What happens when they raise prices and cut the limits?</em></span>
           </p>
         </div>
 
         <figure class="shot">
-          <img src="Images/18%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 620px;">
-          <figcaption>Quartz · OpenAI's leaked 2025 financials · a $38.5B loss</figcaption>
+          <img src="Images/18%20The%20economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 660px; padding-bottom: 30px;">
+          <figcaption>Quartz · OpenAI’s leaked 2025 financials · a $38.5B loss</figcaption>
         </figure>
       </div>
 
@@ -2043,7 +2043,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y">
         <div style="margin-bottom: 40px;">
-          <h2 class="display" style="font-size: 112px;">Don't mention the <em>environment.</em></h2>
+          <h2 class="display" style="font-size: 112px;">Don’t mention the <em>environment.</em></h2>
           <p class="sub" style="margin-top: 18px; font-size: 30px;">Or the <em>societal</em> impacts.</p>
         </div>
 
@@ -2058,7 +2058,7 @@ deck-stage { background: #0a0a0a; }
           </div>
           <div class="tk-row">
             <span class="tk-icon">🏘️</span>
-            <p class="tk-text">It's disrupting <em>local communities.</em></p>
+            <p class="tk-text">It’s disrupting <em>local communities.</em></p>
           </div>
         </div>
       </div>
@@ -2079,7 +2079,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y">
         <div style="margin-bottom: 34px;">
-          <h2 class="display" style="font-size: 84px;">It's a <em>big problem.</em></h2>
+          <h2 class="display" style="font-size: 84px;">It’s a <em>big problem.</em></h2>
         </div>
         <div class="press-grid four">
           <div class="press-card">
@@ -2158,7 +2158,7 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">What works <em>· the pitch</em></p><span class="page-chip"></span></div>
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
-        <p class="sub" style="font-size: 34px; margin-bottom: 28px; color: rgba(255,255,255,0.92);">Well… let's start with <em style="color:#f0b25c;">what everyone's selling right now.</em></p>
+        <p class="sub" style="font-size: 34px; margin-bottom: 28px; color: rgba(255,255,255,0.92);">Well… let’s start with <em style="color:#f0b25c;">what everyone’s selling right now.</em></p>
         <h2 class="display" style="font-size: 170px; margin-bottom: 48px;">
           The <span style="text-decoration: line-through; text-decoration-thickness: 0.07em; text-decoration-color: rgba(240,178,92,0.9); color: rgba(255,255,255,0.59);">agentic</span><br><em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">asbestos</em> era.
         </h2>
@@ -2237,7 +2237,7 @@ deck-stage { background: #0a0a0a; }
           <div class="perm-head">
             <span class="perm-app"><svg viewBox="0 0 24 24"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></span>
             <div>
-              <p class="perm-title">"Agent" wants to run your month-end</p>
+              <p class="perm-title">“Agent” wants to run your month-end</p>
               <p class="perm-sub">Full autonomy · no review</p>
             </div>
           </div>
@@ -2245,7 +2245,7 @@ deck-stage { background: #0a0a0a; }
             <div class="perm-row"><span class="ck">✓</span> Fetch the invoices</div>
             <div class="perm-row"><span class="ck" style="color: var(--amber);">~</span> Match &amp; reconcile</div>
             <div class="perm-row"><span class="ck">✓</span> Post the journals</div>
-            <div class="perm-row prob"><span class="ck">~</span> Decide it's all correct</div>
+            <div class="perm-row prob"><span class="ck">~</span> Decide it’s all correct</div>
           </div>
           <div class="perm-actions">
             <span class="perm-btn">Approve future mistakes</span>
@@ -2269,10 +2269,10 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <h2 class="display" style="font-size: 190px;">
-          It's <em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">toxic.</em>
+          It’s <em style="color:#f0b25c; text-shadow: 0 0 90px rgba(240,178,92,0.45);">toxic.</em>
         </h2>
         <p class="sub" style="margin-top: 36px; font-size: 34px;">
-          It'll need ripping out, at huge cost. <em style="color:#f0b25c;">Like asbestos.</em>
+          It’ll need ripping out, at huge cost. <em style="color:#f0b25c;">Like asbestos.</em>
         </p>
       </div>
 
@@ -2294,7 +2294,7 @@ deck-stage { background: #0a0a0a; }
 
         <div>
           <h2 class="display" style="font-size: 100px; margin-bottom: 36px;">
-            If full autonomy worked,<br><em>I'd be using it.</em>
+            If full autonomy worked,<br><em>I’d be using it.</em>
           </h2>
         </div>
 
@@ -2351,7 +2351,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <h2 class="display" style="font-size: 150px;">
-          So what's <em>my</em> approach?
+          So what’s <em>my</em> approach?
         </h2>
       </div>
 
@@ -2527,7 +2527,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y" style="align-items: center; text-align: center;">
         <div style="margin-bottom: 44px;">
           <h2 class="display" style="font-size: 104px;">Deterministic. <em>The core of the practice.</em></h2>
-          <p class="sub" style="margin-top: 18px; font-size: 30px;">AI (OCR, ML, GenAI) <em>augments</em> it. It doesn't replace it.</p>
+          <p class="sub" style="margin-top: 18px; font-size: 30px;">AI (OCR, ML, GenAI) <em>augments</em> it. It doesn’t replace it.</p>
         </div>
         <div class="tile-grid" style="grid-template-columns: repeat(3, 1fr); gap: 20px; width: 100%; max-width: 1320px;">
           <span class="tile"><span class="ic ic-purple"><svg viewBox="0 0 24 24"><path d="M21.3 8.7 8.7 21.3a1 1 0 0 1-1.4 0l-4.6-4.6a1 1 0 0 1 0-1.4L15.3 2.7a1 1 0 0 1 1.4 0l4.6 4.6a1 1 0 0 1 0 1.4Z"/><path d="m7.5 10.5 2 2"/><path d="m10.5 7.5 2 2"/><path d="m13.5 4.5 2 2"/><path d="m4.5 13.5 2 2"/></svg></span><span class="tile-label">Rules</span></span>
@@ -2585,7 +2585,7 @@ deck-stage { background: #0a0a0a; }
 
     <!-- The product, not a feature: one wide window that runs off the bottom of the slide. -->
     <figure class="shot window si-hero" aria-hidden="true">
-      <img src="Images/34%20Sidgrove%20Intelligence/practice-overview.png" alt="">
+      <img src="presentations/auto-bank-wreck/images/slides/33-sidgrove-intelligence/practice-overview-sep26.png" alt="">
       <figcaption>Sidgrove Intelligence · practice overview · demo mode</figcaption>
     </figure>
   </section>
@@ -2605,7 +2605,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
           <figure class="shot window">
-            <img src="Images/35%20Daily%20cashflow/cashflow.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+            <img src="presentations/auto-bank-wreck/images/slides/34-daily-cashflow/cashflow-sep26.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
             <figcaption></figcaption>
           </figure>
           <div class="slack-inset cashflow-slack" aria-hidden="true">
@@ -2634,7 +2634,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/36%20Bookkeeping/bookkeeping.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="presentations/auto-bank-wreck/images/slides/35-bookkeeping/bookkeeping-sep26.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
@@ -2645,7 +2645,7 @@ deck-stage { background: #0a0a0a; }
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
               <img class="sk-banner" src="Images/shared/slack/banner-bookkeeping.png" alt="">
               <p class="sk-header">📒 Bookkeeping · Circle</p>
-              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s books are up to date as of 22 Aug 2026. We've reconciled what we can - <b>42 unreconciled items</b> need your answers.</p>
+              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>‘s books are up to date as of 22 Aug 2026. We’ve reconciled what we can - <b>42 unreconciled items</b> need your answers.</p>
               <p class="sk-section">Answer the flagged items, hit <b>Send responses</b>, and we finalise the month.</p>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn primary">📊 Review &amp; approve</span></div>
@@ -2675,7 +2675,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/37%20Deadlines/deadlines.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="presentations/auto-bank-wreck/images/slides/36-deadlines/deadlines-sep26.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
@@ -2714,7 +2714,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/38%20Management%20accounts/management-accounts.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="presentations/auto-bank-wreck/images/slides/37-management-accounts/management-accounts-sep26.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
@@ -2759,7 +2759,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/39%20Payroll%20reviews/payroll.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="presentations/auto-bank-wreck/images/slides/38-payroll-reviews/payroll-sep26.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
@@ -2770,7 +2770,7 @@ deck-stage { background: #0a0a0a; }
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
               <img class="sk-banner" src="Images/shared/slack/banner-payroll.png" alt="">
               <p class="sk-header">Approve May 2026 payroll</p>
-              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>'s <b>May 2026</b> payroll is ready for approval.</p>
+              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>‘s <b>May 2026</b> payroll is ready for approval.</p>
               <hr class="sk-divider">
               <div class="sk-actions"><span class="sk-btn">Review and approve</span></div>
               <p class="sk-context">Sent by <span class="sk-mention">@Dave Sellick</span> · <b>Sidgrove</b> - reply here if anything looks off.</p>
@@ -2799,7 +2799,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill center-y">
         <div class="shot-wrap">
         <figure class="shot window">
-          <img src="Images/40%20VAT%20reviews/vat.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
+          <img src="presentations/auto-bank-wreck/images/slides/39-vat-reviews/vat-sep26.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
           <figcaption></figcaption>
         </figure>
         <div class="slack-inset" aria-hidden="true">
@@ -2810,7 +2810,7 @@ deck-stage { background: #0a0a0a; }
               <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
               <p class="sk-header">🧾 Sign off Jul - Sep 2025 VAT - Circle</p>
               <p class="sk-section"><span class="sk-mention">@channel</span></p>
-              <p class="sk-section"><b>Circle</b>'s <b>Jul - Sep 2025</b> VAT return is ready for you to review. Sign it off in the app and we file it with HMRC.</p>
+              <p class="sk-section"><b>Circle</b>‘s <b>Jul - Sep 2025</b> VAT return is ready for you to review. Sign it off in the app and we file it with HMRC.</p>
               <img class="sk-image" src="Images/shared/slack/vat-cover.png" alt="">
               <div class="sk-fields"><div><b>Period</b><br>Jul - Sep 2025</div><div><b>VAT to pay HMRC</b><br>💷 <b>£10,885.36</b></div><div><b>Pay HMRC by</b><br>7 Nov 2025</div></div>
               <hr class="sk-divider">
@@ -2841,13 +2841,13 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <div class="me-grid">
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accruals.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/accrued-income.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/payroll-realloc.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/direct-costs.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/corp-tax.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/rd.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
-          <figure class="me-tile"><img src="Images/41%20Month%20end/cln.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/accruals-sep26.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/accrued-income-sep26.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/payroll-realloc-sep26.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/direct-costs-sep26.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/corp-tax-sep26.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/rd-sep26.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
+          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/cln-sep26.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
         </div>
       </div>
 
@@ -3024,7 +3024,7 @@ deck-stage { background: #0a0a0a; }
           <div class="tk-rows ni vc-col warn">
             <p class="vc-title">Warnings</p>
             <div class="tk-row"><span class="tk-icon">🔒</span><p class="tk-text">Security. <em>Get an engineer if it holds sensitive data.</em></p></div>
-            <div class="tk-row"><span class="tk-icon">🐇</span><p class="tk-text">Rabbit holes. <em>Don't overbuild.</em></p></div>
+            <div class="tk-row"><span class="tk-icon">🐇</span><p class="tk-text">Rabbit holes. <em>Don’t overbuild.</em></p></div>
             <div class="tk-row"><span class="tk-icon">🛒</span><p class="tk-text">If an app already does it, <em>buy it.</em></p></div>
           </div>
         </div>
@@ -3341,9 +3341,9 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
       <div class="fill abr-intro">
-        <p class="sub abr-kicker">Given everything I've said… <em>one worked example.</em></p>
+        <p class="sub abr-kicker">Given everything I’ve said… <em>one worked example.</em></p>
         <h2 class="display" style="font-size: 132px;">Spotlight: <em>auto bank rec.</em></h2>
-        <p class="sub abr-claim"><img src="presentations/auto-bank-wreck/images/shared/site/xero.svg" alt="Xero">Xero's JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
+        <p class="sub abr-claim"><img src="presentations/auto-bank-wreck/images/shared/site/xero.svg" alt="Xero">Xero’s JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
       </div>
     </div>
 
@@ -3365,7 +3365,7 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill abr-grid">
         <div class="abr-copy">
-          <h2 class="display">Why it <em>doesn't work.</em></h2>
+          <h2 class="display">Why it <em>doesn’t work.</em></h2>
           <p class="sub">The model runs the process, <em>end to end.</em></p>
           <div class="abr-points r">
             <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg></span><p>Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
@@ -3429,7 +3429,7 @@ deck-stage { background: #0a0a0a; }
               <div class="xw-table">
                 <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">exact match, <b>same every run</b></p></div><span class="xw-amt">£19,439</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
                 <div class="xw-row"><div><p class="xw-payee">Transfer to savings</p><p class="xw-how">account-to-account</p></div><span class="xw-amt">£5,000</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row flag"><div><p class="xw-payee">Unknown payee</p><p class="xw-how">No rule matched · <b>flagged, not posted</b></p></div><span class="xw-amt">£4,120</span><span class="xw-btn">Review</span></div>
+                <div class="xw-row flag"><div><p class="xw-payee">Unknown payee</p><p class="xw-how">No rule matched<br><b>flagged, not posted</b></p></div><span class="xw-amt">£4,120</span><span class="xw-btn">Review</span></div>
               </div>
             </div>
           </div>
@@ -3476,7 +3476,7 @@ deck-stage { background: #0a0a0a; }
           <div class="tw-card">
             <div class="tw-top"><span class="tk-icon">✅</span><span class="tw-num">04</span></div>
             <h3 class="tw-title">Use it every day.</h3>
-            <p class="tk-text"><span class="pt">Chat as a daily copilot.</span><span class="pt">Build tools with Claude Code.</span><span class="pt">Use tools like AI dictation to augment workflow.</span><span class="pt">(It's still incredible tech.)</span></p>
+            <p class="tk-text"><span class="pt">Chat as a daily copilot.</span><span class="pt">Build tools with Claude Code.</span><span class="pt">Use tools like AI dictation to augment workflow.</span><span class="pt">(It’s still incredible tech.)</span></p>
           </div>
         </div>
       </div>
@@ -4267,6 +4267,9 @@ deck-stage { background: #0a0a0a; }
 .ty-qr img { width: 280px; height: 280px; border-radius: 18px; flex-shrink: 0; }
 .ty-qr-t { margin: 0 0 8px; font-family: var(--font-serif); font-size: 44px; line-height: 1.05; color: var(--ink); }
 .ty-qr-s { margin: 0; font-family: var(--font-sans); font-size: 22px; color: var(--ink-500); }
+
+/* ── Line breaks: no single word stranded on a last line ───────── */
+.slide { text-wrap: pretty; }
 
 /* ── Thank you · LinkedIn CTA ──────────────────────────────────── */
 .ty-follow { display: inline-flex; align-items: center; gap: 12px; padding: 12px 20px; border-radius: 999px; background: #fff; color: var(--ink); border: 1px solid rgba(10,102,194,0.35); text-decoration: none; font-family: var(--font-sans); font-size: 20px; line-height: 1.2; text-align: left; }
