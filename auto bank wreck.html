@@ -2841,7 +2841,7 @@ deck-stage { background: #0a0a0a; }
       </div>
       <div class="fill center-y">
         <div class="me-grid">
-          <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/accruals-sep26.png" alt="Accruals and prepayments in Sidgrove Intelligence"><figcaption>Accruals &amp; prepayments</figcaption></figure>
+          <figure class="me-tile me-feature"><div class="me-detail"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/accruals-sep26.png" alt="Accruals and prepayments: supplier costs scheduled across the monthly columns in Sidgrove Intelligence"></div><figcaption>Accruals &amp; prepayments</figcaption></figure>
           <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/accrued-income-sep26.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
           <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/payroll-realloc-sep26.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
           <figure class="me-tile"><img src="presentations/auto-bank-wreck/images/slides/40-month-end/direct-costs-sep26.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
@@ -3341,7 +3341,6 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
       <div class="fill abr-intro">
-        <p class="sub abr-kicker">Given everything I’ve said… <em>one worked example.</em></p>
         <h2 class="display" style="font-size: 132px;">Spotlight: <em>auto bank rec.</em></h2>
         <p class="sub abr-claim"><img src="presentations/auto-bank-wreck/images/shared/site/xero.svg" alt="Xero">Xero’s JAX aims to auto-reconcile <em>80%+ of statement lines,</em> hands-free and in real time.</p>
       </div>
@@ -4108,12 +4107,11 @@ deck-stage { background: #0a0a0a; }
 /* ── Finale spotlight: auto bank rec (53-55) ───────────────────── */
 /* 53: centred claim, Xero's real Reconciled page running off the bottom. */
 .abr-intro { display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 12px; }
-.slide.ink p.abr-kicker { font-size: 28px; margin: 0 0 24px; color: rgba(255,255,255,0.72); }
 .slide.ink p.abr-claim { font-size: 30px; margin-top: 30px; color: rgba(255,255,255,0.9); }
 .abr-claim img { width: 42px; height: 42px; margin-right: 14px; vertical-align: -11px; }
 .abr-hero {
-  position: absolute; left: 50%; top: 470px; transform: translateX(-50%);
-  width: 1060px; margin: 0; z-index: 3;
+  position: absolute; left: 50%; top: 400px; transform: translateX(-50%);
+  width: 1272px; margin: 0; z-index: 3;
   filter: drop-shadow(0 36px 60px rgba(0,0,0,0.45));
 }
 .abr-hero img { display: block; width: 100%; height: auto; }
@@ -4122,20 +4120,20 @@ deck-stage { background: #0a0a0a; }
    the points on the left, the Xero window on the right, its caption below.
    (display: contents lets the heading, points, window and caption share one grid.) */
 /* Anchored from the top, not centred, so flipping 54 to 55 moves nothing. */
-.abr-grid { display: grid; grid-template-columns: minmax(0, 1fr) 700px; column-gap: 56px; align-content: start; padding-top: 44px; }
+.abr-grid { display: grid; grid-template-columns: minmax(0, 1fr) 800px; column-gap: 56px; align-content: start; padding-top: 44px; }
 .abr-copy, .abr-exhibit { display: contents; }
 .abr-copy .display { grid-column: 1 / -1; font-size: 92px; }
 .abr-copy .sub { grid-column: 1 / -1; font-size: 29px; margin-top: 18px; }
-/* A clean card, as in Sidgrove Intelligence: white, one quiet hairline, a
-   low shadow, the same corners as the Xero window beside it. */
+/* Match the app-window corners; keep a defined edge for bright screens. */
 .abr-points {
   grid-column: 1; grid-row: 3; margin-top: 44px;
-  display: flex; flex-direction: column; padding: 4px 36px;
-  background: var(--paper-card); border: 1px solid rgba(30,30,70,0.16);
-  border-radius: 16px; box-shadow: var(--shadow-card);
+  display: grid; grid-template-rows: repeat(4, 1fr); padding: 4px 28px;
+  height: 570px; box-sizing: border-box;
+  background: var(--paper-card); border: 1px solid var(--presentation-outline);
+  border-radius: 16px; box-shadow: 0 8px 24px -16px rgba(30,30,70,0.16);
 }
-.abr-pt { flex: 1; display: flex; align-items: center; gap: 26px; padding: 22px 0; }
-.abr-pt + .abr-pt { border-top: 2px solid rgba(30,30,70,0.13); }
+.abr-pt { display: flex; align-items: center; gap: 20px; padding: 16px 0; min-height: 0; }
+.abr-pt + .abr-pt { border-top: 2px solid var(--presentation-divider); }
 .abr-pt p { margin: 0; font-size: 28px; font-weight: 500; line-height: 1.3; letter-spacing: -0.015em; color: var(--ink); text-wrap: pretty; }
 .abr-pt em { font-style: normal; color: var(--periwinkle-700); }
 /* Icon tiles as in Sidgrove Intelligence: a soft fill, one hue, no border. */
@@ -4144,7 +4142,7 @@ deck-stage { background: #0a0a0a; }
 .abr-points.r .abr-ic { background: #FBE1E6; } .abr-points.r .abr-ic svg { stroke: #7A1E36; }
 .abr-points.g .abr-ic { background: #DCEFE4; } .abr-points.g .abr-ic svg { stroke: #155A31; }
 
-.abr-exhibit .xw { grid-column: 2; grid-row: 3; margin-top: 44px; }
+.abr-exhibit .xw { grid-column: 2; grid-row: 3; margin-top: 44px; height: 570px; box-sizing: border-box; display: flex; flex-direction: column; }
 .abr-exhibit figcaption { grid-column: 2; grid-row: 4; margin-top: 24px; display: flex; align-items: center; gap: 18px; font-family: var(--font-sans); font-size: 23px; line-height: 1.3; color: var(--ink-500); }
 .abr-exhibit figcaption b { font-weight: 600; color: var(--ink); }
 .abr-exhibit .way-verdict { font-size: 20px; padding: 10px 18px; gap: 10px; }
@@ -4154,11 +4152,11 @@ deck-stage { background: #0a0a0a; }
    own Reconciled page (nav #0078C8, tag #F0F9FE / #003C64, page #F2F3F4). */
 .xw {
   background: #fff; border-radius: 16px; overflow: hidden;
-  border: 1px solid rgba(30,30,70,0.16); box-shadow: var(--shadow-card);
+  border: 1px solid var(--presentation-outline); box-shadow: var(--shadow-card);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; letter-spacing: 0; color: #000A1E;
 }
 .xw p { margin: 0; }
-.xw-nav { height: 60px; display: flex; align-items: center; padding: 0 26px; background: #0078C8; }
+.xw-nav { height: 60px; flex-shrink: 0; display: flex; align-items: center; padding: 0 26px; background: #0078C8; }
 .xw-nav img { display: block; height: 23px; width: auto; }
 .xw-title { display: flex; align-items: center; gap: 16px; padding: 18px 24px; border-bottom: 1px solid #E1E2E5; }
 .xw-title p { font-size: 24px; font-weight: 700; }
@@ -4167,24 +4165,24 @@ deck-stage { background: #0a0a0a; }
 .xw-x::before, .xw-x::after { content: ''; position: absolute; left: 50%; top: 50%; width: 20px; height: 2px; border-radius: 1px; background: #6A6F7B; }
 .xw-x::before { transform: translate(-50%, -50%) rotate(45deg); }
 .xw-x::after { transform: translate(-50%, -50%) rotate(-45deg); }
-.xw-body { display: flex; flex-direction: column; gap: 14px; padding: 18px 20px 20px; background: #F2F3F4; }
+.xw-body { display: flex; flex-direction: column; flex: 1; min-height: 0; gap: 14px; padding: 18px 20px 20px; background: #F2F3F4; }
 .xw-banner { display: flex; align-items: center; gap: 12px; padding: 14px 18px; background: #fff; border: 1px solid #D5D7DB; border-radius: 6px; font-size: 20px; }
 .xw-ok { flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: #209155 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
-.xw-table { background: #fff; border: 1px solid #D5D7DB; border-radius: 6px; overflow: hidden; }
-.xw-row { display: grid; grid-template-columns: minmax(0, 1fr) auto 142px 30px; align-items: center; gap: 18px; padding: 16px 18px; }
+.xw-table { display: grid; grid-template-rows: repeat(3, 1fr); flex: 1; min-height: 0; background: #fff; border: 1px solid #D5D7DB; border-radius: 6px; overflow: hidden; }
+.xw-row { display: grid; grid-template-columns: minmax(0, 1fr) 88px 142px 30px; align-items: center; gap: 18px; padding: 14px 18px; min-height: 0; }
 .xw-row + .xw-row { border-top: 1px solid #E5E6E8; }
-.xw-payee { font-size: 21px; text-decoration: underline; text-decoration-color: rgba(0,10,30,0.3); text-underline-offset: 4px; }
-.xw .xw-how { margin-top: 5px; font-size: 19px; color: #606673; }
+.xw-payee { font-size: 23px; text-decoration: underline; text-decoration-color: rgba(0,10,30,0.3); text-underline-offset: 4px; }
+.xw .xw-how { margin-top: 7px; font-size: 20px; line-height: 1.25; color: #606673; }
 .xw-how b { font-weight: 700; color: #000A1E; }
-.xw-how b.bad { color: #A33343; }
-.xw-amt { font-size: 21px; font-variant-numeric: tabular-nums; text-align: right; }
+.xw-how b.bad { color: #922D40; background: #FBE6EB; padding: 2px 5px; border-radius: 3px; }
+.xw-amt { font-size: 23px; font-variant-numeric: tabular-nums; text-align: right; }
 .xw-chip { justify-self: start; display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 5px; background: #F0F9FE; color: #003C64; font-size: 19px; line-height: 1; white-space: nowrap; }
 /* JAX's sparkle marks a line the model decided. Rules carry none. */
 .xw-chip.jax::after { content: ''; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2313B5EA'/%3E%3Cstop offset='1' stop-color='%232562FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 1c.7 6 5 10.3 11 11-6 .7-10.3 5-11 11-.7-6-5-10.3-11-11 6-.7 10.3-5 11-11z' fill='url(%23s)'/%3E%3C/svg%3E") center / contain no-repeat; }
 .xw-tick { width: 30px; height: 30px; border-radius: 50%; background: #E3F4EA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='%23209155' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 17px no-repeat; }
-.xw-row.flag { background: #FFFBEF; }
+.xw-row.flag { background: #FFF3D6; box-shadow: inset 3px 0 #C29236; }
 .xw-row.flag .xw-how b { color: #7A5E1E; white-space: nowrap; }
-.xw-btn { grid-column: 3 / span 2; justify-self: end; padding: 8px 16px; border-radius: 6px; background: #FDF3D6; border: 1px solid #DEC27E; color: #5C4012; font-size: 19px; font-weight: 700; }
+.xw-btn { grid-column: 3 / span 2; justify-self: end; padding: 9px 18px; border-radius: 6px; background: #FCE6AE; border: 1px solid #C29236; color: #5C4012; font-size: 20px; font-weight: 700; }
 
 /* ── Slack weekly cashflow mock (slide 35) ─────────────────────── */
 .slk-wrap { background: #FFFFFF; }
@@ -4329,8 +4327,15 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .tk-rows .ni-title { font-size: 20px; }
 .tk-foot .way-label { font-size: 22px; }
 /* ── Layout nits from the full-send pass ─────────────────────── */
-.me-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 24px; }
-.me-grid > * { flex: 0 0 calc((100% - 72px) / 4); max-width: calc((100% - 72px) / 4); box-sizing: border-box; }
+/* One readable scheduling detail alongside the six other month-end screens. */
+.me-grid { display: grid; grid-template-columns: 880px repeat(2, minmax(0, 1fr)); gap: 20px; align-items: start; }
+.me-grid > * { box-sizing: border-box; }
+.me-grid .me-tile { border-color: var(--presentation-outline); }
+.me-grid .me-tile figcaption { padding: 10px 14px 12px; line-height: 1.15; }
+.me-grid .me-feature { grid-column: 1; grid-row: 1 / span 3; align-self: center; }
+.me-grid .me-feature figcaption { font-size: 26px; padding: 18px 24px; }
+.me-detail { position: relative; overflow: hidden; aspect-ratio: 1125 / 664; border-bottom: 2px solid var(--presentation-divider); }
+.me-detail img { position: absolute; width: 170.6667%; max-width: none; height: auto; aspect-ratio: auto; left: -20.3556%; top: -35.3916%; border: 0; }
 .rec-grid { align-items: center; }
 .shot.window figcaption { letter-spacing: 0; }
 .xl-shot { border-radius: 22px; overflow: hidden; background: #F7F7F3; border: 1px solid rgba(30,30,70,0.18); box-shadow: var(--shadow-lift); }
@@ -4365,6 +4370,80 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .ty-li-text { display: flex; flex-direction: column; line-height: 1.15; }
 .ty-left .ty-follow b { font-size: 23px; font-weight: 700; color: var(--ink); }
 .ty-left .ty-follow small { display: block; font-size: 17px; color: var(--ink-500); margin-top: 4px; }
+
+/* ── Deck-wide polish for bright presentation screens ────────── */
+:root {
+  /* Strong outlines are deliberate: faint edges wash out on stage screens. */
+  --presentation-outline: rgba(30,30,70,0.25);
+  --presentation-divider: rgba(30,30,70,0.28);
+  --shadow-lift:
+    0 1px 2px rgba(30,30,70,0.04),
+    0 12px 28px -18px rgba(74,86,184,0.14),
+    0 24px 48px -28px rgba(30,30,70,0.16);
+}
+.why-card, .tk-rows, .way-side, .vs-card, .tw-card, .kb-mock, .perm-card {
+  border-color: var(--presentation-outline);
+  border-radius: 22px;
+}
+.tk-row + .tk-row, .way-tool + .way-tool, .tk-rows .tk-foot {
+  border-top: 2px solid var(--presentation-divider);
+}
+.why-headline { line-height: 1.12; }
+.why-tagline { border-top: 2px solid var(--presentation-divider); }
+.way-side { box-shadow: var(--shadow-card); }
+.press-card {
+  border-color: rgba(255,255,255,0.25);
+  box-shadow: 0 16px 32px -20px rgba(0,0,0,0.38);
+}
+.press-meta .press-source, .press-meta .press-role { color: var(--periwinkle-200); }
+.shot.window figcaption { padding: 10px 20px; border-bottom: 2px solid var(--presentation-divider); }
+
+/* Keep the process and the differing totals legible from the room. */
+.pipe-hero { gap: 16px; }
+.ph-arrow { font-size: 34px; }
+.ph-chip.core { box-shadow: 0 12px 26px -16px rgba(30,30,70,0.4); }
+.ph-cand .t { font-size: 26px; width: 176px; }
+.ph-cand .pct { font-size: 24px; }
+.prob-grid { width: 1560px; gap: 130px; }
+.prob-window { border-radius: 22px; border-color: var(--presentation-outline); }
+.prob-hdr { border-bottom: 2px solid var(--presentation-divider); }
+.prob-body { padding: 38px 30px; gap: 22px; }
+.prob-ai { font-size: 24px; }
+.prob-ai em {
+  display: inline-block; font-size: 32px; font-weight: 700;
+  line-height: 1.25; padding: 1px 4px; border-radius: 4px;
+  background: #FDF0D3; color: var(--ink);
+}
+.prob-delta { box-shadow: 0 8px 20px -12px rgba(15,16,48,0.4); }
+.tok-btn, .perm-btn { box-shadow: 0 6px 14px -8px rgba(224,64,64,0.32); }
+.perm-head { border-bottom: 2px solid var(--presentation-divider); }
+.vs-card { box-shadow: var(--shadow-card); }
+
+/* Feature screens: a consistent, readable Slack inset. */
+.slack-inset {
+  width: 520px; zoom: 0.85; right: -12px; bottom: -18px;
+  border-color: var(--presentation-outline);
+  box-shadow: 0 18px 40px -20px rgba(15,16,48,0.36), 0 0 0 4px var(--paper);
+}
+.slide[data-label="Management accounts"] .slack-inset { zoom: 0.85; }
+.slack-inset.cashflow-slack { width: 450px; }
+.slack-inset .sk-section { font-size: 16px; }
+.slack-inset .sk-context { font-size: 14px; }
+.slack-inset .sk-att { font-size: 15px; }
+.slack-inset .sk-fields { font-size: 15px; }
+.slack-inset .sk-header { font-size: 20px; }
+/* Keep the VAT total and the final deadline markers visible above the inset. */
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .slack-inset {
+  width: 470px; zoom: 0.8; right: -30px; bottom: -28px;
+}
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .sk-section { font-size: 14.5px; }
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .sk-context { font-size: 12.5px; }
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .sk-att { font-size: 13.5px; }
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .sk-fields { font-size: 14px; }
+.slide:is([data-label="VAT reviews"], [data-label="Deadlines"]) .sk-header { font-size: 18px; }
+.vc-col.warn .tk-row { flex: 1; }
+.cw-grid .tk-rows.ni { padding-bottom: 24px; }
+
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
