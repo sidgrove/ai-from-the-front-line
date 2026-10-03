@@ -45,6 +45,7 @@ There is one folder for each active slide, in rendered order. Put assets used on
 | 39 | VAT reviews | `39-vat-reviews/` |
 | 40 | Month end | `40-month-end/` |
 | 41 | The hub | `41-the-hub/` |
+| 42 (new) | Client dashboards | `41b-client-dashboards/` (added 3 Oct 2026; later folders keep their old numbers) |
 | 42 | Slides | `42-slides/` |
 | 43 | Websites | `43-websites/` |
 | 44 | Brand assets | `44-brand-assets/` |
