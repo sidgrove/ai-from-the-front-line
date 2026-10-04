@@ -1369,6 +1369,13 @@ deck-stage { background: #0a0a0a; }
   box-shadow: var(--shadow-lift);
 }
 .shot.tight img { border-radius: 14px; }
+/* 17: two loss headlines, stacked like cuttings. Crops keep the headline. */
+.loss-pair { position: relative; width: 860px; height: 660px; }
+.loss-pair .shot { position: absolute; width: 580px; }
+.loss-pair .shot img { aspect-ratio: 1.6; max-height: none; }
+.loss-back { left: 0; top: 0; transform: rotate(-2deg); }
+.loss-back figcaption { order: -1; }
+.loss-front { right: 0; bottom: 0; transform: rotate(1.5deg); z-index: 2; }
 .shot.tilt img { transform: rotate(-1.5deg); }
 .shot figcaption {
   font-family: var(--font-sans); font-size: 17px; color: var(--ink-300);
@@ -1599,7 +1606,6 @@ deck-stage { background: #0a0a0a; }
       <div class="bottombar"></div>
     </div>
   </section>
-
 
   <!-- ════════════════════════════════════════════════════════════════
        08 · WHY THE NARRATIVE IS SO STRONG
@@ -2021,10 +2027,17 @@ deck-stage { background: #0a0a0a; }
           </p>
         </div>
 
-        <figure class="shot">
-          <img src="images/slides/17-the-economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO" style="max-height: 660px; padding-bottom: 30px;">
-          <figcaption>Quartz · OpenAI’s leaked 2025 financials · a $38.5B loss</figcaption>
-        </figure>
+        <!-- Two labs, two record losses: OpenAI behind, Anthropic on top. -->
+        <div class="loss-pair">
+          <figure class="shot tight loss-back">
+            <img src="images/slides/17-the-economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO">
+            <figcaption>Quartz · OpenAI · a $38.5B loss</figcaption>
+          </figure>
+          <figure class="shot tight loss-front">
+            <img src="images/slides/17-the-economics/Anthropic financials.jpg" alt="The Telegraph: Anthropic reveals record $42bn loss as it heads for stock market debut">
+            <figcaption>The Telegraph · Anthropic · a $42bn loss</figcaption>
+          </figure>
+        </div>
       </div>
 
       <div class="bottombar"></div>
@@ -2112,7 +2125,6 @@ deck-stage { background: #0a0a0a; }
       <div class="bottombar"></div>
     </div>
   </section>
-
 
   <!-- ════════════════════════════════════════════════════════════════
        22 · SO HOW SHOULD WE USE IT?
@@ -2411,7 +2423,6 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-
   <!-- ════════════════════════════════════════════════════════════════
        29 · STAGE · AI CHAT INTERFACES.
        ════════════════════════════════════════════════════════════════ -->
@@ -2579,7 +2590,7 @@ deck-stage { background: #0a0a0a; }
       <div class="fill" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding-top: 28px;">
         <p class="build-kicker on-ink" style="justify-content: center;">Built with Claude Code</p>
         <h2 class="display" style="font-size: 150px;">Sidgrove <em>Intelligence.</em></h2>
-        <p class="sub" style="font-size: 30px; margin-top: 22px;">The app that now sits <em>at the centre of my practice.</em></p>
+        <p class="sub" style="font-size: 30px; margin-top: 22px;">The orchestration layer <em>at the centre of my practice.</em></p>
       </div>
     </div>
 
@@ -2588,271 +2599,6 @@ deck-stage { background: #0a0a0a; }
       <img src="images/slides/33-sidgrove-intelligence/practice-overview-oct03.png" alt="">
       <figcaption>Sidgrove Intelligence · practice overview · demo mode</figcaption>
     </figure>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       35 · SPOTLIGHT · DAILY CASHFLOW
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Daily cashflow">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">Daily cashflow. <em>Straight from the bank.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-          <figure class="shot window">
-            <img src="images/slides/34-daily-cashflow/cashflow-oct03.png" alt="Daily cashflow in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-            <figcaption></figcaption>
-          </figure>
-          <div class="slack-inset cashflow-slack" aria-hidden="true">
-            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-            <img class="sk-image" src="images/slides/34-daily-cashflow/slack-preview.png" alt="">
-          </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       36 · SPOTLIGHT · BOOKKEEPING
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Bookkeeping">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">Bookkeeping workflow <em>and comms.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-        <figure class="shot window">
-          <img src="images/slides/35-bookkeeping/bookkeeping-oct03.png" alt="Bookkeeping in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-          <figcaption></figcaption>
-        </figure>
-        <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-          <div class="si-msg">
-            <span class="si-av">S</span>
-            <div class="si-body">
-              <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="images/shared/slack/banner-bookkeeping.png" alt="">
-              <p class="sk-header">📒 Bookkeeping · Circle</p>
-              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>‘s books are up to date as of 22 Aug 2026. We’ve reconciled what we can - <b>42 unreconciled items</b> need your answers.</p>
-              <p class="sk-section">Answer the flagged items, hit <b>Send responses</b>, and we finalise the month.</p>
-              <hr class="sk-divider">
-              <div class="sk-actions"><span class="sk-btn primary">📊 Review &amp; approve</span></div>
-              <p class="sk-context">Sent by <span class="sk-mention">@Dave Sellick</span> · <b>Sidgrove</b> - reply here with any questions.</p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       37 · SPOTLIGHT · DEADLINES
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Deadlines">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">Deadlines <em>and alerts.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-        <figure class="shot window">
-          <img src="images/slides/36-deadlines/deadlines-oct03.png" alt="Deadlines in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-          <figcaption></figcaption>
-        </figure>
-        <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-          <div class="si-msg">
-            <span class="si-av">S</span>
-            <div class="si-body">
-              <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="images/shared/slack/banner-deadlines.png" alt="">
-              <p class="sk-context">📅 Sat 22 Aug 2026  ·  📋 Annual accounts <b>2</b> open  ·  🏛️ Confirmation statements <b>1</b> open</p>
-              <div class="sk-att" style="border-left-color:#6874b4">📋 <b>Annual accounts</b> (2)<br>🔵  <b>31 Oct 2026</b> (70d) - <u>Circle</u> · <i>period ending 31 Jan 2026</i> · <u>Open →</u><br>🔵  <b>31 Dec 2026</b> (131d) - <u>Circle</u> · <i>period ending 31 Mar 2026</i> · <u>Open →</u></div>
-              <div class="sk-att" style="border-left-color:#9aa3c8">🏛️ <b>Confirmation statements</b> (1)<br>⚪  <b>16 Mar 2027</b> (206d) - <u>Circle</u> · <i>period to 2 Mar 2027</i> · <u>Open →</u></div>
-              <div class="sk-att" style="border-left-color:#dfe1ee"><div class="sk-actions"><span class="sk-btn">↗️ Open practice deadlines</span></div></div>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       38 · SPOTLIGHT · MANAGEMENT ACCOUNTS
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Management accounts">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">Management accounts. <em>With notifications.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-        <figure class="shot window">
-          <img src="images/slides/37-management-accounts/management-accounts-oct03.png" alt="Management accounts in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-          <figcaption></figcaption>
-        </figure>
-        <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-          <div class="si-msg">
-            <span class="si-av">S</span>
-            <div class="si-body">
-              <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="images/shared/slack/banner-reporting.png" alt="">
-              <p class="sk-header">📊  Circle - Management Pack</p>
-              <p class="sk-context"><b>Period:</b> 2025-10-31  │  <b>Type:</b> PDF</p>
-              <hr class="sk-divider">
-              <p class="sk-section"><b>💡 Key Insights</b><br>•  Revenue £27.6k, down £20k on lower consultancy sales in the UK<br>•  EBITDA -£19.3k loss, down £22.7k as sales fell while overheads remained flat<br>•  Cash £232.4k, 19 months runway at current £12.3k average monthly burn</p>
-              <hr class="sk-divider">
-              <p class="sk-context">Revenue dropped sharply this month; monitor consultancy pipeline to avoid sustained operating losses.</p>
-              <hr class="sk-divider">
-              <div class="sk-actions"><span class="sk-btn">Open the October 2025 pack</span></div>
-              <p class="sk-context"><img class="sk-icon" src="images/shared/slack/google-drive.png" alt=""> Opens in Google Drive</p>
-              <p class="sk-context">Sent via <b>Sidgrove Intelligence</b></p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       39 · SPOTLIGHT · PAYROLL REVIEWS
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Payroll reviews">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">Payroll reviews <em>and client sign-off.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-        <figure class="shot window">
-          <img src="images/slides/38-payroll-reviews/payroll-oct03.png" alt="Payroll reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-          <figcaption></figcaption>
-        </figure>
-        <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-          <div class="si-msg">
-            <span class="si-av">S</span>
-            <div class="si-body">
-              <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <img class="sk-banner" src="images/shared/slack/banner-payroll.png" alt="">
-              <p class="sk-header">Approve May 2026 payroll</p>
-              <p class="sk-section"><span class="sk-mention">@channel</span><br><br><b>Circle</b>‘s <b>May 2026</b> payroll is ready for approval.</p>
-              <hr class="sk-divider">
-              <div class="sk-actions"><span class="sk-btn">Review and approve</span></div>
-              <p class="sk-context">Sent by <span class="sk-mention">@Dave Sellick</span> · <b>Sidgrove</b> - reply here if anything looks off.</p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-  <!-- ════════════════════════════════════════════════════════════════
-       40 · SPOTLIGHT · VAT REVIEWS
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="VAT reviews">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 28px;">
-        <h2 class="display" style="font-size: 84px;">VAT (Sales Tax) reviews <em>and client sign-off.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="shot-wrap">
-        <figure class="shot window">
-          <img src="images/slides/39-vat-reviews/vat-oct03.png" alt="VAT reviews in Sidgrove Intelligence" style="max-height: 720px;" onerror="this.closest('figure').classList.add('missing')">
-          <figcaption></figcaption>
-        </figure>
-        <div class="slack-inset" aria-hidden="true">
-          <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
-          <div class="si-msg">
-            <span class="si-av">S</span>
-            <div class="si-body">
-              <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
-              <p class="sk-header">🧾 Sign off Jul - Sep 2025 VAT - Circle</p>
-              <p class="sk-section"><span class="sk-mention">@channel</span></p>
-              <p class="sk-section"><b>Circle</b>‘s <b>Jul - Sep 2025</b> VAT return is ready for you to review. Sign it off in the app and we file it with HMRC.</p>
-              <img class="sk-image" src="images/shared/slack/vat-cover.png" alt="">
-              <div class="sk-fields"><div><b>Period</b><br>Jul - Sep 2025</div><div><b>VAT to pay HMRC</b><br>💷 <b>£10,885.36</b></div><div><b>Pay HMRC by</b><br>7 Nov 2025</div></div>
-              <hr class="sk-divider">
-              <div class="sk-actions"><span class="sk-btn primary">✅ Review and sign off</span></div>
-              <p class="sk-context">Sent by Dave Sellick · 22 Aug 2026 · <u>Open the PDF</u></p>
-            </div>
-          </div>
-        </div>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
-  </section>
-
-
-  <!-- ════════════════════════════════════════════════════════════════
-       41 · SPOTLIGHT · MONTH END
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Month end">
-
-
-    <div class="frame" style="--pad-y: 84px;">
-      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
-
-      <div style="margin-bottom: 36px;">
-        <h2 class="display" style="font-size: 84px;">Month end. <em>Schedules to cover all postings.</em></h2>
-      </div>
-      <div class="fill center-y">
-        <div class="me-grid">
-          <figure class="me-tile me-feature"><div class="me-detail"><img src="images/slides/40-month-end/accruals-oct03.png" alt="Accruals and prepayments: supplier costs scheduled across the monthly columns in Sidgrove Intelligence"></div><figcaption>Accruals &amp; prepayments</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/accrued-income-oct03.png" alt="Deferred and accrued revenue in Sidgrove Intelligence"><figcaption>Deferred &amp; accrued revenue</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/payroll-realloc-oct03.png" alt="Payroll reallocations in Sidgrove Intelligence"><figcaption>Payroll reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/direct-costs-oct03.png" alt="Direct cost reallocations in Sidgrove Intelligence"><figcaption>Direct cost reallocations</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/corp-tax-oct03.png" alt="Corporation tax in Sidgrove Intelligence"><figcaption>Corporation tax</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/rd-oct03.png" alt="R&amp;D credits in Sidgrove Intelligence"><figcaption>R&amp;D credits</figcaption></figure>
-          <figure class="me-tile"><img src="images/slides/40-month-end/cln-oct03.png" alt="Loan notes in Sidgrove Intelligence"><figcaption>Loan notes</figcaption></figure>
-        </div>
-      </div>
-
-      <div class="bottombar"></div>
-    </div>
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
@@ -2866,12 +2612,12 @@ deck-stage { background: #0a0a0a; }
 
       <div class="fill center-y">
         <div style="margin-bottom: 48px;">
-          <h2 class="display" style="font-size: 104px;">Sidgrove Intelligence sits <em>between me and my clients (in Slack).</em></h2>
+          <h2 class="display" style="font-size: 104px;">Hundreds of features.<br><em>One orchestration app.</em></h2>
         </div>
 
         <div class="wf-flow">
           <div class="wf-stage">
-            <div class="wf-stage-label">Your tools</div>
+            <div class="wf-stage-label">Practice toolset &amp; data</div>
             <div class="wf-sources">
               <div class="wf-chip"><img class="" src="images/shared/site/xero.svg" alt="">Xero</div>
               <div class="wf-chip"><img class="" src="images/shared/site/excel.png" alt="">Excel</div>
@@ -2894,17 +2640,17 @@ deck-stage { background: #0a0a0a; }
               <div class="wf-row"><span class="wf-tick">✓</span> Data synced &amp; checked</div>
               <div class="wf-row"><span class="wf-tick">✓</span> Month-end review</div>
               <div class="wf-row"><span class="wf-tick">✓</span> Accruals &amp; prepayments</div>
-              <div class="wf-row wf-row-live"><span class="wf-live-dot"></span> Building your report pack…</div>
+              <div class="wf-row wf-row-live"><span class="wf-live-dot"></span> Building the report pack…</div>
             </div>
           </div>
 
           <div class="wf-connector"></div>
 
           <div class="wf-stage">
-            <div class="wf-stage-label">Back to you</div>
+            <div class="wf-stage-label">Client insights &amp; reporting</div>
             <div class="wf-outputs">
               <div class="wf-out">
-                <div class="wf-out-head"><img src="images/shared/site/slack.svg" alt="">#your-finances</div>
+                <div class="wf-out-head"><img src="images/shared/site/slack.svg" alt="">#circle_finance</div>
                 <div class="wf-slack-msg">
                   <div class="wf-avatar">S</div>
                   <div>
@@ -2930,28 +2676,487 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-  <!-- ════════════════════════════════════════════════════════════════
-       42b · SPOTLIGHT · CLIENT DASHBOARDS (names and figures blurred)
-       ════════════════════════════════════════════════════════════════ -->
-  <section class="slide" data-label="Client dashboards">
-
-
-    <div class="frame" style="--pad-y: 90px;">
+  <section class="slide" data-label="Practice &amp; client overview">
+    <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="fill" style="display: grid; grid-template-columns: 4fr 9fr; gap: 56px; align-items: center;">
-        <div>
-          <p class="build-kicker">Built with Claude Code</p>
-          <h2 class="display" style="font-size: 96px;">Bespoke <em>client dashboards.</em></h2>
-        </div>
-        <div class="dash-stack" aria-label="Three client dashboards, names and figures blurred">
-          <figure class="shot window d3"><img src="images/slides/41b-client-dashboards/c80-oct03.jpg" alt="" onerror="this.closest('figure').classList.add('missing')"><figcaption>Portfolio P&amp;L</figcaption></figure>
-          <figure class="shot window d2"><img src="images/slides/41b-client-dashboards/pricc-oct03.jpg" alt="" onerror="this.closest('figure').classList.add('missing')"><figcaption>Clinic</figcaption></figure>
-          <figure class="shot window d1"><img src="images/slides/41b-client-dashboards/haptic-oct03.jpg" alt="" onerror="this.closest('figure').classList.add('missing')"><figcaption>Studio</figcaption></figure>
+      <div class="feat-head"><h2 class="display">Practice &amp; client <em>overview</em></h2></div>
+      <div class="fill center-y">
+        <div class="duo">
+        <figure class="shot window"><img src="images/slides/33-sidgrove-intelligence/practice-overview-oct03.png" alt="Practice overview: every client with cash, bank lines, staff, packs, VAT, year end and confirmation statement"><figcaption></figcaption></figure>
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/client-overview.jpg" alt="A client overview: cash, net this month, things to action and the month-end checklist. Figures changed, names blurred"><figcaption></figcaption></figure>
         </div>
       </div>
 
       <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Deadlines">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Deadlines &amp; <em>HMRC</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/practice-deadlines.jpg" alt="Practice deadlines: what is next, then every client's year-end accounts, confirmation statements and VAT">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#filing-deadlines</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">8:00</span></p>
+                <p class="sk-header">🗓️ Filing deadlines</p>
+                <p class="sk-context">📅 Sunday 4 October &nbsp;·&nbsp; nothing overdue</p>
+                <p class="sk-section">📋&nbsp; <b>Annual accounts</b> &nbsp;·&nbsp; 7 open<br>🔵 This month: <b><span class="sk-link">Circle</span></b> · Sat 31 Oct · 27d</p>
+                <p class="sk-section">📋&nbsp; <b>Confirmation statements</b> &nbsp;·&nbsp; 5 open</p>
+                <div class="sk-actions"><span class="sk-btn">↗️ Open Inform Direct</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Tasks">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Task <em>management</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/tasks.jpg" alt="Tasks: inbox, projects, overdue work, the day planner and filing deadlines in one place"><figcaption></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Automations">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Practice <em>automations</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/automations.jpg" alt="Practice automations: 50 automations, each run tracked, failures and overdue runs flagged"><figcaption></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Daily cashflow">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Daily <em>cashflow</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/cashflow.jpg" alt="Circle cash flow: every bank, a 12-month balance line and spend by supplier with real logos">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset cashflow-slack feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <img class="sk-image" src="images/slides/34-daily-cashflow/slack-preview.png" alt="">
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Cash forecast">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">13-week cash <em>forecast</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/st-cashflow.jpg" alt="Circle 13-week cash flow forecast: cash today, coming in, going out, lowest point">
+            <figcaption></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Forecast">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Forecast <em>P&amp;L</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/forecast.jpg" alt="Circle forecast P&amp;L: actuals rolling into a 12-month forecast">
+            <figcaption></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Management accounts">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Management <em>accounts</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/pack-revenue.jpg" alt="Circle live management accounts pack: revenue by month and cumulative revenue against last year">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:00</span></p>
+                <img class="sk-banner" src="images/shared/slack/banner-reporting.png" alt="">
+                <p class="sk-header">📊 Management accounts sign-off request - Circle - June MI</p>
+                <p class="sk-section"><i>Revenue up 21% on last June; cash £247k at month end, 7.9 months of cover.</i></p>
+                <div class="sk-actions"><span class="sk-btn primary">✅ Sign off</span><span class="sk-btn">🚩 Flag issue</span><span class="sk-btn">📊 Open report</span></div>
+              </div>
+            </div>
+            <div class="si-thread">
+              <span class="si-av sm">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:41</span></p>
+                <p class="sk-section">✅ <b>Signed off</b> by <b>Olivia</b> at 4 Oct, 09:41. Thank you, we take it from here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Bookkeeping">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Book<em>keeping</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/bookkeeping.jpg" alt="Circle bookkeeping: every transaction with its supplier, the questions for the client and their answers">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">9:02</span></p>
+                <img class="sk-banner" src="images/shared/slack/banner-bookkeeping.png" alt="">
+                <p class="sk-header">📒 Bookkeeping · Circle</p>
+                <p class="sk-section"><span class="sk-mention">@channel</span> <b>Circle</b>'s books are up to date as of 4 Oct 2026. <b>12 unreconciled items</b> need your answers.</p>
+                <div class="sk-actions"><span class="sk-btn primary">✅ Review and answer</span></div>
+              </div>
+            </div>
+            <div class="si-thread">
+              <span class="si-av sm">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">11:18</span></p>
+                <p class="sk-section">🎉 <b>Responses are in - thank you, Olivia!</b><br><b>12 of 12</b> flagged items answered - that's the full set. We take it from here.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Month end">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Prepayments &amp; <em>accruals</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/accruals.jpg" alt="Circle prepayments and accruals schedule with supplier logos, synced to Xero">
+            <figcaption></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Payroll reviews">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Payroll <em>review</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/payroll.jpg" alt="Circle payroll review: this month against last, line by line">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">10:15</span></p>
+                <img class="sk-banner" src="images/shared/slack/banner-payroll.png" alt="">
+                <p class="sk-header">Approve September 2026 payroll</p>
+                <p class="sk-section"><span class="sk-mention">@channel</span> <b>Circle</b>'s <b>September 2026</b> payroll is ready for approval. Paid on <b>Wed 30 Sep</b>.</p>
+                <div class="sk-actions"><span class="sk-btn">✅ Review and approve</span></div>
+              </div>
+            </div>
+            <div class="si-thread">
+              <span class="si-av sm">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">10:32</span></p>
+                <p class="sk-section">✅ <b>September 2026 payroll approved by Olivia</b></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="VAT reviews">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">VAT <em>review</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap with-slack">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/vat-detail.jpg" alt="Circle VAT review box by box, ready for the client to sign off">
+            <figcaption></figcaption>
+          </figure>
+          <div class="slack-inset feat-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_finance</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">11:40</span></p>
+                <p class="sk-header">🧾 Sign off Jul - Sep 2025 VAT - Circle</p>
+                <p class="sk-section"><span class="sk-mention">@channel</span> Ready for you to check. Sign it off in the app and we file it with HMRC.</p>
+                <div class="sk-fields"><span>📅 <b>Period</b><br>Jul - Sep 2025</span><span>💷 <b>VAT to pay HMRC</b><br><b>£10,885.36</b></span><span>⏰ <b>Pay HMRC by</b><br>7 Nov 2025</span></div>
+                <div class="sk-actions"><span class="sk-btn primary">✅ Review and sign off</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Group structure">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Group <em>structure</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <figure class="shot window">
+            <img src="images/slides/41a-app-showcase/st-biglove.jpg" alt="Group structure: eight companies under one owner, with revenue and cash. Names blurred, figures changed">
+            <figcaption></figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Intercompany">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Inter<em>company</em></h2></div>
+      <div class="fill center-y">
+        <div class="duo">
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/ic-matrix.jpg" alt="Intercompany matrix for an eight-company group: each pair balanced or with its difference. Names blurred, figures changed"><figcaption></figcaption></figure>
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/ic-recon.jpg" alt="Intercompany reconciliation of one pair: both ledgers side by side, month by month. Names blurred, figures changed"><figcaption></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Forms">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Client <em>forms</em></h2></div>
+      <div class="fill form-duo">
+        <div class="phone"><img src="images/slides/41a-app-showcase/form-phone.jpg" alt="Circle's new starter form on a phone: welcome, what to have to hand, personal details"></div>
+        <div class="form-side">
+          <p class="form-link"><span class="fl-lock" aria-hidden="true"></span>intelligence.sidgrove.com/f/circle/new-starter-form</p>
+
+          <div class="slack-inset form-slack" aria-hidden="true">
+            <div class="si-bar"><img src="images/shared/site/slack.svg" alt=""><span>#circle_payroll</span></div>
+            <div class="si-msg">
+              <span class="si-av">S</span>
+              <div class="si-body">
+                <p class="si-name">Sidgrove Intelligence <span class="sk-app">APP</span> <span class="si-time">14:21</span></p>
+                <p class="sk-section"><span class="sk-mention">@Dave Sellick</span> 🆕 <b>Sam</b> completed the New Starter Form for <b>Circle</b></p>
+                <div class="sk-actions"><span class="sk-btn">👀 Open in Sidgrove</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Proposals">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display"><em>Proposals</em></h2></div>
+      <div class="fill center-y">
+        <div class="duo">
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/proposal-cover.jpg" alt="A proposal for Circle: the cover and the current situation"><figcaption></figcaption></figure>
+        <figure class="shot window"><img src="images/slides/41a-app-showcase/proposal-fees.jpg" alt="The proposal fees: recurring monthly services with the first three months discounted"><figcaption></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Acapella">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">Acapella <em>dictation</em></h2></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <figure class="shot app-own"><img src="images/slides/41a-app-showcase/acapella.png" alt="Acapella by Sidgrove Intelligence: hold a key to dictate; today's dictations with the app each went into, time spoken and wait"></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       CLIENT DASHBOARDS · SECTION INTRO
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide ink" data-label="Client dashboards intro">
+    <div class="frame">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+      <div class="fill center-y">
+        <p class="build-kicker">Built with Claude Code</p>
+        <h2 class="display" style="font-size: 150px;">Client dashboards.<br><em>The big new opportunity.</em></h2>
+      </div>
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════════════════════════════
+       42b · SPOTLIGHT · CLIENT DASHBOARDS (names and figures blurred)
+       ════════════════════════════════════════════════════════════════ -->
+  <section class="slide" data-label="Client dashboards">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <!-- The clinic's own dashboard; four more screens follow. Figures are
+           changed (one hidden factor), the client's logo lightly blurred. -->
+      <div class="fill dash-show">
+                <div class="dash-browser">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-overview.jpg" alt="A clinic's own dashboard: revenue, practitioner pay, sessions and break-even. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Dashboard · Clinic">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
+      <div class="fill app-shot">
+        <div class="app-win">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-practitioners.jpg" alt="Practitioner economics: session value and fees for each practitioner. Demo names, figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Dashboard · Clinic">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
+      <div class="fill app-shot">
+        <div class="app-win">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-marketing.jpg" alt="Marketing review: spend as a share of revenue and spend per new patient. Figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Dashboard · Studio">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
+      <div class="fill app-shot">
+        <div class="app-win">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #C9492F;"><i></i>Studio</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-overview.jpg" alt="A studio's own dashboard: revenue, practitioner pay and twelve months against break-even. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.3%; width: 16%; height: 7.4%;" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Dashboard · Studio">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
+      <div class="fill app-shot">
+        <div class="app-win">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #C9492F;"><i></i>Studio</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-profit.jpg" alt="Studio profit: contribution, overheads and revenue against break-even. Figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.3%; width: 16%; height: 7.4%;" aria-hidden="true"></span></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="slide" data-label="Dashboard · Portfolio">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
+      <div class="fill app-shot">
+        <div class="app-win">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #3B82C4;"><i></i>Portfolio</span></div>
+          <img src="images/slides/41b-client-dashboards/portfolio-client.jpg" alt="A media group's client page: lifetime and 12-month revenue, gross profit and margin, insights, revenue by project and by month. Customers anonymised, figures changed, logo blurred">
+        </div>
+      </div>
     </div>
   </section>
 
@@ -3217,7 +3422,6 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-
   <!-- ════════════════════════════════════════════════════════════════
        50 · WITH CAUTION · SPREADSHEETS
        ════════════════════════════════════════════════════════════════ -->
@@ -3356,7 +3560,6 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-
   <!-- ════════════════════════════════════════════════════════════════
        52a · FINALE · SPOTLIGHT · AUTO BANK REC
        ════════════════════════════════════════════════════════════════ -->
@@ -3380,22 +3583,21 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       52b · FINALE · WHY IT DOESN'T WORK
+       52b · FINALE · WHY YOU SHOULDN’T TURN IT ON
        ════════════════════════════════════════════════════════════════ -->
-  <section class="slide paper-soft" data-label="Why it doesn't work">
+  <section class="slide paper-soft" data-label="Why you shouldn’t turn it on">
 
     <div class="frame" style="--pad-y: 96px;">
       <div class="topbar"><p class="section-tag">Wrapping up <em>· spotlight</em></p><span class="page-chip"></span></div>
 
       <div class="fill abr-grid">
         <div class="abr-copy">
-          <h2 class="display">Why it <em>doesn’t work.</em></h2>
-          <p class="sub">The model runs the process, <em>end to end.</em></p>
+          <h2 class="display">Why you shouldn’t <em>turn it on.</em></h2>
           <div class="abr-points r">
-            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg></span><p>Probabilistic matching <em>inside the process.</em> A different answer on a different day.</p></div>
-            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></svg></span><p>Wrong <em>with confidence.</em> A bad match looks exactly like a good one.</p></div>
-            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span><p>It marks <em>its own homework.</em> No independent check before it posts.</p></div>
-            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M22 17 13.5 8.5l-5 5L2 7"/><path d="M16 17h6v-6"/></svg></span><p>Posts to the live ledger. <em>Errors compound quietly</em> into the accounts.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="12" height="12" x="2" y="10" rx="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg></span><p>It makes mistakes <em>by design.</em> AI is only ever ‘probably’ right.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="m14.5 12.5-5 5"/><path d="m9.5 12.5 5 5"/></svg></span><p>It reconciles items <em>without documentation</em> or rules.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></svg></span><p>The human is <em>an afterthought:</em> a review at the end.</p></div>
+            <div class="abr-pt"><span class="abr-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg></span><p>If everything needs reviewing, <em>what’s the point?</em></p></div>
           </div>
         </div>
 
@@ -3409,12 +3611,12 @@ deck-stage { background: #0a0a0a; }
               <p class="xw-banner"><span class="xw-ok" aria-hidden="true"></span>42 of 51 lines reconciled automatically</p>
               <div class="xw-table">
                 <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">Reconciled</p></div><span class="xw-amt">£19,439</span><span class="xw-chip jax">Match</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row"><div><p class="xw-payee">Transfer to savings</p><p class="xw-how">Coded to <b class="bad">Sales</b></p></div><span class="xw-amt">£5,000</span><span class="xw-chip jax">Prediction</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row"><div><p class="xw-payee">Software subscription</p><p class="xw-how">Coded to <b class="bad">Travel</b>, VAT wrong</p></div><span class="xw-amt">£191</span><span class="xw-chip jax">Memory</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row wrong"><div><p class="xw-payee">Harlow &amp; Co <span class="xw-err">Wrong customer</span></p><p class="xw-how">Matched to INV-1042, <b class="bad">Brightwell Ltd</b></p></div><span class="xw-amt">£4,800</span><span class="xw-chip jax">Match</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row wrong"><div><p class="xw-payee">Software subscription <span class="xw-err">Wrong account</span></p><p class="xw-how">Coded to <b class="bad">Travel</b>, VAT wrong</p></div><span class="xw-amt">£191</span><span class="xw-chip jax">Memory</span><span class="xw-tick" aria-hidden="true"></span></div>
               </div>
             </div>
           </div>
-          <figcaption><span class="way-verdict r">As deployed</span><span>Every row is green. <b>Two of them are wrong.</b></span></figcaption>
+          <figcaption><span class="way-verdict r">As deployed</span><span>Xero ticked all three. <b>Two are wrong.</b></span></figcaption>
         </figure>
       </div>
 
@@ -3452,7 +3654,7 @@ deck-stage { background: #0a0a0a; }
               <p class="xw-banner"><span class="xw-ok" aria-hidden="true"></span>46 of 51 lines matched by rules</p>
               <div class="xw-table">
                 <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">exact match, <b>same every run</b></p></div><span class="xw-amt">£19,439</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row"><div><p class="xw-payee">Transfer to savings</p><p class="xw-how">account-to-account</p></div><span class="xw-amt">£5,000</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
+                <div class="xw-row"><div><p class="xw-payee">Harlow &amp; Co</p><p class="xw-how">Matched to INV-1047, <b>by reference</b></p></div><span class="xw-amt">£4,800</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
                 <div class="xw-row flag"><div><p class="xw-payee">Unknown payee</p><p class="xw-how">No rule matched<br><b>flagged, not posted</b></p></div><span class="xw-amt">£4,120</span><span class="xw-btn">Review</span></div>
               </div>
             </div>
@@ -3595,6 +3797,8 @@ deck-stage { background: #0a0a0a; }
       <div class="bottombar"></div>
     </div>
   </section>
+
+
   -->
 
 </deck-stage>
@@ -3638,7 +3842,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["The objection: humans make mistakes too. Maybe it is better; it is certainly different. It fails in ways a person would not, it is confident either way, and it is very good at making a wrong answer look finished.","It is being pushed into jobs we already have deterministic tools for. And the comparison nobody makes: it is not better than a human using GenAI the right way. That is the whole of act three."],"ask":"'Your junior makes errors too.' Yes, and the errors are legible: you know where they come from and you can train them out. The model's errors are uncorrelated with difficulty and do not improve with telling it off."},
   {"say":["Do not take my word for it. Use it, properly, on real work. The mistakes show up within the hour; that is the experience everyone who actually tries it has, and nobody who only watched the demo."]},
   {"say":["Beat. And it is not only accuracy. Two more things the pitch leaves out: what it costs, and what it burns."]},
-  {"say":["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.","Any business case priced on today's rate is priced on a loss leader."],"src":["Quartz (Jun 2026), from audited 2025 accounts obtained by Ed Zitron and verified by the FT: revenue $13.1B, costs $34B, operating loss $20.9B, net loss $38.5B."],"ask":"'The $38.5B is mostly a one-off.' Correct: about $41.5B of it is a non-cash charge from the for-profit conversion. Strip it out and it is still a $21B operating loss on $13B of revenue, so the point stands. 'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed."},
+  {"say":["The unit cost is not published. What is visible: the flat-rate heavy seats lose money, investors cover it, and when they want it back they shrink the limit rather than raise the price. I hit the Max limit weekly; that is the mechanism.","Any business case priced on today's rate is priced on a loss leader."],"src":["Quartz (Jun 2026), from audited 2025 accounts obtained by Ed Zitron and verified by the FT: revenue $13.1B, costs $34B, operating loss $20.9B, net loss $38.5B.","The Telegraph: Anthropic reveals record $42bn loss as it heads for stock market debut. From its IPO filing; driven by the cost of training and running AI systems."],"ask":"'The $38.5B is mostly a one-off.' Correct: about $41.5B of it is a non-cash charge from the for-profit conversion. Strip it out and it is still a $21B operating loss on $13B of revenue, so the point stands. 'The API is gross-margin positive.' Reported, yes (SemiAnalysis, PitchBook 2026). The seat this room buys is the flat plan, and that is the one being rationed."},
   {"say":["And the bit the pitch never mentions: the environmental and the societal cost. It haemorrhages power and water. It is hoarding memory and components, so your electricity and your electronics cost more. And the data centres are landing on communities that did not ask for them."],"ask":"'Per query it is tiny.' Per answer, yes, and falling. The total is what doubles, and the total is what the grid, the water table and the next-door town feel."},
   {"say":["Not just me saying it. The Economist on memory prices; the UN asking AI firms to disclose emissions, water and energy; EESI on health risks around data centres; Civicus on communities pushing back."],"src":["The Economist, 'Memory lapse': the AI frenzy is creating a big problem for consumer electronics (2026).","Climate Home News, 23 Jun 2026: Guterres asks AI companies to reveal full environmental impacts.","EESI, 27 Jul 2026: Data Centers Are Hotbeds of Health Risks.","Civicus Lens: The cost of the AI boom, communities take on datacentres."]},
   {"say":["Act three. It is brilliant. So how do we use it without handing it the keys? First their answer, then mine."]},
@@ -3654,16 +3858,32 @@ deck-stage { background: #0a0a0a; }
   {"say":["Stage two: build. The default for the practice: use GenAI to build deterministic tools that run without it. Then a proper look at what I have actually built with Claude Code."]},
   {"say":["Deterministic is the core of the practice: pre-set logic, the same answer every run, testable once. This toolkit - rules, APIs, RPA, formulas, Power Query, VBA, Apps Script, Stream Deck, SaaS - is what most of my accounting still runs on. AI - OCR, ML, GenAI - augments that core; it never replaces it."]},
   {"say":["So how do I build those deterministic tools? Vibe coding: describe it, it codes it. Everything in this section - the app, the slides, the websites, the brand - was built this way."]},
-  {"say":["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo."]},
-  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same.","And the weekly cashflow report lands in Slack automatically: balance, net, spend, income, top payments. Nobody has to open the app."]},
-  {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
+  {"say":["Sidgrove Intelligence: the app that sits between my clients and the work I do. Every line of it was written with Claude Code. Solid surfaces, dense where it needs to be; it is a product, not a demo.","Think of it as an orchestration layer: Xero, the sheets, payroll and Slack, with one way in and one way out. And the future is embedding something like this directly into the ledger."]},
+  {"say":["Hundreds of features, and counting. One app. It sits between me and my clients, with Slack alongside: one way in and one way out for the whole firm, not fifteen apps stitched together.","And much more. It has become the central app between my clients and the work, with Slack alongside for live comms. The GenAI is in how it was built, not in what it posts."]},
+  {"say":["The practice overview: every client, their cash, what is due and what is late. And one click into any client: cash, what needs doing, and the month-end checklist."]},
   {"say":["Deadlines and alerts, integrated with the government platforms, so nothing depends on someone remembering."]},
+  {"say":["Task management, built in: every project, the day planned, and the filing deadlines sitting alongside the work."]},
+  {"say":["Fifty automations running across the practice, every run tracked. When one fails, it says so."]},
+  {"say":["Daily cashflow, pulled over the bank and ledger APIs every morning. This is the demo client, Circle; the real ones look the same.","And the weekly cashflow report lands in Slack automatically: balance, net, spend, income, top payments. Nobody has to open the app."]},
+  {"say":["The 13-week cash forecast: cash today, what is coming in and going out, and the lowest point before it happens."]},
+  {"say":["Forecasting: actuals roll straight into a 12-month forecast, line by line, with its own rules. This used to be a spreadsheet."]},
   {"say":["Management accounts hosted in the app, with notifications when a pack is ready and when it has been read."]},
+  {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
+  {"say":["Month end, one screen per posting. Seven of them: accruals and prepayments, deferred and accrued revenue, payroll reallocations, direct cost reallocations, corporation tax, R&D credits, loan notes.","Each screen works the posting out from the ledger and waits for me. The model wrote the screens; the screens do not use the model."]},
   {"say":["Payroll reviews with a client review workflow: I review, the client signs off, the trail is kept."]},
   {"say":["VAT reviews with the same client review workflow."]},
-  {"say":["Month end, one screen per posting. Seven of them: accruals and prepayments, deferred and accrued revenue, payroll reallocations, direct cost reallocations, corporation tax, R&D credits, loan notes.","Each screen works the posting out from the ledger and waits for me. The model wrote the screens; the screens do not use the model."]},
-  {"say":["And much more. It has become the central app between my clients and the work, with Slack alongside for live comms. The GenAI is in how it was built, not in what it posts."]},
-  {"say":["I build each client their own dashboard: a studio, a clinic, a portfolio P&L. Names and figures are blurred; the point is that it is built for them, in their colours, from their own data."]},
+  {"say":["Groups: the structure built from Companies House, who owns what and how each company is doing. Names blurred, figures changed."]},
+  {"say":["Intercompany: the matrix of every pair in the group, and any pair opened up side by side, both ledgers, month by month, so you can see where it went out."]},
+  {"say":["Client forms: a readable link the client opens on their phone, five minutes, and the practice hears in Slack the moment it comes back. The answers never go into Slack."]},
+  {"say":["Proposals, written and sent from the same app: the situation, the services, the fees, and the client accepts online."]},
+  {"say":["Acapella: my own dictation app, part of Sidgrove Intelligence. Hold a key, speak, and it types into whatever is open. It runs on the machine first, and every dictation is kept with where it went."]},
+  {"say":["And this is the big new opportunity. Every client gets their own dashboard, in their own colours, built from their own data, in days not months. Not a template: built for them."]},
+  {"say":["I build each client their own dashboard, in their colours, from their own data. This is a clinic. Figures are changed and the logo is blurred; everything else is real."]},
+  {"say":["The clinic sees what each practitioner brings in against what they are paid."]},
+  {"say":["And whether the marketing is paying for itself: spend per new patient, month by month."]},
+  {"say":["A chiropractic studio: a different business, so a different dashboard. Twelve months against break-even at a glance."]},
+  {"say":["And the profit view the owner actually reads: contribution, overheads, and the line they need to clear."]},
+  {"say":["And a media group: one client page, lifetime and last twelve months, with the insights written for them. Customers anonymised, figures changed."]},
   {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
   {"say":["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."]},
   {"say":["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."]},
@@ -3676,7 +3896,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["MCP: the plumbing that plugs a model straight into your apps - Xero, Slack, the inbox. Powerful, and the bit to be most careful with. Reading is one thing; giving it write access to the ledger is another. And anything it reads, a document, an email, a web page, can carry instructions it will follow: prompt injection. I let it read; I do not let it post."],"ask":"'The connectors are sandboxed.' The connector is; the model's judgement about what it just read is not."},
   {"say":["Oh, and Cowork. The product that does whole tasks end to end; I barely touch it. Niche use cases, lots of hype. Hand an agent a whole job unwatched and the best still fail most of the time."]},
   {"say":["The talk's namesake. Given everything I have said, one worked example: auto bank rec, the thing every vendor is shipping right now. Xero's JAX - Just Ask Xero - reconciles via four methods: Rule, Match, Memory, Prediction. The stated goal is 80%-plus of statement lines auto-reconciled in real time; over 100 million transactions reconciled in beta. How it is being deployed, versus how I believe it should be.","Joke: the tool that saves firms 4 hours per week per client, which would save me 32 hours per working day."],"src":["Xero blog: automatic bank reconciliation with JAX (beta), four methods, 80%+ goal, 100m+ transactions.","Practitioner testing (digit.business, Mar 2026): intercompany transfers coded wrong, batch and part payments mishandled, memory coding firing before the bill arrives, same subscription coded differently across weeks.","Slide image: Xero's own product shot of the Reconciled transactions page (xero.com/uk, automatic bank reconciliation page, Nov 2025). Slides 54-55 are laid out in the same Xero chrome; their rows are illustrative.","The 4 hours: Xero blog, What's new in Auto Bank Reconciliation, 14 Aug 2026, quoting one customer (Anthony Bishop, Sun City Legal Services): It saves probably about 4 hours a week. Per client is the joke, not Xero's claim."]},
-  {"say":["Why it does not work as deployed: probabilistic matching inside the process, so a different answer on a different day - practitioners found the same subscription coded correctly one week and wrong the next. Wrong with confidence: the mock on the right is the point - every row is green, a transfer coded to sales and a subscription with the wrong VAT look exactly like the good match. It marks its own homework, and it posts to the live ledger, so the errors compound quietly into the accounts."]},
+  {"say":["Why you should not turn it on. It makes mistakes by design: the model is only ever probably right - practitioners found the same subscription coded correctly one week and wrong the next. It reconciles items with no documentation behind them and no rule you can point to. The human is an afterthought, a review tacked on at the end - and the mock on the right shows why that review is hard: Xero ticks every row, yet a £4,800 receipt from Harlow matched to Brightwell's invoice - same date, same amount, wrong customer - and a subscription with the wrong VAT look exactly like the good match. So if everything needs reviewing, what is the point?"]},
   {"say":["How it could work, using everything from act three: deterministic rules do the bulk - same answer every run, testable once. Use GenAI to build the rules, not run the rec. Then AI as the exception layer on top: it raises a flag, not a posting, and a human takes the exceptions and signs."]},
   {"say":["Four things to take home. It will not replace us, not as claimed; it is being oversold. It is probabilistic, not intelligent: not correct every time, and it hallucinates by design. Copilot, never the pilot: never autonomous end to end, and nothing posted unreviewed. And use it every day: chat, build tools with Claude Code, and augment with dictation, add-ons, brand, sites and slides."]},
   {"say":["Thank you. Questions now or find me after."]}
@@ -4206,6 +4426,15 @@ deck-stage { background: #0a0a0a; }
 /* JAX's sparkle marks a line the model decided. Rules carry none. */
 .xw-chip.jax::after { content: ''; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cdefs%3E%3ClinearGradient id='s' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%2313B5EA'/%3E%3Cstop offset='1' stop-color='%232562FF'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M12 1c.7 6 5 10.3 11 11-6 .7-10.3 5-11 11-.7-6-5-10.3-11-11 6-.7 10.3-5 11-11z' fill='url(%23s)'/%3E%3C/svg%3E") center / contain no-repeat; }
 .xw-tick { width: 30px; height: 30px; border-radius: 50%; background: #E3F4EA url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='%23209155' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 17px no-repeat; }
+/* 55: Xero's green tick stays (that is its claim); the row wears the soft
+   red tint and says why on itself. */
+.xw-row.wrong { background: #FDEFF2; box-shadow: inset 4px 0 #C2415D; }
+.xw-err {
+  display: inline-flex; align-items: center; gap: 7px; margin-left: 12px; vertical-align: 2px;
+  padding: 6px 12px 6px 9px; border-radius: 999px; background: #FBDDE4; color: #7A1E36;
+  font-size: 17px; font-weight: 700; line-height: 1; white-space: nowrap;
+}
+.xw-err::before { content: ''; width: 14px; height: 14px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M6 6l12 12M18 6 6 18' fill='none' stroke='%237A1E36' stroke-width='3.5' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat; }
 .xw-row.flag { background: #FFF3D6; box-shadow: inset 3px 0 #C29236; }
 .xw-row.flag .xw-how b { color: #7A5E1E; white-space: nowrap; }
 .xw-btn { grid-column: 3 / span 2; justify-self: end; padding: 9px 18px; border-radius: 6px; background: #FCE6AE; border: 1px solid #C29236; color: #5C4012; font-size: 20px; font-weight: 700; }
@@ -4363,12 +4592,86 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .me-detail { position: relative; overflow: hidden; aspect-ratio: 1125 / 664; border-bottom: 2px solid var(--presentation-divider); }
 .me-detail img { position: absolute; width: 170.6667%; max-width: none; height: auto; aspect-ratio: auto; left: -21.7778%; top: -44.5783%; border: 0; }
 /* Client dashboards: three windows fanned back to front, the front one whole. */
-.dash-stack { position: relative; height: 720px; }
-.dash-stack .shot.window { position: absolute; width: 830px; }
-.dash-stack .shot.window img { max-height: none; }
-.dash-stack .d3 { left: 236px; top: 0; z-index: 1; }
-.dash-stack .d2 { left: 118px; top: 130px; z-index: 2; }
-.dash-stack .d1 { left: 0; top: 260px; z-index: 3; }
+/* The hub: each stage is one framed panel and its label is the panel's header,
+   never text floating above the content (Bible: frame the working area). */
+.wf-flow { grid-template-rows: auto; align-items: stretch; }
+.wf-flow > .wf-stage { display: flex; flex-direction: column; gap: 20px; padding: 20px 24px 26px; background: rgba(255,255,255,0.6); border: 1px solid var(--presentation-outline); border-radius: 28px; box-shadow: 0 10px 28px -20px rgba(30,30,70,0.25); }
+.wf-flow > .wf-stage:nth-child(1) { grid-column: 1; } .wf-flow > .wf-stage:nth-child(3) { grid-column: 3; } .wf-flow > .wf-stage:nth-child(5) { grid-column: 5; }
+.wf-flow > .wf-connector:nth-child(n) { grid-row: 1; align-self: center; }
+.wf-flow .wf-stage-label { align-self: stretch; justify-self: auto; display: flex; align-items: center; gap: 10px; padding-bottom: 14px; border-bottom: 1px solid var(--presentation-divider); font-size: 20px; font-weight: 600; color: var(--ink); }
+.wf-flow .wf-stage-label::before { content: ''; width: 9px; height: 9px; border-radius: 50%; background: var(--periwinkle-500); }
+.wf-flow > .wf-stage > :not(.wf-stage-label) { margin: auto 0; }
+/* Bright venue screens wash pale paper out: one step darker ground, so white
+   cards and app screens separate from it, and a firmer edge on every screen. */
+.slide { background: linear-gradient(160deg, #EDECF8 0%, #F0EFE9 46%, #EBEFE4 100%); }
+.slide.paper-soft { background: linear-gradient(160deg, #E8E7F3 0%, #EAE9E2 46%, #E6EADE 100%); }
+.shot img, .app-win, .dash-browser, .xw { border-color: rgba(30,30,70,0.30); }
+
+.shot.app-own { align-items: center; }
+.shot.app-own img { width: auto; max-width: 100%; max-height: 790px; border-radius: 16px; }
+
+/* Two screens side by side, level top and bottom. */
+.fill .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; }
+.fill .duo .shot img { height: 790px; max-height: none; object-fit: cover; object-position: left top; }
+
+/* App features (after The hub): a quiet page title, then the screen as deep as it fits. */
+.feat-head { margin-bottom: 18px; }
+.feat-head .display { font-size: 60px; margin: 0; }
+.feat-head ~ .fill .shot img { max-height: 790px; }
+.feat-head ~ .fill.app-shot .app-win { width: 1220px; }
+.feat-head ~ .fill.form-duo .phone { width: 330px; border-radius: 52px; padding: 12px; }
+.feat-head ~ .fill.form-duo .phone img { border-radius: 40px; }
+.shot-wrap.with-slack .slack-inset.feat-slack { width: 560px; zoom: 0.92; right: -34px; bottom: -30px; }
+.slack-inset .sk-actions { gap: 8px; }
+.slack-inset .si-thread { display: flex; gap: 10px; margin: 0 14px 14px 66px; padding: 10px 0 0; border-top: 1px solid #e8e8e8; }
+.slack-inset .si-thread .si-body { display: flex; flex-direction: column; gap: 4px; }
+.slack-inset .si-av.sm { width: 30px; height: 30px; border-radius: 6px; font-size: 14px; }
+.shot.window figcaption { font-family: var(--font-sans); letter-spacing: 0; }
+/* 42a: app run. The Slack message sits over the screen's lower right, as on 35-40. */
+.app-wrap { position: relative; }
+.app-wrap.has-slack .app-win { width: 1500px; }
+.app-wrap .slack-inset.app-slack { right: -40px; bottom: -26px; width: 540px; zoom: 0.9; }
+.sk-link { color: #1264a3; }
+/* Client logos on the dashboard screens: a soft veil over the corner. */
+.aw-img { position: relative; display: block; }
+.aw-img > img { display: block; width: 100%; height: auto; }
+.logo-veil { position: absolute; border-radius: 10px; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); background: rgba(255,255,255,0.18); }
+/* 42a: forms. The client's phone, the link, and the practice's Slack ping. */
+.fill.form-duo { display: flex; align-items: center; justify-content: center; gap: 110px; width: 100%; }
+.phone { width: 400px; padding: 14px; border-radius: 62px; background: #14152b; box-shadow: var(--shadow-lift), inset 0 0 0 2px rgba(255,255,255,0.08); }
+.phone img { display: block; width: 100%; height: auto; border-radius: 48px; }
+.form-side { display: flex; flex-direction: column; gap: 40px; width: 720px; }
+.form-link { margin: 0; align-self: flex-start; display: inline-flex; align-items: center; gap: 12px; padding: 14px 22px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); font-family: var(--font-sans); font-size: 23px; color: var(--ink-500); }
+.fl-lock { width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b5f86' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='11' x='3' y='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E") center / contain no-repeat; }
+.slack-inset.form-slack { position: relative; right: auto; bottom: auto; width: 100%; zoom: 1.45; }
+/* 42a: the app showcase. One browser window, as big as the slide allows. */
+.app-shot { display: flex; align-items: center; justify-content: center; }
+.app-win {
+  width: 1540px; border-radius: 20px; overflow: hidden; background: #fff;
+  border: 1px solid var(--presentation-outline); box-shadow: var(--shadow-lift);
+}
+.app-win > img { display: block; width: 100%; height: auto; }
+.app-win .db-tab { --c: var(--periwinkle-500); }
+/* 42b: client dashboards. A browser window; the tab dot wears the client's colour. */
+.dash-show { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
+.dash-head { align-self: stretch; display: flex; align-items: baseline; justify-content: space-between; gap: 32px; }
+.dash-head .display { font-size: 88px; margin: 0; }
+.dash-head .build-kicker { margin: 0; }
+.dash-browser {
+  width: 1500px; border-radius: 20px; overflow: hidden; background: #fff;
+  border: 1px solid var(--presentation-outline); box-shadow: var(--shadow-lift);
+}
+.dash-browser > img { display: block; width: 100%; height: auto; }
+.db-bar { display: flex; align-items: flex-end; gap: 4px; height: 58px; padding: 0 16px; background: #ECECF2; }
+.db-dots { align-self: center; display: flex; gap: 9px; margin: 0 26px 0 6px; }
+.db-dots i { width: 13px; height: 13px; border-radius: 50%; background: #ff5f57; }
+.db-dots i + i { background: #febc2e; } .db-dots i + i + i { background: #28c840; }
+.db-tab {
+  display: flex; align-items: center; gap: 11px; height: 46px; padding: 0 30px 0 24px;
+  border-radius: 13px 13px 0 0; background: #fff; color: var(--ink);
+  font-family: var(--font-sans); font-size: 20px; font-weight: 600;
+}
+.db-tab > i { width: 11px; height: 11px; border-radius: 50%; background: var(--c); }
 /* Joy pass (3 Oct 2026): icon tiles take a few calm house hues down a list, never a status colour;
    the vibe coding columns wear their header's tint. */
 .tk-rows .tk-row:nth-of-type(4n+2) .tk-icon, .tw-grid .tw-card:nth-child(4n+2) .tk-icon { background: rgba(150,110,220,0.10); border-color: rgba(150,110,220,0.26); }
