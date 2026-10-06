@@ -2986,7 +2986,7 @@ deck-stage { background: #0a0a0a; }
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
       <div class="feat-head"><h2 class="display">Month <em>end</em></h2><p class="ai-note"><b>Claude Sonnet</b> looks for missing prepayments <i>·</i> <b>Jev</b> ranks each finding</p></div>
-      <div class="fill center-y">
+      <div class="fill center-y also-wrap">
         <div class="mosaic wide-side">
           <figure class="shot window"><img src="images/slides/41a-app-showcase/accruals-oct06b.jpg" alt="Circle prepayments and accruals schedule with supplier logos, synced to Xero"><figcaption>Prepayments &amp; accruals</figcaption></figure>
           <div class="mosaic-col">
@@ -2994,6 +2994,7 @@ deck-stage { background: #0a0a0a; }
             <figure class="shot window"><img src="images/slides/41a-app-showcase/corp-tax-oct06.jpg" alt="Corporation tax accrual, month by month"><figcaption>Corporation tax</figcaption></figure>
           </div>
         </div>
+        <p class="also-row"><span class="also-label">Also</span><span class="also-chip"><span class="sg-ico xs a-info" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></span>Direct costs</span><span class="also-chip"><span class="sg-ico xs a-amber" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z"/><path d="M12 22V12"/><polyline points="3.29 7 12 12 20.71 7"/><path d="m7.5 4.27 9 5.15"/></svg></span>Stock</span><span class="also-chip"><span class="sg-ico xs a-emerald" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 7h6v6"/><path d="m22 7-8.5 8.5-5-5L2 17"/></svg></span>Accrued &amp; deferred revenue</span><span class="also-chip"><span class="sg-ico xs a-brand" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 18v-7"/><path d="M11.12 2.198a2 2 0 0 1 1.76.006l7.866 3.847c.476.233.31.949-.22.949H3.474c-.53 0-.695-.716-.22-.949z"/><path d="M14 18v-7"/><path d="M18 18v-7"/><path d="M3 22h18"/><path d="M6 18v-7"/></svg></span>Loan notes</span><span class="also-chip"><span class="sg-ico xs a-violet" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2v6a2 2 0 0 0 .245.96l5.51 10.08A2 2 0 0 1 18 22H6a2 2 0 0 1-1.755-2.96l5.51-10.08A2 2 0 0 0 10 8V2"/><path d="M6.453 15h11.094"/><path d="M8.5 2h7"/></svg></span>R&amp;D</span><span class="also-chip"><span class="sg-ico xs a-teal" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg></span>Home recharge</span></p>
       </div>
 
       <div class="bottombar"></div>
@@ -5108,6 +5109,11 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 /* Month end: the schedule leads, two other schedules beside it large enough to read. */
 .mosaic.wide-side { grid-template-columns: 1040px 636px; align-items: center; }
 .mosaic.wide-side .mosaic-col { gap: 20px; justify-content: center; }
+/* Month end: the schedules not pictured, as quiet tiles under the screens. */
+.mosaic.wide-side { grid-template-columns: 1086px 590px; }
+.also-row { display: flex; align-items: center; gap: 14px; margin: 26px 0 0; width: calc(100% + 96px); }
+.also-label { font-family: var(--font-sans); font-size: 21px; font-weight: 600; color: var(--ink-300); margin-right: 6px; }
+.also-chip { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); font-family: var(--font-sans); font-size: 21px; font-weight: 500; color: var(--ink); white-space: nowrap; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
