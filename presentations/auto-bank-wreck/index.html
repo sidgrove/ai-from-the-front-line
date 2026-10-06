@@ -3729,7 +3729,6 @@ deck-stage { background: #0a0a0a; }
       <div class="fill abr-grid">
         <div class="abr-copy">
           <h2 class="display">How it <em>could work.</em></h2>
-          <p class="sub">The model builds and watches the process. <em>It never runs it.</em></p>
           <div class="abr-points g">
             <div class="abr-pt"><span class="sg-ico a-emerald" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 17 2 2 4-4"/><path d="m3 7 2 2 4-4"/><path d="M13 6h8"/><path d="M13 12h8"/><path d="M13 18h8"/></svg></span><p>A cash coding style screen. <em>Review all suggested codings before pushing to the ledger.</em></p></div>
             <div class="abr-pt"><span class="sg-ico a-emerald" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"/><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg></span><p>GenAI suggests the rules, <em>with a quick add.</em></p></div>
@@ -3738,22 +3737,25 @@ deck-stage { background: #0a0a0a; }
           </div>
         </div>
 
-        <!-- The same Xero page run the other way: rules post, and the one line
-             no rule covers waits for a person. Rule tags carry no JAX sparkle. -->
+        <!-- The screen as Dave would have it: a cash coding style review. Every
+             suggested coding sits in one list, rules and GenAI suggestions told apart,
+             and nothing reaches the ledger until Post to ledger is pressed. -->
         <figure class="abr-exhibit">
-          <div class="xw" aria-label="Xero bank reconciliation, rules and review">
+          <div class="xw cc" aria-label="A cash coding style review screen for bank reconciliation">
             <div class="xw-nav"><img src="images/shared/site/xero-wordmark-white.svg" alt="Xero"></div>
-            <div class="xw-title"><span class="xw-x" aria-hidden="true"></span><p>Bank reconciliation</p><span class="xw-chip">Rules + review</span></div>
+            <div class="xw-title"><span class="xw-x" aria-hidden="true"></span><p>Bank reconciliation</p><span class="cc-auto"><i aria-hidden="true"></i>Auto publish: <b>Stripe rules only</b></span></div>
             <div class="xw-body">
-              <p class="xw-banner"><span class="xw-ok" aria-hidden="true"></span>46 of 51 lines matched by rules</p>
+              <div class="cc-acts"><p><b>51</b> suggested codings</p><span class="cc-btn ghost">Create 5 suggested rules</span><span class="cc-btn">Post to ledger</span></div>
               <div class="xw-table">
-                <div class="xw-row"><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">exact match, <b>same every run</b></p></div><span class="xw-amt">£19,439</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row"><div><p class="xw-payee">Harlow &amp; Co</p><p class="xw-how">Matched to INV-1047, <b>by reference</b></p></div><span class="xw-amt">£4,800</span><span class="xw-chip">Rule</span><span class="xw-tick" aria-hidden="true"></span></div>
-                <div class="xw-row flag"><div><p class="xw-payee">Unknown payee</p><p class="xw-how">No rule matched<br><b>flagged, not posted</b></p></div><span class="xw-amt">£4,120</span><span class="xw-btn">Review</span></div>
+                <div class="xw-row"><span class="cc-box" aria-hidden="true"></span><div><p class="xw-payee">Stripe Payout</p><p class="xw-how">Sales</p></div><span class="xw-amt">£19,439</span><span class="xw-chip">Rule</span></div>
+                <div class="xw-row"><span class="cc-box" aria-hidden="true"></span><div><p class="xw-payee">Harlow &amp; Co</p><p class="xw-how">INV-1047, by reference</p></div><span class="xw-amt">£4,800</span><span class="xw-chip">Rule</span></div>
+                <div class="xw-row ai"><span class="cc-box" aria-hidden="true"></span><div><p class="xw-payee">Wise · USD 2,400</p><p class="xw-how">FX match: <b>INV-1052</b>, $2,400</p></div><span class="xw-amt">£1,832</span><span class="xw-chip cc-ai">GenAI</span></div>
+                <div class="xw-row ai"><span class="cc-box" aria-hidden="true"></span><div><p class="xw-payee">Business Saver</p><p class="xw-how"><b>Bank transfer</b> between accounts</p></div><span class="xw-amt">£10,000</span><span class="xw-chip cc-ai">GenAI</span></div>
+                <div class="xw-row new"><span class="cc-box" aria-hidden="true"></span><div><p class="xw-payee">Notion</p><p class="xw-how">Software · every month</p></div><span class="xw-amt">£96</span><span class="xw-chip cc-new">Suggested rule</span></div>
               </div>
             </div>
           </div>
-          <figcaption><span class="way-verdict g">Optimised</span><span>The rules post. The exceptions <b>wait for you.</b></span></figcaption>
+          <figcaption><span class="way-verdict g">Optimised</span><span>You review. <b>Then it posts.</b></span></figcaption>
         </figure>
       </div>
 
@@ -5163,6 +5165,38 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 /* The model line is a chip beside the title, not loose text out at the right. */
 .feat-head:not(.has-sub):has(.ai-note) { justify-content: flex-start; align-items: center; gap: 26px; }
 .ai-note { display: inline-block; padding: 8px 18px 8px 14px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); color: var(--ink-500); line-height: 1.2; position: relative; top: 4px; }
+/* Slide 74: the cash coding style review. One list of suggested codings, two actions above it. */
+.abr-exhibit .xw.cc { height: 570px; }
+.xw.cc .xw-body { gap: 12px; padding: 14px 20px 18px; }
+.xw.cc .xw-table { grid-template-rows: repeat(5, 1fr); }
+.xw.cc .xw-row { grid-template-columns: 24px minmax(0, 1fr) 100px 158px; gap: 16px; padding: 4px 18px; }
+.xw.cc .xw-payee { font-size: 21px; }
+.xw.cc .xw-how { margin-top: 4px; font-size: 18px; }
+.xw.cc .xw-amt { font-size: 21px; }
+.xw.cc .xw-chip { font-size: 18px; }
+.cc-box { width: 22px; height: 22px; border-radius: 4px; background: #0078C8 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='m6.5 12.5 3.5 3.5 7.5-8' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 16px no-repeat; }
+.xw-row.new .cc-box { background: #fff; box-shadow: inset 0 0 0 2px #A6AAB3; }
+.xw-row.ai { background: #F6F4FF; }
+.xw-row.new { background: #FFF8E6; }
+.xw-chip.cc-ai { background: #E9E5FF; color: #3B2E8C; }
+.xw-chip.cc-ai::before { content: ''; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233B2E8C' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z'/%3E%3C/svg%3E") center / contain no-repeat; }
+.xw-chip.cc-new { background: #FCE6AE; color: #5C4012; }
+.xw-chip.cc-new::before { content: ''; width: 15px; height: 15px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235C4012' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z'/%3E%3C/svg%3E") center / contain no-repeat; }
+.cc-acts { display: flex; align-items: center; gap: 12px; }
+.cc-acts p { margin-right: auto; font-size: 20px; color: #404756; }
+.cc-acts p b { font-weight: 700; color: #000A1E; }
+.cc-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 6px; background: #0078C8; border: 1px solid #0078C8; color: #fff; font-size: 20px; font-weight: 700; line-height: 1; white-space: nowrap; }
+.cc-btn.ghost { background: #fff; border-color: #A6AAB3; color: #003C64; }
+.cc-btn.ghost::before { content: ''; width: 17px; height: 17px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%230078C8' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z'/%3E%3C/svg%3E") center / contain no-repeat; }
+.cc-auto { margin-left: auto; display: inline-flex; align-items: center; gap: 10px; font-size: 19px; color: #404756; white-space: nowrap; }
+.cc-auto b { font-weight: 700; color: #000A1E; }
+.cc-auto i { position: relative; width: 38px; height: 22px; border-radius: 11px; background: #209155; }
+.cc-auto i::after { content: ''; position: absolute; right: 3px; top: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; }
+html[data-screen="venue"] .xw-chip.cc-ai { background: #DCD5FF; box-shadow: inset 0 0 0 2px #6A5BD0; }
+html[data-screen="venue"] .xw-chip.cc-new { background: #F9D777; box-shadow: inset 0 0 0 2px #8A6410; }
+html[data-screen="venue"] .xw-row.ai { background: #ECE8FF; }
+html[data-screen="venue"] .xw-row.new { background: #FFEDB8; }
+html[data-screen="venue"] .cc-btn.ghost { border: 2px solid #5FA8D6; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
