@@ -1,5 +1,5 @@
 // Builds the folder that goes on a USB stick: the deck with everything it
-// needs, three doorways (one per look) and a PDF of the standard look.
+// needs, four doorways (one per look) and a PDF of the standard look.
 //   node presentations/auto-bank-wreck/make-usb.mjs
 // Output: USB/Auto Bank Wreck/ at the repo root (not committed). Run it again
 // after any change to the deck. The PDF needs Playwright; point PLAYWRIGHT_FROM
@@ -30,17 +30,19 @@ const door = (title, look) => `<!doctype html>
 <body><p><a href="${rel}?screen=${look}">Open Auto Bank Wreck (${title})</a></p></body></html>
 `;
 fs.writeFileSync(path.join(out, '1 - Normal screen.html'), door('normal screen', 'standard'));
-fs.writeFileSync(path.join(out, '2 - Big screen.html'), door('big screen', 'venue'));
-fs.writeFileSync(path.join(out, '3 - Big screen, extra strong.html'), door('big screen, extra strong', 'venue-max'));
+fs.writeFileSync(path.join(out, '2 - Big screen, soft.html'), door('big screen, soft', 'venue-soft'));
+fs.writeFileSync(path.join(out, '3 - Big screen.html'), door('big screen', 'venue'));
+fs.writeFileSync(path.join(out, '4 - Big screen, extra strong.html'), door('big screen, extra strong', 'venue-max'));
 fs.writeFileSync(path.join(out, 'READ ME.txt'), [
   'Auto Bank Wreck - Dave Sellick',
   '',
-  'Double-click one of the three files. They are the same deck in three looks:',
+  'Double-click one of the four files. They are the same deck in four looks:',
   '  1 - Normal screen             laptops and good monitors',
-  '  2 - Big screen                a large bright LCD that washes colours out',
-  '  3 - Big screen, extra strong  if number 2 still looks washed out',
+  '  2 - Big screen, soft          a large screen that only washes out a little',
+  '  3 - Big screen                a large bright LCD that washes colours out',
+  '  4 - Big screen, extra strong  if number 3 still looks washed out',
   '',
-  'Arrow keys move through the slides. F11 for full screen. V steps through the three looks live.',
+  'Arrow keys move through the slides. F11 for full screen. V steps through the four looks live.',
   'N shows the speaker notes. No internet connection is needed.',
   'Auto Bank Wreck.pdf is the normal look, one slide per page.',
   '',

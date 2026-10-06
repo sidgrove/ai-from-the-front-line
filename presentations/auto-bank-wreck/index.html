@@ -5385,6 +5385,26 @@ html[data-screen="venue"] :is(.shot img, .app-win img, .dash-browser img, .me-ti
 html[data-screen="venue"] .rc-loupe { filter: brightness(0.96) contrast(1.06) saturate(1.5); }
 html[data-screen="venue"] .press-card img { filter: contrast(1.08); }
 
+/* ── Venue, soft (data-boost="soft" on top of the venue look): the same solid
+   edges and type floor, with the grounds, inks and edges halfway back to the
+   standard look, for a big screen that turns out kinder than feared. ── */
+html[data-screen="venue"][data-boost="soft"] {
+  --venue-edge: #9698B6; --venue-rule: #B4B6CC;
+  --ink: #19193F; --ink-900: #0D0E2B; --ink-700: #232451; --ink-500: #313560; --ink-300: #545982;
+  --periwinkle-700: #3C49B6; --periwinkle-500: #6773E4; --periwinkle-50: #E8EBFE;
+  --green-600: #40721B; --green-200: #DCF8C0;
+  --amber: #7D4E08; --claude: #D46A46;
+  --shadow-card: 0 0 0 1px var(--venue-edge), 0 14px 26px -16px rgba(11,11,38,0.40);
+  --shadow-lift: 0 0 0 1px var(--venue-edge), 0 20px 34px -20px rgba(11,11,38,0.44);
+}
+html[data-screen="venue"][data-boost="soft"] .slide { background: linear-gradient(160deg, #E9E8F7 0%, #EEEDE8 46%, #E7EDE1 100%); }
+html[data-screen="venue"][data-boost="soft"] .slide.paper-soft { background: linear-gradient(160deg, #E3E2F3 0%, #E8E7E0 46%, #E1E7DA 100%); }
+html[data-screen="venue"][data-boost="soft"] .slide.ink { background: var(--ink); }
+html[data-screen="venue"][data-boost="soft"] .slide:is([data-label="Cover"], [data-label="Thank you"]) { background: linear-gradient(150deg, #D0CFF8 0%, #DDDAFA 40%, #E8E5FA 100%) !important; }
+html[data-screen="venue"][data-boost="soft"] .slide.peach { background: linear-gradient(140deg, #FAD2C1 0%, #F9DDD2 60%, #F5E6DF 100%) !important; }
+html[data-screen="venue"][data-boost="soft"] .slide[data-label="Copilot, never the pilot"] { background: linear-gradient(160deg, #EFEFF7 0%, #EEEDE8 46%, #E9EDE4 100%) !important; }
+html[data-screen="venue"][data-boost="soft"] .slide[data-label="Asbestos era"] { background: linear-gradient(155deg, #0D0E2B 0%, #19193F 55%, #252757 100%) !important; }
+
 /* ── Venue, extra strong (data-boost="max" on top of the venue look): the
       fallback when the real screen still washes the venue look out. Deeper
       grounds, heavier edges and type, screenshots pushed harder. It is heavy
@@ -5490,16 +5510,16 @@ html[data-screen="venue"][data-boost="max"] .slide[data-label="Claude Cowork"] .
   })();
 </script>
 <script>
-  // Three looks: standard (default), venue (big bright LCD) and venue-max (the
-  // venue look pushed further). ?screen= on the URL sets it, as venue.html and
+  // Four looks: standard (default), venue-soft (the venue look eased back),
+  // venue (big bright LCD) and venue-max (the venue look pushed further). ?screen= on the URL sets it, as venue.html and
   // venue-max.html do. V steps through them live and the choice is
   // remembered per deck; a ?screen= on the URL always wins on load. The look is
   // named in the notes panel and, for two seconds after a flip, in the corner.
   (() => {
     const root = document.documentElement;
     const key = 'deck-stage:screen:' + (location.pathname || '/');
-    const LOOKS = ['standard', 'venue', 'venue-max'];
-    const NAMES = { standard: 'Standard', venue: 'Venue', 'venue-max': 'Venue, extra strong' };
+    const LOOKS = ['standard', 'venue-soft', 'venue', 'venue-max'];
+    const NAMES = { standard: 'Standard', 'venue-soft': 'Venue, soft', venue: 'Venue', 'venue-max': 'Venue, extra strong' };
     const valid = (v) => (LOOKS.includes(v) ? v : null);
     const params = new URLSearchParams(location.search);
     const fromUrl = valid(params.get('screen'));
@@ -5518,7 +5538,7 @@ html[data-screen="venue"][data-boost="max"] .slide[data-label="Claude Cowork"] .
       current = v;
       // The extra strong look is the venue look plus a boost.
       root.setAttribute('data-screen', v === 'standard' ? 'standard' : 'venue');
-      if (v === 'venue-max') root.setAttribute('data-boost', 'max'); else root.removeAttribute('data-boost');
+      if (v === 'venue-max') root.setAttribute('data-boost', 'max'); else if (v === 'venue-soft') root.setAttribute('data-boost', 'soft'); else root.removeAttribute('data-boost');
       look.textContent = NAMES[v] + ' look';
       if (!announce) return;
       flag.textContent = NAMES[v] + ' look · V to switch';
