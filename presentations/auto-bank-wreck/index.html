@@ -3053,14 +3053,40 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-  <section class="slide" data-label="Acapella">
+  <!-- The three desktop apps, one hotkey each. The Setlist and Sidgrove Intelligence
+       windows are the live pages set in a replica of the desktop frame
+       (desktop/tasks FramedForm.cs, Theme.cs); Setlist's task titles are rewritten. -->
+  <section class="slide" data-label="Desktop apps">
     <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <div class="feat-head"><h2 class="display">Acapella <em>dictation</em></h2></div>
+      <div class="feat-head"><h2 class="display">Desktop <em>apps</em></h2></div>
       <div class="fill center-y">
-        <div class="shot-wrap">
-          <figure class="shot app-own"><img src="images/slides/41a-app-showcase/acapella.png" alt="Acapella by Sidgrove Intelligence: hold a key to dictate; today's dictations with the app each went into, time spoken and wait"></figure>
+        <div class="dapps">
+          <div class="dapp">
+            <div class="dapp-head">
+              <img class="dapp-mark" src="images/slides/41c-desktop-apps/acapella-icon.png" alt="">
+              <div class="dapp-id"><p class="dapp-name">Acapella</p><p class="dapp-was">Replaces Wispr Flow</p></div>
+            </div>
+            <img class="dapp-win" src="images/slides/41a-app-showcase/acapella.png" alt="The Acapella window: hold a key to dictate, and the day's dictations listed beneath">
+            <p class="dapp-keys"><kbd>Win</kbd><kbd>Left Ctrl</kbd></p>
+          </div>
+          <div class="dapp">
+            <div class="dapp-head">
+              <img class="dapp-mark" src="images/slides/41c-desktop-apps/setlist-icon.png" alt="">
+              <div class="dapp-id"><p class="dapp-name">Setlist</p><p class="dapp-was">Replaces Todoist</p></div>
+            </div>
+            <img class="dapp-win" src="images/slides/41c-desktop-apps/setlist.png" alt="The Setlist window: today's tasks laid out on the day, with the lists and what is overdue alongside">
+            <p class="dapp-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>T</kbd></p>
+          </div>
+          <div class="dapp">
+            <div class="dapp-head">
+              <img class="dapp-mark" src="images/slides/41c-desktop-apps/intelligence-icon.png" alt="">
+              <div class="dapp-id"><p class="dapp-name">Sidgrove Intelligence</p></div>
+            </div>
+            <img class="dapp-win" src="images/slides/41c-desktop-apps/intelligence.png" alt="The Sidgrove Intelligence window, open on the practice overview: every client with cash, staff, packs and what is due">
+            <p class="dapp-keys"><kbd>Ctrl</kbd><kbd>Alt</kbd><kbd>I</kbd></p>
+          </div>
         </div>
       </div>
 
@@ -3083,78 +3109,25 @@ deck-stage { background: #0a0a0a; }
   </section>
 
   <!-- ════════════════════════════════════════════════════════════════
-       42b · SPOTLIGHT · CLIENT DASHBOARDS (names and figures blurred)
+       42b · SPOTLIGHT · CLIENT DASHBOARDS (three client apps on one slide;
+       figures changed, customers anonymised, client logos veiled)
        ════════════════════════════════════════════════════════════════ -->
   <section class="slide" data-label="Client dashboards">
     <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
 
-      <!-- The clinic's own dashboard; four more screens follow. Figures are
-           changed (one hidden factor), the client's logo lightly blurred. -->
-      <div class="fill dash-show">
-                <div class="dash-browser">
-          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-overview.jpg" alt="A clinic's own dashboard: revenue, practitioner pay, sessions and break-even. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
+      <div class="cd-stage cd-a">
+        <div class="app-win cd-win cd-portfolio">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #3B82C4;"><i></i>Portfolio</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/portfolio-client.jpg" alt="A media group's client page: lifetime and 12-month revenue, gross profit and margin. Customers anonymised, figures changed, logo blurred"></span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Dashboard · Clinic">
-    <div class="frame" style="--pad-y: 56px;">
-      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
-      <div class="fill app-shot">
-        <div class="app-win">
-          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-practitioners.jpg" alt="Practitioner economics: session value and fees for each practitioner. Demo names, figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Dashboard · Clinic">
-    <div class="frame" style="--pad-y: 56px;">
-      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
-      <div class="fill app-shot">
-        <div class="app-win">
-          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-marketing.jpg" alt="Marketing review: spend as a share of revenue and spend per new patient. Figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Dashboard · Studio">
-    <div class="frame" style="--pad-y: 56px;">
-      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
-      <div class="fill app-shot">
-        <div class="app-win">
+        <div class="app-win cd-win cd-studio">
           <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #C9492F;"><i></i>Studio</span></div>
           <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-overview.jpg" alt="A studio's own dashboard: revenue, practitioner pay and twelve months against break-even. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.3%; width: 16%; height: 7.4%;" aria-hidden="true"></span></span>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Dashboard · Studio">
-    <div class="frame" style="--pad-y: 56px;">
-      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
-      <div class="fill app-shot">
-        <div class="app-win">
-          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #C9492F;"><i></i>Studio</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-profit.jpg" alt="Studio profit: contribution, overheads and revenue against break-even. Figures changed"><span class="logo-veil" style="left: 0.6%; top: 0.3%; width: 16%; height: 7.4%;" aria-hidden="true"></span></span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="slide" data-label="Dashboard · Portfolio">
-    <div class="frame" style="--pad-y: 56px;">
-      <div class="topbar"><p class="section-tag">What works <em>· client dashboards</em></p><span class="page-chip"></span></div>
-      <div class="fill app-shot">
-        <div class="app-win">
-          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #3B82C4;"><i></i>Portfolio</span></div>
-          <img src="images/slides/41b-client-dashboards/portfolio-client.jpg" alt="A media group's client page: lifetime and 12-month revenue, gross profit and margin, insights, revenue by project and by month. Customers anonymised, figures changed, logo blurred">
+        <div class="app-win cd-win cd-clinic">
+          <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-marketing.jpg" alt="A clinic's marketing review: spend as a share of revenue and spend per new patient, month by month. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
         </div>
       </div>
     </div>
@@ -3876,14 +3849,9 @@ deck-stage { background: #0a0a0a; }
   {"say":["Intercompany: the matrix of every pair in the group, and any pair opened up side by side, both ledgers, month by month, so you can see where it went out."]},
   {"say":["Client forms: a readable link the client opens on their phone, five minutes, and the practice hears in Slack the moment it comes back. The answers never go into Slack."]},
   {"say":["Proposals, written and sent from the same app: the situation, the services, the fees, and the client accepts online."]},
-  {"say":["Acapella: my own dictation app, part of Sidgrove Intelligence. Hold a key, speak, and it types into whatever is open. It runs on the machine first, and every dictation is kept with where it went."]},
+  {"say":["And it is not only in the browser. Three desktop apps, each one hotkey away. Acapella is my own dictation app: hold a key, speak, and it types into whatever is open; it replaced Wispr Flow. Setlist is my task manager; it replaced Todoist. And Sidgrove Intelligence itself, in its own window."]},
   {"say":["And this is the big new opportunity. Every client gets their own dashboard, in their own colours, built from their own data, in days not months. Not a template: built for them."]},
-  {"say":["I build each client their own dashboard, in their colours, from their own data. This is a clinic. Figures are changed and the logo is blurred; everything else is real."]},
-  {"say":["The clinic sees what each practitioner brings in against what they are paid."]},
-  {"say":["And whether the marketing is paying for itself: spend per new patient, month by month."]},
-  {"say":["A chiropractic studio: a different business, so a different dashboard. Twelve months against break-even at a glance."]},
-  {"say":["And the profit view the owner actually reads: contribution, overheads, and the line they need to clear."]},
-  {"say":["And a media group: one client page, lifetime and last twelve months, with the insights written for them. Customers anonymised, figures changed."]},
+  {"say":["Three of them. A media group: one page per customer, lifetime and last twelve months. A chiropractic studio: twelve months against break-even at a glance. And a clinic: whether the marketing is paying for itself, spend per new patient, month by month. Different businesses, so different dashboards. Figures are changed and the logos are blurred; everything else is real."]},
   {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
   {"say":["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."]},
   {"say":["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."]},
@@ -4607,9 +4575,6 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .slide.paper-soft { background: linear-gradient(160deg, #E8E7F3 0%, #EAE9E2 46%, #E6EADE 100%); }
 .shot img, .app-win, .dash-browser, .xw { border-color: rgba(30,30,70,0.30); }
 
-.shot.app-own { align-items: center; }
-.shot.app-own img { width: auto; max-width: 100%; max-height: 790px; border-radius: 16px; }
-
 /* Two screens side by side, level top and bottom. */
 .fill .duo { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 100%; }
 .fill .duo .shot img { height: 790px; max-height: none; object-fit: cover; object-position: left top; }
@@ -4618,7 +4583,6 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .feat-head { margin-bottom: 18px; }
 .feat-head .display { font-size: 60px; margin: 0; }
 .feat-head ~ .fill .shot img { max-height: 790px; }
-.feat-head ~ .fill.app-shot .app-win { width: 1220px; }
 .feat-head ~ .fill.form-duo .phone { width: 330px; border-radius: 52px; padding: 12px; }
 .feat-head ~ .fill.form-duo .phone img { border-radius: 40px; }
 .shot-wrap.with-slack .slack-inset.feat-slack { width: 560px; zoom: 0.92; right: -34px; bottom: -30px; }
@@ -4645,7 +4609,6 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .fl-lock { width: 18px; height: 18px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%235b5f86' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect width='18' height='11' x='3' y='11' rx='2'/%3E%3Cpath d='M7 11V7a5 5 0 0 1 10 0v4'/%3E%3C/svg%3E") center / contain no-repeat; }
 .slack-inset.form-slack { position: relative; right: auto; bottom: auto; width: 100%; zoom: 1.45; }
 /* 42a: the app showcase. One browser window, as big as the slide allows. */
-.app-shot { display: flex; align-items: center; justify-content: center; }
 .app-win {
   width: 1540px; border-radius: 20px; overflow: hidden; background: #fff;
   border: 1px solid var(--presentation-outline); box-shadow: var(--shadow-lift);
@@ -4653,15 +4616,6 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .app-win > img { display: block; width: 100%; height: auto; }
 .app-win .db-tab { --c: var(--periwinkle-500); }
 /* 42b: client dashboards. A browser window; the tab dot wears the client's colour. */
-.dash-show { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 30px; }
-.dash-head { align-self: stretch; display: flex; align-items: baseline; justify-content: space-between; gap: 32px; }
-.dash-head .display { font-size: 88px; margin: 0; }
-.dash-head .build-kicker { margin: 0; }
-.dash-browser {
-  width: 1500px; border-radius: 20px; overflow: hidden; background: #fff;
-  border: 1px solid var(--presentation-outline); box-shadow: var(--shadow-lift);
-}
-.dash-browser > img { display: block; width: 100%; height: auto; }
 .db-bar { display: flex; align-items: flex-end; gap: 4px; height: 58px; padding: 0 16px; background: #ECECF2; }
 .db-dots { align-self: center; display: flex; gap: 9px; margin: 0 26px 0 6px; }
 .db-dots i { width: 13px; height: 13px; border-radius: 50%; background: #ff5f57; }
@@ -4787,6 +4741,36 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .vc-col.warn .tk-row { flex: 1; }
 .cw-grid .tk-rows.ni { padding-bottom: 24px; }
 
+/* ── Desktop apps + client dashboards on one slide (6 Oct 2026) ───────────
+   Desktop apps: three apps side by side: mark, name, what it replaced, its
+   window, its hotkey. Client dashboards: three browser windows on one stage,
+   two behind and one in front, placed so no chart or headline figure is hidden. */
+.dapps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 0 -92px; }
+.dapp { display: flex; flex-direction: column; min-width: 0; }
+.dapp-head { display: flex; align-items: center; gap: 20px; height: 84px; margin-bottom: 22px; }
+.dapp-mark { width: 76px; height: 76px; border-radius: 18px; background: #fff; border: 1px solid rgba(30,30,70,0.30); }
+.dapp-id { min-width: 0; }
+.dapp-name { margin: 0; font-family: var(--font-serif); font-weight: 400; font-size: 46px; line-height: 1; color: var(--ink); white-space: nowrap; }
+.dapp-was { margin: 8px 0 0; font-family: var(--font-sans); font-size: 23px; font-weight: 500; line-height: 1.1; color: var(--ink-500); }
+.dapp-win {
+  display: block; width: 100%; aspect-ratio: 1186 / 940; object-fit: cover; object-position: left top;
+  border-radius: 9px; background: #fff; border: 1px solid rgba(30,30,70,0.34);
+  box-shadow: 0 2px 4px rgba(30,30,70,0.06), 0 26px 50px -24px rgba(15,16,48,0.42);
+}
+.dapp-keys { display: flex; justify-content: center; gap: 10px; margin: 26px 0 0; }
+.dapp-keys kbd {
+  min-width: 52px; padding: 9px 16px; border-radius: 11px; text-align: center;
+  background: #fff; border: 1px solid rgba(30,30,70,0.34); border-bottom-width: 4px;
+  font-family: var(--font-sans); font-size: 22px; font-weight: 600; line-height: 1.1; color: var(--ink);
+}
+.cd-stage { position: absolute; inset: 0; }
+.cd-stage .cd-win {
+  position: absolute; border-radius: 18px; border-color: rgba(30,30,70,0.36);
+  box-shadow: 0 2px 4px rgba(30,30,70,0.08), 0 34px 64px -26px rgba(15,16,48,0.50);
+}
+.cd-a .cd-portfolio { left: 60px; top: 112px; width: 880px; }
+.cd-a .cd-studio { left: 980px; top: 112px; width: 880px; }
+.cd-a .cd-clinic { left: 510px; top: 444px; width: 900px; }
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
