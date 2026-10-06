@@ -2922,6 +2922,22 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
+  <section class="slide" data-label="AI findings · schedule">
+    <div class="frame" style="--pad-y: 56px;">
+      <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+
+      <div class="feat-head"><h2 class="display">AI <em>findings</em></h2><p class="ai-note">Every attachment is read by <b>Gemini</b></p></div>
+      <div class="fill center-y">
+        <div class="shot-wrap">
+          <i class="lens wide" aria-hidden="true" style="left: 300px; top: 768px; background-size: 2400px auto; background-image: url('images/slides/41a-app-showcase/ai-schedule-oct06.jpg'); background-position: -372px -986px;"></i>
+          <figure class="shot window"><img src="images/slides/41a-app-showcase/ai-schedule-oct06.jpg" alt="The prepayments schedule with the new line the finding added: the software subscription spread at 540 a month from October 2026 to September 2027"><figcaption></figcaption></figure>
+        </div>
+      </div>
+
+      <div class="bottombar"></div>
+    </div>
+  </section>
+
   <section class="slide" data-label="Bookkeeping">
     <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
@@ -3953,6 +3969,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["Click the paperclip on any of them and there is the actual invoice from Xero, beside the line it belongs to. An annual subscription, paid up front: the period is right there on it."]},
   {"say":["And from that same line: add a prepayment, add an accrual, or attach it to an accrual already in the schedule. On the fly. Behind it, every attachment in Xero gets read by GenAI to find the period it covers."]},
   {"say":["And this is what it does with every attachment. It has read that invoice, it quotes the line it found, subscription period first of October to the thirtieth of September, and it proposes the prepayment: twelve months, five hundred and forty a month, to the right account. One click adds it to the schedule. I stay in charge of the click."]},
+  {"say":["One click, and it is in the schedule: five hundred and forty a month from October, linked back to the invoice, ready to post to Xero with everything else at month end."]},
   {"say":["Bookkeeping workflow and comms: what is outstanding, who is waiting on whom, and the messages to the client in one place."]},
   {"say":["Month end. Prepayments and accruals on the left, synced to Xero. And the other month-end processes run the same way: payroll reallocations, direct costs, the corporation tax accrual, each one a schedule that posts its own journal."]},
   {"say":["Payroll. The review on the left: this month against last, every variance explained. The journal it posts in the middle, balanced. And the client approves it in Slack."]},
@@ -4977,6 +4994,8 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 .tok-sec .tok-lbl .v.low { font-size: 30px; font-weight: 700; }
 /* 67: Cowork's prompt at the screenshot's own size, so the ask can be read. */
 .cw-grid { grid-template-columns: 1fr 826px; }
+/* A wide lens for one row of a table. */
+.lens.wide { width: 960px; height: 120px; border-radius: 60px; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
