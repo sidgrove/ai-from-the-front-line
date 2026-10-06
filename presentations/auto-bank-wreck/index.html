@@ -1592,6 +1592,7 @@ deck-stage { background: #0a0a0a; }
             <span class="pt"><em>And they’re already backtracking.</em></span>
           </p>
           <figure class="shot bub-cut">
+            <i class="mark" aria-hidden="true" style="left: 26px; top: 134px; width: 464px; height: 46px;"></i>
             <img src="images/slides/05-hype-bubble/reversal.png" alt="Forbes: companies fired workers for AI, now they want them back">
           </figure>
         </div>
@@ -2030,10 +2031,12 @@ deck-stage { background: #0a0a0a; }
         <!-- Two labs, two record losses: OpenAI behind, Anthropic on top. -->
         <div class="loss-pair">
           <figure class="shot tight loss-back">
+            <i class="mark" aria-hidden="true" style="left: 366px; bottom: 318px; width: 134px; height: 30px;"></i>
             <img src="images/slides/17-the-economics/openai-losses.png" alt="OpenAI 2025 financials leaked: $38.5B loss ahead of IPO">
             <figcaption>Quartz · OpenAI · a $38.5B loss</figcaption>
           </figure>
           <figure class="shot tight loss-front">
+            <i class="mark" aria-hidden="true" style="left: 6px; top: 178px; width: 204px; height: 44px;"></i>
             <img src="images/slides/17-the-economics/Anthropic financials.jpg" alt="The Telegraph: Anthropic reveals record $42bn loss as it heads for stock market debut">
             <figcaption>The Telegraph · Anthropic · a $42bn loss</figcaption>
           </figure>
@@ -3614,6 +3617,7 @@ deck-stage { background: #0a0a0a; }
          fills, each line tagged Rule, Match, Memory or Prediction. It runs off
          the bottom of the slide like the Sidgrove Intelligence hero. -->
     <figure class="abr-hero">
+      <i class="mark" aria-hidden="true" style="left: 347px; top: 123px; width: 166px; height: 24px;"></i>
       <img src="images/slides/53-spotlight-auto-bank-rec/xero-reconciled-transactions.png" alt="Xero's Reconciled transactions page: 96 of 120 statement lines auto-reconciled by JAX, each tagged Rule, Match, Memory or Prediction">
     </figure>
   </section>
@@ -4915,6 +4919,21 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
   background-color: #fff; background-repeat: no-repeat; background-size: 1956px auto;
   border: 4px solid #fff; box-shadow: 0 0 0 1px rgba(30,30,70,0.35), 0 18px 40px -14px rgba(15,16,48,0.5);
 }
+/* ── Calm wow (06/10), the slides either side of the app screens: one quiet
+      device per slide, on the one thing that should land. No wording touched.
+      .mark is a highlighter stroke over a press cutting or screenshot (the
+      amber already behind the two totals on "Two answers"); it multiplies,
+      so the print shows through. Placed inline, in px of its figure. The
+      rest is weight and size on a single figure. ── */
+.mark { position: absolute; z-index: 1; border-radius: 4px; background: #FBE4B0; mix-blend-mode: multiply; pointer-events: none; }
+.bub-cut { position: relative; }
+html[data-screen="venue"] .mark { background: #FAD67C; }
+/* 10: the winning token still only has a third of the vote. */
+.ph-cand.win .pct { font-weight: 700; color: var(--periwinkle-700); }
+/* 22: the figure the whole mock turns on. */
+.tok-sec .tok-lbl .v.low { font-size: 30px; font-weight: 700; }
+/* 67: Cowork's prompt at the screenshot's own size, so the ask can be read. */
+.cw-grid { grid-template-columns: 1fr 826px; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
