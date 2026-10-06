@@ -1458,7 +1458,7 @@ deck-stage { background: #0a0a0a; }
         <div style="display: flex; align-items: center; gap: 22px;">
           <div style="text-align: right;">
             <div style="font-family: var(--font-sans); font-size: 30px; font-weight: 700; color: var(--ink); letter-spacing: -0.025em; line-height: 1;">Dave Sellick</div>
-            <div class="byline" style="margin-top: 8px; font-size: 17px;">Founder, Sidgrove</div>
+            <div class="byline" style="margin-top: 8px;">Founder, Sidgrove</div>
           </div>
           <img src="images/slides/01-cover/headshot.jpg" alt="Dave Sellick" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; box-shadow: 0 10px 28px rgba(30,30,70,0.22); border: 3px solid rgba(255,255,255,0.85);">
         </div>
@@ -4787,6 +4787,209 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
 .vc-col.warn .tk-row { flex: 1; }
 .cw-grid .tk-rows.ni { padding-bottom: 24px; }
 
+/* ══ Two looks, one deck ═══════════════════════════════════════════
+   <html data-screen="standard"> is everything above: laptop, good monitor.
+   <html data-screen="venue"> is the block below: a big, bright LCD in a lit
+   room, where blacks lift to grey, pale tints vanish, thin lines break up
+   and colour dulls. Open venue.html (or add ?screen=venue), or press V to
+   flip live. Screen only, so print / PDF always exports the standard look.
+   Rules of the venue look: a denser ground so white cards separate; greys
+   moved to near-ink; every edge solid and 2px; tints swapped for real fills
+   and outlines; accents deeper; ink slides at full white; screenshots lifted
+   and framed; nothing under 22px. ══════════════════════════════════════ */
+#screen-flag {
+  position: fixed; left: 14px; top: 14px; z-index: 2147483002;
+  padding: 6px 12px; border-radius: 8px; background: rgba(0,0,0,0.82); color: #fff;
+  font-family: "DM Sans", ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 600;
+  pointer-events: none; user-select: none;
+}
+#screen-flag[hidden] { display: none; }
+.np-look { color: #D0F8B0; font-weight: 600; }
+/* Sweep, both looks: no typewriter face in the notes panel; small labels up
+   to the floor; the Claude kicker readable on ink. */
+.np-num, .np-hint { font-family: inherit; }
+.tok-sec .tok-lbl .v { font-size: 22px; }
+.ty-left .ty-follow small { font-size: 20px; }
+.slide.ink .build-kicker { color: var(--periwinkle-200); }
+@media print { #screen-flag { display: none !important; } }
+
+@media screen {
+/* ── Venue · tokens ── */
+html[data-screen="venue"] {
+  --venue-edge: #6B6E98;
+  --venue-rule: #8D90B2;
+  --ink: #14143A; --ink-900: #0B0B26; --ink-700: #1B1B45; --ink-500: #25274F; --ink-300: #3F4370;
+  --periwinkle-700: #2F3CB4; --periwinkle-500: #5360E0; --periwinkle-50: #E0E4FD;
+  --green-600: #33660F; --green-200: #D2F4AE;
+  --amber: #6F4300; --amber-soft: #FBE4B0; --claude: #CF5D36;
+  --presentation-outline: var(--venue-edge);
+  --presentation-divider: var(--venue-rule);
+  /* A defined edge plus a short, dense shadow: soft alpha lifts wash out. */
+  --shadow-card: 0 0 0 1px var(--venue-edge), 0 12px 20px -14px rgba(11,11,38,0.55);
+  --shadow-lift: 0 0 0 1px var(--venue-edge), 0 18px 28px -18px rgba(11,11,38,0.6);
+}
+/* ── Venue · grounds ── */
+html[data-screen="venue"] .slide { background: linear-gradient(160deg, #D3D1E8 0%, #D9D6CA 46%, #CFD6C3 100%); }
+html[data-screen="venue"] .slide.paper-soft { background: linear-gradient(160deg, #CCCAE2 0%, #D2CFC2 46%, #C8D0BC 100%); }
+html[data-screen="venue"] .slide.ink { background: var(--ink); color: #fff; }
+html[data-screen="venue"] .slide:is([data-label="Cover"], [data-label="Thank you"]) { background: linear-gradient(150deg, #C2C1F3 0%, #CFCCF4 40%, #DAD7F4 100%) !important; }
+html[data-screen="venue"] .slide.peach { background: linear-gradient(140deg, #F6C6B2 0%, #F4D2C4 60%, #EFDCD2 100%) !important; }
+html[data-screen="venue"] .slide[data-label="Copilot, never the pilot"] { background: linear-gradient(160deg, #D3D1E8 0%, #D9D6CA 46%, #CFD6C3 100%) !important; }
+html[data-screen="venue"] .slide[data-label="Asbestos era"] { background: linear-gradient(155deg, #0B0B26 0%, #14143A 55%, #1F2050 100%) !important; }
+/* Decorative hairline rings: 2px and visible, or they shimmer. */
+html[data-screen="venue"] .slide > div[aria-hidden][style*="border:1px"] { border-width: 2px !important; border-color: rgba(30,30,70,0.20) !important; }
+html[data-screen="venue"] .slide.ink > div[aria-hidden][style*="border:1px"] { border-color: rgba(196,202,250,0.16) !important; }
+
+/* ── Venue · chrome and type ── */
+html[data-screen="venue"] .topbar .section-tag { font-size: 22px; font-weight: 600; }
+html[data-screen="venue"] .page-chip { font-size: 20px; border: 2px solid var(--venue-edge); color: var(--ink); }
+html[data-screen="venue"] .slide.ink .section-tag, html[data-screen="venue"] .slide.ink .section-tag em { color: #fff; }
+html[data-screen="venue"] .slide.ink .page-chip { border-color: rgba(255,255,255,0.6); color: #fff; }
+html[data-screen="venue"] .slide.peach .section-tag, html[data-screen="venue"] .slide.peach .page-chip, html[data-screen="venue"] .slide.peach .page-chip .n { color: #5A1A0A; }
+html[data-screen="venue"] .slide.peach .page-chip { border-color: rgba(90,26,10,0.6); }
+html[data-screen="venue"] .slide.ink { --green: #CCFFA0; --periwinkle-200: #DCE0FF; --periwinkle: #B9C0FF; }
+html[data-screen="venue"] .slide.ink .display { color: #fff; }
+html[data-screen="venue"] .slide.ink .sub, html[data-screen="venue"] .slide.ink p.abr-claim { color: #fff !important; }
+html[data-screen="venue"] .slide.ink .display span[style*="line-through"] { color: rgba(255,255,255,0.8) !important; }
+html[data-screen="venue"] .slide.ink .stage-num span, html[data-screen="venue"] .slide.ink .stage-kicker { color: #fff; }
+html[data-screen="venue"] .slide .byline, html[data-screen="venue"] figure.shot figcaption, html[data-screen="venue"] .shot.window figcaption,
+html[data-screen="venue"] .press-meta .press-source, html[data-screen="venue"] .rd-row .auto, html[data-screen="venue"] .hc-src,
+html[data-screen="venue"] .prob-hdr .prob-hdr-label, html[data-screen="venue"] .prob-hdr .prob-run, html[data-screen="venue"] .tok-head .tok-pill,
+html[data-screen="venue"] p.perm-sub, html[data-screen="venue"] .appw-bar .appw-title,
+html[data-screen="venue"] .nt-head .nt-pill, html[data-screen="venue"] .nt-head .nt-meta, html[data-screen="venue"] .way-tool .way-star,
+html[data-screen="venue"] .cover-prompt .cover-prompt-kbd, html[data-screen="venue"] .abr-exhibit .way-verdict { font-size: 22px; }
+html[data-screen="venue"] .slide.ink .shot:not(.window) figcaption { color: #fff; }
+html[data-screen="venue"] .sub, html[data-screen="venue"] .why-tagline, html[data-screen="venue"] .tw-card .tk-text { font-weight: 500; }
+
+/* ── Venue · card edges and rules ── */
+html[data-screen="venue"] :is(.why-card, .env-card, .tk-rows, .kb-mock, .rcpt, .perm-card, .appw, .mode-card, .prob-window, .rec-col.most,
+  .vs-card, .tw-card, .hc-card, .ic-card, .det-card, .way-side, .tile, .ph-chip, .ph-drop, .flow-step, .wf-chip, .wf-app, .wf-out, .me-tile,
+  .abr-points, .xw, .shot.window, .app-win, .dash-browser, .xl-shot, .slack-inset, .form-link, .contact-card, .wl-claims, .way-other,
+  .vs-chip, .cb-input, .xl-grid, .cover-prompt, .qr-block img) { border-color: var(--venue-edge); }
+html[data-screen="venue"] .wf-flow > .wf-stage { border-color: var(--venue-edge); background: rgba(255,255,255,0.55); box-shadow: 0 0 0 1px var(--venue-edge); }
+html[data-screen="venue"] .shot:not(.window) img, html[data-screen="venue"] .rc-wrap img { border: 2px solid var(--venue-edge); }
+html[data-screen="venue"] .slide.ink .shot:not(.window) img { border-color: rgba(220,224,255,0.7); box-shadow: 0 18px 28px -18px #000; }
+html[data-screen="venue"] .shot.bub-cut img { border: 4px solid #fff; }
+html[data-screen="venue"] .shot.xl-shot img { border: 0; }
+html[data-screen="venue"] :is(.app-win, .dash-browser, .shot.window, .xl-shot, .me-tile, .xw, .abr-points, .phone) { box-shadow: var(--shadow-lift); }
+html[data-screen="venue"] .slide.ink .si-hero { box-shadow: 0 0 0 2px rgba(220,224,255,0.7); border-color: transparent; }
+html[data-screen="venue"] .slack-inset { box-shadow: 0 0 0 1px var(--venue-edge), 0 0 0 5px #fff, 0 18px 28px -14px rgba(11,11,38,0.6); }
+html[data-screen="venue"] .slack-inset.form-slack { box-shadow: 0 0 0 1px var(--venue-edge), 0 12px 20px -14px rgba(11,11,38,0.55); }
+html[data-screen="venue"] :is(.cover-prompt.big, .contact-card) { background: #fff; backdrop-filter: none; box-shadow: var(--shadow-lift); }
+html[data-screen="venue"] .ty-left .ty-follow { border: 1px solid var(--venue-edge); }
+html[data-screen="venue"] .qr-block.land { border-left: 2px solid var(--venue-rule); }
+html[data-screen="venue"] :is(.tk-row + .tk-row, .way-tool + .way-tool, .tk-foot, .why-tagline, .prob-hdr, .perm-head, .perm-note, .appw-bar,
+  .shot.window figcaption, .wf-app-header, .abr-pt + .abr-pt, .use-rows p, .rec-row + .rec-row, .wl-claim + .wl-claim, .way-rule, .det-eg,
+  .kb-foot, .stat-src, .prob-run-label, .me-tile img, .me-detail) { border-color: var(--venue-rule); }
+html[data-screen="venue"] .wf-flow .wf-stage-label { border-bottom: 2px solid var(--venue-rule); }
+html[data-screen="venue"] .db-bar { background: #D9DAE6; }
+html[data-screen="venue"] .shot.window figcaption, html[data-screen="venue"] .appw-bar { background: #E4E5F0; color: var(--ink-500); }
+html[data-screen="venue"] .appw-bar .appw-title { color: var(--ink-500); }
+
+/* ── Venue · tints become fills and outlines ── */
+html[data-screen="venue"] :is(.way-verdict, .mode-pill, .way-tool .way-star, .nt-pill, .wf-report-badge) { box-shadow: inset 0 0 0 2px currentColor; }
+html[data-screen="venue"] :is(.way-verdict, .mode-pill).g { background: #D5EDBB; }
+html[data-screen="venue"] :is(.way-verdict, .mode-pill).a { background: #F8E0A8; color: #6F4300; }
+html[data-screen="venue"] :is(.way-verdict, .mode-pill).r { background: #F4CFD9; color: #6E1930; }
+html[data-screen="venue"] :is(.way-verdict, .mode-pill):is(.c, .t) { background: #F8D3C2; color: #8C3413; }
+html[data-screen="venue"] :is(.way-verdict, .mode-pill).p, html[data-screen="venue"] .way-tool .way-star { background: #D9DDFB; }
+html[data-screen="venue"] :is(.tk-icon, .hc-ico) { border: 2px solid rgba(83,96,224,0.6); }
+html[data-screen="venue"] .hc-card.hc-hot, html[data-screen="venue"] .hc-card.hc-hot .hc-ico { border-color: var(--periwinkle-700); }
+html[data-screen="venue"] :is(.tk-rows .tk-row:nth-of-type(4n+2), .tw-grid .tw-card:nth-child(4n+2)) .tk-icon { background: rgba(150,110,220,0.24); border-color: rgba(120,80,200,0.7); }
+html[data-screen="venue"] :is(.tk-rows .tk-row:nth-of-type(4n+3), .tw-grid .tw-card:nth-child(4n+3)) .tk-icon { background: rgba(56,140,200,0.24); border-color: rgba(30,110,175,0.7); }
+html[data-screen="venue"] :is(.tk-rows .tk-row:nth-of-type(4n+4), .tw-grid .tw-card:nth-child(4n+4)) .tk-icon { background: rgba(31,130,120,0.22); border-color: rgba(20,110,100,0.7); }
+html[data-screen="venue"] :is(.tk-rows.vc-col .tk-row:nth-of-type(n), .det-card.good) .tk-icon { background: rgba(78,125,40,0.22); border-color: rgba(51,102,15,0.7); }
+html[data-screen="venue"] .tk-rows.vc-col.warn .tk-row:nth-of-type(n) .tk-icon { background: rgba(217,119,87,0.24); border-color: rgba(180,83,9,0.7); }
+html[data-screen="venue"] .why-card.t-teal .why-icon { background: rgba(31,90,82,0.20); border-color: rgba(31,90,82,0.7); }
+html[data-screen="venue"] .why-card.t-amber .why-icon { background: rgba(180,83,9,0.20); border-color: rgba(180,83,9,0.7); }
+html[data-screen="venue"] :is(.why-card.t-rose .why-icon, .det-card.bad .tk-icon) { background: rgba(122,30,53,0.18); border-color: rgba(122,30,53,0.7); }
+html[data-screen="venue"] .vc-title { background: #D5EDBB; border-bottom-color: var(--green-600); }
+html[data-screen="venue"] .vc-col.warn .vc-title { background: #F8DDB6; border-bottom-color: #B45309; color: #8A3D00; }
+html[data-screen="venue"] .vc-col.warn .tk-text em, html[data-screen="venue"] .why-card.t-amber :is(.why-label, .why-headline em) { color: #8A3D00; }
+html[data-screen="venue"] .ic { border-width: 2px; filter: saturate(1.6) brightness(0.95); }
+html[data-screen="venue"] .abr-points.r .abr-ic { background: #F6CBD4; box-shadow: inset 0 0 0 2px rgba(122,30,54,0.6); }
+html[data-screen="venue"] .abr-points.g .abr-ic { background: #C5E6D1; box-shadow: inset 0 0 0 2px rgba(21,90,49,0.6); }
+html[data-screen="venue"] .vs-chip { background: #E3E4F3; border-width: 2px; }
+html[data-screen="venue"] .vs-chip.you { background: var(--ink); border-color: var(--ink); }
+html[data-screen="venue"] .vs-card.bad .vs-chip:not(.who) { background: #F6DCE3; border-color: #7A1E35; color: #6E1930; }
+html[data-screen="venue"] :is(.vs-arr, .hub-arr, .ph-arrow, .flow-arr) { color: var(--periwinkle-700); font-weight: 700; }
+html[data-screen="venue"] .way-side .way-other { background: #fff; border-width: 2px; }
+html[data-screen="venue"] .app-tile { border-color: var(--tile-bd, var(--venue-edge)); }
+html[data-screen="venue"] .prob-ai, html[data-screen="venue"] .cb.ai, html[data-screen="venue"] .ph-chip.out { border: 2px solid var(--periwinkle-500); }
+html[data-screen="venue"] .prob-ai em { background: #FAD67C; }
+html[data-screen="venue"] .prob-run:is(.a, .b) { background: #D9DDFB; color: var(--ink-500); }
+html[data-screen="venue"] .ph-cand .bar { background: rgba(30,30,70,0.2); }
+html[data-screen="venue"] .ph-cand .bar i { background: var(--periwinkle-700); box-shadow: none; }
+html[data-screen="venue"] .ph-chip.tok { color: var(--ink); }
+html[data-screen="venue"] .kb-bubble.them { background: #DDDEEA; }
+html[data-screen="venue"] .kb-suggest { background: #D0D2E2; }
+html[data-screen="venue"] .kb-rowk i { border-color: var(--venue-rule); box-shadow: 0 2px 0 var(--venue-rule); }
+html[data-screen="venue"] .kb-rowk i.w { background: #C9CBDD; color: var(--ink); }
+html[data-screen="venue"] .kb-rowk i.space { color: var(--ink-300); }
+html[data-screen="venue"] .perm-row.prob { border: 2px solid #C98A10; }
+html[data-screen="venue"] .perm-app { border-width: 2px; border-color: var(--venue-rule); }
+html[data-screen="venue"] .cover-prompt-icon { background: #FBE3D8; border-color: rgba(207,93,54,0.6); }
+html[data-screen="venue"] .hc-area { fill: rgba(83,96,224,0.22); }
+html[data-screen="venue"] .rc-ring, html[data-screen="venue"] .rc-loupe { box-shadow: 0 0 0 8px rgba(83,96,224,0.35); }
+html[data-screen="venue"] .oe-wave i { background: var(--periwinkle-700); opacity: 1; }
+html[data-screen="venue"] .oe-mic { box-shadow: 0 0 0 6px rgba(83,96,224,0.4); }
+
+/* ── Venue · dark cards and ink slides ── */
+html[data-screen="venue"] .press-card { background: #1E1F52; border: 2px solid rgba(220,224,255,0.75); box-shadow: none; }
+html[data-screen="venue"] .press-meta .press-source, html[data-screen="venue"] .press-meta .press-role { color: #DCE0FF; }
+html[data-screen="venue"] .press-meta .press-name { color: #fff; }
+html[data-screen="venue"] .use-card { background: #1E1F52; border: 2px solid rgba(220,224,255,0.75); box-shadow: none; }
+html[data-screen="venue"] .use-tag, html[data-screen="venue"] .use-value { color: #DCE0FF; }
+html[data-screen="venue"] .use-value.warn { color: #FFC56E; }
+html[data-screen="venue"] .use-label, html[data-screen="venue"] .use-name { color: #fff; }
+html[data-screen="venue"] .use-foot { color: #fff; border-top-color: rgba(255,255,255,0.5); }
+html[data-screen="venue"] :is(.use-track, .tok-track) { background: rgba(255,255,255,0.22); box-shadow: none; }
+html[data-screen="venue"] :is(.use-fill, .tok-fill) { box-shadow: none; }
+html[data-screen="venue"] .use-live { color: var(--green); }
+html[data-screen="venue"] :is(.tok-card, .rd-card) { border: 2px solid #0B0B26; box-shadow: 0 18px 28px -18px rgba(11,11,38,0.7); }
+html[data-screen="venue"] .tok-lbl { color: #E4E4EE; }
+html[data-screen="venue"] .tok-lbl .v { color: #fff; }
+html[data-screen="venue"] .tok-lbl .v.low { color: #FF6B6B; }
+html[data-screen="venue"] .tok-pill { color: #8BEA8B; border: 2px solid #8BEA8B; }
+html[data-screen="venue"] .tok-fine, html[data-screen="venue"] .rd-skip { color: rgba(255,255,255,0.9); }
+html[data-screen="venue"] .rd-row { color: #fff; }
+html[data-screen="venue"] .rd-row + .rd-row { border-top-color: rgba(255,255,255,0.45); }
+html[data-screen="venue"] .rd-row .auto { color: #FFD08A; }
+html[data-screen="venue"] .rd-emoji { background: rgba(226,80,66,0.3); border: 2px solid rgba(255,111,94,0.8); filter: none; }
+html[data-screen="venue"] .cover-prompt.dark { background: #26275A; border: 2px solid rgba(220,224,255,0.75); box-shadow: none; }
+html[data-screen="venue"] .cover-prompt.dark .cover-prompt-text { color: #fff; }
+html[data-screen="venue"] .cover-prompt.dark .cover-prompt-kbd { background: #fff; }
+html[data-screen="venue"] .bub-outer { fill: rgba(168,176,248,0.12); stroke: #B9C0FF; stroke-width: 3; }
+html[data-screen="venue"] .bub-inner { fill: rgba(208,248,176,0.14); stroke: #CCFFA0; stroke-width: 3; }
+html[data-screen="venue"] .bub-arc { stroke: rgba(255,255,255,0.85); }
+html[data-screen="venue"] .prob-delta { border: 2px solid #f0b25c; color: #FFC56E; }
+html[data-screen="venue"] .wl-pline { color: #fff; }
+
+/* ── Venue · screenshots, photos and the Xero window ── */
+/* Pale UI on lavender-white washes out first: a modest lift, a firm frame.
+   Saturation carries it; more contrast than this bleaches the pale panels. */
+html[data-screen="venue"] :is(.shot img, .app-win img, .dash-browser img, .me-tile img, .xl-shot img, .phone img, .abr-hero img, .rc-wrap img, .sk-image, .sk-banner),
+html[data-screen="venue"] .rc-loupe { filter: brightness(0.96) contrast(1.06) saturate(1.5); }
+html[data-screen="venue"] .press-card img { filter: contrast(1.08); }
+html[data-screen="venue"] .slack-inset :is(.sk-app, .si-time, .sk-context, .si-ctx) { color: #3A393A; }
+html[data-screen="venue"] .slack-inset .sk-btn:not(.primary):not(.danger) { border-color: #6B6A6B; }
+html[data-screen="venue"] .slack-inset :is(.sk-divider, .si-thread) { border-top-color: #A9A8A9; }
+html[data-screen="venue"] .xw-body { background: #E2E4E8; }
+html[data-screen="venue"] :is(.xw-banner, .xw-table) { border: 2px solid #9CA1AD; }
+html[data-screen="venue"] .xw-title { border-bottom: 2px solid #9CA1AD; }
+html[data-screen="venue"] .xw-row + .xw-row { border-top: 2px solid #BFC3CC; }
+html[data-screen="venue"] .xw .xw-how { color: #2E3440; }
+html[data-screen="venue"] .xw-banner { font-size: 22px; }
+html[data-screen="venue"] .xw-chip { background: #D3EAFA; box-shadow: inset 0 0 0 2px #5FA8D6; font-size: 20px; }
+html[data-screen="venue"] .xw-tick { background-color: #C4E8D2; box-shadow: inset 0 0 0 2px #209155; }
+html[data-screen="venue"] .xw-row.wrong { background: #FAD9E0; box-shadow: inset 6px 0 #B02A4A; }
+html[data-screen="venue"] .xw-err { background: #B02A4A; color: #fff; }
+html[data-screen="venue"] .xw-err::before { filter: brightness(0) invert(1); }
+html[data-screen="venue"] .xw-how b.bad { background: #F6C3CF; color: #7A1E36; }
+html[data-screen="venue"] .xw-row.flag { background: #FFE7A8; box-shadow: inset 6px 0 #A9780F; }
+html[data-screen="venue"] .xw-btn { background: #F9D777; border: 2px solid #8A6410; font-size: 22px; }
+}
+
 </style>
 <script>
   // Speaker notes panel. N toggles it. With ?notes on the URL the panel starts
@@ -4828,6 +5031,59 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
         if (e.key !== key || e.newValue == null) return;
         const n = parseInt(e.newValue, 10);
         if (Number.isFinite(n) && n !== stage.index) stage.goTo(n);
+      });
+    }
+  })();
+</script>
+<script>
+  // Two looks: standard (default) and venue (big bright LCD). ?screen=venue on
+  // the URL sets it, as venue.html does. V flips it live and the choice is
+  // remembered per deck; a ?screen= on the URL always wins on load. The look is
+  // named in the notes panel and, for two seconds after a flip, in the corner.
+  (() => {
+    const root = document.documentElement;
+    const key = 'deck-stage:screen:' + (location.pathname || '/');
+    const valid = (v) => (v === 'venue' || v === 'standard' ? v : null);
+    const params = new URLSearchParams(location.search);
+    const fromUrl = valid(params.get('screen'));
+    let stored = null;
+    try { stored = valid(localStorage.getItem(key)); } catch (e) { /* ignore */ }
+    const flag = document.createElement('div');
+    flag.id = 'screen-flag'; flag.hidden = true;
+    document.body.appendChild(flag);
+    const head = document.querySelector('#notes-panel .np-head');
+    const look = document.createElement('span');
+    look.className = 'np-look';
+    if (head) head.insertBefore(look, head.querySelector('.np-hint'));
+    let timer = null;
+    const apply = (v, announce) => {
+      root.setAttribute('data-screen', v);
+      look.textContent = v + ' look';
+      if (!announce) return;
+      flag.textContent = (v === 'venue' ? 'Venue' : 'Standard') + ' look · V to switch';
+      flag.hidden = false;
+      clearTimeout(timer);
+      timer = setTimeout(() => { flag.hidden = true; }, 2000);
+    };
+    // Announce on load only when a remembered venue look is in play.
+    apply(fromUrl || stored || 'standard', !fromUrl && stored === 'venue');
+    window.addEventListener('keydown', (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      const t = e.target;
+      if (t && (t.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(t.tagName))) return;
+      if (e.key !== 'v' && e.key !== 'V') return;
+      const next = root.getAttribute('data-screen') === 'venue' ? 'standard' : 'venue';
+      apply(next, true);
+      try { localStorage.setItem(key, next); } catch (err) { /* ignore */ }
+      // Keep a ?screen= on the URL in step, so a refresh holds the look.
+      if (fromUrl) {
+        try { params.set('screen', next); history.replaceState(null, '', location.pathname + '?' + params + location.hash); } catch (err) { /* ignore */ }
+      }
+    });
+    // The presenter window (?notes) follows the projector window's look.
+    if (params.has('notes')) {
+      window.addEventListener('storage', (e) => {
+        if (e.key === key && valid(e.newValue)) apply(e.newValue, false);
       });
     }
   })();
