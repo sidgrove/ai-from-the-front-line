@@ -3152,9 +3152,9 @@ deck-stage { background: #0a0a0a; }
     </div>
   </section>
 
-  <!-- The three desktop apps, one hotkey each. The Setlist and Sidgrove Intelligence
-       windows are the live pages set in a replica of the desktop frame
-       (desktop/tasks FramedForm.cs, Theme.cs); Setlist's task titles are rewritten. -->
+  <!-- The two desktop apps. The Setlist window is the live page set in a replica
+       of the desktop frame (desktop/tasks FramedForm.cs, Theme.cs), its task
+       titles rewritten; Acapella is the running app's own window. -->
   <section class="slide" data-label="Desktop apps">
     <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
@@ -3167,7 +3167,7 @@ deck-stage { background: #0a0a0a; }
               <img class="dapp-mark" src="images/slides/41c-desktop-apps/acapella-icon.png" alt="">
               <div class="dapp-id"><p class="dapp-name">Acapella</p><p class="dapp-was">Replaces Wispr Flow</p></div>
             </div>
-            <img class="dapp-win" src="images/slides/41c-desktop-apps/acapella-oct06.png" alt="The Acapella window: hold a key to dictate, and the day's dictations listed beneath">
+            <img class="dapp-win" style="aspect-ratio: 1192 / 861;" src="images/slides/41c-desktop-apps/acapella-oct06.png" alt="The Acapella window: hold a key to dictate, and the day's dictations listed beneath">
           </div>
           <div class="dapp">
             <div class="dapp-head">
@@ -3175,13 +3175,6 @@ deck-stage { background: #0a0a0a; }
               <div class="dapp-id"><p class="dapp-name">Setlist</p><p class="dapp-was">Replaces Todoist</p></div>
             </div>
             <img class="dapp-win" src="images/slides/41c-desktop-apps/setlist.png" alt="The Setlist window: today's tasks laid out on the day, with the lists and what is overdue alongside">
-          </div>
-          <div class="dapp">
-            <div class="dapp-head">
-              <img class="dapp-mark" src="images/slides/41c-desktop-apps/intelligence-icon.png" alt="">
-              <div class="dapp-id"><p class="dapp-name">Sidgrove Intelligence</p><p class="dapp-was">Productised spreadsheet workflows</p></div>
-            </div>
-            <img class="dapp-win" src="images/slides/41c-desktop-apps/intelligence.png" alt="The Sidgrove Intelligence window, open on the practice overview: every client with cash, staff, packs and what is due">
           </div>
         </div>
       </div>
@@ -3952,7 +3945,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["Groups and intercompany. The matrix of every pair in the group, balanced or with its difference; any pair opened up side by side, both ledgers, month by month; and the structure itself, built from Companies House. Names blurred, figures changed."]},
   {"say":["Client forms. The hub on the left: every client's form link and what has come back. The new starter form itself in the middle. And when someone completes it, we get the ping in Slack."]},
   {"say":["Proposals. The hub: what to chase, what is in draft, what we have won. The proposal itself with its fees. And a ping the moment someone accepts."]},
-  {"say":["And it is not only in the browser. Three desktop apps. Acapella is my own dictation app: hold a key, speak, and it types into whatever is open; it replaced Wispr Flow. Setlist is my task manager; it replaced Todoist. And Sidgrove Intelligence itself, in its own window."]},
+  {"say":["And it is not only in the browser. Two desktop apps of my own. Acapella is my dictation app: hold a key, speak, and it types into whatever is open; it replaced Wispr Flow. Setlist is my task manager; it replaced Todoist."]},
   {"say":["And this is the big new opportunity. Every client gets their own dashboard, in their own colours, built from their own data, in days not months. Not a template: built for them."]},
   {"say":["Three of them. A media group: the last twelve months against the year before, and which customers make the money. A chiropractic studio: new patients every month, by practitioner, and what each visit brings in. And a clinic with two sites: revenue side by side, month by month, and how full each diary is. Different businesses, so different dashboards. Figures are changed and the logos are blurred; everything else is real."]},
   {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
@@ -4849,7 +4842,7 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
    window, its hotkey. Client dashboards: three browser windows on one grid,
    the portfolio whole on the left, studio and clinic stacked on the right and
    cut just under their charts, so no chart or headline figure is hidden. */
-.dapps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; margin: 0 -92px; }
+.dapps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 36px; margin: 0 -92px; align-items: start; }
 .dapp { display: flex; flex-direction: column; min-width: 0; }
 .dapp-head { display: flex; align-items: center; gap: 20px; height: 84px; margin-bottom: 22px; }
 .dapp-mark { width: 76px; height: 76px; border-radius: 18px; background: #fff; border: 1px solid rgba(30,30,70,0.30); }
