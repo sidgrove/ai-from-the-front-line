@@ -5161,6 +5161,9 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 .lens[style*="-786px -348px"] { background-position: -786px -357px !important; }    /* 46: no half row at the top; both buttons whole */
 .tw-card .tk-text .pt::before { top: calc(0.56em - 1px); }
 .slide[data-label="Brand assets"] h2.display em { display: inline-block; text-indent: -11px; }
+/* The model line is a chip beside the title, not loose text out at the right. */
+.feat-head:not(.has-sub):has(.ai-note) { justify-content: flex-start; align-items: center; gap: 26px; }
+.ai-note { display: inline-block; padding: 8px 18px 8px 14px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); color: var(--ink-500); line-height: 1.2; position: relative; top: 4px; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
