@@ -5339,6 +5339,26 @@ html[data-screen="venue"] .xw-err::before { filter: brightness(0) invert(1); }
 html[data-screen="venue"] .xw-how b.bad { background: #F6C3CF; color: #7A1E36; }
 html[data-screen="venue"] .xw-row.flag { background: #FFE7A8; box-shadow: inset 6px 0 #A9780F; }
 html[data-screen="venue"] .xw-btn { background: #F9D777; border: 2px solid #8A6410; font-size: 22px; }
+
+/* ── Venue · final sweep (06/10): the pieces added after the two looks were
+      drawn, brought into line with their siblings. Nudges only. ── */
+/* A lens is a CSS background, so the screenshot filter never reached it: it
+   sat paler than the screen it magnifies. Same filter, and a firm ring. */
+html[data-screen="venue"] .lens { filter: brightness(0.96) contrast(1.06) saturate(1.5); box-shadow: 0 0 0 2px var(--venue-edge), 0 18px 28px -14px rgba(11,11,38,0.6); }
+html[data-screen="venue"][data-boost="max"] .lens { filter: brightness(0.93) contrast(1.14) saturate(1.85); }
+/* Desktop apps: the two windows and their marks are bare images, outside
+   .shot, so they had neither the edge nor the lift. */
+html[data-screen="venue"] :is(.dapp-win, .dapp-mark, .pair-side) { border-color: var(--venue-edge); }
+html[data-screen="venue"] .dapp-win { box-shadow: var(--shadow-lift); filter: brightness(0.96) contrast(1.06) saturate(1.5); }
+html[data-screen="venue"][data-boost="max"] .dapp-win { filter: brightness(0.93) contrast(1.14) saturate(1.85); outline: 3px solid var(--venue-edge); outline-offset: -1px; }
+/* Other-option chips inside a row card (Cowork) get the 2px edge the same
+   chips have on the tool slides. */
+html[data-screen="venue"] .tk-rows .way-other { border-width: 2px; }
+/* The model note and the Month end chips, up to the 22px floor. */
+html[data-screen="venue"] :is(.ai-note, .also-label, .also-chip) { font-size: 22px; }
+/* Extra strong only: at 600 the Cowork bullet no longer fitted beside its
+   chip and pushed the slide down a line. Back to the venue weight there. */
+html[data-screen="venue"][data-boost="max"] .slide[data-label="Claude Cowork"] .sub { font-weight: 500; }
 }
 
 </style>
