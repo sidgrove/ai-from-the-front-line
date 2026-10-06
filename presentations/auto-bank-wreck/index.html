@@ -5115,6 +5115,34 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 .also-chip { display: inline-flex; align-items: center; gap: 10px; padding: 8px 16px 8px 9px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); font-family: var(--font-sans); font-size: 21px; font-weight: 500; color: var(--ink); white-space: nowrap; }
 /* The typing cursor stands on the baseline and is as tall as the letters beside it, at any size. */
 .cover-prompt-cursor, .cw-box .cover-prompt-cursor { height: 0.98em; vertical-align: -0.13em; margin-left: 0.12em; }
+/* ── Pixel pass (06/10): details measured at 4x against the text or edge
+      beside them and moved by the measured amount. Nothing here is a taste
+      change; no wording, image or markup touched. ── */
+/* 12: the "apart" pill was centred with translate(-50%, -50%) on a 55px
+   height, so it sat on a half pixel and its 1px rim smeared over two rows.
+   Centred by layout instead, where the browser snaps it to whole pixels. */
+.prob-grid .prob-delta { left: 0; right: 0; bottom: 43%; width: fit-content; height: fit-content; margin: auto; transform: none; }
+/* 8: two year labels sat left of their ticks (2015 by 3.6px, 2023 by 1.9px). */
+.hc > .hc-ax:nth-of-type(4) { margin-left: 4px; }
+.hc > .hc-ax:nth-of-type(5) { margin-left: 2px; }
+/* 29, 70, 71: the verdict pill's label was still 2px above the sub's
+   baseline (3px above the bullets on 71). */
+.way-head:has(.sub) > .way-verdict { top: 10px; }
+.slide[data-label="Claude Cowork"] .way-head:has(.sub) > .way-verdict { top: 11px; }
+/* 66: the note dots rode 2px above the capitals; every other bullet in the
+   deck sits about 1px below their centre. */
+.oe-note .b { margin-top: 0.5em; }
+/* 71: the screenshot is 826px plus a 1px rim each side, so it overhung its
+   826px column, and the slide's right edge, by 2px. The column is now the
+   picture plus its rim, whatever the rim; the picture stays at its own 826px. */
+.cw-grid { grid-template-columns: 1fr max-content; }
+.cw-grid .shot img { width: 826px; max-width: none; }
+/* Lenses: a few px of the picture inside, so the rim does not slice a letter
+   or a logo (keyed to the inline position each one replaces). */
+.lens[style*="-334px -143px"] { background-position: -330px -143px !important; }  /* 35: no sliver of the next digit after "£175," and "£20," */
+.lens[style*="-340px -958px"] { background-position: -343px -961px !important; }  /* 35: "Nation", not "Natio" and half an n; no half row at the top */
+.lens[style*="-372px -1020px"] { background-position: -356px -1020px !important; } /* 47: the LinkedIn mark, the Q and "7 archived" whole */
+.lens[style*="-442px -592px"] { background-position: -438px -587px !important; }  /* 49: no stray "F" at the right rim, no half row at the foot */
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
