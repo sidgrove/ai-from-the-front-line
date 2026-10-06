@@ -4996,6 +4996,37 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 .cw-grid { grid-template-columns: 1fr 826px; }
 /* A wide lens for one row of a table. */
 .lens.wide { width: 960px; height: 120px; border-radius: 60px; }
+/* ── Joy pass (06/10): craft, not decoration. Things that were nearly right
+      made right, in all three looks. No wording, image or order touched. ── */
+/* Two-line copy breaks at the thought, not wherever the line ran out: no
+   "or rules." or "the end." left alone under a full line. (Not the taglines
+   on 6 or the bullets on 27: balanced, those split mid-sentence.) */
+.abr-pt p, .tk-text, .tw-card .tk-text .pt, .sub, .sub .pt { text-wrap: balance; }
+/* 27, 73: where the second sentence is the accent, it moves down whole. */
+.vs-bullet em, .abr-points.g .abr-pt em { display: inline-block; }
+/* 69: the last row turns after its first sentence. */
+.slide[data-label="MCP connections"] .tk-row:nth-of-type(3) .tk-text { max-width: 1004px; text-wrap: wrap; }
+/* 6: the reserve for two tagline lines forgot the 2px rule above them, so the
+   two-line card's hairline sat 2px above its neighbours'. */
+.why-tagline { min-height: calc(2px + 26px + 2 * 1.5 * 23px); }
+/* 10: the line under the pipeline starts where the pipeline starts. */
+.slide[data-label="Probabilistic"] .pipe-hero + div > .sub { padding-left: 58px; }
+/* 29, 69, 70: the verdict pill's label sits on the sub's line, not 8px above it. */
+.way-head:has(.sub) > .way-verdict { position: relative; top: 8px; }
+/* Every logo has rounded corners: the mark itself, not only its tile. */
+.app-tile img { border-radius: 22%; }
+/* 49: three small windows in a column keep 16px of air between them (they
+   touched); each gives up a few px of its lower edge for it. */
+.mosaic-col:has(> .shot:nth-child(3)) { justify-content: flex-start; gap: 16px; }
+.mosaic-col:has(> .shot:nth-child(3)) > .shot { flex: 1 1 0; min-height: 0; }
+.feat-head ~ .fill .mosaic .mosaic-col:has(> .shot:nth-child(3)) > .shot img { flex: 1 1 0; min-height: 0; height: 0; object-fit: cover; object-position: left top; }
+/* 55: the hub's empty title bar is as deep as the form's, so the two windows
+   start and end level. */
+.slide[data-label="Forms"] .shot.window figcaption:empty::after { content: '\200b'; }
+/* 65, 66: the window wears the same corner as the card beside it. */
+.way-body .appw { border-radius: 22px; }
+/* 72, 73: the points card lifts like the Xero window beside it. */
+.abr-points { box-shadow: var(--shadow-card); }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
