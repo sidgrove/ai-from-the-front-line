@@ -5156,6 +5156,11 @@ html[data-screen="venue"] .mark { background: #FAD67C; }
 /* Embedded AI: the phrase and its label share one capsule, so the label is plainly about the phrase. */
 .hype { display: inline-flex; align-items: center; gap: 12px; margin: 0 8px 0 4px; padding: 2px 6px 2px 14px; border-radius: 999px; background: var(--paper-card); border: 1px solid var(--presentation-outline); white-space: nowrap; vertical-align: baseline; }
 .hype-tag { padding: 4px 12px; border-radius: 999px; background: rgba(240,178,92,0.26); font-family: var(--font-sans); font-size: 18px; font-weight: 600; line-height: 1.2; color: var(--ink); }
+/* Pixel pass, second round: lens rims off half rows and stray fragments; the italic line on Brand assets starts where the others do. */
+.lens[style*="-1825px -197px"] { background-position: -1841px -197px !important; }  /* 45: no "d: 1" fragment at the left rim */
+.lens[style*="-786px -348px"] { background-position: -786px -357px !important; }    /* 46: no half row at the top; both buttons whole */
+.tw-card .tk-text .pt::before { top: calc(0.56em - 1px); }
+.slide[data-label="Brand assets"] h2.display em { display: inline-block; text-indent: -11px; }
 /* ══ Two looks, one deck ═══════════════════════════════════════════
    <html data-screen="standard"> is everything above: laptop, good monitor.
    <html data-screen="venue"> is the block below: a big, bright LCD in a lit
