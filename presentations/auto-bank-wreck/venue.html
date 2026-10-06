@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Auto Bank Wreck - Dave Sellick (venue look)</title>
+<!-- The venue look of the deck: a doorway, not a copy. It opens index.html
+     with ?screen=venue (works from file:// too), so the two cannot drift.
+     Any ?slide= / ?notes / #N on this URL is carried across. -->
+<script>
+  (() => {
+    const q = new URLSearchParams(location.search);
+    q.set('screen', 'venue');
+    location.replace('index.html?' + q + location.hash);
+  })();
+</script>
+</head>
+<body>
+<p><a href="index.html?screen=venue">Open the deck in the venue look</a></p>
+</body>
+</html>
