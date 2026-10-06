@@ -19,3 +19,6 @@ desktop.ini
 *.pptx
 # Office lock files
 ~$*
+
+# The folder for a USB stick (rebuild: node presentations/auto-bank-wreck/make-usb.mjs)
+USB/
