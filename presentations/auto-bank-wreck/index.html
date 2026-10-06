@@ -3159,6 +3159,7 @@ deck-stage { background: #0a0a0a; }
   <section class="slide" data-label="Client dashboards">
     <div class="frame" style="--pad-y: 56px;">
       <div class="topbar"><p class="section-tag">What works <em>· 02 build</em></p><span class="page-chip"></span></div>
+      <div class="feat-head"><h2 class="display">Client <em>dashboards</em></h2></div>
 
       <div class="cd-stage cd-a">
         <div class="app-win cd-win cd-portfolio">
@@ -3167,11 +3168,11 @@ deck-stage { background: #0a0a0a; }
         </div>
         <div class="app-win cd-win cd-studio">
           <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #C9492F;"><i></i>Studio</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-overview.jpg" alt="A studio's own dashboard: revenue, practitioner pay and twelve months against break-even. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.3%; width: 16%; height: 7.4%;" aria-hidden="true"></span></span>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/studio-patients-oct06.jpg" alt="A studio's own dashboard: new patients each month by practitioner, and revenue per visit across the year. Figures and names changed, logo blurred"><span class="logo-veil" style="left: 5%; top: 0.6%; width: 13.2%; height: 6.8%;" aria-hidden="true"></span></span>
         </div>
         <div class="app-win cd-win cd-clinic">
           <div class="db-bar"><span class="db-dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="db-tab on" style="--c: #2F7A45;"><i></i>Clinic</span></div>
-          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-marketing.jpg" alt="A clinic's marketing review: spend as a share of revenue and spend per new patient, month by month. Figures changed, logo blurred"><span class="logo-veil" style="left: 0.6%; top: 0.4%; width: 8.5%; height: 5.6%;" aria-hidden="true"></span></span>
+          <span class="aw-img"><img src="images/slides/41b-client-dashboards/clinic-clinics-oct06.jpg" alt="A clinic's two sites side by side: revenue by month for each, and how full each diary is over the next fortnight. Figures and names changed, logo blurred"><span class="logo-veil" style="left: 1.2%; top: 0.5%; width: 5.2%; height: 5.2%;" aria-hidden="true"></span></span>
         </div>
       </div>
     </div>
@@ -3897,7 +3898,7 @@ deck-stage { background: #0a0a0a; }
   {"say":["Proposals. The hub: what to chase, what is in draft, what we have won. The proposal itself with its fees. And a ping the moment someone accepts."]},
   {"say":["And it is not only in the browser. Three desktop apps. Acapella is my own dictation app: hold a key, speak, and it types into whatever is open; it replaced Wispr Flow. Setlist is my task manager; it replaced Todoist. And Sidgrove Intelligence itself, in its own window."]},
   {"say":["And this is the big new opportunity. Every client gets their own dashboard, in their own colours, built from their own data, in days not months. Not a template: built for them."]},
-  {"say":["Three of them. A media group: the last twelve months against the year before, and which customers make the money. A chiropractic studio: twelve months against break-even at a glance. And a clinic: whether the marketing is paying for itself, spend per new patient, month by month. Different businesses, so different dashboards. Figures are changed and the logos are blurred; everything else is real."]},
+  {"say":["Three of them. A media group: the last twelve months against the year before, and which customers make the money. A chiropractic studio: new patients every month, by practitioner, and what each visit brings in. And a clinic with two sites: revenue side by side, month by month, and how full each diary is. Different businesses, so different dashboards. Figures are changed and the logos are blurred; everything else is real."]},
   {"say":["This deck. Every slide is HTML written in Claude Code from a plain-text plan; I edit the words, it rebuilds the slides."]},
   {"say":["sidgrove.com: described, built and deployed with Claude Code. No agency, no template."]},
   {"say":["Brand assets with Claude Design: the same engine as Claude Code, tailored for design work. Logos, colour tokens, templates."]},
@@ -4815,9 +4816,10 @@ p.perm-sub { font-size: 20px; } .perm-row .ck { font-size: 20px; } .perm-actions
   position: absolute; border-radius: 18px; border-color: rgba(30,30,70,0.36);
   box-shadow: 0 2px 4px rgba(30,30,70,0.08), 0 34px 64px -26px rgba(15,16,48,0.50);
 }
-.cd-a .cd-portfolio { left: 60px; top: 254px; width: 972px; }
-.cd-a .cd-studio { left: 1060px; top: 116px; width: 800px; height: 416px; }
-.cd-a .cd-clinic { left: 1060px; top: 556px; width: 800px; height: 440px; }
+/* With the slide's title above them the grid starts at 148px. */
+.cd-a .cd-portfolio { left: 60px; top: 262px; width: 1060px; }
+.cd-a .cd-studio { left: 1148px; top: 148px; width: 712px; height: 430px; }
+.cd-a .cd-clinic { left: 1148px; top: 600px; width: 712px; height: 430px; }
 
 /* ── Slack beside the screen (06/10): the message a feature sends sits next
       to its page and never covers it. The screen keeps the title's left
